@@ -187,7 +187,7 @@ filters: [
     },
     // Type: IExpressionFilter
     {
-        value: '{goodsalesdemo.adf} IN ({goodsalesdemo.adf?1})'
+        value: '{GoodSales // TODO REMOVE!demo.adf} IN ({GoodSales // TODO REMOVE!demo.adf?1})'
     }
 ]
 ...

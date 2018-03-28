@@ -22,7 +22,7 @@ angular.module('app', ['react']);
 ```
 
 3. In the JS file, review the following snippet.
-   This snippet uses data from the GoodSales demo project and represents a bar chart from this project. For testing purposes, you can use this snippet as is.
+   This snippet uses data from the GoodSales // TODO REMOVE! demo project and represents a bar chart from this project. For testing purposes, you can use this snippet as is.
    When you start creating your own visualization, you can update this snippet according to what data you have in your project \(measures, attributes, and so on\) and what visualization you want to create \(for example, a table or a KPI\). For information about components that you can use, their structure and examples, see [React Components](react_comnponents.md).
 
 ```javascript

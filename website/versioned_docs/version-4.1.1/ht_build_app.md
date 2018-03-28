@@ -40,7 +40,7 @@ $ npminstall@gooddata/react-components
 ```javascript
 import { Visualization } from '@gooddata/react-components';
 
-// This is an example of embedding a visualization from the GoodSales demo project.
+// This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"
@@ -74,7 +74,7 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
 
 1. Obtain the identifier of the visualization by either of the following methods:
  
-   * Via the gray pages \(the ID of the GoodSales demo project is `la84vcyhrq8jwbu4wpipw66q2sqeb923`\):
+   * Via the gray pages \(the ID of the GoodSales // TODO REMOVE! demo project is `la84vcyhrq8jwbu4wpipw66q2sqeb923`\):
 
 ```bash
 https://secure.gooddata.com/gdc/md/{project-id}/query/visualizations
@@ -92,7 +92,7 @@ import{ Visualization } from'@gooddata/react-components';
 3. Create a `Visualization` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
 
 ```javascript
-// This is an example of embedding a visualization from the GoodSales demo project.
+// This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"
@@ -115,7 +115,7 @@ To change colors in a chart, provide a `config` for each component where you wan
 ```javascript
 import { Visualization } from '@gooddata/react-components';
  
-// This is an example of embedding a visualization from the GoodSales demo project with custom colors and palette options.
+// This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project with custom colors and palette options.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"
@@ -134,7 +134,7 @@ To change the legend position, adjust the `config.legend.position` property \(`
 ```javascript
 import { Visualization } from '@gooddata/react-components';
  
-// This is an example of embedding a visualization from the GoodSales demo project with custom colors and palette options.
+// This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project with custom colors and palette options.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"
@@ -153,7 +153,7 @@ To customize tooltips and fonts, [implement a custom visualization](data_layer.m
 
 ## Create a Visualization Programmatically on the Fly
 
-For learning purposes, this procedure uses data from the GoodSales demo project. In particular, it explains how to create a bar chart that renders `# of Activities` sliced by `Activity Type`.
+For learning purposes, this procedure uses data from the GoodSales // TODO REMOVE! demo project. In particular, it explains how to create a bar chart that renders `# of Activities` sliced by `Activity Type`.
 
 You can choose any other supported visualization type. When this article was last updated, the following visualization types were available: `BarChart`, `ColumnChart`, `LineChart`, `PieChart`, and `Table`. For the complete information about the visualization types, see [React Components](react_components.md).
 
@@ -162,7 +162,7 @@ Before you start creating visualizations on the fly, make sure that you have a b
 **Steps:**
 
 1. [Find the project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID).
-   The ID of the GoodSales demo project is`la84vcyhrq8jwbu4wpipw66q2sqeb923`.
+   The ID of the GoodSales // TODO REMOVE! demo project is`la84vcyhrq8jwbu4wpipw66q2sqeb923`.
 
 2. Obtain data identifiers using [gdc-catalog-export](gdc-catalog-export).
 
@@ -287,7 +287,7 @@ To personalize the bar chart further \(for example, change colors\), override t
 To enable event drilling, extend the `Visualization` component with a `drillableItems` property. In the `drillableItems` property, add an array of `uri`'s and/or `identifier`'s of the measures and attributesthat will become highlighted and drillable.
 
 ```javascript
-// This is an example of event drilling on the visualization from the GoodSales demo project.
+// This is an example of event drilling on the visualization from the GoodSales // TODO REMOVE! demo project.
 <Visualization
   projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
   identifier="aby3polcaFxy"

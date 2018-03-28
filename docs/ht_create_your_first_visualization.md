@@ -7,7 +7,7 @@ id: ht_create_your_first_visualization
 
 This tutorial will guide you through the process of creating your first smart application using Facebook’s `create-react-app` tool and will show you the GoodData UI SDK in action.
 
-When you complete this tutorial, you will be able to display various measures and charts from the [GoodSales demo project](https://secure.gooddata.com/#s=/gdc/projects/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CprojectDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399) within the context of your React application.
+When you complete this tutorial, you will be able to display various measures and charts from the [GoodSales // TODO REMOVE! demo project](https://secure.gooddata.com/#s=/gdc/projects/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CprojectDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399) within the context of your React application.
 
 ## Step 1. Get create-react-app
 
@@ -186,7 +186,7 @@ $ gdc-catalog-export --output src/catalog.json
 
 ```javascript
 {
-  "metrics": {
+  "measures": {
     "Avg Deal Size": {
       "identifier": "atSHqCtAePe4",
       "tags": ""

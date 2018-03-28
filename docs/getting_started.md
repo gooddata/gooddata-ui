@@ -83,7 +83,7 @@ You will need your project ID for the most components to work.
 
 To get your project ID, see [Find the Project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID).
 
-Examples in this documentation use data from the GoodSales demo project with an ID of `la84vcyhrq8jwbu4wpipw66q2sqeb923`.
+Examples in this documentation use data from the GoodSales // TODO REMOVE! demo project with an ID of `la84vcyhrq8jwbu4wpipw66q2sqeb923`.
 
 ### Get resource identifiers
 

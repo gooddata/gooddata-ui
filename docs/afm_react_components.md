@@ -38,7 +38,7 @@ const { BarChart } = AfmComponents; // replace BarChart with ColumnChart, LineCh
 
 ### Example
 
-This example uses data from the GoodSales demo project. For testing purposes, you can use this snippet as is.
+This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is.
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
@@ -102,7 +102,7 @@ const { Table } = AfmComponents;
 
 ### Example
 
-This example uses data from the GoodSales demo project. For testing purposes, you can use this snippet as is.
+This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is.
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';

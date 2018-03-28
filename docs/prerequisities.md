@@ -12,7 +12,7 @@ To integrate the GoodData UI SDK in your application, you must meet the followi
 * Have previous experience with the GoodData platform and being familiar with its main concepts. For more information, see the [GoodData online help](https://help.gooddata.com/display/doc/GoodData+Help).
 * Have an account on the GoodData platform. If you do not have a GoodData account yet, [create a trial one](https://secure.gooddata.com/account.html?lastUrl=%252F#/registration/projectTemplate/urn%253Agooddata%253AOnboardingProductTour).
 
-Examples in this documentation use data from the GoodSales demo project that is available for trial GoodData accounts.
+Examples in this documentation use data from the GoodSales // TODO REMOVE! demo project that is available for trial GoodData accounts.
 
 The supported version of TypeScript is 2.3+.
 
