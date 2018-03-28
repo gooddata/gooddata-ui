@@ -1,6 +1,6 @@
 ---
-title: How to Create Your First Visualization with GoodData UI SDK
-sidebar_label: How to Create Your First Visualization with GoodData UI SDK
+title: Create Your First Visualization with GoodData UI SDK
+sidebar_label: Create Your First Visualization with GoodData UI SDK
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_create_your_first_visualization
 ---

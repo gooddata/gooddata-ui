@@ -1,6 +1,6 @@
 ---
-title: How to Build an App
-sidebar_label: How to Build an App
+title: Build an App
+sidebar_label: Build an App
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_build_app
 ---

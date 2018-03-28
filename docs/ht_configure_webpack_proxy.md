@@ -1,6 +1,6 @@
 ---
-title: How to Configure a Webpack Proxy
-sidebar_label: How to Configure a Webpack Proxy
+title: Configure a Webpack Proxy
+sidebar_label: Configure a Webpack Proxy
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_configure_webpack_proxy
 ---

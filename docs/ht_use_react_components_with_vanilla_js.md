@@ -1,7 +1,7 @@
 ---
 id: ht_use_react_components_with_vanilla_js
-title: How to Use React Components with Vanilla JavaScript
-sidebar_label: How to Use React Components with Vanilla JavaScript
+title: Use React Components with Vanilla JavaScript
+sidebar_label: Use React Components with Vanilla JavaScript
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 

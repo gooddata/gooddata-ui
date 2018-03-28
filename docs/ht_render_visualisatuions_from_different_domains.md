@@ -1,6 +1,6 @@
 ---
-title: How to Render Visualizations from Different Domains and Projects
-sidebar_label: How to Render Visualizations from Different Domains and Projects
+title: Render Visualizations from Different Domains and Projects
+sidebar_label: Render Visualizations from Different Domains and Projects
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_render_visualization_from_different_domain
 ---

@@ -1,6 +1,6 @@
 ---
-title: How to Set Up a Loading State for Embedded Insights
-sidebar_label: How to Set Up a Loading State for Embedded Insights
+title: Set Up a Loading State for Embedded Insights
+sidebar_label: Set Up a Loading State for Embedded Insights
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_set_up_loading_state_for_embedded_insights
 ---

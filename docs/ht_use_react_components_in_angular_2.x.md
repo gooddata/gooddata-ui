@@ -1,6 +1,6 @@
 ---
-title: How to Use React Components in Angular 2+
-sidebar_label: How to Use React Components in Angular 2+
+title: Use React Components in Angular 2+
+sidebar_label: Use React Components in Angular 2+
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_2.x
 ---
