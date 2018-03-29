@@ -72,74 +72,9 @@ yarn add @gooddata/react-components
 
 This command adds `@gooddata/react-components` to the list of your project dependencies in `package.json` and downloads all required packages.
 
-## Step 4. Prevent cross-origin issues
+## Step 4. Start the development server
 
-Your local application runs at [https://localhost:3000](https://localhost:3000/) but you need it to call the GoodData APIs from [https://secure.gooddata.com/gdc/](https://secure.gooddata.com/gdc/). Modern browsers do not permit this because of the security measure known as the [same-origin-policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
-
-You can bypass this restriction in this case because making a cross-origin request from a trusted application is safe. To bypass, set up a local proxy. The proxy will make the GoodData API accessible under the same hostname and port as your web application, that is, [https://localhost:3000/gdc/](https://localhost:3000/gdc/).
-
-Using a proxy is a quick solution that allows you to immediately start with the GoodData UI SDK. For a proper production-ready solution, see [How to Access the GoodData API Directly](ht_access_gd_api_directly.md)and set up access to the GoodData API.
-
-To set up a proxy, add the following section to the root level of your `package.json` \(this works with any application started using `react-scripts start`\):
-
-```javascript
-"proxy": {
-   "/gdc": {
-      "changeOrigin": true,
-      "cookieDomainRewrite": "localhost",
-      "secure": false,
-      "target": "https://secure.gooddata.com/"
-   },
-   "/*.html": {
-      "changeOrigin": true,
-      "secure": false,
-      "target": "https://secure.gooddata.com/"
-   }
-},
-```
-
-The `/gdc` prefix refers to the GoodData APIs as they are hosted under [https://secure.gooddata.com/gdc](https://secure.gooddata.com/gdc). The `"secure: false"` section allows you to set up a proxy against your localhost server that may use a self-signed certificate.
-
-In addition, proxying the `/*.html` pages allows you to easily establish a user session by logging in using the GoodData login page \(account.html\) and possibly invoke other GoodData actions that you may need during the development.
-
-Your `package.json` should now look something like this \(the version numbers may differ\):
-
-```javascript
-{
-   "name": "my-first-sba",
-   "version": "0.1.0",
-   "private": true,
-   "proxy": {
-      "/gdc": {
-         "changeOrigin": true,
-         "cookieDomainRewrite": "localhost",
-         "secure": false,
-         "target": "https://secure.gooddata.com/"
-      },
-      "/*.html": {
-         "changeOrigin": true,
-         "secure": false,
-         "target": "https://secure.gooddata.com/"
-      }
-   },
-   "dependencies": {
-      "@gooddata/react-components": "^3.0.1",
-      "react": "15.3.2",
-      "react-dom": "15.3.2",
-      "react-scripts": "1.0.10"
-   },
-   "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test --env=jsdom",
-      "eject": "react-scripts eject"
-   }
-}
-```
-
-## Step 5. Start the development server
-
-Run the following command from the command line:
+Before you start your development server, [prevent cross-origin issues](cors.md#on-your-local-dev-machine). Then run the following command from the command line:
 
 * If you are on Mac or Linux:
 
@@ -153,9 +88,9 @@ HTTPS=true yarn start
 set HTTPS=true&&npm start
 ```
 
-Always run your local development server using HTTP**S** because the GoodData API responses set cookies with the `secure` flag. Specifically, it means thatif you skip the `HTTPS=true` part,you will not be able to log in.
+Always run your local development server using HTTP**S** because the GoodData API responses set cookies with the `secure` flag. Specifically, it means thatif you skip the `HTTPS=true` part, you will not be able to log in.
 
-## Step 6. Establish a session
+## Step 5. Establish a session
 
 Open [https://localhost:3000/account.html](https://localhost:3000/account.html) in your browser, and enter your GoodData credentials.
 
@@ -167,7 +102,7 @@ For the purpose of this tutorial, you are asked to establish a client session by
 
 In your production environment, your end users may be authenticated using single sign-on. This case will be covered in a different tutorial.
 
-## Step 7. Add GoodData components 
+## Step 6. Add GoodData components 
 
 Open [https://localhost:3000/](https://localhost:3000/) in your browser.
 
@@ -236,7 +171,7 @@ Go back to your browser window. The default page now looks like the following:
 
 Notice the KPI number that you have added.
 
-## Step 8. Keep your code clean
+## Step 7. Keep your code clean
 
 The GoodData UI SDK provides a tool named [gdc-catalog-export](gdc-catalog-export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
 
@@ -321,7 +256,7 @@ export default App;
 
 Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` at line 17\). In your real application, you may prefer to pass the project ID via URL or hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
 
-## Step 9. Add more visualizations
+## Step 8. Add more visualizations
 
 So far, you have added a single number using the KPI component.
 

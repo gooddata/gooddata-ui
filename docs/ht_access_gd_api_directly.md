@@ -19,32 +19,9 @@ White-labeling is done by the GoodData Support specialists per request submitted
 
 You can white-label a brand new domain \(see [White-Label a New Domain](https://help.gooddata.com/display/doc/White-Label+a+New+Domain)\) or an existing domain \([White-Label an Existing Domain](https://help.gooddata.com/display/doc/White-Label+an+Existing+Domain)\).
 
-If you are contacting GoodData Support regarding white labeling your domain, you may want to also request CORS as described in Step 2 of this tutorial.
+If you are contacting GoodData Support regarding white labeling your domain, you may want to also request [CORS](cors.md).
 
-## Step 2. Configure CORS
-
-To request CORS setup, submit a request via the [GoodData Support Portal](https://support.gooddata.com/hc/en-us). In your request, provide the following:
-
-* The name of your GoodData domain
-* URLs the you want to enable requesting additional URLs to enable API calls from a local machine during development is recommended. For example, `https://local.test:8443` \(you have to set up
-  `local.test` as an alias for `localhost` because using the actual localhost is not allowed\).
-
-**Example:**
-If your white-labelled GoodData domain is `analytics.example.com` and your app is expected to be hosted at `https://smart-app.example.com/`, you can request CORS by submitting the following request:
-
-```
-To: support@gooddata.com
-
-Subject: CORS origin setup for analytics.example.com
-
-Hello GoodData Support team,could you please enable https://smart-app.example.com and https://local.test:8443 as CORS origins for the GoodData domain associated with https://analytics.example.com/
-
-Thank you.
-```
-
-If you know the exact name of your GoodData domain, provide it too.
-
-## Step 3. Update your code
+## Step 2. Update your code
 
 Before your app starts communicating with GoodData, add the following lines to your executable code \(for example, at the beginning of the file with your root component\):
 
@@ -55,7 +32,7 @@ config.setCustomDomain('https://analytics.example.com');
 
 If you followed the instructions from the tutorial [How to Create Your First Visualization with GoodData UI SDK]ht_create_your_first_visualization.md), you can now remove the proxy-related code from the `package.json` file because it is not needed anymore.
 
-## Step 4. Run your app locally without a proxy
+## Step 3. Run your app locally without a proxy
 
 In this step, we assume the following:
 
@@ -88,7 +65,7 @@ Do \_not\_ modify the `/etc/hosts` file except for adding `local.test` to the en
 HTTPS=true HOST=local.test PORT=8443 yarn start
 ```
 
-## Step 5. Deploy your app
+## Step 4. Deploy your app
 
 In this step, we assume that your app's address is `https://smart-app.example.com`.
 

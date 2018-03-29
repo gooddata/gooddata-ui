@@ -7,7 +7,7 @@ id: ht_configure_webpack_proxy
 
 When you are developing smart business applications using the GoodData platform, you have to set up a secure connection from your localhost to the GoodData server. One of the ways how you can do that is using the Webpack dev server with a proxy.
 
-Using the Webpack dev server with a proxy is recommended for your **local** development. Your **production** version must run from a whitelisted domain using a CORS request andwithout a proxy.
+Using the Webpack dev server with a proxy is recommended for your **local** development. Your **production** version must run from a whitelisted domain using a CORS request and without a proxy.
 
 Using the Webpack dev server with a proxy does the following:
 

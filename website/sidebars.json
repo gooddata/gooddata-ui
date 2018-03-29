@@ -8,7 +8,7 @@
     "Tutorials": [
       "ht_create_your_first_visualization", 
       "ht_access_gd_api_directly",
-
+      "cors",
       "ht_render_visualization_from_different_domain"
     ],
     "React Components": [
