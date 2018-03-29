@@ -32,19 +32,23 @@ $ yarn add @gooddata/react-components
 or
 
 ```bash
-$ npminstall@gooddata/react-components
+$ npm install @gooddata/react-components
 ```
 
-2. Import the components that you want to use to your app. For example, to get the `Visualization` component:
+2. Import the components that you want to use to your app. For example, to get the `Visualization` component.
+
+ **Warning:** react-components have height:100%, so wrapper is always needed.
 
 ```javascript
 import { Visualization } from '@gooddata/react-components';
 
-// This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project.
-<Visualization
+<div style={{ height: 300 }}>
+  // This is an example projectId and saved visualization identifier
+  <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
     identifier="aby3polcaFxy"
-/>
+    />
+</div>
 ```
 
 To get results from executing any component, you must be authenticated to the GoodData platform.
@@ -72,30 +76,29 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
 
 **Steps:**
 
-1. Obtain the identifier of the visualization by either of the following methods:
- 
-   * Via the gray pages \(the ID of the GoodSales // TODO REMOVE! demo project is `la84vcyhrq8jwbu4wpipw66q2sqeb923`\):
+// TODO  how to find projectId ?
 
+1. Obtain the identifier of the visualization by either of the following methods:
+  * Via the gray pages \(find the ID of your project is `la84vcyhrq8jwbu4wpipw66q2sqeb923`\):
 ```bash
 https://secure.gooddata.com/gdc/md/{project-id}/query/visualizations
 https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizations
 ```
 
-    * Via [gdc-catalog-export](gdc-catalog-export.md)
+  * Via [gdc-catalog-export](gdc-catalog-export.md) tool
 
 2. Import the `Visualization` component from the `@gooddata/react-components` package into your app:
-
-```javascript
-import{ Visualization } from'@gooddata/react-components';
+ ```javascript
+import { Visualization } from'@gooddata/react-components';
 ```
 
 3. Create a `Visualization` component in your app, and provide it with the project ID and the visualization identifier that you obtained at Step 1:
-
 ```javascript
-// This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project.
-<Visualization
-    projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-    identifier="aby3polcaFxy"
+<div style={{ height: 300 }}>
+  // This is an example of saved visualization (by identifier)
+  <Visualization
+    projectId="k26dtejorcqlqf11crn6imbeevp2q4kg"
+    identifier="aepRx0i8haM7"
     config={{
         colors: ['rgba(195, 49, 73, 1)', 'rgba(168, 194, 86, 1)'],
         legend: {
@@ -103,7 +106,8 @@ import{ Visualization } from'@gooddata/react-components';
             position: 'bottom'
         }
     }}
-/>
+    />
+</div>
 ```
 
 ## Customize a Visualization
@@ -114,7 +118,7 @@ To change colors in a chart, provide a `config` for each component where you wan
 
 ```javascript
 import { Visualization } from '@gooddata/react-components';
- 
+
 // This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project with custom colors and palette options.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -133,7 +137,7 @@ To change the legend position, adjust the `config.legend.position` property \(`
 
 ```javascript
 import { Visualization } from '@gooddata/react-components';
- 
+
 // This is an example of embedding a visualization from the GoodSales // TODO REMOVE! demo project with custom colors and palette options.
 <Visualization
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -209,10 +213,10 @@ const customConfig = {};
 ```javascript
 import { AfmComponents } from '@gooddata/react-components';
 import catalogue from './catalogue';
- 
- 
+
+
 const { BarChart } = AfmComponents;
- 
+
 const projectId = 'la84vcyhrq8jwbu4wpipw66q2sqeb923';
 const afm = {
     measures: [
@@ -264,7 +268,7 @@ const resultSpec = {
         }
     ]
 }
- 
+
 ...
 
 render() {
