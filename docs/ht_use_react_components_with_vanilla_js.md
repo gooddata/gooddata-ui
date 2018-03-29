@@ -13,13 +13,6 @@ This tutorial focuses only on integrating the GoodData UI SDK with Vanilla JavaS
 * Creating Vanilla JavaScript helper functions for attaching and detaching React components to/from DOM nodes
 * Copying the CSS style sheet from the GoodData UI SDK and including it in your HTML page using the `<link src…>` HTML tag
 
-## Prerequisites
-
-You must haveoneof the following software installed on your machine:
-
-* `node.js` and `npm`
-* `yarn`
-
 ## Sample Code
 
 In addition to this tutorial, sample code is available at [https://github.com/gooddata/ui-sdk-examples/tree/master/vanillajs](https://github.com/gooddata/ui-sdk-examples/tree/master/vanillajs) for you to try it out.

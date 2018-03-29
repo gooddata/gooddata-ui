@@ -7,15 +7,15 @@
     ],
     "Tutorials": [
       "ht_create_your_first_visualization", 
-      "ht_build_app",
       "ht_access_gd_api_directly",
-      "ht_configure_webpack_proxy",
-      "ht_set_up_loading_state_for_embedded_insights",
+
       "ht_render_visualization_from_different_domain"
     ],
     "React Components": [
       "react_components", 
       "afm_react_components", 
+      "loading_component",
+      "error_component",
       "chart_config", 
       "drillable_item", 
       "on_legend_ready"

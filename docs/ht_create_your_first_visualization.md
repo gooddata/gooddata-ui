@@ -9,18 +9,6 @@ This tutorial will guide you through the process of creating your first smart ap
 
 When you complete this tutorial, you will be able to display various measures and charts from the [GoodSales demo project](https://secure.gooddata.com/#s=/gdc/projects/la84vcyhrq8jwbu4wpipw66q2sqeb923%7CprojectDashboardPage%7C/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/obj/33807%7Caa0fb2c4d399) within the context of your React application.
 
-## Prerequisites
-
-To successfully complete this tutorial, you are required to:
-
-* Be familiar with the modern JavaScript ecosystem
-* Have `node.js` and `yarn` installed in your development environment. If you do not have these tools installed, you can get them from [https://nodejs.org/](https://nodejs.org/) \(install first\) and [https://yarnpkg.com/](https://yarnpkg.com/) respectively.
-* Have an account on the GoodData platform. If you do not have a GoodData account yet, [create a trial one](https://secure.gooddata.com/account.html?lastUrl=%252F#/registration/projectTemplate/urn%253Agooddata%253AOnboardingProductTour).
-
-The supported version of TypeScript is 2.3+.
-
-The supported version of React is 15.3.2.
-
 ## Step 1. Get create-react-app
 
 Run the following command from the command line:

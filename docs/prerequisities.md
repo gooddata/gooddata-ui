@@ -17,3 +17,5 @@ Examples in this documentation use data from the GoodSales demo project that is 
 The supported version of TypeScript is 2.3+.
 
 The supported version of React is 15.3.2.
+
+Server-side rendering is _not_ supported.

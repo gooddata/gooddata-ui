@@ -5,12 +5,6 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_2.x
 ---
 
-The supported version of TypeScript is 2.3+.
-
-The supported version of React is 15.3.2.
-
-Server-side rendering is _not_ supported.
-
 To be able to use the GoodData [React Components](react_components.md) in your Angular 2+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside.
 
 **Steps:**
@@ -144,5 +138,10 @@ You can use wrapped components across your app. You can pass the component props
     measure="atSHqCtAePe4">
 </app-kpi>
 ```
+
+If you want to handle loading and error content yourself and do not want to use the default LoadingComponent and ErrorComponent, pass null explicitly:
+
+* `LoadingComponent={null}`
+* `ErrorComponent={null}`
 
 For more information on including React components in Angular, see [https://www.packtpub.com/books/content/integrating-angular-2-react](https://www.packtpub.com/books/content/integrating-angular-2-react).

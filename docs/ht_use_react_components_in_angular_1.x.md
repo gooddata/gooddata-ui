@@ -5,17 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_1.x
 ---
 
-You can use the GoodData [React Components](react_components.md) in your Angular 1._x_app.
-
-The supported version of TypeScript is 2.3+.
-
-The supported version of React is 15.3.2.
-
-Server-side rendering is_not_supported.
-
-There are many way how to use the React Component.
-
-Here is how you do that with [ngReact](http://ngreact.github.io/ngReact/):
+You can use the GoodData [React Components](react_components.md) in your Angular 1._x_app. There are many way how to use the React Component. Here is how you do that with [ngReact](http://ngreact.github.io/ngReact/):
 
 1. Add `angular`, `react`, `react-dom`, `ngReact`, and `@gooddata/react-components` dependencies into your project:
 
@@ -116,5 +106,11 @@ angular.module('gdcAngularApp', ['react']) // Injecting ngReact
             </div>
           </body>
         ```
+
+If you want to handle loading and error content yourself and do not want to use the default LoadingComponent and ErrorComponent, pass null explicitly:
+
+* `LoadingComponent={null}`
+* `ErrorComponent={null}`
+
 
  You are now ready to use the GoodData React Components in your Angular app.

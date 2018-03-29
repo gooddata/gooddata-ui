@@ -34,17 +34,6 @@ The GoodData UI SDK is tested against and supports the following:
 
 The GoodData UI SDK may work with other platforms and operating systems but has _not_ been thoroughly tested yet and may _not_ provide all functionalities.
 
-## Prerequisites
-
-To integrate the GoodData UI SDK in your application, you must meet the following requirements:
-
-* Be familiar with the modern JavaScript ecosystem.
-* Have `node.js` and `yarn` installed in your development environment. If you do not have these tools installed, you can get them from [https://nodejs.org/](https://nodejs.org/) \(install first\) and [https://yarnpkg.com/](https://yarnpkg.com/) respectively.
-* Have previous experience with the GoodData platform and being familiar with its main concepts. For more information, see the [GoodData online help](https://help.gooddata.com/display/doc/GoodData+Help).
-* Have an account on the GoodData platform. If you do not have a GoodData account yet, [create a trial one](https://secure.gooddata.com/account.html?lastUrl=%252F#/registration/projectTemplate/urn%253Agooddata%253AOnboardingProductTour).
-
-Examples in this documentation use data from the GoodSales demo project that is available for trial GoodData accounts.
-
 ## Installation
 
 ```bash
