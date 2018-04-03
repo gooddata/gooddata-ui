@@ -19,7 +19,7 @@ const siteConfig = {
   title: 'GoodData UI SDK' /* title for your website */,
   tagline: '',
   url: 'https://gooddata.github.io' /* your website url */,
-  baseUrl: '/ui-sdk/' /* base url for your project */,
+  baseUrl: '/gdc-ui-sdk-doc/' /* base url for your project */,
   projectName: 'GoodData UI SDK',
   headerLinks: [
     {doc: 'getting_started', label: 'Docs'},
@@ -53,8 +53,8 @@ const siteConfig = {
     'Copyright © ' +
     new Date().getFullYear() +
     ' GoodData',
-  // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
-  // projectName: 'test-site', // or set an env variable PROJECT_NAME
+  organizationName: 'gooddata',
+  projectName: 'gdc-ui-sdk-doc',
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
