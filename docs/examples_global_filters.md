@@ -19,7 +19,7 @@ import { PropTypes } from 'prop-types';
 import { AttributeElements, AfmComponents, Kpi } from '@gooddata/react-components';
 import { SidebarItem } from '../components/utils/SidebarItem';
 import { EmployeeCard } from '../components/GlobalFiltersComponents/EmployeeCard';
-import { KpiMetricBox } from '../components/GlobalFiltersComponents/KpiMetricBox';
+import { KpiMeasureBox } from '../components/GlobalFiltersComponents/KpiMeasureBox';
 import {
     projectId,
     employeeNameIdentifier,
@@ -171,7 +171,7 @@ export class EmployeeProfile extends React.Component {
                                 <EmployeeCard uri={selectedEmployee.uri} name={employeeName} />
                             </div>
                             <div className="kpis">
-                                <KpiMetricBox title="Daily sales">
+                                <KpiMeasureBox title="Daily sales">
                                     <Kpi
                                         filters={[employeeFilter]}
                                         measure={averageDailyTotalSales}
@@ -182,9 +182,9 @@ export class EmployeeProfile extends React.Component {
                                         }
                                         ErrorComponent={Error}
                                     />
-                                </KpiMetricBox>
+                                </KpiMeasureBox>
 
-                                <KpiMetricBox title="Average check amount">
+                                <KpiMeasureBox title="Average check amount">
                                     <Kpi
                                         filters={[employeeFilter]}
                                         measure={averageCheckSizeByServer}
@@ -195,7 +195,7 @@ export class EmployeeProfile extends React.Component {
                                         }
                                         ErrorComponent={Error}
                                     />
-                                </KpiMetricBox>
+                                </KpiMeasureBox>
                             </div>
                             <div className="pie-chart-block" >
                                 <h2>Average daily total sales by menu category</h2>

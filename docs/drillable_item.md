@@ -12,9 +12,9 @@ To turn on eventing and drilling, specify at least one drillableItem. Drillable 
 ```javascript
 drillableItems: [
     {
-        identifier: <identifier>  // metric or attribute displayForm identifier
+        identifier: <identifier>  // measure or attribute displayForm identifier
         // or
-        uri: <uri>    // metric, attribute displayForm, or attribute value uri
+        uri: <uri>    // measure, attribute displayForm, or attribute value uri
     },
     ...
 ]

@@ -94,9 +94,9 @@ When both a measure filter of the [`DateFilter`](afm.md#date-filter) type and
 
 ### Show as a percentage
 
-When an AFM is executed on the GoodData platform, the result metric data is by default returned as raw values \(numbers\).
+When an AFM is executed on the GoodData platform, the result measure data is by default returned as raw values \(numbers\).
 
-If you want the metric data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
+If you want the meaures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
 
 When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
 
