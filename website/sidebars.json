@@ -6,35 +6,36 @@
       "platform_intro"
     ],
     "Tutorials": [
-      "ht_create_your_first_visualization", 
+      "ht_create_your_first_visualization",
       "ht_access_gd_api_directly",
       "cors",
       "ht_render_visualization_from_different_domain"
     ],
     "React Components": [
-      "react_components", 
-      "afm_react_components", 
+      "react_components",
+      "afm_react_components",
       "loading_component",
       "error_component",
-      "chart_config", 
-      "drillable_item", 
+      "chart_config",
+      "drillable_item",
       "on_legend_ready"
     ],
     "Reference": [
+      "visualization_lifecycle",
       "afm",
-      "result_specification", 
-      "execute_component", 
-      "data_layer", 
-      "execution_rest_api_and_result", 
+      "result_specification",
+      "execute_component",
+      "data_layer",
+      "execution_rest_api_and_result",
       "table_totals_in_execution_object"
     ],
     "Tools" : ["gdc_catalog_export"]
   },
   "FAQ": {
     "FAQ": [
-      "trouble_shooting", 
-      "ht_use_react_component_in_angular_1.x", 
-      "ht_use_react_component_in_angular_2.x", 
+      "trouble_shooting",
+      "ht_use_react_component_in_angular_1.x",
+      "ht_use_react_component_in_angular_2.x",
       "ht_use_react_components_with_vanilla_js",
       "glossary"
     ]
