@@ -55,7 +55,13 @@ const afm = {
     ]
 };
 
-const resultSpec = {};
+const resultSpec = {
+    dimensions: [
+        {
+            itemIdentifiers: ['measureGroup']
+        }
+    ]
+};
 
 /*
 Initializing the Adapter object

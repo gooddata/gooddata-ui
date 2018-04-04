@@ -187,7 +187,7 @@ filters: [
     },
     // Type: IExpressionFilter
     {
-        value: '{GoodSales // TODO REMOVE!demo.adf} IN ({GoodSales // TODO REMOVE!demo.adf?1})'
+        value: '{demoproject.adf} IN ({demoproject.adf?1})'
     }
 ]
 ...
@@ -516,7 +516,7 @@ nativeTotals: [
                     identifier: '<date-dataset-identifier>' // Or uri: '<date-dataset-uri>'
                 },
                 from: '2017-07-31', // Supported string format 'YYYY-MM-DD'
-                    to: '2017-08-29' // Supported string format 'YYYY-MM-DD'
+                to: '2017-08-29' // Supported string format 'YYYY-MM-DD'
             }
         },
         // Type: IPositiveAttributeFilter
