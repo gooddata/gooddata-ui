@@ -2,7 +2,8 @@
 title: gdc-catalog-export
 sidebar_label: gdc-catalog-export
 copyright: (C) 2007-2018 GoodData Corporation
-id: gdc_catalog_export
+id: version-4.1.1-gdc_catalog_export
+original_id: gdc_catalog_export
 ---
 
 `gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project.

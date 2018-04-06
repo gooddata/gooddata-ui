@@ -2,7 +2,8 @@
 title: Create Your First Visualization with GoodData UI SDK
 sidebar_label: Create Your First Visualization with GoodData UI SDK
 copyright: (C) 2007-2018 GoodData Corporation
-id: ht_create_your_first_visualization
+id: version-4.1.1-ht_create_your_first_visualization
+original_id: ht_create_your_first_visualization
 ---
 
 This tutorial will guide you through the process of creating your first smart application using Facebook’s `create-react-app` tool and will show you the GoodData UI SDK in action.
