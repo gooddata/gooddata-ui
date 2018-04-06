@@ -203,6 +203,15 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
+          <div style={{textAlign: 'center'}}>
+              This is the pre-release GoodData developer documentation.
+              <br/>
+              The contents of this documentation are under constant construction and the subject to change.
+              <br/>
+              Before you proceed, please read the <a href={`${siteConfig.baseUrl}docs/${this.props.language}legal_notices.html`}>legal information</a> first.
+              <br/><br/>
+              With any question, contact your GoodData Account Manager.
+          </div>
         <div className="mainContainer">
           {/* <Features />
           <FeatureCallout />

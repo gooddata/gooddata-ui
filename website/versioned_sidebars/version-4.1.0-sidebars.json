@@ -28,6 +28,10 @@
     ],
     "Tools": [
       "version-4.1.0-gdc_catalog_export"
+    ],
+    "License": [
+      "version-4.1.0-license",
+      "version-4.1.0-legal_notices"
     ]
   },
   "version-4.1.0-FAQ": {

@@ -5,6 +5,11 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: getting_started
 ---
 
+> This is the pre-release GoodData developer documentation.
+The contents of this documentation are under constant construction and the subject to change.
+Before you proceed, please read the [legal information](legal_notices.md) first.
+With any question, contact your GoodData Account Manager.
+
 ## About the GoodData UI SDK
 
 The GoodData UI SDK is a library that provides all the building blocks you need to create a smart business application _powered by GoodData_.

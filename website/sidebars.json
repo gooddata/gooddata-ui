@@ -35,7 +35,11 @@
       "execution_rest_api_and_result",
       "table_totals_in_execution_object"
     ],
-    "Tools" : ["gdc_catalog_export"]
+    "Tools" : ["gdc_catalog_export"],
+    "License" : [
+      "license",
+      "legal_notices"
+    ]
   },
   "FAQ": {
     "FAQ": [
