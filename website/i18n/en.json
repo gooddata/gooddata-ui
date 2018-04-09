@@ -76,6 +76,8 @@
     "React Components": "React Components",
     "result_specification": "Result Specification (resultSpec)",
     "Result Specification": "Result Specification",
+    "sso": "Authentication to the GoodData Platform",
+    "SSO (single sign-on)": "SSO (single sign-on)",
     "table_component": "Table Component",
     "Table Component": "Table Component",
     "table_totals_in_execution_object": "Table Totals in ExecutionObject",

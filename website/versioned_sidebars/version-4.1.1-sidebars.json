@@ -9,7 +9,8 @@
       "version-4.1.1-ht_access_gd_api_directly",
       "version-4.1.1-ht_configure_webpack_proxy",
       "version-4.1.1-ht_set_up_loading_state_for_embedded_insights",
-      "version-4.1.1-ht_use_react_components_with_vanilla_js"
+      "version-4.1.1-ht_use_react_components_with_vanilla_js",
+      "version-4.1.1-sso"
     ],
     "React Components": [
       "version-4.1.1-react_components",
