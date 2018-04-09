@@ -52,16 +52,16 @@ class Versions extends React.Component {
           <table className="versions">
               <tbody>
                 {stableVersions.map(
-                  version =>
+                  (version, i) =>
                     version !== latestVersion && (
-                      <tr>
+                      <tr key={i}>
                         <th>{version}</th>
                         <td>
-                          <a href={''}>Documentation</a>
+                            <a href={this.docUrl('getting_started.html', version)}>Documentation</a>
                         </td>
-                        <td>
-                          <a href={''}>Release Notes</a>
-                        </td>
+                        {/*<td>*/}
+                          {/*<a href={''}>Release Notes</a>*/}
+                        {/*</td>*/}
                       </tr>
                     )
                 )}
@@ -84,16 +84,16 @@ class Versions extends React.Component {
               <table className="versions">
                 <tbody>
                 {preReleaseVersions.map(
-                    version =>
+                    (version, i) =>
                       version !== latestVersion && (
-                        <tr>
+                        <tr key={i}>
                           <th>{version}</th>
                           <td>
-                            <a href={''}>Documentation</a>
+                              <a href={this.docUrl('getting_started.html', version)}>Documentation</a>
                           </td>
-                          <td>
-                            <a href={''}>Release Notes</a>
-                          </td>
+                          {/*<td>*/}
+                            {/*<a href={''}>Release Notes</a>*/}
+                          {/*</td>*/}
                         </tr>
                       )
                   )}
@@ -124,9 +124,9 @@ class Versions extends React.Component {
                   <td>
                     <a href={this.docUrl('getting_started.html')}>Documentation</a>
                   </td>
-                  <td>
-                    <a href={''}>Release Notes</a>
-                  </td>
+                  {/*<td>*/}
+                    {/*<a href={''}>Release Notes</a>*/}
+                  {/*</td>*/}
                 </tr>
               </tbody>
             </table>
