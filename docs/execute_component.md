@@ -38,8 +38,8 @@ import { Execute, isEmptyResult } from '@gooddata/react-components';
  
 <Execute afm={<afm>} projectId={<project-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
     {
-        (executionResult) => {
-            console.log(isEmptyResult(executionResult) ? 'empty result' : executionResult);
+        (execution) => {
+            console.log(isEmptyResult(execution.result) ? 'empty result' : execution.result);
         }
     }
 </Execute>
@@ -128,106 +128,138 @@ In this example, you can see how to handle `onLoadingChanged` and `onError` call
 
 ```javascript
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Execute } from '@gooddata/react-components';
+import { Execute, isEmptyResult } from '@gooddata/react-components';
 
+import { totalSalesIdentifier, projectId } from '../utils/fixtures';
+import { Loading } from './utils/Loading';
+import { Error } from './utils/Error';
 
-// This generates true/false randomly, so we can test failing execution
-const randomBoolean = () => (Math.random() >= 0.5 ? '' : 'fail');
+export class ExecuteExample extends Component {
+    constructor(props) {
+        super(props);
 
-export default class CustomExecute extends Component {
-  constructor(props) {
-    super(props);
-
-    // We need to track error and isLoading states, executionNumber to force remount of execution component
-    this.state = {
-      error: null,
-      isLoading: true,
-      executionNumber: 0,
-      willFail: randomBoolean()
-    };
-    this.onLoadingChanged = this.onLoadingChanged.bind(this);
-    this.onError = this.onError.bind(this);
-    this.retry = this.retry.bind(this);
-  }
-
-  onLoadingChanged({isLoading}) {
-    console.log('isLoading', isLoading);
-    // onLoadingChanged must reset error, so that we are not in error during loading
-    // onError is run after onLoadingChanged, so we do not have to worry about overriding current error
-    this.setState({
-      isLoading,
-      error: null
-    });
-  }
-
-  onError(error) {
-    console.log('onError', error);
-    this.setState({
-      error
-    });
-  }
-
-  retry() {
-    console.log('retry');
-    // We need to track executionNumber so that we can remount Execute component
-    // In order to showcase error states, here we also decide if the next execution will fail or not
-    this.setState({
-      executionNumber: this.state.executionNumber + 1,
-      willFail: randomBoolean()
-    });
-  }
-
-  render() {
-    const { error, isLoading, executionNumber, willFail } = this.state;
-    const projectId = 'hdint8y1xvk9oyns1r0iefknwivzlb4g';
-    const afm = {
-      measures: [
-        {
-          localIdentifier: 'measure',
-          definition: {
-              measure: {
-                  item: {
-                      // In order to showcase the fail state, we send invalid measure uri
-                      uri: willFail ? `/gdc/md/${projectId}/obj/15415` : null
-                  },
-                  aggregation: 'sum'
-              }
-          }
-        }
-      ]
-    };
-
-    let status = null;
-
-    // This is how we render loading and error states
-    if (isLoading) {
-      status = <p>Loading…</p>;
-    } else if(error) {
-      status = <p>Oops, error!</p>;
+        // We need to track error and isLoading states, executionNumber to force remount of execution component
+        this.state = {
+            error: null,
+            isLoading: true,
+            executionNumber: 0,
+            willFail: true
+        };
+        this.onLoadingChanged = this.onLoadingChanged.bind(this);
+        this.onError = this.onError.bind(this);
+        this.retry = this.retry.bind(this);
     }
 
-    return (<div>
-      {status}
-      <p><button onClick={this.retry}>Retry</button> (fails randomly 50%)</p>
-      {/* We need to render the Execute component even during loading otherwise the ongoing request is cancelled */}
-      <Execute
-        key={executionNumber}
-        afm={afm}
-        projectId={projectId}
-        onLoadingChanged={this.onLoadingChanged}
-        onError={this.onError}
-        children={
-          (executionResult) => {
-            console.log(executionResult);
-            return !error ? (<div>
-              <h3>Example KPI: <big>{executionResult.result.executionResult.executionResult.data[0]}</big></h3>
-              <pre>{JSON.stringify(executionResult, null, '  ')}</pre>
-            </div>) : <div />;
-          }
+    onLoadingChanged({ isLoading }) {
+        // eslint-disable-next-line no-console
+        console.log('isLoading', isLoading);
+        // onLoadingChanged must reset error, so that we are not in error during loading
+        // onError is run after onLoadingChanged, so we do not have to worry about overriding current error
+        this.setState({
+            isLoading,
+            error: null
+        });
+    }
+
+    onError(error) {
+        // eslint-disable-next-line no-console
+        console.log('onError', error);
+        this.setState({
+            error
+        });
+    }
+
+    retry() {
+        // eslint-disable-next-line no-console
+        console.log('retry');
+        // We need to track executionNumber so that we can remount Execute component
+        // In order to showcase error states, here we also decide if the next execution will fail or not
+        this.setState({
+            executionNumber: this.state.executionNumber + 1,
+            willFail: this.state.executionNumber % 2
+        });
+    }
+
+    executeChildrenFunction(res) {
+        console.log(res);
+        const { result, isLoading, error } = res;
+
+        if (error) {
+            return <Error error={error} />;
         }
-      />
-    </div>);
-  }
+        if (isLoading) {
+            return <Loading />;
+        }
+        return (
+            <div>
+                <style jsx>{`
+                    .kpi {
+                        height: 60px;
+                        margin: 10px 0;
+                        font-size: 50px;
+                        line-height: 60px;
+                        white-space: nowrap;
+                        vertical-align: bottom;
+                        font-weight: 700;
+                    }
+                `}</style>
+                <p className="kpi s-execute-kpi">{result.executionResult.executionResult.data[0]}</p>
+                <p>Full execution response and result as JSON:</p>
+                <pre>{JSON.stringify({ result, isLoading, error }, null, '  ')}</pre>
+            </div>
+        );
+    }
+
+    render() {
+        const { error, isLoading, executionNumber, willFail } = this.state;
+        const afm = {
+            measures: [
+                {
+                    localIdentifier: 'measure',
+                    definition: {
+                        measure: {
+                            item: {
+                                // In order to showcase the fail state, we send invalid measure uri
+                                identifier: willFail ? totalSalesIdentifier : null
+                            }
+                        }
+                    }
+                }
+            ]
+        };
+
+        let status = null;
+
+        // This is how we render loading and error states
+        if (isLoading) {
+            status = <div className="gd-message progress"><div className="gd-message-text">Loading…</div></div>;
+        } else if (error) {
+            status = <div className="gd-message error"><div className="gd-message-text">Oops, simulated error! Retry?</div></div>;
+        }
+
+        return (
+            <div>
+                {status}
+                <p>
+                    <button onClick={this.retry} className="button button-secondary s-retry-button">Retry</button>
+                    (fails every second attempt)
+                </p>
+                {/*
+                    We need to render the Execute component even in loading
+                    otherwise the ongoing request is cancelled
+                */}
+                <Execute
+                    key={executionNumber}
+                    afm={afm}
+                    projectId={projectId}
+                    onLoadingChanged={this.onLoadingChanged}
+                    onError={this.onError}
+                >{this.executeChildrenFunction}
+                </Execute>
+            </div>
+        );
+    }
 }
+
+export default ExecuteExample;
 ```
