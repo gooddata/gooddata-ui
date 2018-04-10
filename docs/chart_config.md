@@ -8,10 +8,10 @@ id: chart_config
 
 ```javascript
 {
-    colors?: String[];
-    legend?: {
-        enabled?: boolean;
-        position?: 'top' | 'left' | 'right' | 'bottom';
+    colors: ['rgba(195, 49, 73, 1)', 'rgba(168, 194, 86, 1)']; // array of strings
+    legend: {
+        enabled: true; // boolean
+        position: 'bottom'; // 'top' | 'left' | 'right' | 'bottom'
     };
 }
 ```

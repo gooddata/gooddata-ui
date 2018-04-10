@@ -50,7 +50,7 @@ When a user clicks a [drillable item](https://confluence.intgdc.com/display/VS/D
    projectId="<project-id>"
    identifier="<visualization-identifier>"
    config={<chart-config>}
-   onFiredDrillEvent={(data) => { alert(data.executionContext); }
+   onFiredDrillEvent={(data) => { console.log(data.executionContext); }
    drillableItems={[{ identifier: 'drillable-Identifier1' }, { uri: 'drillable-Uri2' }]}
 />
 ```
