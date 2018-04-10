@@ -5,7 +5,7 @@ sidebar_label: Platform Introduction
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-The **GoodData platform** is a complete analytics platform. This end-to-end solution for business intelligence delivers ETL (Extract Transform Load), data warehousing, and predictive modeling in a single, unified platform.
+The **GoodData platform** is a complete analytics platform. This end-to-end solution for business intelligence delivers ETL (Extract Transform Load), data warehousing, and report modeling in a single, unified platform.
 
 GoodData users access analytics through the **GoodData Portal**, an intuitive and secure web interface purpose-built for querying and displaying analytics reporting. After a GoodData user logs in to the GoodData Portal, they can create reports and insights and build dashboards.
 
