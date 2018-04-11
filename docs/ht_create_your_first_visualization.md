@@ -256,18 +256,15 @@ export default App;
 
 Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` at line 17\). In your real application, you may prefer to pass the project ID via URL or hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
 
-## Step 8. Add more visualizations
-
-So far, you have added a single number using the KPI component.
-
-You can add more different elements: tables, charts, custom visualizations. The GoodData UI SDK provides a continuously growing set of built-in components, see [React Components](react_components.md)).
-
 ## Next steps
 
-In a real application, you will probably do a number of things differently. For example:
+Here are some suggestions on what you can do after you have created your first visualization:
 
-* Avoid hardcoding the project ID.
+* Add more different elements: tables, charts, custom visualizations. For more information, see [React Components](react_components.md)).
+* [Customize a visualization](ht_customize_visualization.md).
+* [Embed a visualization](ht_embed_visualization.md).
+* [Set up drilling](ht_set_up_drilling.md).
 * Use your GoodData domain with CORS settings so you do not need to use a local proxy \(this is what you will have to do for the production deployment even if you prefer to use a proxy for local development\). For more information, see [How to Access the GoodData API Directly](ht_access_gd_api_directly.md).
-* Authenticate your users using single sign-on rather than sending them to a proxied GoodData login page.
-
-However, we recommend that you first take a look at the documentation of the SDK components and try adding a bar chart or a saved component.
+* Authenticate your users [using Single Sign-on (SSO)](sso.md) rather than sending them to a proxied GoodData login page.
+* Create a visualization in a [custom React application](ht_build_visualization_custom_react.md).
+* Create a visualization in [Angular 1.x](ht_use_react_compinents_in_angular_1.x.md)) or [Angular 2+](ht_use_react_components_in_angular_2.x.md).
