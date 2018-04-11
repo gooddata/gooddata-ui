@@ -258,8 +258,6 @@ Notice that the code in the `App.js` file still includes the hardcoded referen
 
 ## Next steps
 
-In a real life application, you may want to avoid hardcoding the project ID.
-
 Here are some suggestions on what you can do after you have created your first visualization:
 
 * Add more different elements: tables, charts, custom visualizations. For more information, see [React Components](react_components.md)).
