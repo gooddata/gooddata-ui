@@ -8,36 +8,33 @@ original_id: glossary
 
 ## A
 
-**AFM \(Attribute - Filter - Measure\)**is unified input for creating a visualization using the GoodData UI SDK.AFM is a combination of attributes, measures and filters that describes a query you want to execute. In terms of underlying API, it is similar to when you are creating an insight using [Analytic Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). See [AFM](https://confluence.intgdc.com/display/VS/AFM).
+**AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using the GoodData UI SDK.AFM is a combination of attributes, measures and filters that describes a query you want to execute. In terms of underlying API, it is similar to when you are creating an insight using [Analytic Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). See [AFM](afm.md).
 
 **aggregation** is a general term for the process by which information is gathered and expressed in summary form. Aggregation means:
 
-* The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See 
-  [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
-  
+* The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
+
 * The process of breaking down measures by attributes and attribute values. For example, date-related attributes that are useful in these breakdowns include Day, Month, and Year.
 
-**attribute**is a descriptor used to break apart measures and provide context to report data. Attributes dictate how measures are calculated and represented. Attributes may contain one or more labels, which are display values for the attribute \(see**displayForm**\).
+**attribute** is a descriptor used to break apart measures and provide context to report data. Attributes dictate how measures are calculated and represented. Attributes may contain one or more labels, which are display values for the attribute \(see **displayForm**\).
 
 ## B
 
-**bar chart** is a chart that allows you to visually compare discrete categories of data. See [Bar Chart](https://help.gooddata.com/display/doc/Bar+Chart).
+**bar chart** is a chart that allows you to visually compare discrete categories of data. See [Bar Chart](afm_react_components.md#charts).
 
 ## D
 
-**displayForm**, or**attribute label**, is a different means of representing an attribute \(see**attribute**\). For example, the`Name`attribute might have labels for`Firstname`and`Lastname`.
+**displayForm**, or **attribute label**, is a different means of representing an attribute \(see **attribute** \). For example, the `Name` attribute might have labels for `Firstname` and `Lastname`.
 
-**drilling**is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest. See [Drilling into Reports](https://help.gooddata.com/display/doc/Drilling+into+Reports).
+**drilling** is the process of 'zooming in' on a single measure value by filtering out all other data and breaking that value across a new attribute of interest. See [Drilling into Reports](https://help.gooddata.com/display/doc/Drilling+into+Reports).
 
 ## F
 
-**filter **is a set of characteristics applied to a visualization or measure to remove values from computed and displayed values. For example, if you are building a regional sales chart, you may want to apply a filter to limit the display of Total Sales data to a specified region. See [Dashboard Filters](https://help.gooddata.com/display/doc/Dashboard+Filters).
+**filter** is a set of characteristics applied to a visualization or measure to remove values from computed and displayed values. For example, if you are building a regional sales chart, you may want to apply a filter to limit the display of Total Sales data to a specified region. See [Dashboard Filters](https://help.gooddata.com/display/doc/Dashboard+Filters).
 
 ## G
 
-**gdc-catalog-export**is a GoodData UI SDK tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](https://confluence.intgdc.com/display/VS/gdc-catalog-export).
-
-**gray pages** are a form-based wrapper on top of the GoodData APIs, which can be used for making changes to an individual project. After you authenticate with the GoodData platform, you can access the gray pages interface using the internal project identifier for your project. See [Accessing Gray Pages for a Project](https://help.gooddata.com/display/developer/Accessing+Gray+Pages+for+a+Project).
+**gdc-catalog-export** is a GoodData UI SDK tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](gdc-catalog-export.md).
 
 ## K
 
@@ -45,7 +42,7 @@ original_id: glossary
 
 ## M
 
-**measure**is aggregation of facts or counts of distinct attribute values, which are represented as numbers in reports. Measures represent what is being measured in a report; for example, sum of sales or average salary.
+**measure** is aggregation of facts or counts of distinct attribute values, which are represented as numbers in reports. Measures represent what is being measured in a report; for example, sum of sales or average salary.
 
 ## S
 
@@ -53,10 +50,10 @@ original_id: glossary
 
 ## R
 
-**resultSpec**is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](https://confluence.intgdc.com/pages/viewpage.action?pageId=173510453).
+**resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](result_specification.md).
 
 ## V
 
-**visualization** is a view into a specific part of your data defined by AFM, ResultSpec and a configuration object, usually in a form of a table or graph \(see**AFM**and **resultSpec**\).
+**visualization** is a view into a specific part of your data defined by AFM, ResultSpec and a configuration object, usually in a form of a table or graph \(see **AFM** and **resultSpec**\).
 
-**Visualization component** is a component of the GoodData UI SDK that renders a table or graph displaying data defined by a combination of AFM, ResultSpec \(see**AFM**and**resultSpec**\) and a configuration object.
+**Visualization component** is a component of the GoodData UI SDK that renders a table or graph displaying data defined by a combination of AFM, ResultSpec \(see **AFM** and **resultSpec**\) and a configuration object.
