@@ -9,5 +9,14 @@ Review the examples available at https://github.com/gooddata/gooddata-react-comp
 The examples contain live demos and code snippets that you can reuse in your project.
 
 Here are a few things that you can build using the examples:
+* Create a visualization and a KPI
+* Create a responsive chart
+* Add a date picker
+* Create a custom legend
+* Add an attribute filter
 
-To try out the examples in a project, you must have an account on the GoodData platform. If you do not have a GoodData account, contact a person in your company who administers GoodData projects or your GoodData account manager.
+and more.
+
+## GoodData Platform Account
+
+To try out the examples in a project, you must have an account on the GoodData platform. If you do not have a GoodData account, contact a person in your company who administers GoodData projects or your GoodData Account Manager.
