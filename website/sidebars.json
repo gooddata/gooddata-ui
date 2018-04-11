@@ -7,7 +7,11 @@
     ],
     "Tutorials": [
       "ht_create_your_first_visualization",
-      "ht_build_app",
+      "ht_customize_visualization.md",
+      "ht_set_up_drilling.md",
+      "ht_embed_visualization.md",
+      "ht_create_visualization_programmatically.md",
+      "ht_build_visualization_custom_react.md",
       "ht_access_gd_api_directly",
       "cors",
       "sso",
