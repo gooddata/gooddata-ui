@@ -130,6 +130,17 @@ class Versions extends React.Component {
                 </tr>
               </tbody>
             </table>
+            <h3 id="latest">Next version (Pre-release)</h3>
+            <table className="versions">
+              <tbody>
+                <tr>
+                  <th>next</th>
+                  <td>
+                    <a href={this.docUrl('getting_started.html', 'next')}>Documentation</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             {this.renderPreReleaseVersions()}
             {this.renderStableVersions()}
             <p>
