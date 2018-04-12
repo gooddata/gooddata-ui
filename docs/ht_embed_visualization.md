@@ -9,16 +9,7 @@ To embed an existing visualization created in Analytical Designer, use the `Visu
 
 **Steps:**
 
-1. Obtain the identifier of the visualization by either of the following methods:
-
-   * Via [gdc-catalog-export](gdc-catalog-export.md)
- 
-   * Via the gray pages \(the ID of the GoodSales demo project is `la84vcyhrq8jwbu4wpipw66q2sqeb923`\):
-
-```bash
-https://secure.gooddata.com/gdc/md/{project-id}/query/visualizations
-https://secure.gooddata.com/gdc/md/la84vcyhrq8jwbu4wpipw66q2sqeb923/query/visualizations
-```
+1. Obtain the identifier of the visualization via [gdc-catalog-export](gdc-catalog-export.md).
 
 2. Import the `Visualization` component from the `@gooddata/react-components` package into your app:
 
