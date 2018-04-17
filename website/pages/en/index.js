@@ -58,7 +58,7 @@ const Logo = props => (
 
 const ProjectTitle = props => (
   <h2 className="projectTitle">
-    {siteConfig.title}
+    GoodData {siteConfig.title}
     <small>{siteConfig.tagline}</small>
   </h2>
 );
@@ -76,7 +76,7 @@ class HomeSplash extends React.Component {
     let language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('gooddata_white.svg')} />
+        {/*<Logo img_src={imgUrl('gooddata_white.svg')} />*/}
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
@@ -203,7 +203,7 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
-          <div style={{textAlign: 'center'}}>
+          <div style={{textAlign: 'center', margin: '1em' }}>
               This is the pre-release GoodData developer documentation.
               <br/>
               The contents of this documentation are under constant construction and the subject to change.
