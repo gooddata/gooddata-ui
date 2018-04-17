@@ -25,6 +25,7 @@
       "line_chart_component",
       "area_chart_component",
       "pie_chart_component",
+      "headline_component",
       "afm_react_components",
       "loading_component",
       "error_component",
