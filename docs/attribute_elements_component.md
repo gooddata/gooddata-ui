@@ -17,6 +17,7 @@ The children function receives the following arguments:
 In the following example, attribute values are listed as a combination of checkboxes and label elements, a 'load more' button, and an ```onChange``` callback that logs the selected values to the console.
 
 <!-- code from Examples: https://github.com/gooddata/gooddata-react-components/blob/master/examples/src/components/AttributeElementsExample.jsx -->
+
 ```javascript
 import React, { Component } from 'react';
 import { AttributeElements } from '@gooddata/react-components';

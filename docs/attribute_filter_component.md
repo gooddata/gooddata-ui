@@ -14,6 +14,7 @@ This is a dropdown component that lists attribute values. You can pass a callbac
 In the following example, attribute values are listed and the ```onApply``` callback function is triggered when a user clicks **Apply** to confirm the selection.
 
 <!-- code from Examples: https://github.com/gooddata/gooddata-react-components/blob/master/examples/src/components/AttributeFilterExample.jsx -->
+
 ```javascript
 import React, { Component } from 'react';
 import { AttributeFilter } from '@gooddata/react-components';
