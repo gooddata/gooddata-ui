@@ -153,8 +153,8 @@ export class ExecuteExample extends Component {
     onLoadingChanged({ isLoading }) {
         // eslint-disable-next-line no-console
         console.log('isLoading', isLoading);
-        // onLoadingChanged must reset error, so that we are not in error during loading
-        // onError is run after onLoadingChanged, so we do not have to worry about overriding current error
+        // onLoadingChanged must reset the error so that we are not in error during loading
+        // onError is run after onLoadingChanged so we do not have to worry about an overriding current error
         this.setState({
             isLoading,
             error: null
@@ -172,8 +172,8 @@ export class ExecuteExample extends Component {
     retry() {
         // eslint-disable-next-line no-console
         console.log('retry');
-        // We need to track executionNumber so that we can remount Execute component
-        // In order to showcase error states, here we also decide if the next execution will fail or not
+        // We need to track executionNumber so that we can remount the Execute component
+        // To showcase error states, here we also decide if the next execution will fail or not
         this.setState({
             executionNumber: this.state.executionNumber + 1,
             willFail: this.state.executionNumber % 2
@@ -219,7 +219,7 @@ export class ExecuteExample extends Component {
                     definition: {
                         measure: {
                             item: {
-                                // In order to showcase the fail state, we send invalid measure uri
+                                // To showcase the fail state, we send the invalid measure URI
                                 identifier: willFail ? totalSalesIdentifier : null
                             }
                         }

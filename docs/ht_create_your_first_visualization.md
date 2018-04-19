@@ -45,7 +45,7 @@ This command adds latest `@gooddata/react-components` to the list of your projec
 
 
 ## Step 4. Start the development server
-Before you start your development server and [prevent cross-origin issues](cors.md#on-your-local-dev-machine). Then run the following command from the command line:
+Before you start your development server and [prevent cross-origin issues](cors.md#on-your-local-dev-machine), run the following command from the command line:
 * If you are on Mac or Linux: 
     ```bash
     HTTPS=true yarn start
@@ -61,7 +61,7 @@ Always run your local development server using HTTP**S** because the GoodData AP
 ## Step 5. Establish a session
 Open [https://localhost:3000/account.html](https://localhost:3000/account.html) in your browser, and enter your GoodData credentials. You are now logged in to GoodData.
 
-If you see a warning about an insecure connection due to using a self-signed certificate, accept exception: you can trust your localhost.
+If you see a warning about an insecure connection due to using a self-signed certificate, accept the exception: you can trust your localhost.
 
 For the purpose of this tutorial, you are asked to establish a client session by simply logging in to GoodData.
 
@@ -86,7 +86,7 @@ Start with adding the first GoodData component:
     ```
 4. Add simple KPI number by appending following lines somewhere in the `render()` method:
     ```javascript
-    // Use projectId and measure id from your project
+    // Use the project ID and measure ID from your project.
     <Kpi
       projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
       measure="atSHqCtAePe4" />
