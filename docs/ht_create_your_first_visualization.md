@@ -10,14 +10,12 @@ This tutorial will guide you through the process of creating your first smart ap
 When you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 
 ## Step 1. Get create-react-app
-
 Run the following command from the command line:
-
 ```bash
 yarn global add create-react-app
 ```
-
 This command installs the `create-react-app` tool that will help you create a functional skeleton of a React application.
+
 
 ## Step 2. Create your React application
 1. Run the following command from the command line:
@@ -200,7 +198,7 @@ Once you have installed the tool, do the following:
     
     export default App;
     ```
-Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` at line 17\). In your real application, you may prefer to pass the project ID via URL or hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
+Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` on line 17\). In your real application, you may prefer to pass the project ID via URL or hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
 
 ## Next steps
 
@@ -213,4 +211,4 @@ Here are some suggestions on what you can do after you have created your first v
 * Use your GoodData domain with CORS settings so you do not need to use a local proxy \(this is what you will have to do for the production deployment even if you prefer to use a proxy for local development\). For more information, see [How to Access the GoodData API Directly](ht_access_gd_api_directly.md).
 * Authenticate your users [using Single Sign-on (SSO)](sso.md) rather than sending them to a proxied GoodData login page.
 * Create a visualization in a [custom React application](ht_build_visualization_custom_react.md).
-* Create a visualization in [Angular 1.x](ht_use_react_compinents_in_angular_1.x.md)) or [Angular 2+](ht_use_react_components_in_angular_2.x.md).
+* Create a visualization in [Angular 1.x](ht_use_react_compinents_in_angular_1.x.md) or [Angular 2+](ht_use_react_components_in_angular_2.x.md).
