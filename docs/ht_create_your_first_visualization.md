@@ -65,7 +65,7 @@ If you see a warning about an insecure connection due to using a self-signed cer
 
 For the purpose of this tutorial, you are asked to establish a client session by simply logging in to GoodData.
 
-In your production environment, your end users may be authenticated using single sign-on. // TODO link to SSO
+In your production environment, your end users may be authenticated using [single sign-on](sso.md).
 
 
 ## Step 6. Add GoodData components 

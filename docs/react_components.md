@@ -49,7 +49,7 @@ import { Kpi } from '@gooddata/react-components';
 
 ### Example
 
-This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is.
+<!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
@@ -159,7 +159,7 @@ import { Visualization } from '@gooddata/react-components';
 
 ### Example
 
-This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is.
+<!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
