@@ -1,8 +1,8 @@
 {
   "docs": {
-    "Introduction": [
-      "getting_started",
-      "prerequisities",
+    "Getting Started": [
+      "quick_start",
+      "installation",
       "platform_intro"
     ],
     "Tutorials": [
