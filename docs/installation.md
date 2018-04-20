@@ -11,6 +11,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 yarn add @gooddata/react-components
 ```
 
+```bash
+$ npminstall@gooddata/react-components
+```
 ## Workflow
 
 1. Get your project ID.
