@@ -77,6 +77,8 @@
     "Line Chart Component": "Line Chart Component",
     "loading_component": "LoadingComponent",
     "LoadingComponent": "LoadingComponent",
+    "migration_guide_5": "Migration guide to React Components v5.x.x",
+    "Migration guide to v5.x.x": "Migration guide to v5.x.x",
     "on_fire_drill_event": "OnFireDrillEvent",
     "OnFireDrillEvent": "OnFireDrillEvent",
     "on_legend_ready": "OnLegendReady",
