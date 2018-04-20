@@ -5,8 +5,8 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: migration_guide_5
 ---
 
-## [@gooddata/data-layer](https://yarnpkg.com/en/package/@gooddata/data-layer) deprecated
-This package is deprecated. Functionality was merged into [gooddata-js](https://github.com/gooddata/gooddata-js) repository. Package `gooddata` was renamed to `@gooddata/gooddata-js`. So use `@gooddata/gooddata-js@6.0.0` package instead of `@gooddata/data-layer`.
+## @gooddata/data-layer deprecated
+The package [@gooddata/data-layer](https://yarnpkg.com/en/package/@gooddata/data-layer) is deprecated. Functionality was merged into [gooddata-js](https://github.com/gooddata/gooddata-js) repository. Package `gooddata` was renamed to `@gooddata/gooddata-js`. So use `@gooddata/gooddata-js@6.0.0` package instead of `@gooddata/data-layer`.
 
 ### Example usage
 Old way:
@@ -22,7 +22,9 @@ import { DataLayer } from '@gooddata/gooddata-js';
 const adapter = DataLayer.ExecuteAfmAdapter;
 ```
 
-## [@gooddata/react-components@5.0.0](https://yarnpkg.com/en/package/@gooddata/react-components)
+## @gooddata/react-components@5.0.0
+See package here: [@gooddata/react-components@5.0.0](https://yarnpkg.com/en/package/@gooddata/react-components)
+
 ### React 15.6.2
 Upgrade React from 15.3.2 to 15.6.2
 ```bash
@@ -36,7 +38,6 @@ yarn upgrade react-dom@15.6.2
 [Execute Component](http://sdk.gooddata.com/gdc-ui-sdk-doc/docs/execute_component.html) and [KPI and Visualization](react_components.md) are without change.
 
 ### Example usage
-
 Old way:
 ```javascript
 import { AfmComponents } from '@gooddata/react-components';

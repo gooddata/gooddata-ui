@@ -9,7 +9,7 @@
   "scripts": {
     "start": "yarn compile-scss; docusaurus-start",
     "build": "yarn compile-scss; docusaurus-build",
-    "publish-gh-pages": "yarn compile-scss; docusaurus-publish",
+    "publish-gh-pages": "yarn compile-scss; USE_SSH=true docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
