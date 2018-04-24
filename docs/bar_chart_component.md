@@ -1,11 +1,11 @@
 ---
-title: Bar Chart Component
-sidebar_label: Bar Chart Component
+title: Bar Chart
+sidebar_label: Bar Chart
 copyright: (C) 2007-2018 GoodData Corporation
 id: bar_chart_component
 ---
 
-Bar Chart Component is used to show data in horizontal bars. It can either display one or multiple metrics side by side divided by attribute values or one measure stacked by attribute values.
+Bar Chart is used to show data in horizontal bars. It can either display one or multiple metrics side by side divided by attribute values or one measure stacked by attribute values.
 
 ![Bar Chart Component](assets/bar_chart.png "Bar Chart Component")
 
