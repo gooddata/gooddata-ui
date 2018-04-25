@@ -22,7 +22,7 @@ const siteConfig = {
   baseUrl: '/gdc-ui-sdk-doc/' /* base url for your project */,
   projectName: 'GoodData UI SDK',
   headerLinks: [
-    {doc: 'getting_started', label: 'Docs'},
+    {doc: 'quick_start', label: 'Docs'},
     {doc: 'examples', label: 'Examples'},
     {doc: 'trouble_shooting', label: 'FAQ'},
     {search: true},

@@ -26,8 +26,18 @@ If you are contacting GoodData Support regarding white labeling your domain, you
 Before your app starts communicating with GoodData, add the following lines to your executable code \(for example, at the beginning of the file with your root component\):
 
 ```javascript
-import { config } from 'gooddata';
-config.setCustomDomain('https://analytics.example.com');
+import { factory as sdkFactory } from '@gooddata/gooddata-js';
+const sdk = sdkFactory({ domain: 'https://analytics.yourcompany.com' });
+```
+
+The `sdk` constant now holds new SDK instance with custom domain set to `https://analytics.yourcompany.com`. To fetch data using this SDK, the instance needs to be passed into each sdk component used in your application as a parameter, for example:
+
+```javascript
+<Visualization
+    identifier="<identifier-from-domain1>"
+    projectId="<projectId-from-domain1>"
+    sdk={this.sdkDomain1}
+/>
 ```
 
 If you followed the instructions from the tutorial [How to Create Your First Visualization with GoodData UI SDK]ht_create_your_first_visualization.md), you can now remove the proxy-related code from the `package.json` file because it is not needed anymore.

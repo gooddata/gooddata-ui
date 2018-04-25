@@ -17,7 +17,7 @@ To develop your own smart business application, you must add an authentication c
 ## Use GoodData Platform users - no SSO required
 To obtain the authentication cookie, call the `sdk.user.login()` method that gets a cookie for the current user.
 ```js
-import { factory } from 'gooddata';
+import { factory } from '@gooddata/gooddata-js';
 const sdk = factory();
 const loginPromise = sdk.user.login('user@example.com', 'password');
 ```

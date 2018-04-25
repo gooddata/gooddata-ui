@@ -68,7 +68,7 @@ const measures = [
 | :--- | :--- | :--- | :--- |
 | projectId | false | string | The project ID |
 | measures | false | Measure[] | An array of measure definitions |
-| viewBy | false | Attribute[] | An array of attribute definitions |
+| viewBy | false | Attribute | Attribute definition |
 | filters | false | Filter[] | An array of filter definitions |
 | config | false | {} | The chart configuration object |
 | locale | false | string | The location string for translations |

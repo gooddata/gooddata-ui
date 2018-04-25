@@ -22,6 +22,23 @@ import { DataLayer } from '@gooddata/gooddata-js';
 const adapter = DataLayer.ExecuteAfmAdapter;
 ```
 
+## Using custom domains as a backend
+With the upgrade of `gooddata` to `@gooddata/gooddata-js@6.0.0` there is a new way of instantiating GoodData JS SDK and setting it up to use custom domain instead of the default 
+`secure.gooddata.com`. To use the SDK with different domain, new instance of the SDK must be crated.
+
+### Example
+Old way:
+```javascript
+import { config } from 'gooddata';
+config.setCustomDomain('https://analytics.yourcompany.com'); // Deprecated
+```
+
+New way:
+```javascript
+import { factory as sdkFactory } from '@gooddata/gooddata-js';
+const sdk = sdkFactory({ domain: 'https://analytics.yourcompany.com' });
+```
+
 ## @gooddata/react-components@5.0.0
 See package here: [@gooddata/react-components@5.0.0](https://yarnpkg.com/en/package/@gooddata/react-components)
 

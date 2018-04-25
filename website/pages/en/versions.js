@@ -36,10 +36,45 @@ function getLatest(type, versions) {
   return getVersionsOfType(type, versions)[0];
 }
 
+function parseVersionToNumber(version) {
+  return parseInt(version.replace(/\D/g,''));
+}
+
 class Versions extends React.Component {
   docUrl(doc, version) {
     const baseUrl = siteConfig.baseUrl;
     return baseUrl + 'docs/' + (version ? version + '/' : '') + doc;
+  }
+
+  renderChangelog(version) {
+    const majorVersion = parseInt(version.split('.')[0]);
+    const versionNumber = parseVersionToNumber(version);
+    if (majorVersion && majorVersion >= 5) {
+      return (
+        <td>
+          <a href={`https://github.com/gooddata/gooddata-react-components/blob/release/CHANGELOG.md#${versionNumber}`}>Changelog</a>
+        </td>
+      );
+    }
+
+    return (<td>&mdash;</td>);
+  }
+
+  renderMigrationGuide(version) {
+    const semVer = version.split('.');
+    const majorVersion = parseInt(semVer[0]);
+    const minorVersion = parseInt(semVer[1]);
+    const patchVersion = parseInt(semVer[2]);
+
+    if (minorVersion === 0 && patchVersion === 0 && majorVersion > 4) {
+      return (
+        <td>
+          <a href={this.docUrl(`migration_guide_${majorVersion}.html`, '')}>Migration Guide</a>
+        </td>
+      );
+    }
+
+    return (<td>&mdash;</td>);
   }
 
   renderStableVersions() {
@@ -59,9 +94,8 @@ class Versions extends React.Component {
                         <td>
                             <a href={this.docUrl('getting_started.html', version)}>Documentation</a>
                         </td>
-                        {/*<td>*/}
-                          {/*<a href={''}>Release Notes</a>*/}
-                        {/*</td>*/}
+                        { this.renderChangelog(version) }
+                        { this.renderMigrationGuide(version) }
                       </tr>
                     )
                 )}
@@ -89,11 +123,10 @@ class Versions extends React.Component {
                         <tr key={i}>
                           <th>{version}</th>
                           <td>
-                              <a href={this.docUrl('getting_started.html', version)}>Documentation</a>
+                              <a href={this.docUrl('quick_start.html', version)}>Documentation</a>
                           </td>
-                          {/*<td>*/}
-                            {/*<a href={''}>Release Notes</a>*/}
-                          {/*</td>*/}
+                          { this.renderChangelog(version) }
+                          { this.renderMigrationGuide(version) }
                         </tr>
                       )
                   )}
@@ -122,11 +155,10 @@ class Versions extends React.Component {
                 <tr>
                   <th>{latestVersion}</th>
                   <td>
-                    <a href={this.docUrl('getting_started.html')}>Documentation</a>
+                    <a href={this.docUrl('quick_start.html')}>Documentation</a>
                   </td>
-                  {/*<td>*/}
-                    {/*<a href={''}>Release Notes</a>*/}
-                  {/*</td>*/}
+                  { this.renderChangelog(latestVersion) }
+                  { this.renderMigrationGuide(latestVersion) }
                 </tr>
               </tbody>
             </table>
@@ -136,7 +168,7 @@ class Versions extends React.Component {
                 <tr>
                   <th>next</th>
                   <td>
-                    <a href={this.docUrl('getting_started.html', 'next')}>Documentation</a>
+                    <a href={this.docUrl('quick_start.html', 'next')}>Documentation</a>
                   </td>
                 </tr>
               </tbody>
