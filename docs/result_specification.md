@@ -1,6 +1,6 @@
 ---
-title: Result Specification (resultSpec)
-sidebar_label: Result Specification
+title: Specify Result Data (resultSpec)
+sidebar_label: Specify Result Data
 copyright: (C) 2007-2018 GoodData Corporation
 id: result_specification
 ---

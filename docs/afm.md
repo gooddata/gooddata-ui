@@ -1,6 +1,6 @@
 ---
-title: AFM
-sidebar_label: AFM
+title: Set Up an AFM Query
+sidebar_label: Set Up an AFM Query
 copyright: (C) 2007-2018 GoodData Corporation
 id: afm
 ---
