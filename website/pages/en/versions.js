@@ -136,7 +136,7 @@ class Versions extends React.Component {
                 <tr>
                   <th>next</th>
                   <td>
-                    <a href={this.docUrl('getting_started.html', 'next')}>Documentation</a>
+                    <a href={this.docUrl('about_gooddataui.html', 'next')}>Documentation</a>
                   </td>
                 </tr>
               </tbody>

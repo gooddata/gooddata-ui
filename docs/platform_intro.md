@@ -17,7 +17,7 @@ A **report** is a chart or table of measures that has been designed to surface a
 
 Reports represent **visualizations** of your data. A visualization is a view into a specific part of your data defined by **AFM**, **resultSpec** and a configuration object, usually in a form of a table or chart.
 
-* **AFM** (Attribute - Filter - Measure) is unified input for creating a visualization using the GoodData UI SDK. AFM describes what data you want to execute: what to measure by _measure_ - how to slice by _attribute_ - how to filter out by _filter_. See [AFM](afm.md).
+* **AFM** (Attribute - Filter - Measure) is unified input for creating a visualization using the GoodData.UI. AFM describes what data you want to execute: what to measure by _measure_ - how to slice by _attribute_ - how to filter out by _filter_. See [AFM](afm.md).
 * **resultSpec** is an object that defines the structure of result data. For example, you can define a custom title and format for each measure, or sorting of data. See [resultSpec](result_specification.md).
 
 For more details on the terminology, see [Glossary](glossary.md).

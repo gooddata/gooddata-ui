@@ -1,21 +1,11 @@
 {
-  "docs": {
+  "Docs": {
     "Getting Started": [
-      "quick_start",
+      "about_gooddataui",
+      "platform_intro",
       "installation",
-      "platform_intro"
-    ],
-    "Tutorials": [
-      "ht_create_your_first_visualization",
-      "ht_customize_visualization",
-      "ht_set_up_drilling",
-      "ht_embed_visualization",
-      "ht_create_visualization_programmatically",
-      "ht_build_visualization_custom_react",
-      "ht_access_gd_api_directly",
-      "cors",
-      "sso",
-      "ht_render_visualization_from_different_domain"
+      "examples",
+      "ht_create_your_first_visualization"
     ],
     "Visual Components": [
       "start_with_visual_components",
@@ -29,37 +19,47 @@
       "table_component",
       "visualization_component"
     ],
-    "Properties": [
-      "afm_react_components",
-      "attribute_filter_component",
-      "attribute_elements_component",
-      "loading_component",
-      "error_component",
-      "chart_config",
-      "drillable_item",
-      "on_legend_ready"
-    ],
-    "Reference": [
-      "visualization_lifecycle",
+    "Access Raw Data": [
+      "ht_create_visualization_programmatically",
       "afm",
       "result_specification",
-      "execute_component",
-      "data_layer",
-      "execution_rest_api_and_result",
-      "table_totals_in_execution_object"
+      "execute_component"
     ],
-    "Tools" : ["gdc_catalog_export"],
-    "License" : [
-      "license",
-      "legal_notices"
+    "Development Tips": [
+      "gdc_catalog_export",
+      "sso",
+      "cors",
+      "data_layer",
+      "ht_render_visualization_from_different_domain",
+      "ht_use_react_components_with_vanilla_js",
+      "ht_use_react_component_in_angular_1.x",
+      "ht_use_react_component_in_angular_2.x"
     ]
   },
-  "FAQ": {
-    "FAQ": [
+  "Reference": {
+    "Visual Components": [
+      "area_chart_component2",
+      "bar_chart_component2",
+      "column_chart_component2",
+      "headline_component2",
+      "kpi_component2",
+      "line_chart_component2",
+      "pie_chart_component2",
+      "table_component2",
+      "visualization_component2"
+    ],
+    "Properties" : [
+      "chart_config",
+      "drillable_item",
+      "error_component",
+      "loading_component",
+      "on_legend_ready"
+    ]
+  },
+  "Support": {
+    "Support": [
+      "support_options",
       "trouble_shooting",
-      "ht_use_react_component_in_angular_1.x",
-      "ht_use_react_component_in_angular_2.x",
-      "ht_use_react_components_with_vanilla_js",
       "glossary"
     ]
   }

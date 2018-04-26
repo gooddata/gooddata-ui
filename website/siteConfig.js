@@ -16,15 +16,15 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'UI SDK' /* title for your website */,
+  title: 'GoodData.UI' /* title for your website */,
   tagline: '',
   url: 'https://gooddata.github.io' /* your website url */,
   baseUrl: '/gdc-ui-sdk-doc/' /* base url for your project */,
   projectName: 'GoodData UI SDK',
   headerLinks: [
-    {doc: 'getting_started', label: 'Docs'},
-    {doc: 'examples', label: 'Examples'},
-    {doc: 'trouble_shooting', label: 'FAQ'},
+    {doc: 'about_gooddataui', label: 'Docs'},
+    {doc: 'area_chart_component2', label: 'Reference'},
+    {doc: 'support_options', label: 'Support'},
     {search: true},
   ],
   onPageNav: 'separate',

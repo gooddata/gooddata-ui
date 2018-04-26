@@ -1,6 +1,6 @@
 ---
-title: gdc-catalog-export
-sidebar_label: gdc-catalog-export
+title: Get Identifier From the Platform
+sidebar_label: Get Identifier From the Platform
 copyright: (C) 2007-2018 GoodData Corporation
 id: gdc_catalog_export
 ---
