@@ -13,8 +13,9 @@ body,
 }
 
 h1, .mainContainer .wrapper .post .postHeader h1,
-h2, .mainContainer .wrapper .post h2,
-h3, .mainContainer .wrapper .post h3 {
+h2, .mainContainer .wrapper .post h2, .productShowcaseSection h2,
+h3, .mainContainer .wrapper .post h3,
+h4 {
     padding: 0;
     color: $gd-color-dark;
 }
@@ -24,12 +25,21 @@ h1,
     margin: 1rem 0 3rem 0;
     font-size: 3.125rem;
     font-weight: bold;
+
+    small {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: normal;
+        line-height: 2.75rem;
+    }
 }
 
 h2,
-.mainContainer .wrapper .post h2 {
+.mainContainer .wrapper .post h2,
+.productShowcaseSection h2 {
     margin: 2rem 0;
     font-size: 2.5rem;
+    line-height: 3.4375rem;
 }
 
 h3,
@@ -43,4 +53,8 @@ h3,
 .blockElement p {
     margin: 0.7rem 0;
     padding: 0;
+}
+
+strong {
+    font-weight: bold;
 }

@@ -1,0 +1,35 @@
+$visualizationsPerLine: 6;
+$visualizationsPerLineMobile: 3;
+
+.visualizationsSection {
+    color: $gd-color-text-light;
+    background-image: linear-gradient(-135deg, #0BCCE8 0%, #10A1CE 100%);
+}
+
+.visualizationsList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 4rem 6rem;
+    list-style-type: none;
+}
+
+.visualization {
+    display: inline-block;
+    width: percentage(1 / $visualizationsPerLine);
+    text-align: center;
+
+    @media only screen and (max-width: 735px) {
+        width: percentage(1 / $visualizationsPerLineMobile);
+    }
+}
+
+.visualizationImage {
+    display: inline-block;
+    margin-bottom: 2.5rem;
+}
+
+.visualizationTitle {
+    display: block;
+    font-size: 1.1rem;
+}

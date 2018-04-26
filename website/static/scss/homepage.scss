@@ -1,0 +1,131 @@
+.homeSplashFade {
+    position: relative;
+    padding-bottom: 369px;
+    box-shadow: inset 0 0 13px 0 rgba(0,0,0,0.07);
+    color: $gd-color-white;
+    background-image:
+        linear-gradient(-180deg, rgba(20,178,226,0.00) 0%, rgba(0,193,141,0.79) 100%),
+        url('../img/homepage/splash-banner.jpg');
+    background-size: cover;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 24px;
+        opacity: 0.05;
+        background-image:
+            linear-gradient(
+                -180deg,
+                transparentize($gd-color-dark, 1) 0%,
+                transparentize($gd-color-dark, 0.48) 77%,
+                $gd-color-dark 100%
+            );
+    }
+}
+
+.projectTitle {
+    margin-top: 4.68rem;
+    color: inherit;
+    font-weight: bold;
+}
+
+.projectDescription {
+    margin: 1.25rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
+}
+
+.homeContainer {
+    .button,
+    .button-link {
+        display: inline-block;
+        margin: 1rem auto;
+    }
+
+    .button {
+        padding: 0.7rem 4.1rem;
+        border: 2px solid $gd-color-white;
+        border-radius: 3px;
+        color: $gd-color-white;
+        font-size: 1rem;
+        text-align: center;
+        background-color: transparentize($gd-color-dark, 0.85);
+        transition: background-color 0.2s;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none !important;
+            background-color: transparentize($gd-color-dark, 0.65);
+        }
+    }
+
+    .button-link {
+        color: transparentize($gd-color-white, 0.2);
+        font-size: 1rem;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: transparentize($gd-color-white, 0.1);
+        }
+    }
+
+    .homeWrapper {
+        position: static;
+    }
+}
+
+.promoSection {
+    position: static;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    &::before {
+        height: 318px;
+        background-image: url('../img/homepage/splash-bottom-image.png');
+        background-size: contain;
+    }
+
+    &::after {
+        height: 369px;
+        background-image: url('../img/homepage/splash-bottom.svg');
+    }
+
+    .promoRow {
+        .pluginRowBlock {
+            display: block;
+        }
+    }
+}
+
+.getStartedSection {
+    padding: 5rem 0 6.7rem;
+    box-shadow: inset 0 1px 2px 0 transparentize($gd-color-dark, 0.7);
+    background-image: linear-gradient(-130deg, $gd-color-highlight 0%, $gd-color-positive 100%);
+
+    h2 {
+        color: $gd-color-text-light;
+    }
+}
+
+.backgroundBlock-white {
+    background-color: $gd-color-white;
+}
+
+.backgroundBlock-gray {
+    background-color: $gray-2;
+    background-image: linear-gradient(-180deg, rgba(148,161,174,0.00) 0%, rgba(89,98,107,0.11) 100%);
+}

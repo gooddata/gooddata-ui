@@ -1,0 +1,161 @@
+.featuresBlock {
+    display: flex;
+    align-items: center;
+    color: $gd-color-text;
+
+    @media only screen and (max-width: 735px) {
+        flex-wrap: wrap;
+    }
+}
+
+.featuresBlockText-left {
+    .featuresText {
+        @media only screen and (min-width: 736px) {
+            margin-right: 6rem;
+        }
+    }
+}
+
+.featuresBlockText-right {
+    .featuresText {
+        @media only screen and (min-width: 736px) {
+            order: 1;
+            margin-left: 6rem;
+        }
+    }
+}
+
+.featuresBlockText-center {
+    flex-wrap: wrap;
+
+    &,
+    .featuresText {
+        text-align: center;
+    }
+
+    .featuresText,
+    .featuresExample {
+        flex: 1 1 100%;
+    }
+
+    .featuresExample {
+        padding-top: 0;
+    }
+}
+
+.featuresText,
+.featuresExample {
+    padding: 4rem 2rem;
+    flex: 1 1 50%;
+
+    @media only screen and (max-width: 735px) {
+        padding: 2rem;
+        flex-basis: 100%;
+    }
+}
+
+.featuresText {
+    text-align: left;
+}
+
+.featuresLink {
+    display: block;
+    margin: 2rem 0;
+}
+
+.featuresExample {
+    text-align: left;
+}
+
+.exampleCode {
+    padding: 1.56rem 1.3rem;
+    background-color: $gd-color-white;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+
+    .highlighting {
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+    }
+}
+
+.exampleImage {
+    position: relative;
+    overflow: hidden;
+    padding-top: 1.75rem;
+
+    .exampleCode + & {
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2.19rem;
+            height: 2.19rem;
+            margin-top: -3.5rem;
+            margin-left: -1.57rem;
+            box-shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+            background-color: $gd-color-white;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.exampleImage,
+.exampleImageImage {
+    width: 100%;
+}
+
+.featuresBlockGallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.featuresBlockGalleryItem {
+    flex: 1 1 25.5rem;
+    max-width: 25.5rem;
+    min-width: 15rem;
+    margin: 0 0.625rem;
+}
+
+.featuresBlockGalleryTitle {
+    margin: 0.4rem 0;
+    color: transparentize($gd-color-dark, 0.2);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.featuresBlockGalleryImage {
+    width: 100%;
+    padding-top: 54.545%;
+    box-shadow: 0 1px 10px 0 transparentize($gd-color-dark, 0.9);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.charting-lib-logo {
+    display: inline-block;
+    margin-right: 2.5rem;
+    vertical-align: middle;
+}
+
+.d3-logo {
+    width: 46px;
+    height: 43px;
+}
+
+.highcharts-logo {
+    width: 190px;
+    height: 37px;
+}
+
+.chartjs-logo {
+    width: 143px;
+    height: 99px;
+}

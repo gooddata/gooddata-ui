@@ -42,7 +42,9 @@ code,
     color: lighten($gd-color-negative, 6%);
 }
 
-.hljs-literal {
+.hljs-literal,
+.hljs-attr,
+.hljs-meta {
     color: $gd-color-positive;
 }
 
@@ -57,6 +59,7 @@ code,
     color: darken($gd-color-highlight, 12%);
 }
 
-.hljs-meta-string {
+.hljs-meta-string,
+.hljs-name {
     color: $gd-color-highlight;
 }

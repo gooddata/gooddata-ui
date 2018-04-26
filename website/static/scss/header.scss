@@ -1,7 +1,7 @@
 .fixedHeaderContainer {
     height: 64px;
-    padding: 15px 0;
-    background: #fdfdfd;
+    padding: 0;
+    background: $gray-3;
 
     header img,
     .logo {
@@ -10,7 +10,8 @@
     }
 
     header {
-        display: flex;
+        height: 100%;
+        align-items: center;
 
         > a {
             flex: 0 0 auto;
@@ -76,12 +77,18 @@
                 border-bottom: 2px solid transparent;
                 color: transparentize($gd-color-dark, 0.3);
                 font-size: 0.95rem;
+                text-decoration: none;
 
                 @media only screen and (max-width: 735px) {
                     height: 1.5rem;
                     padding-top: 0;
                     padding-bottom: 0;
                     line-height: 1.5rem;
+                }
+
+                @media only screen and (min-width: 736px) {
+                    height: 4rem;
+                    line-height: 4rem;
                 }
             }
 
@@ -94,6 +101,14 @@
                 background: transparent;
                 transition: all 100ms ease-in;
             }
+        }
+    }
+
+    @media only screen and (min-width: 736px) {
+        &,
+        nav.slidingNav,
+        .nav-site {
+            height: 100%;
         }
     }
 }
@@ -114,14 +129,17 @@
 }
 
 footer.nav-footer {
-    background: linear-gradient(to bottom, #1e2025 0%, #0a0d14 100%);
+    padding: 1rem 0;
+    box-shadow: none;
+    color: $gd-color-text-light;
+    background-color: $gray-4;
 }
 
 h1,
 .mainContainer .wrapper .post h1,
 .mainContainer .wrapper .post h2,
 .mainContainer .wrapper .post h3 {
-    color: #1e2025;
+    color: $gd-color-dark;
 }
 
 nav.toc .toggleNav .navGroup.navGroupActive {

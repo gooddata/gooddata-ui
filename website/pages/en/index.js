@@ -6,6 +6,7 @@
  */
 
 const React = require('react');
+const hljs = require('highlight.js');
 
 const CompLibrary = require('../../core/CompLibrary.js');
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
@@ -30,7 +31,7 @@ class Button extends React.Component {
   render() {
     return (
       <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={this.props.href} target={this.props.target}>
+        <a className={this.props.className || 'button'} href={this.props.href} target={this.props.target}>
           {this.props.children}
         </a>
       </div>
@@ -42,12 +43,20 @@ Button.defaultProps = {
   target: '_self',
 };
 
+const ResponsiveImage = props => (
+  <div
+    className={'responsiveImage ' + props.className}
+    tite={props.alt}
+    style={{backgroundImage: 'url(' + props.src + ')'}}
+  />
+);
+
 const SplashContainer = props => (
-  <div className="homeContainer">
+  <section className="homeContainer">
     <div className="homeSplashFade">
       <div className="wrapper homeWrapper">{props.children}</div>
     </div>
-  </div>
+  </section>
 );
 
 const Logo = props => (
@@ -57,11 +66,15 @@ const Logo = props => (
 );
 
 const ProjectTitle = props => (
-  <h2 className="projectTitle">
-    GoodData {siteConfig.title}
+  <h1 className="projectTitle">
     <small>{siteConfig.tagline}</small>
-  </h2>
+    {siteConfig.title}
+  </h1>
 );
+
+const ProjectDescription = props => (
+  <p className="projectDescription">A React-based JavaScript library for building smart <br className="noMobile" />business applications powered by GoodData</p>
+)
 
 const PromoSection = props => (
   <div className="section promoSection">
@@ -76,13 +89,12 @@ class HomeSplash extends React.Component {
     let language = this.props.language || '';
     return (
       <SplashContainer>
-        {/*<Logo img_src={imgUrl('gooddata_white.svg')} />*/}
         <div className="inner">
           <ProjectTitle />
+          <ProjectDescription />
           <PromoSection>
             <Button href={docUrl('getting_started.html')}>Get Started</Button>
-            <Button href={docUrl('examples.html', language)}>See Examples</Button>
-            <Button href={docUrl('trouble_shooting.html', language)}>FAQ</Button>
+            <Button href="https://www.gooddata.com" className="button-link">About GoodData</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -99,102 +111,252 @@ const Block = props => (
   </Container>
 );
 
-const Features = props => (
-  <Block layout="fourColumn">
-    {[
-      {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature One',
-      },
-      {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature Two',
-      },
-    ]}
-  </Block>
-);
+const BackgroundBlock = props => (
+  <div className={'backgroundBlock-' + props.background}>
+    {props.children}
+  </div>
+)
 
-const FeatureCallout = props => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
+const FeaturesBlock = props => (
+  <div className={'wrapper featuresBlock featuresBlockText-'+ props.textPosition}>
+    <div className="featuresText">
+      <h2 className="featuresTitle">{props.title}</h2>
+      {props.content && <p className="featuresContent">{props.content}</p>}
+      {props.linkTitle && <a href={props.linkUrl} className="featuresLink">{props.linkTitle}</a>}
+      {props.children}
+    </div>
+    <div className="featuresExample">
+      {props.example}
+    </div>
   </div>
 );
 
-const LearnHow = props => (
-  <Block background="light">
-    {[
-      {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Learn How',
-      },
-    ]}
-  </Block>
-);
+const FeaturesBlockGallery = props => {
+  const gallery = props.children.map((item) => (
+    <li className="featuresBlockGalleryItem">
+      <h4 className="featuresBlockGalleryTitle">{item.title}</h4>
+      <ResponsiveImage
+        className="featuresBlockGalleryImage"
+        alt={item.title}
+        src={item.image}
+      />
+    </li>
+  ));
 
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'left',
-        title: 'Try it Out',
-      },
-    ]}
-  </Block>
-);
+  return <ul className="featuresBlockGallery">{gallery}</ul>
+}
 
-const Description = props => (
-  <Block background="dark">
-    {[
-      {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Description',
-      },
-    ]}
-  </Block>
-);
+const VisualizationsSection = (props) => {
+  const imgPath = '/static/img/vis-icons/';
+  const visualizations = ['Table', 'Pie', 'Line', 'Column', 'Headline', 'Scatter', 'Bubble', 'Bar', 'Treemap', 'Column-line', 'Funnel', 'Dual Line'];
+  const visualizationsList = visualizations.map((visualization) => {
+    const visClass = visualization.replace(/\s/, '-').toLowerCase();
 
-const Showcase = props => {
-  if ((siteConfig.users || []).length === 0) {
-    return null;
-  }
-  const showcase = siteConfig.users
-    .filter(user => {
-      return user.pinned;
-    })
-    .map((user, i) => {
-      return (
-        <a href={user.infoLink} key={i}>
-          <img src={user.image} title={user.caption} />
-        </a>
-      );
-    });
-
+    return (
+      <li className={'visualization ' + visClass}>
+        <img src={imgPath + visClass} className="visualizationImage" alt={visualization} />
+        <span className="visualizationTitle">{visualization}</span>
+      </li>
+    );
+  });
   return (
-    <div className="productShowcaseSection paddingBottom">
-      <h2>{"Who's Using This?"}</h2>
-      <p>This project is used by all these people</p>
-      <div className="logos">{showcase}</div>
-      <div className="more-users">
-        <a className="button" href={pageUrl('users.html', props.language)}>
-          More {siteConfig.title} Users
-        </a>
-      </div>
+    <div className="visualizationsSection">
+      <ul className="visualizationsList">{visualizationsList}</ul>
     </div>
   );
 };
+
+const CodeExample1 =
+`<LineChart
+  projectId='<project-id>'
+  measures={measures}
+  trendBy={attribute}
+  config={
+    colors: ['#14b2e2', '#02C18E']
+  }
+/>`;
+
+const CodeExample2 =
+`<Execute afm={<afm>} projectId={<project-id>}
+onLoadingChanged={function} onError={function}>
+{
+    // your visualization code
+}
+</Execute>`;
+
+const InstallationExample1 =
+`// optional See how to install yarn, or use npm.
+$ yarn global add create-react-app
+$ create-react-app my-first-sba
+
+
+// installation
+$ cd my-first-sba
+$ yarn add @gooddata/react-components`;
+
+const InstallationExample2 = (
+  <ol>
+    <li>
+      Open your <strong>GoodData project</strong> in the browser.
+      <img src="./img/homepage/installation_2.png" />
+    </li>
+    <li>
+      Search for <strong>/projects/</strong> in the address bar.
+      <pre className="exampleCode">
+        <code className="hljs highlighting">
+          <span className="hljs-literal">https://</span>
+          …gooddata.com/…/projects/
+          <span className="hljs-selector-id">ProjectID</span>
+          |…
+        </code>
+      </pre>
+    </li>
+    <li>
+      Save the <span className="hljs-selector-id">Project ID</span> for later.
+    </li>
+  </ol>
+);
+
+const InstallationExample3 =
+`import { LineChart } from '@gooddata/react-components';
+
+<LineChart
+    projectId="<project-id>"
+    measures={measures}
+    trendBy={attribute}
+    config={
+       colors: ['#14b2e2']
+    }
+/>`;
+
+const ExampleCode = props => {
+  return (
+    <pre className="exampleCode">
+      <code
+        className={'hljs highlighting ' + props.lang}
+        dangerouslySetInnerHTML={{__html: hljs.highlight(props.lang, props.code).value}} />
+    </pre>
+  );
+};
+
+const ExampleImage = props => (
+  <div className="exampleImage">
+    <img src={props.src} alt={props.alt} className="exampleImageImage" />
+  </div>
+)
+
+const Features = props => (
+  <section className="features">
+    <BackgroundBlock background="gray">
+      <FeaturesBlock
+        title="Use analytics visualizations as simple React components"
+        content="Build your application from ready-made and custom React components. Customize visualizations in just a few lines of code. No iframes involved."
+        example={[
+          <ExampleCode lang="html" code={CodeExample1}></ExampleCode>,
+          <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" />
+        ]}
+        linkTitle="View all visual components"
+        linkUrl=""
+        textPosition="left"
+        background="gray"
+      />
+      {/*<VisualizationsSection />*/}
+    </BackgroundBlock>
+
+    <BackgroundBlock background="white">
+      <FeaturesBlock
+        title="Create custom visualizations"
+        content="Use the GoodData React data provider component to wrap any visualization, from libraries like D3.js, Highcharts or Chart.js, to completely custom code."
+        example={[
+          <ExampleCode lang="html" code={CodeExample2}></ExampleCode>,
+          <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
+        ]}
+        linkTitle="View custom visualization tutorial"
+        linkUrl=""
+        textPosition="right"
+        background="white"
+      >
+        <ResponsiveImage src="./img/homepage/d3_logo.png" alt="D3.js" className="charting-lib-logo d3-logo" />
+        <ResponsiveImage src="./img/homepage/highcharts_logo.png" alt="Highcharts" className="charting-lib-logo highcharts-logo" />
+        <ResponsiveImage src="./img/homepage/chartjs_logo.png" alt="Chart.js" className="charting-lib-logo chartjs-logo" />
+      </FeaturesBlock>
+    </BackgroundBlock>
+
+    <BackgroundBlock background="gray">
+      <FeaturesBlock
+        title="Power of the GoodData platform"
+        content="Ready-made components for ad hoc data analysis, machine learning recommendations and much more…"
+        example={<FeaturesBlockGallery>
+          {[{
+            title: 'Discover',
+            image: './img/homepage/discover.png'
+          },{
+            title: 'Publish',
+            image: './img/homepage/publish.png'
+          },{
+            title: 'Embed',
+            image: './img/homepage/embed.png'
+          }]}
+        </FeaturesBlockGallery>}
+        linkTitle="View the Platform demo"
+        linkUrl=""
+        textPosition="center"
+        background="gray"
+      />
+    </BackgroundBlock>
+  </section>
+);
+
+const FeatureCalloutBlock = props => (
+  <div className="productShowcaseBlock">
+    <label>
+      <input
+        type="radio"
+        name="productShowcaseSwitch"
+        className="productShowcaseSwitch"
+        checked={props.checked}
+      />
+      <div className="productShowcaseTitle">
+        <h4>{props.title}</h4>
+      </div>
+      <div className="productShowcaseExample">{props.example}</div>
+    </label>
+  </div>
+);
+
+const FeatureCallout = props => (
+  <section className="productShowcaseSection">
+    <h2>Start Right Now</h2>
+    <div className="productShowcase wrapper">
+      <div className="productShowcaseInner">
+        <FeatureCalloutBlock
+          title="Install GoodData.UI"
+          example={<ExampleCode lang="shell" code={InstallationExample1}></ExampleCode>}
+          checked="true"
+        />
+        <FeatureCalloutBlock
+          title="Get your project ID"
+          example={InstallationExample2}
+        />
+        <FeatureCalloutBlock
+          title="Add a visual component"
+          example={[
+            <ExampleCode lang="html" code={InstallationExample3}></ExampleCode>,
+            <p className="codeNote">See <a href="#">how to get identifiers from the GoodData platform</a>.</p>
+          ]}
+        />
+      </div>
+    </div>
+    <a href="#" className="productShowcaseLink">Continue creating your first visualization</a>
+  </section>
+);
+
+const GetStarted = props => (
+  <section className="getStartedSection">
+    <h2>See the GoodData.UI library</h2>
+    <Button href={docUrl('getting_started.html')}>Get Started</Button>
+  </section>
+);
 
 class Index extends React.Component {
   render() {
@@ -203,22 +365,10 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
-          <div style={{textAlign: 'center', margin: '1em' }}>
-              This is the pre-release GoodData developer documentation.
-              <br/>
-              The contents of this documentation are under constant construction and the subject to change.
-              <br/>
-              Before you proceed, please read the <a href={`${siteConfig.baseUrl}docs/${this.props.language}legal_notices.html`}>legal information</a> first.
-              <br/><br/>
-              With any question, contact your GoodData Account Manager.
-          </div>
-        <div className="mainContainer">
-          {/* <Features />
+        <div className="homeContainer">
+          <Features />
           <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase language={language} /> */}
+          <GetStarted />
         </div>
       </div>
     );

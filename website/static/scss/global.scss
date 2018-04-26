@@ -1,0 +1,16 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+.responsiveImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.noMobile {
+    @media only screen and (max-width: 735px) {
+        display: none;
+    }
+}
