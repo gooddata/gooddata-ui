@@ -1,6 +1,6 @@
 ---
-title: Execute Component
-sidebar_label: Execute Component
+title: Execute API Call
+sidebar_label: Execute API Call
 copyright: (C) 2007-2018 GoodData Corporation
 id: execute_component
 ---

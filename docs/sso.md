@@ -1,6 +1,6 @@
 ---
-title: Authentication to the GoodData Platform
-sidebar_label: SSO (single sign-on)
+title: Set Up Authentication and Single Sign-On
+sidebar_label: Set Up Authentication and Single Sign-On
 copyright: (C) 2007-2018 GoodData Corporation
 id: sso
 ---

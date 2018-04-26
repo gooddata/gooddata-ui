@@ -92,7 +92,7 @@ class Versions extends React.Component {
                       <tr key={i}>
                         <th>{version}</th>
                         <td>
-                            <a href={this.docUrl('getting_started.html', version)}>Documentation</a>
+                            <a href={this.docUrl('about_gooddataui.html', version)}>Documentation</a>
                         </td>
                         { this.renderChangelog(version) }
                         { this.renderMigrationGuide(version) }
@@ -123,7 +123,7 @@ class Versions extends React.Component {
                         <tr key={i}>
                           <th>{version}</th>
                           <td>
-                              <a href={this.docUrl('quick_start.html', version)}>Documentation</a>
+                              <a href={this.docUrl('about_gooddataui.html', version)}>Documentation</a>
                           </td>
                           { this.renderChangelog(version) }
                           { this.renderMigrationGuide(version) }
@@ -155,7 +155,7 @@ class Versions extends React.Component {
                 <tr>
                   <th>{latestVersion}</th>
                   <td>
-                    <a href={this.docUrl('quick_start.html')}>Documentation</a>
+                    <a href={this.docUrl('about_gooddataui.html')}>Documentation</a>
                   </td>
                   { this.renderChangelog(latestVersion) }
                   { this.renderMigrationGuide(latestVersion) }
@@ -168,7 +168,7 @@ class Versions extends React.Component {
                 <tr>
                   <th>next</th>
                   <td>
-                    <a href={this.docUrl('quick_start.html', 'next')}>Documentation</a>
+                    <a href={this.docUrl('about_gooddataui.html', 'next')}>Documentation</a>
                   </td>
                 </tr>
               </tbody>
