@@ -35,7 +35,7 @@ The following example shows the function specified as children in the Execution
 
 ```javascript
 import { Execute, isEmptyResult } from '@gooddata/react-components';
- 
+
 <Execute afm={<afm>} projectId={<project-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
     {
         (execution) => {
@@ -203,7 +203,7 @@ export class ExecuteExample extends Component {
                         font-weight: 700;
                     }
                 `}</style>
-                <p className="kpi s-execute-kpi">{result.executionResult.executionResult.data[0]}</p>
+                <p className="kpi s-execute-kpi">{result.executionResult.data[0]}</p>
                 <p>Full execution response and result as JSON:</p>
                 <pre>{JSON.stringify({ result, isLoading, error }, null, '  ')}</pre>
             </div>
