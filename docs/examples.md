@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: examples
 ---
 
-Review the examples available at https://github.com/gooddata/gooddata-react-components/tree/master/examples to see what you can build using the GoodData UI SDK.
+Review the examples available at https://github.com/gooddata/gooddata-react-components/tree/master/examples to see what you can build using the GoodData.UI.
 The examples contain live demos and code snippets that you can reuse in your project.
 
 Here are a few things that you can build using the examples:
@@ -14,8 +14,6 @@ Here are a few things that you can build using the examples:
 * Add a date picker
 * Create a custom legend
 * Add an attribute filter
-
-and more.
 
 ## GoodData Platform Account
 
