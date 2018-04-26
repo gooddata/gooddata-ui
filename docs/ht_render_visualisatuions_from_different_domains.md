@@ -1,6 +1,6 @@
 ---
-title: Render Visualizations from Different Domains and Projects
-sidebar_label: Render Visualizations from Different Domains and Projects
+title: Access Multiple Domains and Projects
+sidebar_label: Access Multiple Domains and Projects
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_render_visualization_from_different_domain
 ---

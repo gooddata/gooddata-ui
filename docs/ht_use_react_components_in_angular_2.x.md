@@ -1,6 +1,6 @@
 ---
-title: Use React Components in Angular 2+
-sidebar_label: Use React Components in Angular 2+
+title: GoodData.UI and Angular 2+
+sidebar_label: GoodData.UI and Angular 2+
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_2.x
 ---
