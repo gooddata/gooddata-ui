@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: column_chart_component
 ---
 
-The Column Chart component shows data in vertical columns. It can display either one or multiple measures side by side divided by attribute values or one measure stacked by attribute values.
+Column chart shows data in vertical columns. Column charts can display one or multiple measures side by side, divided by either attribute values or by a single measure stacked by attribute values.
 
 ![Column Chart Component](assets/column_chart.png "Column Chart Component")
 
