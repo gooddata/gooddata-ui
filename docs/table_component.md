@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: table_component
 ---
 
-The Table component shows data in columns and rows. Unlike charts, a table can display only attribute values without any measures. Also, tables have higher limits for the number of datapoints to display.
+Table shows data in columns and rows. Unlike charts, tables can display only attribute values without any measures. Also, tables have higher limits for the number of datapoints to display.
 
 ![Table Component](assets/table.png "Table Component")
 
