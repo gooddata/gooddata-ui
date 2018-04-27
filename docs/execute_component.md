@@ -5,9 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: execute_component
 ---
 
-The Execute component allows you to execute input data and send it to the function that you have chosen to use and have implemented. You can use the Execute component, for example, to create a report using an arbitrary chart library.
+Execute component allows you to execute input data and send it to the function that you chose to use and then implemented. You can use the Execute component, for example, to create a report using an arbitrary chart library.
 
-The input data is specified using the component parameters \(see [Parameters](execute_component.md#parameters)\). Then, the execution result is sent to the function that you specify as children in the Execution component.
+You specify the input data by using the component parameters \(see [Parameters](execute_component.md#parameters)\). Then, the execution result is sent to the function that you specify as a child in the Execution component.
 
 ## Parameters
 
@@ -19,19 +19,19 @@ The input data is specified using the component parameters \(see [Parameters](e
 | onError | false | function |
 | onLoadingChanged | false | function |
 
-* If you specify a function in the `onError` parameter, this function will be called in case of an error. It is always executed after `onLoadingChanged`. The first parameter is an error object: `{ status: ErrorStates, error?: string }`. Status can be one of the following \(use`import { ErrorStates } from '@gooddata/react-components'`\):
+* If you specify a function in the `onError` parameter, this function will be called in case of an error. It is always executed after `onLoadingChanged`. The first parameter is an error object: `{ status: ErrorStates, error?: string }`. Status can be one of the following \(use `import { ErrorStates } from '@gooddata/react-components'`\):
 
   * `ErrorStates.DATA_TOO_LARGE_TO_COMPUTE`
   * `ErrorStates.HTTP_BAD_REQUEST`
   * `ErrorStates.UNKNOWN_ERROR`
 
-* If you specify a function in the `onLoadingChanged` parameter, this function will be called every time data load starts or finishes, and it will get either the `{isLoading: true}` or `{isLoading: false}` object as a parameter. It is always executed before `onError`.
+* If you specify a function in the `onLoadingChanged` parameter, this function will be called every time a data load starts or finishes, and it will get either the `{isLoading: true}` or `{isLoading: false}` object as a parameter. It is always executed before `onError`.
 
 * Empty execution results can be found by an empty data property in the result. To check if the result is empty, use `import { isEmptyResult } from '@gooddata/react-components'`.
 
 ## Example
 
-The following example shows the function specified as children in the Execution component that displays the execution output on the console.
+The following example shows the function specified as a child in the Execution component that displays the execution output on the console.
 
 ```javascript
 import { Execute, isEmptyResult } from '@gooddata/react-components';
@@ -47,7 +47,7 @@ import { Execute, isEmptyResult } from '@gooddata/react-components';
 
 ## Execution result
 
-Execution result is a data structure that is returned from aGET command on the execution request URL \(see [Execution REST API and Results](execution_rest_api_and_results.md)\).
+Execution result is a data structure that is returned from the GET command on the execution request URL \(see [Execution REST API and Results](execution_rest_api_and_results.md)\).
 
 ### Structure
 
@@ -122,9 +122,9 @@ The header items array lists all header items \(also called elements\) in a thre
 * The second level has the items: one record for each item in the dimension's `itemIdentifiers`. The order is the same as they were defined in `ResultSpec`.
 * The third level has the values \(also known as elements\): one record for each element in the individual item \(`attribute` or `measureGroup`\).
 
-## Complex Use Case Example
+## Complex use case example
 
-In this example, you can see how to handle `onLoadingChanged` and `onError` callbacks within a custom component. The React `key` prop is used here to force remounting of the Execute component on retry. The example fails randomly 50% of the time to showcase handling of error states.
+The following example shows how to handle `onLoadingChanged` and `onError` callbacks within a custom component. The React `key` prop is used to force remounting of the Execute component on retry. The example fails randomly 50% of the time to showcase handling of error states.
 
 ```javascript
 import React, { Component } from 'react';
