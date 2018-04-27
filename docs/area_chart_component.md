@@ -5,7 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: area_chart_component
 ---
 
-The Area Chart component shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or one measure split by one attribute into multiple areas with points intersecting attribute values. Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stacking: false }```.
+Area chart shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or a single measure split by one attribute into multiple areas with points intersecting attribute values. 
+
+Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stacking: false }```.
 
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
 
