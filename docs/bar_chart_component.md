@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: bar_chart_component
 ---
 
-The Bar Chart component shows data in horizontal bars. It can display either one or multiple metrics side by side divided by attribute values or one measure stacked by attribute values.
+Bar chart shows data in horizontal bars. Bar charts can display one or multiple metrics side by side divided by attribute values or a single measure stacked by attribute values.
 
 ![Bar Chart Component](assets/bar_chart.png "Bar Chart Component")
 
