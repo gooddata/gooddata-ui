@@ -5,18 +5,18 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: table_totals_in_execution_object
 ---
 
-There are several typical examples how to define table totals, how they looks like on the UI and what has to be defined in ExecutionObject \([AFM](afm.md#native-total) and [ResultSpec](result_specification.md#totals)\) to achieve expected results.
+There are several examples that can show how to define table totals, how they look in the UI and what has to be defined in ExecutionObject \([AFM](afm.md#native-total) and [ResultSpec](result_specification.md#totals)\) to achieve expected results.
 
-## Currently Supported Types
+## Currently supported types
 
 | Type | In 1st dimension | In 2nd dimension |
 | :--- | :--- | :--- |
 | Grand totals | DONE | NOT YET |
 | Sub-totals | NOT YET | NOT YET |
 
-## Grand Totals
+## Grand totals
 
-Grand totals are totals computed for a measure in a whole column or row.
+Grand totals are totals that are computed for the measure in a whole column or row.
 
 ### In 1st dimension
 
@@ -25,7 +25,7 @@ Grand totals are totals computed for a measure in a whole column or row.
 * **a1**, **a2** are attributes.
 * **m1** is a measure.
 
-### Example: ExecutionObject for Grand Totals in 1st dimension
+### Example: ExecutionObject for grand totals in 1st dimension
 
 ```javascript
 execution : {
