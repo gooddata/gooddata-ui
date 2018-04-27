@@ -9,7 +9,7 @@ The `onLegendReady` parameter allows you to get a series from charts and to ren
 
 This parameter is not available in the Table component.
 
-## Callback Data Structure
+## Callback data structure
 
 ```javascript
 {
