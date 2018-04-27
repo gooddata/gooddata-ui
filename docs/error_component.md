@@ -5,11 +5,13 @@ sidebar_label: ErrorComponent
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-The top level components support 'ErrorComponent' props. These props enable you to set custom content that is displayed when a component is in error state. You can also disable the default error indicator by explicitly passing null instead.
+ErrorComponent indicator is a property that enables you to customize what content is displayed when a visual component is in its error state. You can disable the default setting of the ErrorComponent indicator by explicitly passing null instead.
+
+The ErrorComponent indicator is supported by all visualization components.
 
 ## Example: Disabled ErrorComponent
 
-In the following example, the KPI shows neither loading indicator nor error message.
+In the following example, the KPI shows neither the loading indicator nor the error message.
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
@@ -24,9 +26,9 @@ import { Kpi } from '@gooddata/react-components';
 />
 ```
 
-## Example: Custom ErrorComponent
+## Example: Customized ErrorComponent
 
-In the following example, the default ErrorComponent is replaced with a custom component.
+In the following example, the default ErrorComponent is replaced by a custom component.
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
