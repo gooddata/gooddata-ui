@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: line_chart_component
 ---
 
-The Line Chart component shows data as line-connected dots. It can display either multiple measures as different lines or one measure split by one attribute into multiple lines with points intersecting attribute values.
+Line Chart shows data as line-connected dots. Line Charts can display either multiple measures as individual lines or a single measure split by one attribute into multiple lines with points intersecting attribute values.
 
 ![Line Chart Component](assets/line_chart.png "Line Chart Component")
 
