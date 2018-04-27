@@ -5,11 +5,13 @@ sidebar_label: LoadingComponent
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-The top level components support 'LoadingComponent' props. These props enable you to set custom content that is displayed when a component is in loading state. You can also disable the default loading indicator by explicitly passing null instead.
+LoadingComponent indicator is a property that enables you to customize what content is displayed when a visual component is in its loading state. You can disable the default setting of the LoadingComponent indicator by explicitly passing null instead.
+
+The LoadingComponent indicator is supported by all visualization components.
 
 ## Example: Disabled LoadingComponent
 
-In the following example, the KPI shows neither loading indicator nor error message.
+In the following example, the KPI shows neither the loading indicator nor the error message.
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
@@ -24,7 +26,7 @@ import { Kpi } from '@gooddata/react-components';
 />
 ```
 
-## Example: Custom LoadingComponent
+## Example: Customized LoadingComponent
 
 In the following example, the default LoadingComponent is customized with color, fixed size, indicator size, and speed of animation.
 
