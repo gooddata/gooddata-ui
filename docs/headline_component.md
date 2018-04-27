@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: headline_component
 ---
 
-The Headline component shows a single number. You can display measures and also attributes.
+Headline shows a single number. Use headlines to display measures and attributes.
 
 ![Headline Component](assets/headline.png "Headline Component")
 
