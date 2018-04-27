@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: pie_chart_component
 ---
 
-The Pie Chart shows data as proportional segments of a disc. It can be segmented by either multiple measures or an attribute.
+Pie chart shows data as proportional segments of a disc. Charts can be segmented by either multiple measures or an attribute.
 
 ![Pie Chart Component](assets/pie_chart.png "Pie Chart Component")
 
