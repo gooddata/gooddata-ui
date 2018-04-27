@@ -5,9 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: afm
 ---
 
-**AFM**\(Attribute - Filter - Measure\) is unified input for the [GoodData DataLayer](data_layer.md).
+**AFM**\(Attribute - Filter - Measure\) is a unified input for the [GoodData DataLayer](data_layer.md).
 
-AFM is acombination of attributes, measures and filters that describes a query you want to execute. In terms of underlying API, it is similar to when you are creating an insight using [Analytic Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
+AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 
 ## Structure
 
@@ -20,110 +20,9 @@ AFM is acombination of attributes, measures and filters that describes a query y
 }
 ```
 
-## Measure
-
-Measures inside an AFM are represented by an array of the following objects, each of which represents a single measure:
-
-```javascript
-// Items of AFM.measures
-// Type: IMeasure
-{
-    localIdentifier: '<measure-local-identifier>',
-    // Type: SimpleMeasureDefinition
-    definition: {
-        measure: {
-            // Type: ObjQualifier
-            item: {
-                identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
-            },
-            aggregation: 'sum', // Optional; By default 'sum'; Possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
-            filters: [],        // Optional; By default []; Type: CompatibilityFilter[]
-            computeRatio: true  // Optional; By default false
-        }
-    },
-    alias: 'Custom measure title',  // Optional; Overrides default measure title
-    format: '#,##0.00'  // Optional; Overrides default measure format
-}
-
-```
-
-`item` either contains a measure URL:
-
-```javascript
-item: {
-    uri: '<measure-uri>'
-}
-```
-
-...or a measure identifier:
-
-```javascript
-item: {
-    identifier: '<measure-identifier>'
-}
-
-```
-
-Besides `uri` or `identifier`, a measure requires a `localIdentifier` string that uniquely identifies the measure in the context of the current AFM. This is used in dimension definitions, sorting, and any other places where you need to target a measure or an attribute.
-
-Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the_same_object identifier in_any_of those projects\).
-
-To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catolog-export.md)).
-
-### Aggregation inside a measure
-
-Each measure can specify `aggregation` of data. Aggregation is represented by a string value that defines the aggregation type.
-
-| Type | Description |
-| :--- | :--- |
-| `'sum'` | Returns a sum of all numbers in the set |
-| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter |
-| `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
-| `'min'` | Returns the minimum value of all numbers in the set |
-| `'max'` | Returns the maximum value of all numbers in the set |
-| `'median'` | Counts the statistical median - an order statistic that gives the "middle" value of a sample. If the "middle" falls between two values, the function returns average of the two middle values. Null values are ignored. |
-| `'runsum'` | Returns a sum of numbers increased by the sum from the previous value \(accumulating a sum incrementally\) |
-
-### Filters in a measure definition
-
-Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
-
-Only one filter of the [`DateFilter`](afm.md#date-filter) type is allowed in a measure's filter definition.
-
-When both a measure filter of the [`DateFilter`](afm.md#date-filter) type and an AFM global filter of the [`DateFilter`](afm.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
-
-### Show as a percentage
-
-When an AFM is executed on the GoodData platform, the result measure data is by default returned as raw values \(numbers\).
-
-If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
-
-When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
-
-### Period-over-period
-
-To enable period-over-period \(PoP\), use the `PopMeasureDefinition` structure instead of `SimpleMeasureDefinition` and reference the original measure by the `measureIdentifier` property.
-
-For examples, see PoP [with a measure defined directly from the identifier](https://confluence.intgdc.com/display/VS/AFM#AFM-Period-over-periodwithmeasuredefineddirectlyfromidentifier) and [with a measure defined by reference in AFM](https://confluence.intgdc.com/display/VS/AFM#AFM-Period-over-periodwithmeasuredefinedbyreferenceinAFM).
-
-`PopMeasureDefinition` is represented by the following structure:
-
-```javascript
-// Type: IPopMeasureDefinition
-definition: {
-    popMeasure: {
-        measureIdentifier: '<measure-local-identifier>',    // reference to localIdentifier in afm.measures
-        // Type: IObjUriQualifier
-        popAttribute: {
-            uri: '<measure-uri>'    // or identifier: '<measure-identifier>'
-        }
-    }
-}
-```
-
 ## Attribute
 
-Each attribute requires localIdentifier and `displayForm`.
+Each attribute requires `localIdentifier` and `displayForm`.
 
 * `localIdentifier` \(string\) is specified by the attribute's `displayForm` identifier.
 * `type` \(string\) can be either `date` or `attribute`.
@@ -195,15 +94,15 @@ filters: [
 
 Both global filters and measure filters can use `in` or `notIn` and are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
-All attributes, `popAttribute`'s and filters are defined via the `displayForm` identifier.
+All attributes, `popAttribute`s and filters are defined using the `displayForm` identifier.
 
 ### DateFilter
 
 A date filter limits data processing to the selected date intervals.
 
-Date filters can be of the following types:
+Types of date filters:
 
-* **Absolute date filter:** you set an interval based on two exact dates
+* **Absolute date filter:** you set an interval based on two specific dates
 * **Relative date filter:** you set an interval that is relative to the current date \(for example, last week\)
 
 ```javascript
@@ -224,9 +123,9 @@ filters: [
 ...
 ```
 
-**Absolute date filter** An absolute date filter specifes a time interval within two dates: start date and end date \(in this exact order\). For example, 2017-07-31 - 2017-08-29.
+An **absolute date filter** specifes a time interval within two dates: start date and end date \(in this exact order\). For example, 2017-07-31 - 2017-08-29.
 
-**Format:**
+**Absolute date filter format:**
 
 ```javascript
 from: 'YYYY-MM-DD',
@@ -236,7 +135,7 @@ from: '2017-07-31',
 to: '2017-08-29',
 ```
 
-**Example:**
+**Absolute date filter example:**
 
 Interval between 2017, July 31, and 2017, August 29, inclusive:
 
@@ -253,11 +152,9 @@ Interval between 2017, July 31, and 2017, August 29, inclusive:
 }
 ```
 
-**Relative date filter**
+A **relative date filter** specifies a time interval that is relative to the current date. For example, last week, next month, and so on.
 
-A relative filter specifies a time interval that is relative to the current date. For example, last week, next month, and so on.
-
-**Format:**
+**Relative date filter format:**
 
 ```javascript
 from: number,
@@ -271,7 +168,7 @@ to: 7,
 * `-1` for the previous period
 * `-` _`n`_ for the _n_th previous period
 
-**Granularity:**
+**Relative date filter granularity:**
 
 * `'GDC.time.date'` \(day granularity\)
 * `'GDC.time.week'` \(week granularity\)
@@ -279,7 +176,7 @@ to: 7,
 * `'GDC.time.quarter'` \(quarter granularity\)
 * `'GDC.time.year'` \(year granularity\)
 
-**Example:**
+**Relative date filter example:**
 
 Last 7 days \(yesterday and 6 days before\):
 
@@ -331,9 +228,9 @@ Last quarter only:
 
 ### AttributeFilter
 
-Attribute filters can be of the following types:
+Types of attribute filters:
 
-* **Positive** **attribute filters** list only those items whose attribute elements' URIs are included in the `in` property array.
+* **Positive attribute filters** list only those items whose attribute elements' URIs are included in the `in` property array.
 * **Negative attribute filters** lists only those items whose attribute elements' URIs are _not_ included in the  `notIn` property array.
 
 Currently, attribute elements only support URIs, not identifiers.
@@ -364,6 +261,107 @@ Currently, attribute elements only support URIs, not identifiers.
         notIn: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only uri
     }
 },
+```
+
+## Measure
+
+Measures inside an AFM are represented by an array of the following objects, each of which represents a single measure:
+
+```javascript
+// Items of AFM.measures
+// Type: IMeasure
+{
+    localIdentifier: '<measure-local-identifier>',
+    // Type: SimpleMeasureDefinition
+    definition: {
+        measure: {
+            // Type: ObjQualifier
+            item: {
+                identifier: '<measure-identifier>'    // Or uri: '<measure-uri>'
+            },
+            aggregation: 'sum', // Optional; By default 'sum'; Possible values: 'sum' | 'count' | 'avg' | 'min' | 'max' | 'median' | 'runsum'
+            filters: [],        // Optional; By default []; Type: CompatibilityFilter[]
+            computeRatio: true  // Optional; By default false
+        }
+    },
+    alias: 'Custom measure title',  // Optional; Overrides default measure title
+    format: '#,##0.00'  // Optional; Overrides default measure format
+}
+
+```
+
+`item` either contains a measure URL...:
+
+```javascript
+item: {
+    uri: '<measure-uri>'
+}
+```
+
+...or a measure identifier:
+
+```javascript
+item: {
+    identifier: '<measure-identifier>'
+}
+
+```
+
+Besides `uri` or `identifier`, a measure requires a `localIdentifier` string that uniquely identifies the measure in the context of the current AFM. This is used in dimension definitions, sorting, and any other places where you need to target a measure or an attribute.
+
+Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the_same_object identifier in_any_of those projects\).
+
+To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catolog-export.md)).
+
+### Aggregation inside a measure
+
+Each measure can specify `aggregation` of data. Aggregation is represented by a string value that defines the aggregation type.
+
+| Type | Description |
+| :--- | :--- |
+| `'sum'` | Returns a sum of all numbers in the set |
+| `'count'` | Counts unique values of a selected attribute in a given dataset determined by the second attribute parameter |
+| `'avg'` | Returns the average value of all numbers in the set; null values are ignored |
+| `'min'` | Returns the minimum value of all numbers in the set |
+| `'max'` | Returns the maximum value of all numbers in the set |
+| `'median'` | Counts the statistical median - an order statistic that gives the "middle" value of a sample. If the "middle" falls between two values, the function returns average of the two middle values. Null values are ignored. |
+| `'runsum'` | Returns a sum of numbers increased by the sum from the previous value \(accumulating a sum incrementally\) |
+
+### Filters in a measure definition
+
+Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
+
+Only one filter of the [`DateFilter`](afm.md#date-filter) type is allowed in a measure's filter definition.
+
+When both a measure filter of the [`DateFilter`](afm.md#date-filter) type and an AFM global filter of the [`DateFilter`](afm.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
+
+### Show as a percentage
+
+When an AFM is executed on the GoodData platform, the result measure data is by default returned as raw values \(numbers\).
+
+If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
+
+When `computeRatio` is not specified, it defaults to `false`, and values from execution are displayed as numbers.
+
+### Period-over-period
+
+To enable period-over-period \(PoP\), use the `PopMeasureDefinition` structure instead of `SimpleMeasureDefinition` and reference the original measure by the `measureIdentifier` property.
+
+For examples, see PoP [with a measure defined directly from the identifier](https://confluence.intgdc.com/display/VS/AFM#AFM-Period-over-periodwithmeasuredefineddirectlyfromidentifier) and [with a measure defined by reference in AFM](https://confluence.intgdc.com/display/VS/AFM#AFM-Period-over-periodwithmeasuredefinedbyreferenceinAFM).
+
+`PopMeasureDefinition` is represented by the following structure:
+
+```javascript
+// Type: IPopMeasureDefinition
+definition: {
+    popMeasure: {
+        measureIdentifier: '<measure-local-identifier>',    // reference to localIdentifier in afm.measures
+        // Type: IObjUriQualifier
+        popAttribute: {
+            uri: '<measure-uri>'    // or identifier: '<measure-identifier>'
+        }
+    }
+}
 ```
 
 ## Native Total
