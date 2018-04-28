@@ -7,7 +7,7 @@ id: kpi_component
 
 KPI \(Key Performance Indicator\) renders a measure calculated by the GoodData platform.
 
-### Structure
+## Structure
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
@@ -20,7 +20,7 @@ import { Kpi } from '@gooddata/react-components';
 />
 ```
 
-### Example
+## Example
 
 <!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
 
@@ -79,7 +79,7 @@ import { Kpi } from '@gooddata/react-components';
 />
 ```
 
-### Properties
+## Properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
