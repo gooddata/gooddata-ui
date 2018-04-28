@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: execution_rest_api_and_result
 ---
 
-If you want to execute direct API calls, here is an overview of the main parts of the API.
+This article provides an overview of the main API parts that you need to execute direct API calls.
 
 ## executeAfm Endpoint
 
@@ -31,7 +31,7 @@ The response returns `HTTP 201 Created`:
 }
 ```
 
-## executionResults and Polling
+## executionResults and polling
 
 If fetching data from the GoodData infrastructure takes longer than expected, the API may periodically ask if the result is ready \(polling\). In this case, poll the URL from `executionResponse.link.executionResult` in the `executeAfm` response.
 
@@ -62,13 +62,13 @@ You receive one of the following requests:
 * `HTTP 202 Accepted`: the data is not ready yet, request again
 * `HTTP 204 No content`: execution returned no data
 
-## Multidimensional Paging
+## Multidimensional paging
 
-For one defined dimension, both the parameters `offset` and `limits` have one number.
+For a single defined dimension, parameters `offset` and `limits` have both one number.
 
-For two dimensions, the parameters have two values separated by comma. In the response, it is an array with two values. The first value represents the first dimension, the second value represents the second dimension.
+For two dimensions, the parameters have two values separated by a comma. In the response, it is an array with two values. The first value represents the first dimension, the second value represents the second dimension.
 
-Let's set the limit to`3,2`. The pages could be retrieved in four requests with offsets `0,0` and `0,2` and `3,0` and`3,2` respectively.
+For example, if you set the limit to`3,2`, the pages could be retrieved in four requests with offsets `0,0` and `0,2` and `3,0` and`3,2` respectively.
 
 | \[ 11, 12 \] \[ 21, 22 \] \[ 31, 32 \] | \[ 13 \] \[ 23 \] \[ 33 \] |
 | :--- | :--- |
@@ -76,6 +76,6 @@ Let's set the limit to`3,2`. The pages could be retrieved in four requests with 
 
 The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification \(resultSpec\)](result_specification.md).
 
-For more detailed information, see [executeAfm test scenarios](https://github.com/gooddata/gooddata-js/blob/master/test/execution/execute-afm.test.js#L228)from the GoodData JavaScript SDK.
+For details, see [executeAfm test scenarios](https://github.com/gooddata/gooddata-js/blob/master/test/execution/execute-afm.test.js#L228)from the GoodData JavaScript SDK.
 
 GoodData JavaScript SDK automatically requests all pages and merges them into one canvas.
