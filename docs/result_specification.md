@@ -25,7 +25,7 @@ id: result_specification
 }
 ```
 
-Dimensions organize the result `data` and `headerItems`. Each dimension requires the `itemIdentifiers` property, which is an array of `items`: attributes' `localIdentifier`s from the AFM or a special `measureGroup` string. You can define one or two dimensions, where one can be empty. The default is two dimensions: all attributes in one and `measureGroup` in the other.
+Dimensions organize the result `data` and `headerItems`. Each dimension requires the `itemIdentifiers` property, which is an array of `items`: attributes' `localIdentifier`s from the AFM or a special `measureGroup` string. You can define one or two dimensions - one dimension can be empty. The default is two dimensions with all attributes in one dimension and `measureGroup` in the other one.
 
 AFM components fill `resultSpec` with an appropriate definition depending on the type of the visualization. Most likely, you will not have to change it.
 
@@ -44,9 +44,9 @@ To understand how a dimension works, see the following examples:
 
 The `data` property is indexed only by integers. The elements' text labels are sent in the `headerItems` property, which is a three-dimensional array, where:
 
-* First level has the dimensions: one or two records, one for each respective dimensions in `resultSpec.dimensions`.
-* Second level has the items: one record for each item in the dimension's  `itemIdentifiers`.
-* Third level has the elements: one record for each element in the individual item (attribute or `measureGroup`).
+* First level has dimensions: one or two records, one for each respective dimensions in `resultSpec.dimensions`.
+* Second level has items: one record for each item in the dimension's  `itemIdentifiers`.
+* Third level has elements: one record for each element in an individual item (attribute or `measureGroup`).
 
 The type of the deepest record is one of the following:
 
@@ -54,11 +54,11 @@ The type of the deepest record is one of the following:
 * `IResultMeasureHeaderItem`
 * `IResultTotalHeaderItem`
 
-See the @gooddata/typings [typescript defintion file](https://github.com/gooddata/gooddata-typings/blob/master/index.ts#L254).
+See @gooddata/typings [typescript defintion file](https://github.com/gooddata/gooddata-typings/blob/master/index.ts#L254).
 
 ### Totals
 
-Optionally, you can define dimension totals. Totals are used to get aggregated data over several rows or columns of measure data.
+Optionally, you can also define dimension totals. Totals are used to get aggregated data over several rows or columns of measure data.
 
 #### Definition
 
@@ -75,11 +75,11 @@ totals: [
 
 #### Totals order limits
 
-Currently, the order of total items is `[sum, max, min, avg, med, nat]` and cannot be changed.
+The order of total items is `[sum, max, min, avg, med, nat]` and cannot be changed.
 
 #### Limitations
 
-Only the following are currently supported:
+Only the following limitations are currently supported:
 
 * Table visualizations
   * First dimension with `attributes` and `totals`
@@ -87,7 +87,7 @@ Only the following are currently supported:
 * Grand totals in the first dimension
   * `total.attributeIdentifier` contains the first `attribute-local-identifier` from `itemIdentifiers`.
 
-If you want define 'nat'(native) total, make sure that it is in sync with the AFM.nativeTotals definition (see[Native totals](afm.md#AFM-NativeTotal)).
+If you want to define `nat` (native) total, make sure that it is in sync with the `AFM.nativeTotals` definition (see[Native totals](afm.md#AFM-NativeTotal)).
 
 #### Defining table totals
 
@@ -123,15 +123,17 @@ See [Table Totals in ExecutionObject](table_totals_in_execution_context.md).
 
 ## Sorting
 
-Sorting is defined by an array ofeither `AttributeSortItems` or `MeasureSortItems`.
+Sorting is defined by an array of either `AttributeSortItems` or `MeasureSortItems`.
 
 Multi-level sorting is supported by combining several sortings. For example, sort by date first, then by product name alphabetically.
 
-You can sort specific dimension items by data line using `measureSortItem`. A data line is uniquely defined by the `locators` array. The data line contains a chain of elements (`attributeLocatorItem`) and optionally a measure (`measureLocatorItem`) matching the selected dimension items. For example, you can sort your data by a specific data column (sorting your product sales only by sales of a certain product).
+You can sort specific dimension items by a data line using `measureSortItem`. 
+
+A data line is uniquely defined by the `locators` array. The data line contains a chain of elements (`attributeLocatorItem`) and optionally a measure (`measureLocatorItem`) matching the selected dimension items. For example, you can sort your data by a specific data column (sorting your product sales only by sales of a certain product).
 
 If the selected attributes, attribute values or measures are not available (for example, by being filtered out), `measureSortItems` are omitted.
 
-Measures are always listed in the same order they were defined in the AFM. Sorting measures based on their value is currently_not_supported.
+Measures are always listed in the same order in which they were defined in the AFM. Sorting measures based on their value is currently _not_ supported.
 
 ### Structure
 
@@ -168,11 +170,11 @@ Measures are always listed in the same order they were defined in the AFM. Sorti
 
 ### Aggregation
 
-By using `aggregation: 'sum'`, all elements of an attribute are sorted based on an aggregation function applied to all valid values belonging to each element. This is extremely useful when sorting stacked visualizations like stack bars or area charts.
+By using `aggregation: 'sum'`, all elements of an attribute are sorted based on an aggregation function applied to all valid values belonging to each element. This is extremely useful when sorting stacked visualizations such as stack bars or area charts.
 
 Currently, only sorting by the `sum` function is supported.
 
-The following is an example of sorting a table with two measures and a 'Year' attribute. You can set sorting based on the Year attribute with:
+The following example shows sorting a table with two measures and a 'Year' attribute. You can set sorting based on the Year attribute with:
 
 ```javascript
 {
@@ -220,7 +222,7 @@ Attribute values are then sorted by this computed value (3 and 7, respectivelly)
 }
 ```
 
-### Chart with View by Attribute
+### Chart with view by attribute
 
 ```javascript
 {
