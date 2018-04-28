@@ -5,9 +5,17 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: afm
 ---
 
-**AFM**\(Attribute - Filter - Measure\) is a unified input for the [GoodData DataLayer](data_layer.md).
+**AFM** \(Attribute - Filter - Measure\) is a unified input for the [GoodData DataLayer](data_layer.md).
 
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
+
+**Contents**
+* [Structure](##Structure)
+* [Attribute](##Attribute)
+* [Filter](##tFilter)
+* [Measure](##Measure)
+* [Native total](##Native-total)
+
 
 ## Structure
 
@@ -307,11 +315,11 @@ item: {
 
 ```
 
-Besides `uri` or `identifier`, a measure requires a `localIdentifier` string that uniquely identifies the measure in the context of the current AFM. This is used in dimension definitions, sorting, and any other places where you need to target a measure or an attribute.
+Besides `uri` or `identifier`, a measure requires a `localIdentifier` string that uniquely identifies the measure in the context of the current AFM. This is used in dimension definitions, sorting, and any other place where you need to target a measure or an attribute.
 
-Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the_same_object identifier in_any_of those projects\).
+Though you can use either object URIs or object identifiers \(`ObjQualifier = IObjUriQualifier | IObjIdentifierQualifier`\), we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project that they live in. That means that an object that is used in any project within your domain, has the _same_ object identifier in _any_ of those projects\).
 
-To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catolog-export.md)).
+To get the list of catalog items and date datasets from a GoodData project in the form of a JavaScript object, use [gdc-catalog-export](gdc-catolog-export.md)).
 
 ### Aggregation inside a measure
 
@@ -331,13 +339,13 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
 
-Only one filter of the [`DateFilter`](afm.md#date-filter) type is allowed in a measure's filter definition.
+Only one filter of the [`DateFilter`](afm.md#date-filter) type is allowed in the measure's filter definition.
 
-When both a measure filter of the [`DateFilter`](afm.md#date-filter) type and an AFM global filter of the [`DateFilter`](afm.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
+When both the measure filter of the [`DateFilter`](afm.md#date-filter) type and the AFM global filter of the [`DateFilter`](afm.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
 
-### Show as a percentage
+### Show measure as a percentage
 
-When an AFM is executed on the GoodData platform, the result measure data is by default returned as raw values \(numbers\).
+When an AFM is executed on the GoodData platform, the result measure data is, by default, returned as raw values \(numbers\).
 
 If you want the measures data to be displayed as a percentage instead, add a `computeRatio` property and set it to `true`.
 
@@ -346,8 +354,6 @@ When `computeRatio` is not specified, it defaults to `false`, and values fr
 ### Period-over-period
 
 To enable period-over-period \(PoP\), use the `PopMeasureDefinition` structure instead of `SimpleMeasureDefinition` and reference the original measure by the `measureIdentifier` property.
-
-For examples, see PoP [with a measure defined directly from the identifier](https://confluence.intgdc.com/display/VS/AFM#AFM-Period-over-periodwithmeasuredefineddirectlyfromidentifier) and [with a measure defined by reference in AFM](https://confluence.intgdc.com/display/VS/AFM#AFM-Period-over-periodwithmeasuredefinedbyreferenceinAFM).
 
 `PopMeasureDefinition` is represented by the following structure:
 
@@ -364,55 +370,9 @@ definition: {
 }
 ```
 
-## Native Total
+### Examples of measures
 
-Native totals in the AFM structure represent a definition of the data needed for computing correct results.
-
-### Definition
-
-```javascript
-...
-nativeTotals: [
-    {
-        measureIdentifier: string       // local measure identifier on which total is defined
-        attributeIdentifiers: string[]  // subset of local attribute identifiers in AFM defining total placement
-    },
-    ...
-]
-```
-
-### Prerequisites
-
-Native total items must be in sync with [result specification \(ResultSpec\)](result_specification.md)and its dimension totals. If they are not in sync, it is treated as a bad execution request.
-
-### Limitations
-
-Native total are curretly supported only for:
-
-* Table visualizations
-* Grand native totals
-  * `nativeTotal.attributeIdentifiers` is an empty array.
-
-### Defining native totals
-
-See [Table Totals in ExecutionObject](table_totals_in_execution_context.md).
-
-### Example
-
-```javascript
-...
-nativeTotals: [
-    {
-        measureIdentifier: '<measure-local-identifier-1>',
-        attributeIdentifiers: [] // only Grand totals are currently supported so the array should be empty
-    },
-    ...
-]
-```
-
-## Examples
-
-### Simple measure
+#### Simple measure
 
 ```javascript
 {
@@ -432,7 +392,7 @@ nativeTotals: [
 }
 ```
 
-### Complex measure
+#### Complex measure
 
 ```javascript
 // Type: IAfm
@@ -481,7 +441,7 @@ nativeTotals: [
 }
 ```
 
-### Measure with global filters 
+#### Measure with global filters 
 
 ```javascript
 // Type: IAfm
@@ -532,7 +492,7 @@ nativeTotals: [
 }
 ```
 
-### Period-over-period with measure defined by reference in AFM 
+#### Period-over-period with measure defined by reference in AFM 
 
 ```javasctript
 {
@@ -568,4 +528,50 @@ nativeTotals: [
         }
     ]
 }
+```
+
+## Native total
+
+Native totals in the AFM structure represent a definition of the data needed for computing correct results.
+
+### Definition
+
+```javascript
+...
+nativeTotals: [
+    {
+        measureIdentifier: string       // local measure identifier on which total is defined
+        attributeIdentifiers: string[]  // subset of local attribute identifiers in AFM defining total placement
+    },
+    ...
+]
+```
+
+### Prerequisites
+
+Native total items must be in sync with [result specification \(ResultSpec\)](result_specification.md)and its dimension totals. If they are not in sync, it is treated as a bad execution request.
+
+### Limitations
+
+Native total are curretly supported only for:
+
+* Table visualizations
+* Grand native totals
+  * `nativeTotal.attributeIdentifiers` is an empty array.
+
+### Defining native totals
+
+See [Table Totals in ExecutionObject](table_totals_in_execution_context.md).
+
+### Example
+
+```javascript
+...
+nativeTotals: [
+    {
+        measureIdentifier: '<measure-local-identifier-1>',
+        attributeIdentifiers: [] // only Grand totals are currently supported so the array should be empty
+    },
+    ...
+]
 ```
