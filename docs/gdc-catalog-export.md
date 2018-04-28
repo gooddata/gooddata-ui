@@ -7,39 +7,47 @@ id: gdc_catalog_export
 
 `gdc-catalog-export` is a tool for exporting a list of catalog items and date datasets from a GoodData project.
 
-Using this list, you can create AFMs with meaningful object names instead of using URIs or identifiers. For example, use `gdc-catalog-export` when you are working with [DataLayer](data_layer.md).
+Using this list, you can create AFMs with human-readable object names instead of using URIs or identifiers. For example, use `gdc-catalog-export` when you are working with [DataLayer](data_layer.md).
 
-`gdc-catalog-export` exports only data from a project \(production data\). If you[uploaded data to your project from a file](https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project), the data from the file is added as a separate dataset \(non-production data\), and `gdc-catalog-export` cannot retrieve it. This also include any measures that have been created using the data from that separate dataset.
+`gdc-catalog-export` exports only data from a project \(production data\). 
+
+If you [uploaded data to your project from a file](https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project), the data from the file is added as a separate dataset \(non-production data\), and `gdc-catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
+
+**Contents:**
+* [Installing gdc-catalog-export](#Installing-gdc-catalog-export)
+* [Using gdc-catalog-export](#Using-gdc-catalog-export)
+* [CatalogHelper utility](#CatalogHelper-utility)
 
 ## Installing gdc-catalog-export
 
-To install the stable version, run the following command:
+To install the stable version, run one of the following commands **depending on your package manager**:
+
+**yarn**
 
 ```bash
 yarn global add gdc-catalog-export
 ```
-
-This command assumes that you are using `yarn` as your package manager. If you are using npm as your package manager, run the following command:
+**npm**
 
 ```bash
 $ npminstall -g gdc-catalog-export
 ```
 
-The `gdc-catalog-export` source code is written in JavaScript, compatible with ES7 version. You do not need any bundler such as webpack for building these files. Babel transpiler is enough.
+The `gdc-catalog-export` source code is written in JavaScript, compatible with ES7 version. You do not need any bundler such as webpack to build these files. Babel transpiler is enough.
 
 ## Using gdc-catalog-export
 
 You can use `gdc-catalog-export`:
 
-* In interactive mode
+* In the interactive mode
 * By specifying a config file
 * By running it with command line options
 
 The tool respects following hierarchy:
 
-### Interactive Mode
+### Interactive mode
 
-This is the default mode. When you run the tool, it automatically runs in interactive mode:
+This is the default mode. When you run `gdc-catalog-export`, it automatically runs in the interactive mode:
 
 ```bash
 $ gdc-catalog-export
@@ -48,22 +56,22 @@ $ gdc-catalog-export
 You are prompted to enter input information to export the catalog.
 
 1. Enter your username and password.
-2. Choose the project that you want to export the catalog data from.
-3. Enter the file name that you want to export the data to \(the default file name is `catalog.json`\).
+2. Choose the project from which you want to export the catalog data.
+3. Enter the file name to which you want to export the data \(the default file name is `catalog.json`\).
 
    If the file already exists, you are asked whether you want to overwrite it.
 
-   If you choose to overwrite, the tool overwrite the files with new data. Otherwise, you are asked to enter a different name for the file.
+   If you choose to overwrite the file, the tool overwrites it with new data. If you choose otherwise, you are asked to enter a different name for the file.
 
 After the data is successfully fetched, it is written to the specified file. The path to the file is displayed.
 
-### Configuration File
+### Configuration file
 
 To avoid manually entering information needed to run `gdc-catalog-export`, you can create a config file \(the default name is `.gdcatalogrc`\) in your project directory.
 
 You do not have to provide all the information in the config file. If any information is missing, the interactive interface will ask you to enter it, or you can provide it as parameters when invoking the tool.
 
-The structure of the `.gdcatalogrc` config file is the following:
+The structure of the `.gdcatalogrc` config file is as follows:
 
 ```javascript
 {
@@ -79,9 +87,9 @@ The structure of the `.gdcatalogrc` config file is the following:
 * **username** is your GoodData login username.
 * **password** is your GoodData login password.
 
-  We do not recommend that you store the password in the config file. A more secure option is to provide it through the interactive interface or by using the `--password` parameter when running the command.
+**Important!**  We do not recommend that you store the password in the config file. A more secure option is to provide it through the interactive interface or by using the `--password` parameter when running the command.
 
-* **projectId** is the ID of the project that you want to export the data from.
+* **projectId** is the ID of the project from which you want to export the data.
 * **output** is the name/path for the output file.
 
 To provide a custom config file, run the tool with the `--config` parameter:
@@ -90,15 +98,15 @@ To provide a custom config file, run the tool with the `--config` parameter:
 $ gdc-catalog-export--config/path/to/customConfig
 ```
 
-### Command Line Parameters
+### Command line parameters
 
-You can use command line parameters to set up a configuration needed to obtain data.
+You can use command line parameters to set up the configuration that you need to obtain data.
 
 ```bash
 $ gdc-catalog-export--project-id<project-id> --username <your-email> --password <your-password> --output <file-name-path> --hostname<host-url> --config </path/to/customConfig>
 ```
 
-Any parameter provided as a command line parameter has the highest priority. If you also use a config file to set up a c onfiguration, the config file paramters get overriden, and the command line parameters are used.
+Any parameter provided as a command line parameter has the highest priority. If you also use a config file to set up a configuration, the config file parameters are overridden and the command line parameters are used.
 
 To see all the available parameters, run the following command:
 
@@ -106,7 +114,7 @@ To see all the available parameters, run the following command:
 $ gdc-catalog-export-h
 ```
 
-The command returns a list of the available parameters:
+The command returns the list of the available parameters:
 
 ```bash
 Usage: gdc-catalog-export [options]
@@ -123,13 +131,13 @@ Usage: gdc-catalog-export [options]
     --config <path>     Custom config file (default .gdcatalogrc)
 ```
 
-## CatalogHelper Utility
+## CatalogHelper utility
 
-To easily access all the values in `catalog.json`, use the `CatalogHelper`utility.
+To access all the values in `catalog.json` easily, use the `CatalogHelper` utility.
 
 The utility is located in the `@gooddata/react-components` package.
 
-### Using the CatalogHelper Utility
+### Using the CatalogHelper utility
 
 ```javascript
 import { CatalogHelper } from '@gooddata/react-components';
@@ -139,7 +147,7 @@ const C = new CatalogHelper(catalogJson);
 const revenueId = C.measure('Revenue');
 ```
 
-### API Reference
+### API reference
 
 The following definitions are written in TypeScript.
 
