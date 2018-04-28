@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_2.x
 ---
 
-To be able to use the GoodData [React Components](react_components.md) in your Angular 2+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside.
+To be able to use the GoodData [React components](react_components.md) in your Angular 2+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside.
 
 ## 1. Install dependencies
 <!-- 
@@ -38,7 +38,8 @@ To be able to use the GoodData [React Components](react_components.md) in your 
     - add KpiComponent to app.module.ts section NgModule.declarations
  -->
  
-Install latest dependencies using either `npm` or `yarn`. Your app must be able to render React components from `@gooddata/react-components` using a unique ID \(`uuid`\), and also has to be able to issue an `invariant` exception if the DOM node is not available.
+Install latest dependencies using either `npm` or `yarn`. Your app must be able to render React components from `@gooddata/react-components` using a unique ID \(`uuid`\), and you also must be able to issue an `invariant` exception if the DOM node is not available.
+
 ```bash
 npm install --save uuid invariant react@15.6.2 react-dom@15.6.2 @gooddata/react-components
 npm install --save-dev @types/react @types/react-intl
@@ -50,10 +51,11 @@ yarn add @types/react @types/react-intl --dev
 ```
 
 ## 2. Declare the Angular wrapper component
-It renders a React component and re-renders it on property change.
+Angular wrapper component renders a React component and re-renders it on property change.
+
 The component wrapper must be able to render React components imported from `@gooddata/react-components`. 
-You can import any supported components from the package, and then either put them together using multiple `React.createElement` 
-functions, or make an abstract wrapper component that accepts a React component reference as a parameter. 
+You can import any supported components from the package, and then either put them together using multiple `React.createElement` functions, or make an abstract wrapper component that accepts a React component reference as a parameter. 
+
 The following examples are using a single KPI component.
 
 **kpi.component.ts**:
@@ -144,15 +146,15 @@ export class KpiComponent implements OnInit, OnDestroy, OnChanges, AfterViewInit
 }
 ```
 
-When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252): `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
+When this article was last updated, there was an [outstanding issue in Angular 4](https://github.com/angular/angular/issues/14252). `ngOnDestroy` is called _after_ a DOM node has already been removed. Not calling `ReactDOM.unmountComponentAtNode(this.getRootDomNode())` results in memory leaks.
 
-Verify whether the issue is present in your version of Angular. if not, uncomment the commented out line in `ngOnDestroy`.
+Verify whether the issue is present in your version of Angular. If not, uncomment the commented out line in `ngOnDestroy`.
 
 
 ## 3. Use the component
-You are now ready to use the GoodData React Components in your Angular app.
+You are now ready to use the GoodData React components in your Angular app.
 
-You can use wrapped components across your app. You can pass the component props to it and even update them using data-binding.
+You can use wrapped components across your app, pass the component props to it, and even update them using data-binding.
 
 ```javascript
 <app-kpi
@@ -161,9 +163,9 @@ You can use wrapped components across your app. You can pass the component props
 </app-kpi>
 ```
 
-If you want to handle loading and error content yourself and do not want to use the default LoadingComponent and ErrorComponent, pass null explicitly:
+If you want to handle loading and error content yourself, and you do not want to use the default LoadingComponent and ErrorComponent, pass null explicitly:
 
 * `LoadingComponent={null}`
 * `ErrorComponent={null}`
 
-For more information on including React components in Angular, see [https://www.packtpub.com/books/content/integrating-angular-2-react](https://www.packtpub.com/books/content/integrating-angular-2-react).
+For more information about including React components in Angular, see [https://www.packtpub.com/books/content/integrating-angular-2-react](https://www.packtpub.com/books/content/integrating-angular-2-react).
