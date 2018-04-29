@@ -7,9 +7,10 @@ id: glossary
 
 ## A
 
-**AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using the GoodData UI SDK.AFM is a combination of attributes, measures and filters that describes a query you want to execute. In terms of underlying API, it is similar to when you are creating an insight using [Analytic Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). See [AFM](afm.md).
+**AFM \(Attribute - Filter - Measure\)** is unified input for creating a visualization using GoodData.UI. AFM is a combination of attributes, filters, and measures that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer). 
+See [AFM](afm.md).
 
-**aggregation** is a general term for the process by which information is gathered and expressed in summary form. Aggregation means:
+**aggregation** is a general term for the process by which information is gathered and expressed in a summary form. Aggregation means:
 
 * The process of computing measures using aggregation functions applied to a set of numerical facts \(such as sum, average, minimum, maximum, and so on\). See [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
 
@@ -33,11 +34,11 @@ id: glossary
 
 ## G
 
-**gdc-catalog-export** is a GoodData UI SDK tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](gdc-catalog-export.md).
+**gdc-catalog-export** is a GoodData.UI tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](gdc-catalog-export.md).
 
 ## K
 
-**KPI \(Key Performance Indicator\)** is a type of performance measurement that evaluate a person's or organization's success in a particular activity. See [KPI Dashboards](https://help.gooddata.com/display/doc/KPI+Dashboards).
+**KPI \(Key Performance Indicator\)** is a type of performance measurement that evaluates a person's or organization's success in a particular activity. See [KPI Dashboards](https://help.gooddata.com/display/doc/KPI+Dashboards).
 
 ## M
 
@@ -45,7 +46,7 @@ id: glossary
 
 ## S
 
-**stacked bar chart** is a chart that enables the display of the composite categories that make up each bar. These charts may be useful in simplifying the display of a busy bar chart. See [Stacked Bar Chart](https://help.gooddata.com/display/doc/Stacked+Bar+Chart).
+**stacked bar chart** is a chart that enables the display of the composite categories that make up each bar. These charts may be useful for simplifying the display of a busy bar chart. See [Stacked Bar Chart](https://help.gooddata.com/display/doc/Stacked+Bar+Chart).
 
 ## R
 
@@ -53,6 +54,6 @@ id: glossary
 
 ## V
 
-**visualization** is a view into a specific part of your data defined by AFM, ResultSpec and a configuration object, usually in a form of a table or graph \(see **AFM** and **resultSpec**\).
+**visualization** is a view into a specific part of your data defined by AFM, ResultSpec, and a configuration object, usually in a form of a table or graph \(see **AFM** and **resultSpec**\).
 
-**Visualization component** is a component of the GoodData UI SDK that renders a table or graph displaying data defined by a combination of AFM, ResultSpec \(see **AFM** and **resultSpec**\) and a configuration object.
+**visualization component** is a component of GoodData.UI that renders a table or graph displaying data defined by a combination of AFM, ResultSpec \(see **AFM** and **resultSpec**\), and a configuration object.
