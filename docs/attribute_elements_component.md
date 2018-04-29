@@ -5,7 +5,7 @@ sidebar_label: AttributeElements Component
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-AttributeElements component is a low level counterpart to the [AttributeFilter component](attribute_filter_component.md).
+Attribute elements component is a low level counterpart to the [Attribute Filter component](attribute_filter_component.md).
 
 It lists attribute values and allows you to completely customize how they are rendered.
 
