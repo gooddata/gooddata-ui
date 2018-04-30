@@ -1,6 +1,6 @@
 ---
-title: Table Totals in ExecutionObject
-sidebar_label: Table Totals in ExecutionObject
+title: Specify Table Totals
+sidebar_label: Specify Table Totals
 copyright: (C) 2007-2018 GoodData Corporation
 id: table_totals_in_execution_object
 ---
