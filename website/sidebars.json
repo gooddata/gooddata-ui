@@ -27,7 +27,7 @@
       "on_legend_ready"
     ],
     "Custom Visualizations": [
-      "ht_create_visualization_programmatically",
+      "create_new_visualization",
       "afm",
       "result_specification",
       "table_totals_in_execution_object",
