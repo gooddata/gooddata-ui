@@ -71,7 +71,7 @@ Choose either of the following options to bypass this restriction:
   You can white-label your domain so that requests from this domain are accepted. To have your domain white-labeled, contact the GoodData Support.
 
   For more information about CORS, see
-  [How to Access the GoodData API Directly](ht_access_gd_api_directly.md). For more information about white labeling, see [White Label Your Domain]https://help.gooddata.com/display/doc/White+Label+Your+Domain).
+  [How to Access the GoodData API Directly](ht_access_gd_api_directly.md). For more information about white labeling, see [White Label Your Domain](https://help.gooddata.com/display/doc/White+Label+Your+Domain).
 
 ## Before You Start Using the GoodData UI SDK
 
