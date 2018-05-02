@@ -3,24 +3,15 @@
     align-items: center;
     color: $gd-color-text;
 
-    @media only screen and (max-width: 735px) {
+    @media #{$medium-down} {
         flex-wrap: wrap;
-    }
-}
-
-.featuresBlockText-left {
-    .featuresText {
-        @media only screen and (min-width: 736px) {
-            margin-right: 6rem;
-        }
     }
 }
 
 .featuresBlockText-right {
     .featuresText {
-        @media only screen and (min-width: 736px) {
+        @media #{$medium-up} {
             order: 1;
-            margin-left: 6rem;
         }
     }
 }
@@ -48,7 +39,7 @@
     padding: 4rem 2rem;
     flex: 1 1 50%;
 
-    @media only screen and (max-width: 735px) {
+    @media #{$medium-down} {
         padding: 2rem;
         flex-basis: 100%;
     }
@@ -59,7 +50,7 @@
 }
 
 .featuresLink {
-    display: block;
+    display: inline-block;
     margin: 2rem 0;
 }
 
@@ -67,12 +58,17 @@
     text-align: left;
 }
 
+.exampleCode,
+.exampleImageImage {
+    box-shadow: $shadow;
+    background-color: $gd-color-white;
+}
+
 .exampleCode {
     padding: 1.56rem 1.3rem;
-    background-color: $gd-color-white;
     border: none;
     border-radius: 0;
-    box-shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+    white-space: pre-wrap;
 
     .highlighting {
         margin: 0;
@@ -85,7 +81,8 @@
 .exampleImage {
     position: relative;
     overflow: hidden;
-    padding-top: 1.75rem;
+    margin: 0 -1rem -1rem;
+    padding: 1.75rem 1rem 1rem;
 
     .exampleCode + & {
         &::before {
@@ -96,14 +93,13 @@
             height: 2.19rem;
             margin-top: -3.5rem;
             margin-left: -1.57rem;
-            box-shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+            box-shadow: $shadow;
             background-color: $gd-color-white;
             transform: rotate(45deg);
         }
     }
 }
 
-.exampleImage,
 .exampleImageImage {
     width: 100%;
 }
@@ -141,7 +137,7 @@
 
 .charting-lib-logo {
     display: inline-block;
-    margin-right: 2.5rem;
+    margin: 0.5rem 2.5rem 0.5rem 0;
     vertical-align: middle;
 }
 
@@ -157,5 +153,5 @@
 
 .chartjs-logo {
     width: 143px;
-    height: 99px;
+    height: 63px;
 }

@@ -46,14 +46,15 @@ Button.defaultProps = {
 const ResponsiveImage = props => (
   <div
     className={'responsiveImage ' + props.className}
-    tite={props.alt}
+    title={props.alt}
     style={{backgroundImage: 'url(' + props.src + ')'}}
   />
 );
 
 const SplashContainer = props => (
   <section className="homeContainer">
-    <div className="homeSplashFade">
+    <div id="homeSplashFade" className="homeSplashFade">
+      <div id="homeSplashFadeBg" className="homeSplashFadeBg" />
       <div className="wrapper homeWrapper">{props.children}</div>
     </div>
   </section>
@@ -73,7 +74,7 @@ const ProjectTitle = props => (
 );
 
 const ProjectDescription = props => (
-  <p className="projectDescription">A React-based JavaScript library for building smart <br className="noMobile" />business applications powered by GoodData</p>
+  <p className="projectDescription">A&nbsp;React-based JavaScript library <br className="noMobile" />for&nbsp;building data-driven applications</p>
 )
 
 const PromoSection = props => (
@@ -93,8 +94,8 @@ class HomeSplash extends React.Component {
           <ProjectTitle />
           <ProjectDescription />
           <PromoSection>
-            <Button href={docUrl('getting_started.html')}>Get Started</Button>
-            <Button href="https://www.gooddata.com" className="button-link">About GoodData</Button>
+            <Button href={docUrl('about_gooddataui.html')}>Get Started</Button>
+            <Button href="https://help.gooddata.com/display/doc/GoodData+Platform+Overview" className="button-link">Develop with GoodData</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -123,7 +124,7 @@ const FeaturesBlock = props => (
       <h2 className="featuresTitle">{props.title}</h2>
       {props.content && <p className="featuresContent">{props.content}</p>}
       {props.linkTitle && <a href={props.linkUrl} className="featuresLink">{props.linkTitle}</a>}
-      {props.children}
+      <div>{props.children}</div>
     </div>
     <div className="featuresExample">
       {props.example}
@@ -184,15 +185,19 @@ onLoadingChanged={function} onError={function}>
 }
 </Execute>`;
 
-const InstallationExample1 =
-`// optional See how to install yarn, or use npm.
-$ yarn global add create-react-app
-$ create-react-app my-first-sba
-
-
-// installation
-$ cd my-first-sba
-$ yarn add @gooddata/react-components`;
+const InstallationExample1 = (
+  <pre className="exampleCode">
+    <code className="hljs highlighting">
+      <span className="hljs-comment">// optional See <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or use <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
+      <span className="hljs-literal">$ yarn</span> global add <span className="hljs-type">create-react-app</span><br/>
+      <span className="hljs-literal">$ create-react-app</span> my-first-sba<br/>
+      <br/>
+      <span className="hljs-comment">// installation</span><br/>
+      <span className="hljs-literal">$ cd</span> my-first-sba<br/>
+      <span className="hljs-literal">$ yarn</span> add <span className="hljs-type">@gooddata/react-components</span>
+    </code>
+  </pre>
+);
 
 const InstallationExample2 = (
   <ol>
@@ -256,7 +261,7 @@ const Features = props => (
           <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" />
         ]}
         linkTitle="View all visual components"
-        linkUrl=""
+        linkUrl={docUrl('start_with_visual_components.html')}
         textPosition="left"
         background="gray"
       />
@@ -272,7 +277,7 @@ const Features = props => (
           <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
         ]}
         linkTitle="View custom visualization tutorial"
-        linkUrl=""
+        linkUrl={docUrl('ht_create_your_first_visualization.html')}
         textPosition="right"
         background="white"
       >
@@ -284,7 +289,7 @@ const Features = props => (
 
     <BackgroundBlock background="gray">
       <FeaturesBlock
-        title="Power of the GoodData platform"
+        title="Powered by the GoodData platform"
         content="Ready-made components for ad hoc data analysis, machine learning recommendations and much more…"
         example={<FeaturesBlockGallery>
           {[{
@@ -298,7 +303,7 @@ const Features = props => (
             image: './img/homepage/embed.png'
           }]}
         </FeaturesBlockGallery>}
-        linkTitle="View the Platform demo"
+        linkTitle="View live examples"
         linkUrl=""
         textPosition="center"
         background="gray"
@@ -331,7 +336,7 @@ const FeatureCallout = props => (
       <div className="productShowcaseInner">
         <FeatureCalloutBlock
           title="Install GoodData.UI"
-          example={<ExampleCode lang="shell" code={InstallationExample1}></ExampleCode>}
+          example={InstallationExample1}
           checked="true"
         />
         <FeatureCalloutBlock
@@ -342,19 +347,22 @@ const FeatureCallout = props => (
           title="Add a visual component"
           example={[
             <ExampleCode lang="html" code={InstallationExample3}></ExampleCode>,
-            <p className="codeNote">See <a href="#">how to get identifiers from the GoodData platform</a>.</p>
+            <p className="codeNote">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers from the GoodData platform</a>.</p>
           ]}
+        />
+        <FeatureCalloutBlock
+          title="Get demo access"
         />
       </div>
     </div>
-    <a href="#" className="productShowcaseLink">Continue creating your first visualization</a>
+    <a href={docUrl('ht_create_your_first_visualization.html')} className="productShowcaseLink">Continue creating your first visualization</a>
   </section>
 );
 
 const GetStarted = props => (
   <section className="getStartedSection">
     <h2>See the GoodData.UI library</h2>
-    <Button href={docUrl('getting_started.html')}>Get Started</Button>
+    <Button href={docUrl('about_gooddataui.html')}>Get Started</Button>
   </section>
 );
 
@@ -370,6 +378,7 @@ class Index extends React.Component {
           <FeatureCallout />
           <GetStarted />
         </div>
+        <script src="js/parallax.js" />
       </div>
     );
   }

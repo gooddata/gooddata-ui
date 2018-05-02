@@ -1,5 +1,5 @@
 .doc.separateOnPageNav .docsNavContainer {
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         flex: 0 0 290px;
         margin-right: 1rem;
     }
@@ -8,7 +8,7 @@
 .docsSliderActive nav.toc .navBreadcrumb,
 .doc.separateOnPageNav .docsNavContainer,
 .navigationSlider .slidingNav ul {
-    @media only screen and (max-width: 735px) {
+    @media #{$medium-down} {
         z-index: 1;
         background: $gray-3;
     }
@@ -20,13 +20,13 @@ nav.toc {
     .toggleNav {
         background: transparent;
 
-        @media only screen and (min-width: 736px) {
+        @media #{$medium-up} {
             padding: 1.25rem;
         }
 
         .navGroup.navGroupActive {
             margin-bottom: 1.25rem;
-            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
+            box-shadow: 0 1px 2px 0 transparentize($gd-color-dark, 0.8);
             background: $gd-color-white;
 
             h3 {
@@ -74,4 +74,8 @@ nav.toc {
             }
         }
     }
+}
+
+.navToggle {
+    //display: none;
 }

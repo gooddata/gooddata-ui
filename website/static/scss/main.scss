@@ -4,15 +4,16 @@ body,
 }
 
 .docMainWrapper.wrapper {
+    flex: 1 0 auto;
     margin: 0 auto;
 
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         padding-left: 0;
     }
 }
 
 .doc.separateOnPageNav.sideNavVisible .navPusher .mainContainer {
-    @media only screen and (min-width: 1024px) {
+    @media #{$large-up} {
         padding-left: 20px;
     }
 }

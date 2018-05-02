@@ -2,7 +2,7 @@
     padding: 4.375rem;
     background-color: $gray-1;
 
-    @media only screen and (max-width: 735px) {
+    @media #{$medium-down} {
         padding-right: 1.25rem;
         padding-left: 1.25rem;
     }
@@ -11,7 +11,7 @@
 .productShowcase {
     position: relative;
 
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,7 +22,7 @@
 .productShowcaseInner {
     display: inline-block;
 
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         margin-left: -430px;
         padding-right: 30px;
         border-right: 1px solid transparentize($gd-color-dark, 0.67);
@@ -37,12 +37,20 @@
             content: '#{$i}.';
         }
     }
+
+    @media #{$medium-down} {
+        margin-top: 1rem;
+
+        label {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+    }
 }
 
 .productShowcaseSwitch {
     display: none;
 
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         &:checked,
         &:hover,
         &:active {
@@ -101,7 +109,7 @@
     padding: 0;
     border: none;
     border-radius: 0;
-    box-shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+    box-shadow: $shadow;
     background-color: $gd-color-white;
 
     .exampleCode {
@@ -109,18 +117,6 @@
         border: none;
         box-shadow: none;
         background-color: transparent;
-    }
-
-    @media only screen and (min-width: 736px) {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        left: 50%;
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 630px;
-        transform: translateY(-50%);
     }
 
     ol {
@@ -141,9 +137,21 @@
         color: $gd-color-state-blank;
         font-size: 0.9rem;
     }
+
+    @media #{$medium-up} {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        left: 50%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 630px;
+        transform: translateY(-50%);
+    }
 }
 
 .productShowcaseLink {
-    display: block;
+    display: inline-block;
     margin: 3rem 0;
 }

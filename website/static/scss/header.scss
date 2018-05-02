@@ -1,12 +1,13 @@
 .fixedHeaderContainer {
     height: 64px;
     padding: 0;
+    box-shadow: $shadow;
     background: $gray-3;
 
     header img,
     .logo {
-        width: 116px;
-        height: 34px;
+        width: 141px;
+        height: 35px;
     }
 
     header {
@@ -15,6 +16,14 @@
 
         > a {
             flex: 0 0 auto;
+
+            &:hover,
+            &:active,
+            &:focus {
+                h3 {
+                    text-decoration: underline;
+                }
+            }
         }
 
         a {
@@ -27,19 +36,19 @@
             }
         }
 
-        h2,
-        h3 {
-            color: $gd-color-text;
-        }
-
         h2 {
-            font-size: 16px;
+            display: none;
         }
 
         h3 {
+            position: absolute;
+            right: 7rem;
+            margin: 0;
+            color: $gd-color-text;
             font-family: $gd-font-primary;
-            font-size: 14px;
-
+            font-weight: lighter;
+            font-size: 1rem;
+            text-decoration: none;
         }
     }
 }
@@ -52,41 +61,68 @@
         ul {
             justify-content: center;
 
-            @media only screen and (max-width: 735px) {
+            @media #{$medium-down} {
                 margin-top: 64px;
-                background-color: rgba(250,250,250,0.9);
+                background-color: transparentize($gray-2, 0.1);
             }
 
-            @media only screen and (min-width: 736px) {
+            @media #{$medium-up} {
                 margin-right: 218px;
             }
         }
 
         ul li {
-            padding-left: 1.4rem;
-            padding-right: 1.4rem;
+            flex: 0 1 auto;
+            padding: 0;
 
-            @media only screen and (min-width: 736px) {
+            @media #{$medium-up} {
                 flex: 0 0 auto;
             }
 
             a {
-                margin: 0;
-                padding-left: 1.4rem;
-                padding-right: 1.4rem;
+                margin: 0 1.4rem;
+                padding: 0 1.4rem;
                 border-bottom: 2px solid transparent;
                 color: transparentize($gd-color-dark, 0.3);
                 font-size: 0.95rem;
                 text-decoration: none;
+                transition: all 0.2s;
 
-                @media only screen and (max-width: 735px) {
+                &:empty {
+                    display: none;
+                }
+
+                &[href*="https://github.com/"] {
+                    position: absolute;
+                    top: 17px;
+                    right: 0;
+                    height: 1.75rem;
+                    margin: 0;
+                    border: 1px solid transparentize($gd-color-dark, 0.5);
+                    border-radius: 100px;
+                    color: $gd-color-dark;
+                    font-size: 0.75rem;
+                    line-height: 1.75rem;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        border-color: $gd-color-dark;
+                    }
+
+                    @media #{$medium-down} {
+                        right: 20px;
+                    }
+                }
+
+                @media #{$medium-down} {
                     height: 1.5rem;
                     padding-top: 0;
                     padding-bottom: 0;
                     line-height: 1.5rem;
                 }
 
-                @media only screen and (min-width: 736px) {
+                @media #{$medium-up} {
                     height: 4rem;
                     line-height: 4rem;
                 }
@@ -104,7 +140,7 @@
         }
     }
 
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         &,
         nav.slidingNav,
         .nav-site {
@@ -121,14 +157,17 @@
 }
 
 .navPusher {
+    display: flex;
+    flex-direction: column;
     padding-top: 88px;
 
-    @media only screen and (min-width: 736px) {
+    @media #{$medium-up} {
         padding-top: 64px;
     }
 }
 
 footer.nav-footer {
+    flex: 0 0 auto;
     padding: 1rem 0;
     box-shadow: none;
     color: $gd-color-text-light;

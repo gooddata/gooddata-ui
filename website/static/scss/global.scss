@@ -10,7 +10,115 @@
 }
 
 .noMobile {
-    @media only screen and (max-width: 735px) {
+    @media #{$medium-down} {
         display: none;
+    }
+}
+
+.wrapper {
+    max-width: 1440px;
+}
+
+blockquote {
+    overflow: hidden;
+    padding: 0 8px 0 10px;
+    border: none;
+    border-radius: 3px;
+    color: $gd-color-warning-text;
+    background: transparentize($gd-color-warning, 0.85);
+
+    a {
+        color: $gd-color-warning-text;
+        text-decoration: underline;
+    }
+
+    p {
+        margin: 4px 0;
+    }
+}
+
+.mainContainer .wrapper blockquote a {
+    text-decoration: underline;
+}
+
+table {
+    border: none;
+    background-color: transparent;
+
+    tr {
+        th,
+        td {
+            padding: 0.3rem;
+            border: none;
+            font-family: $gd-font-primary;
+            font-size: 0.9rem;
+            font-weight: lighter;
+            line-height: 1.3rem;
+
+            code {
+                color: $gd-color-positive;
+            }
+        }
+
+        th {
+            text-transform: none;
+        }
+    }
+
+    thead {
+        border: none;
+
+        tr {
+            &:nth-of-type(odd) {
+                background-color: transparent;
+            }
+
+            th {
+                color: $gd-color-state-blank;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-of-type(odd) {
+                background-color: transparentize($border-color, 0.6);
+            }
+        }
+    }
+}
+
+.versionsContainer {
+    .post {
+        padding-right: 20px;
+        padding-left: 20px;
+
+        h2 {
+            margin-top: 1rem;
+        }
+
+        table {
+            min-width: 500px;
+
+            tbody {
+                th {
+                    width: 150px;
+                }
+            }
+
+            @media #{$medium-up} {
+                min-width: 500px;
+            }
+
+            @media #{$medium-down} {
+                width: 100%;
+            }
+        }
+    }
+
+    @media #{$large-up} {
+        margin-right: 260px;
+        margin-left: 326px;
     }
 }

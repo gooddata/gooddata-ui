@@ -24,13 +24,13 @@ const siteConfig = {
   headerLinks: [
     {doc: 'about_gooddataui', label: 'Docs'},
     {doc: 'support_options', label: 'Support'},
-    {search: true},
+    {href: 'https://github.com/gooddata/gooddata-react-components/', label: 'GitHub', external: true}
   ],
   onPageNav: 'separate',
   users,
   /* path to images for header/footer */
-  headerIcon: 'img/gooddata_white.svg',
-  footerIcon: 'img/gooddata_white.svg',
+  headerIcon: 'img/gooddata.svg',
+  footerIcon: 'img/gooddata.svg',
   favicon: 'img/favicon.ico',
   /* colors for website */
   colors: {

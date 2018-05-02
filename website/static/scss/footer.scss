@@ -1,3 +1,16 @@
-footer .sitemap {
-    display: none;
+footer {
+    .copyright {
+        color: transparentize($gd-color-text-light, 0.2);
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $gd-color-text-light;
+            }
+        }
+    }
 }

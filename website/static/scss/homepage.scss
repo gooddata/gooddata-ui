@@ -1,12 +1,18 @@
+$homesplashBgOverflow: 15%;
+
 .homeSplashFade {
     position: relative;
-    padding-bottom: 369px;
-    box-shadow: inset 0 0 13px 0 rgba(0,0,0,0.07);
+    overflow: hidden;
+    padding-bottom: 0;
+    box-shadow: inset 0 0 13px 0 transparentize($gd-color-dark, 0.93);
     color: $gd-color-white;
     background-image:
-        linear-gradient(-180deg, rgba(20,178,226,0.00) 0%, rgba(0,193,141,0.79) 100%),
-        url('../img/homepage/splash-banner.jpg');
-    background-size: cover;
+        linear-gradient(
+            -180deg,
+            transparentize($gd-color-highlight, 1) 0%,
+            transparentize($gd-color-positive, 0.21) 100%
+        );
+    background-position: center;
 
     &::after {
         content: '';
@@ -23,6 +29,20 @@
                 transparentize($gd-color-dark, 0.48) 77%,
                 $gd-color-dark 100%
             );
+    }
+
+    .homeSplashFadeBg {
+        position: absolute;
+        top: -$homesplashBgOverflow;
+        right: 0;
+        bottom: -$homesplashBgOverflow;
+        left: 0;
+        background-image: url('../img/homepage/splash-banner.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        transform: translate3d(0, -$homesplashBgOverflow, 0);
+        transition: transform 1ms;
     }
 }
 
@@ -75,7 +95,8 @@
     }
 
     .homeWrapper {
-        position: static;
+        position: relative;
+        padding-bottom: 369px;
     }
 }
 
@@ -112,7 +133,7 @@
 }
 
 .getStartedSection {
-    padding: 5rem 0 6.7rem;
+    padding: 5rem 1.25rem 6.7rem;
     box-shadow: inset 0 1px 2px 0 transparentize($gd-color-dark, 0.7);
     background-image: linear-gradient(-130deg, $gd-color-highlight 0%, $gd-color-positive 100%);
 
@@ -127,5 +148,10 @@
 
 .backgroundBlock-gray {
     background-color: $gray-2;
-    background-image: linear-gradient(-180deg, rgba(148,161,174,0.00) 0%, rgba(89,98,107,0.11) 100%);
+    background-image:
+        linear-gradient(
+            -180deg,
+            transparentize($gd-color-state-blank, 1) calc(100% - 100px),
+            transparentize(#59626b, 0.89) 100%
+        );
 }

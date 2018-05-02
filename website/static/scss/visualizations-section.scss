@@ -19,7 +19,7 @@ $visualizationsPerLineMobile: 3;
     width: percentage(1 / $visualizationsPerLine);
     text-align: center;
 
-    @media only screen and (max-width: 735px) {
+    @media #{$medium-down} {
         width: percentage(1 / $visualizationsPerLineMobile);
     }
 }

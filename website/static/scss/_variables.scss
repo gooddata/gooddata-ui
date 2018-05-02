@@ -35,3 +35,18 @@ $gray-1: #f0f0f0;
 $gray-2: #fafafa;
 $gray-3: #fdfdfd;
 $gray-4: #404040;
+
+$shadow: 0 1px 3px 0 transparentize($gd-color-dark, 0.8);
+
+$breakpoint-small: 360px;
+$breakpoint-medium: 735px;
+$breakpoint-large: 1024px;
+
+$small-down: 'only screen and (max-width: ' + $breakpoint-small + ')';
+$small-only: 'only screen and (max-width: ' + $breakpoint-small + ')';
+$small-up: 'only screen and (min-width: ' + ($breakpoint-small + 1) + ')';
+$medium-down: 'only screen and (max-width: ' + $breakpoint-medium + ')';
+$medium-only: 'only screen and (min-width:' + ($breakpoint-small + 1) + ') and (max-width: ' + $medium-down + ')';
+$medium-up: 'only screen and (min-width: ' + ($breakpoint-medium + 1) + ')';
+$large-down: 'only screen and (max-width: ' + $breakpoint-large + ')';
+$large-up: 'only screen and (min-width: ' + ($breakpoint-large + 1) + ')';
