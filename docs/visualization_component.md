@@ -7,7 +7,7 @@ id: visualization_component
 
 Visualization is a generic component that renders a chart according to the provided URI or identifier. It can render a table or any type of chart.
 
-### Structure
+## Structure
 
 ```javascript
 import '@gooddata/react-components/styles/css/main.css';
@@ -35,7 +35,7 @@ import { Visualization } from '@gooddata/react-components';
 </div>
 ```
 
-### Example
+## Example
 
 <!-- This example uses data from the GoodSales // TODO REMOVE! demo project. For testing purposes, you can use this snippet as is. -->
 
@@ -58,7 +58,7 @@ import { Visualization } from '@gooddata/react-components';
 </div>
 ```
 
-### Properties
+## Properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |

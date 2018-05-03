@@ -1,13 +1,12 @@
 ---
 id: ht_use_react_components_with_vanilla_js
-title: GoodData.UI and Vanilla JavaScript
-sidebar_label: GoodData.UI and Vanilla JavaScript
+title: Use Vanilla JavaScript
+sidebar_label: Use Vanilla JavaScript
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
 You can build a custom bundle, include it using the `<script src=...>` HTML tag, and use it without the React framework - for example, with Vanilla JavaScript, jQuery, or other JavaScript frameworks that use direct DOM manipulation.
 
-**Contents:**
 
 * Using [webpack](https://webpack.js.org/) to transpile and bundle the files provided by the GoodData UI SDK into a single minified file that can be included by the `<script src=...>` HTML tag
 * Creating Vanilla JavaScript helper functions for attaching and detaching React components to/from DOM nodes
@@ -108,7 +107,7 @@ yarn dist
 
 These commands create the `dist` folder with the JavaScript bundle named `gooddata_react_components_bundle.js` and the CSS style sheet named `gooddata_react_components_bundle.css`.
 
-## Step 3. Use the bundle.
+## Step 3. Use the bundle
 Make the `gooddata_react_components_bundle.js` and `gooddata_react_components_bundle.css` files accessible from the Internet so they can be referenced from your HTML code using the usual HTML elements, for example:
 
 ```javascript

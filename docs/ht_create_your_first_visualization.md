@@ -8,13 +8,13 @@ id: ht_create_your_first_visualization
 This tutorial will guide you through the process of creating your first smart application using GoodData.UI with the Facebook’s `create-react-app` tool.
 
 **Contents**
-* [Step 1 - Get create-react-app](#step-1---get-create-react-app)
-* [Step 2 - Create your React application](#step-2---create-your-react-application)
-* [Step 3 - Add GoodData SDK dependencies](#step-3---add-gooddata-sdk-dependencies)
-* [Step 4 - Start the development server](#step-4---start-the-development-server)
-* [Step 5 - Establish a session](#step-5---establish-a-session)
-* [Step 6 - Add GoodData components](#step-6---add-gooddata-components)
-* [Step 7 - Keep your code clean](#step-7---keep-your-code-clean)
+* [Step 1 - Get create-react-app](#step-1-get-create-react-app)
+* [Step 2 - Create your React application](#step-2-create-your-react-application)
+* [Step 3 - Add GoodData SDK dependencies](#step-3-add-gooddata-sdk-dependencies)
+* [Step 4 - Start the development server](#step-4-start-the-development-server)
+* [Step 5 - Establish a session](#step-5-establish-a-session)
+* [Step 6 - Add GoodData components](#step-6-add-gooddata-components)
+* [Step 7 - Keep your code clean](#step-7-keep-your-code-clean)
 * [Next steps](#next-steps)
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.

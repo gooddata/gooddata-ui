@@ -13,7 +13,7 @@ DataLayer obtains data from your project either using AFM+ResultSpec or Visualiz
 
 ![Data layer](assets/data_layer_diagram.png)
 
-## How to Use DataLayer
+## How to use DataLayer
 
 In the following code sample, replace the parameter placeholders with your values, and then execute the code.
 

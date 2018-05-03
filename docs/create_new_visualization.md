@@ -1,11 +1,11 @@
 ---
-title: Create new Visualization 
-sidebar_label: Create new visualization
+title: Create New Visualization 
+sidebar_label: Create New Visualization
 copyright: (C) 2007-2018 GoodData Corporation
 id: create_new_visualization
 ---
 
-With GoodData.UI, you can create your new visual components to address your specific analytical needs.
+With GoodData.UI, you can create your new visual components to address your specific analytics needs.
 
 Your component code must be wrapped within the Execute component.
 

@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: start_with_visual_components
 ---
 
-GoodData.UI comes with ready-made visual components listed in the Visual Components section that you can use as-is or further customize. You can also use the unique visualization componen that simply renders any chart you create on the GoodData platform.
+GoodData.UI comes with ready-made visual components listed in the Visual Components section that you can use as-is or further customize. You can also use the unique visualization component that simply renders any chart you create on the GoodData platform.
 
 This article provides components examples and basic usage information to get you going. 
 
@@ -27,10 +27,6 @@ The element in which you are inserting a React component must have the height an
     <Visualization ... />
 </div>
 ```
-
-## Server-side rendering
-
-Server-side rendering is _not_ supported.
 
 ## Object URI vs. object identifier
 

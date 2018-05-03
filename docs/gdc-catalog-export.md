@@ -30,7 +30,7 @@ yarn global add gdc-catalog-export
 **npm**
 
 ```bash
-$ npminstall -g gdc-catalog-export
+$ npm install -g gdc-catalog-export
 ```
 
 The `gdc-catalog-export` source code is written in JavaScript, compatible with ES7 version. You do not need any bundler such as webpack to build these files. Babel transpiler is enough.

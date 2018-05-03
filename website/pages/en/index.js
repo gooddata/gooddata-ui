@@ -74,7 +74,7 @@ const ProjectTitle = props => (
 );
 
 const ProjectDescription = props => (
-  <p className="projectDescription">A&nbsp;React-based JavaScript library <br className="noMobile" />for&nbsp;building data-driven applications</p>
+  <p className="projectDescription">Powerfull JavaScript library <br className="noMobile" />for&nbsp;building analytics applications</p>
 )
 
 const PromoSection = props => (
@@ -260,7 +260,7 @@ const Features = props => (
           <ExampleCode lang="html" code={CodeExample1}></ExampleCode>,
           <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" />
         ]}
-        linkTitle="View all visual components"
+        linkTitle="View visual components"
         linkUrl={docUrl('start_with_visual_components.html')}
         textPosition="left"
         background="gray"
@@ -271,7 +271,7 @@ const Features = props => (
     <BackgroundBlock background="white">
       <FeaturesBlock
         title="Create custom visualizations"
-        content="Use the GoodData React data provider component to wrap any visualization, from libraries like D3.js, Highcharts or Chart.js, to completely custom code."
+        content="Use the GoodData React data provider component to wrap any visualization, from libraries such as D3.js, Highcharts or Chart.js, up to your own custom code."
         example={[
           <ExampleCode lang="html" code={CodeExample2}></ExampleCode>,
           <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
@@ -303,7 +303,7 @@ const Features = props => (
             image: './img/homepage/embed.png'
           }]}
         </FeaturesBlockGallery>}
-        linkTitle="View live examples"
+        linkTitle="Get your access now"
         linkUrl=""
         textPosition="center"
         background="gray"
@@ -331,7 +331,7 @@ const FeatureCalloutBlock = props => (
 
 const FeatureCallout = props => (
   <section className="productShowcaseSection">
-    <h2>Start Right Now</h2>
+    <h2>Code your first app</h2>
     <div className="productShowcase wrapper">
       <div className="productShowcaseInner">
         <FeatureCalloutBlock
@@ -349,9 +349,6 @@ const FeatureCallout = props => (
             <ExampleCode lang="html" code={InstallationExample3}></ExampleCode>,
             <p className="codeNote">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers from the GoodData platform</a>.</p>
           ]}
-        />
-        <FeatureCalloutBlock
-          title="Get demo access"
         />
       </div>
     </div>

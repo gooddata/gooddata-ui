@@ -16,6 +16,7 @@ Use the examples to do any of the following:
 * Create a custom legend
 * Add an attribute filter
 
+
 ## GoodData platform account
 
-To try out the examples in a project, you must have an account on the GoodData platform. If you do not have a GoodData account, contact a person in your company who administers GoodData projects or your GoodData Account Manager.
+To try out the examples in a project, you must have an account on the GoodData platform. If you do not have an account and want to try GoodData.UI, use [live examples]().

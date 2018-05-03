@@ -1,6 +1,6 @@
 ---
-title: GoodData.UI and Angular 1.x
-sidebar_label: GoodData.UI and Angular 1.x
+title: Use Angular 1.x
+sidebar_label: Use Angular 1.x
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_1.x
 ---
