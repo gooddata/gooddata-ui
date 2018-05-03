@@ -1,6 +1,6 @@
 ---
-title: DataLayer
-sidebar_label: DataLayer
+title: Access Low Level API (DataLayer)
+sidebar_label: Access Low Level API
 copyright: (C) 2007-2018 GoodData Corporation
 id: data_layer
 ---
