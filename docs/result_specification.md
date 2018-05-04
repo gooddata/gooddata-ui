@@ -7,10 +7,6 @@ id: result_specification
 
 `ResultSpec` is an object that defines the requested structure of result data. You can define dimensions and sorting.
 
-**Contents**
-* [Dimensions](#dimensions)
-* [Sorting](#sorting)
-* [Examples](#examples)
 
 ## Dimensions
 

@@ -5,9 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: examples
 ---
 
-Review the examples available at [GoodData React examples](https://github.com/gooddata/gooddata-react-components/tree/master/examples) to see what you can build using the GoodData.UI.
-
-The examples contain live demos and code snippets that you can reuse in your project.
+See [live examples](https://gooddata-examples.herokuapp.com/) of GoodData.UI. These examples contain also code snippets that you can reuse in your project.
 
 Use the examples to do any of the following:
 * Create a visualization and a KPI

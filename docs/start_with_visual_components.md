@@ -9,16 +9,9 @@ GoodData.UI comes with ready-made visual components listed in the Visual Compone
 
 This article provides components examples and basic usage information to get you going. 
 
-**Contents:**
+## Responsive UI
 
-* [Element height and width](#element-height-and-width)
-* [Server-side rendering](#server-side-rendering)
-* [Object URI vs. object identifier](#object-uri-vs-object-identifier)
-* [Visualization lifecycle](#visualization-lifecycle)
-
-## Element height and width
-
-The element in which you are inserting a React component must have the height and width set up. Otherwise, the visualization will not work correctly.
+Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour also implicates that in case you want a visualization with specific `height` and `width`, you have to specifiy them in the wrapper element. Otherwise, the visualization will not work correctly.
 
 ### Example
 

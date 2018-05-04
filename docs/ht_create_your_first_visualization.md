@@ -7,16 +7,6 @@ id: ht_create_your_first_visualization
 
 This tutorial will guide you through the process of creating your first smart application using GoodData.UI with the Facebook’s `create-react-app` tool.
 
-**Contents**
-* [Step 1 - Get create-react-app](#step-1-get-create-react-app)
-* [Step 2 - Create your React application](#step-2-create-your-react-application)
-* [Step 3 - Add GoodData SDK dependencies](#step-3-add-gooddata-sdk-dependencies)
-* [Step 4 - Start the development server](#step-4-start-the-development-server)
-* [Step 5 - Establish a session](#step-5-establish-a-session)
-* [Step 6 - Add GoodData components](#step-6-add-gooddata-components)
-* [Step 7 - Keep your code clean](#step-7-keep-your-code-clean)
-* [Next steps](#next-steps)
-
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 
 ## Step 1 - Get create-react-app
@@ -214,11 +204,6 @@ Notice that the code in the `App.js` file still includes the hardcoded referen
 
 Here are some suggestions about what you can do after you created your first visualization:
 
-* Add more different elements: tables, charts, custom visualizations. For more information, see [React Components](react_components.md).
-* [Customize a visualization](ht_customize_visualization.md).
-* [Embed a visualization](ht_embed_visualization.md).
-* [DrillableItem](drillable_item.md).
-* Use your GoodData domain with CORS settings so you do not need to use a local proxy \(this is what you will have to do for the production deployment even if you prefer to use a proxy for local development\). For more information, see [How to Access the GoodData API Directly](ht_access_gd_api_directly.md).
+* Add more different elements: tables, charts, custom visualizations. For more information, see [how to use visual components](start_with_visual_components.md).
+* [Enable drilling](drillable_item.md).
 * Authenticate your users [using Single Sign-on (SSO)](sso.md) rather than sending them to a proxied GoodData login page.
-* Create a visualization in a [custom React application](ht_build_visualization_custom_react.md).
-* Create a visualization in [Angular 1.x](ht_use_react_components_in_angular_1.x.md) or [Angular 2+](ht_use_react_components_in_angular_2.x.md).

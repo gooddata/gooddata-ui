@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_2.x
 ---
 
-To be able to use the GoodData [React components](react_components.md) in your Angular 2+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside.
+To be able to use the GoodData.UI Visual Components in your Angular 2+ environment, wrap each component into an Angular component, and then render the React component using `ReactDom.render` inside.
 
 ## 1. Install dependencies
 <!-- 

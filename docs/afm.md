@@ -5,16 +5,8 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: afm
 ---
 
-**AFM** \(Attribute - Filter - Measure\) is a unified input for the [GoodData DataLayer](data_layer.md).
 
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
-
-**Contents**
-* [Structure](#structure)
-* [Attribute](#attribute)
-* [Filter](#filter)
-* [Measure](#measure)
-* [Native total](#native-total)
 
 
 ## Structure
@@ -339,9 +331,9 @@ Each measure can specify `aggregation` of data. Aggregation is represented by a 
 
 Each measure can be filtered by attribute filters. Filters are represented by an array of `FilterItem` objects. Measure attribute filters use the same `FilterItem` interface as [AFM global filters](afm.md).
 
-Only one filter of the [`DateFilter`](afm.md#date-filter) type is allowed in the measure's filter definition.
+Only one filter of the `DateFilter` type is allowed in the measure's filter definition.
 
-When both the measure filter of the [`DateFilter`](afm.md#date-filter) type and the AFM global filter of the [`DateFilter`](afm.md#date-filter)type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
+When both the measure filter of the `DateFilter` type and the AFM global filter of the `DateFilter` type are set, the measure date filter overrides the AFM global date filter for this measure \(global date filters are still applied to other measures that do not have a measure date filter defined\).
 
 ### Show measure as a percentage
 

@@ -40,8 +40,6 @@ If you know the exact name of your GoodData domain, provide it too.  Requesting 
 
 You can bypass this CORS restriction in this case because making a cross-origin request from a trusted application is safe. To bypass, set up a local proxy. The proxy will make the GoodData API accessible under the same hostname and port as your web application, that is, [https://localhost:3000/gdc/](https://localhost:3000/gdc/).
 
-Using a proxy is a quick solution that allows you to immediately start using GoodData.UI. For a proper, production-ready, solution, see [How to Access the GoodData API Directly](ht_access_gd_api_directly.md) and set up access to the GoodData API.
-
 To set up a proxy, add the following section to the root level of your `package.json` \(this works with any application started using `react-scripts start`\):
 
 ```javascript

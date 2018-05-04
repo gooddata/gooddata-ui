@@ -13,11 +13,6 @@ Using this list, you can create AFMs with human-readable object names instead of
 
 If you [uploaded data to your project from a file](https://help.gooddata.com/display/doc/Add+Data+from+a+File+to+a+Project), the data from the file is added as a separate dataset \(non-production data\), and `gdc-catalog-export` cannot retrieve it. This also includes any measures that were created using the data from that separate dataset.
 
-**Contents**
-* [Installing gdc-catalog-export](#installing-gdc-catalog-export)
-* [Using gdc-catalog-export](#using-gdc-catalog-export)
-* [CatalogHelper utility](#cataloghelper-utility)
-
 ## Installing gdc-catalog-export
 
 To install the stable version, run one of the following commands **depending on your package manager**:
@@ -103,7 +98,7 @@ $ gdc-catalog-export--config/path/to/customConfig
 You can use command line parameters to set up the configuration that you need to obtain data.
 
 ```bash
-$ gdc-catalog-export--project-id<project-id> --username <your-email> --password <your-password> --output <file-name-path> --hostname<host-url> --config </path/to/customConfig>
+$ gdc-catalog-export --project-id<project-id> --username <your-email> --password <your-password> --output <file-name-path> --hostname<host-url> --config </path/to/customConfig>
 ```
 
 Any parameter provided as a command line parameter has the highest priority. If you also use a config file to set up a configuration, the config file parameters are overridden and the command line parameters are used.
@@ -111,7 +106,7 @@ Any parameter provided as a command line parameter has the highest priority. If 
 To see all the available parameters, run the following command:
 
 ```bash
-$ gdc-catalog-export-h
+$ gdc-catalog-export -h
 ```
 
 The command returns the list of the available parameters:

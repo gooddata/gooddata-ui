@@ -9,12 +9,6 @@ Execute component allows you to execute input data and send it to the function t
 
 You specify the input data by using the component parameters. Then, the execution result is sent to the function that you specify as a child in the Execution component.
 
-**Contents**
-* [Parameters](#parameters)
-* [Example](#example)
-* [Execution result](#execution-result)
-* [Complex use case example](#complex-use-case-example)
-
 ## Parameters
 
 | Name | Required? | Type |
@@ -53,7 +47,7 @@ import { Execute, isEmptyResult } from '@gooddata/react-components';
 
 ## Execution result
 
-Execution result is a data structure that is returned from the GET command on the execution request URL \(see [Execution REST API and Results](execution_rest_api_and_results.md)\).
+Execution result is a data structure that is returned from the GET command on the execution request URL.
 
 ### Structure
 
