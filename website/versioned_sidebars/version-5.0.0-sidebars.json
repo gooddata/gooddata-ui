@@ -1,0 +1,54 @@
+{
+  "version-5.0.0-Docs": {
+    "Getting Started": [
+      "version-5.0.0-about_gooddataui",
+      "version-5.0.0-platform_intro",
+      "version-5.0.0-installation",
+      "version-5.0.0-examples",
+      "version-5.0.0-ht_create_your_first_visualization"
+    ],
+    "Visual Components": [
+      "version-5.0.0-start_with_visual_components",
+      "version-5.0.0-area_chart_component",
+      "version-5.0.0-bar_chart_component",
+      "version-5.0.0-column_chart_component",
+      "version-5.0.0-headline_component",
+      "version-5.0.0-kpi_component",
+      "version-5.0.0-line_chart_component",
+      "version-5.0.0-pie_chart_component",
+      "version-5.0.0-table_component",
+      "version-5.0.0-visualization_component"
+    ],
+    "Properties": [
+      "version-5.0.0-chart_config",
+      "version-5.0.0-drillable_item",
+      "version-5.0.0-error_component",
+      "version-5.0.0-loading_component",
+      "version-5.0.0-on_legend_ready"
+    ],
+    "Custom Visualizations": [
+      "version-5.0.0-create_new_visualization",
+      "version-5.0.0-afm",
+      "version-5.0.0-result_specification",
+      "version-5.0.0-table_totals_in_execution_object",
+      "version-5.0.0-execute_component"
+    ],
+    "Development Tips": [
+      "version-5.0.0-gdc_catalog_export",
+      "version-5.0.0-sso",
+      "version-5.0.0-cors",
+      "version-5.0.0-data_layer",
+      "version-5.0.0-ht_render_visualization_from_different_domain",
+      "version-5.0.0-ht_use_react_components_with_vanilla_js",
+      "version-5.0.0-ht_use_react_component_in_angular_1.x",
+      "version-5.0.0-ht_use_react_component_in_angular_2.x"
+    ]
+  },
+  "version-5.0.0-Support": {
+    "Support": [
+      "version-5.0.0-support_options",
+      "version-5.0.0-trouble_shooting",
+      "version-5.0.0-glossary"
+    ]
+  }
+}
