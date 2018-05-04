@@ -1,6 +1,6 @@
 ---
-title: Get Identifiers From the Platform
-sidebar_label: Get Identifiers From the Platform
+title: Get Identifiers from the Platform
+sidebar_label: Get Identifiers from the Platform
 copyright: (C) 2007-2018 GoodData Corporation
 id: gdc_catalog_export
 ---
