@@ -303,8 +303,8 @@ const Features = props => (
             image: './img/homepage/embed.png'
           }]}
         </FeaturesBlockGallery>}
-        linkTitle="Get your access now"
-        linkUrl=""
+        linkTitle="View live examples"
+        linkUrl="https://gooddata-examples.herokuapp.com/"
         textPosition="center"
         background="gray"
       />

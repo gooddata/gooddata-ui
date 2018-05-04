@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: ht_create_your_first_visualization
 ---
 
-This tutorial will guide you through the process of creating your first smart application using GoodData.UI with the Facebook’s `create-react-app` tool.
+This tutorial will guide you through the process of creating your first analytics application using GoodData.UI with the Facebook’s `create-react-app` tool.
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 

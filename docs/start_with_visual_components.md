@@ -1,6 +1,6 @@
 ---
-title: How to Use Visual Components
-sidebar_label: How to Use Visual Components
+title: Start with Visual Components
+sidebar_label: Start with Visual Components
 copyright: (C) 2007-2018 GoodData Corporation
 id: start_with_visual_components
 ---
