@@ -1,6 +1,6 @@
 ---
-title: Create New Visualization
-sidebar_label: Create New Visualization
+title: Create Custom Visualization
+sidebar_label: Create Custom Visualization
 copyright: (C) 2007-2018 GoodData Corporation
 id: version-5.0.0-create_new_visualization
 original_id: create_new_visualization

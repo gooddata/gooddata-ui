@@ -74,7 +74,7 @@ const ProjectTitle = props => (
 );
 
 const ProjectDescription = props => (
-  <p className="projectDescription">Powerfull JavaScript library <br className="noMobile" />for&nbsp;building analytics applications</p>
+  <p className="projectDescription">Powerful JavaScript library <br className="noMobile" />for&nbsp;building analytics applications</p>
 )
 
 const PromoSection = props => (
@@ -277,7 +277,7 @@ const Features = props => (
           <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
         ]}
         linkTitle="View custom visualization tutorial"
-        linkUrl={docUrl('ht_create_your_first_visualization.html')}
+        linkUrl={docUrl('create_new_visualization.html.html')}
         textPosition="right"
         background="white"
       >

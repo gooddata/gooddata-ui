@@ -9,13 +9,8 @@ original_id: examples
 See [live examples](https://gooddata-examples.herokuapp.com/) of GoodData.UI. These examples contain also code snippets that you can reuse in your project.
 
 Use the examples to do any of the following:
-* Create a visualization and a KPI
-* Create a responsive chart
-* Add a date picker
-* Create a custom legend
-* Add an attribute filter
-
-
-## GoodData platform account
-
-To try out the examples in a project, you must have an account on the GoodData platform. If you do not have an account and want to try GoodData.UI, use [live examples]().
+* Create a visualization and a KPI.
+* Create a responsive chart.
+* Add a date picker.
+* Create a custom legend.
+* Add an attribute filter.

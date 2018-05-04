@@ -1,5 +1,5 @@
 ---
-title: Create Your First Visualization with GoodData.UI
+title: Create Your First Visualization
 sidebar_label: Create Your First Visualization
 copyright: (C) 2007-2018 GoodData Corporation
 id: ht_create_your_first_visualization
