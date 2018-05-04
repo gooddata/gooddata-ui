@@ -29,7 +29,7 @@ This command installs the `create-react-app` tool that will help you create a fu
 
 2. Change your current working directory to `my-first-sba` (for example, by running `cd my-first-sba` on Mac or Linux).
 
-3. **GoodData UI SDK requires React 15.6.2**. However, the current version of `create-react-app` installs React 16. Downgrade your version of React to 15.6.2 by running the following command:
+3. **GoodData.UI requires React 15.6.2**. However, the current version of `create-react-app` installs React 16. Downgrade your version of React to 15.6.2 by running the following command:
     ```bash
     yarn install
     yarn upgrade react@15.6.2 react-dom@15.6.2
@@ -130,7 +130,7 @@ Notice the KPI number that you have added.
 
 
 ## Step 7 - Keep your code clean
-The GoodData UI SDK provides a tool named [gdc-catalog-export](gdc-catalog-export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
+GoodData.UI provides a tool named [gdc-catalog-export](gdc-catalog-export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
 
 For example, see the following component used in this tutorial:
 

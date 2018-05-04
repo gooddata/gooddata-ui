@@ -7,7 +7,7 @@ id: trouble_shooting
 
 ## A table is broken or not rendered properly. The legend is missing colors.
 
-Include CSS files in your application. For more information, see [How to Create Your First Visualization with GoodData UI SDK](ht_create_your_first_visualization.md), Step 7.
+Include CSS files in your application. For more information, see [How to Create Your First Visualization](ht_create_your_first_visualization.md), Step 7.
 
 ## A chart legend is broken or positioned incorrectly. 
 

@@ -12,7 +12,7 @@ To develop your own analytics application, you must add an authentication cookie
     If you need public access, you may use proxy method below. 
     GoodData Platform doesn't support public access, but there is 
     a possibility to supply access token via URI. 
-    (But it is not supported by UI SDK.)  
+    (But it is not supported by GoodData.UI.)  
  -->
 
 ## Use GoodData platform users - no SSO required

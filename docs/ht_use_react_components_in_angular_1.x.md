@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: ht_use_react_component_in_angular_1.x
 ---
 
-You can use the GoodData [React components](react_components.md) in your Angular 1._x_app_. There are several ways how to use the React component. Here is how you do that with [ngReact](http://ngreact.github.io/ngReact/):
+You can use the GoodData.UI Visual Components in your Angular 1._x_app_. There are several ways how to use the React component. Here is how you do that with [ngReact](http://ngreact.github.io/ngReact/):
 
 1. Add `angular`, `react`, `react-dom`, `ngReact`, and `@gooddata/react-components` dependencies into your project:
 

@@ -34,9 +34,9 @@ The `gdc-catalog-export` source code is written in JavaScript, compatible with E
 
 You can use `gdc-catalog-export`:
 
-* In the interactive mode
-* By specifying a config file
-* By running it with command line options
+* In the interactive mode.
+* By specifying a config file.
+* By running it with command line options.
 
 The tool respects following hierarchy:
 

@@ -18,8 +18,8 @@ You have to prevent CORS restriction before you can develop or deploy your appli
 
 To request a CORS setup, submit your request via the [GoodData Support Portal](https://support.gooddata.com/hc/en-us). In your request, provide the following:
 
-* The name of your GoodData domain
-* URLs the you want to enable
+* The name of your GoodData domain.
+* URLs you want to enable.
 
 ### Example
 

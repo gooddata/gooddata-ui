@@ -9,9 +9,9 @@ original_id: ht_use_react_components_with_vanilla_js
 You can build a custom bundle, include it using the `<script src=...>` HTML tag, and use it without the React framework - for example, with Vanilla JavaScript, jQuery, or other JavaScript frameworks that use direct DOM manipulation.
 
 
-* Using [webpack](https://webpack.js.org/) to transpile and bundle the files provided by the GoodData UI SDK into a single minified file that can be included by the `<script src=...>` HTML tag
+* Using [webpack](https://webpack.js.org/) to transpile and bundle the files provided by GoodData.UI into a single minified file that can be included by the `<script src=...>` HTML tag
 * Creating Vanilla JavaScript helper functions for attaching and detaching React components to/from DOM nodes
-* Copying the CSS style sheet from the GoodData UI SDK and including it in your HTML page using the `<link src=...>` HTML tag
+* Copying the CSS style sheet from GoodData.UI and including it in your HTML page using the `<link src=...>` HTML tag
 
 This tutorial focuses only on integrating GoodData.UI with Vanilla JavaScript and covers the following functional areas:
 
@@ -47,8 +47,8 @@ The `package.json` npm descriptor [https://github.com/gooddata/ui-sdk-examples/b
 
 The entry point JavaScript file ([vanilla.js](https://github.com/gooddata/ui-sdk-examples/blob/vanillajs/vanillajs/create-bundle/vanilla.js)) does the following:
 
-* Imports `react` and `@gooddata/react-components`
-* Exports an object wrapping of the GoodData.UI React components, helper functions for attaching and detaching React components to/from DOM nodes, and other elements of the GoodData UI SDK
+* Imports `react` and `@gooddata/react-components`.
+* Exports an object wrapping of the GoodData.UI React components, helper functions for attaching and detaching React components to/from DOM nodes, and other elements of GoodData.UI.
 
 For more information about the helper functions, see the blogpost by Benjamin Winterberg at [http://winterbe.com/posts/2015/08/24/integrate-reactjs-into-jquery-webapps/](http://winterbe.com/posts/2015/08/24/integrate-reactjs-into-jquery-webapps/).
 
