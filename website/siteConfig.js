@@ -19,7 +19,7 @@ const siteConfig = {
   title: 'GoodData.UI' /* title for your website */,
   tagline: 'Welcome to',
   url: 'https://gooddata.github.io' /* your website url */,
-  baseUrl: '/gdc-ui-sdk-doc/' /* base url for your project */,
+  baseUrl: '/gooddata-ui/' /* base url for your project */,
   projectName: 'GoodData UI SDK',
   headerLinks: [
     {doc: 'about_gooddataui', label: 'Docs'},
