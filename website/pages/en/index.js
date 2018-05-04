@@ -304,7 +304,7 @@ const Features = props => (
           }]}
         </FeaturesBlockGallery>}
         linkTitle="Get your access now"
-        linkUrl=""
+        linkUrl="https://gooddata-examples.herokuapp.com/"
         textPosition="center"
         background="gray"
       />
