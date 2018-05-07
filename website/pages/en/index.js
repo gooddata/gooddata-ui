@@ -74,7 +74,7 @@ const ProjectTitle = props => (
 );
 
 const ProjectDescription = props => (
-  <p className="projectDescription">Powerful JavaScript library <br className="noMobile" />for&nbsp;building analytics applications</p>
+  <p className="projectDescription">Powerful JavaScript library <br className="noMobile" />for&nbsp;building analytical applications</p>
 )
 
 const PromoSection = props => (

@@ -5,7 +5,7 @@ sidebar_label: About GoodData.UI
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-GoodData.UI is a React-based JavaScript library for building responsive analytics applications.
+GoodData.UI is a React-based JavaScript library for building responsive analytical applications.
 
 With GoodData.UI, you can:
 * Display insights or existing visualizations from the GoodData platform using [visual components](start_with_visual_components.md).

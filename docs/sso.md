@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: sso
 ---
 
-To develop your own analytics application, you must add an authentication cookie to all requests coming to the GoodData platform.
+To develop your own analytical application, you must add an authentication cookie to all requests coming to the GoodData platform.
 
 <!-- INTERNAL GDC NOTE:
     If you need public access, you may use proxy method below. 
