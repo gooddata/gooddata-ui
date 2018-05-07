@@ -15,7 +15,10 @@
     }
 }
 
-.wrapper {
+.wrapper,
+.separateOnPageNav.doc .wrapper,
+.separateOnPageNav .headerWrapper.wrapper {
+    width: 100%;
     max-width: 1440px;
 }
 

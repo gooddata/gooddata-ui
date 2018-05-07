@@ -47,6 +47,10 @@
 
 .featuresText {
     text-align: left;
+
+    .buttonWrapper {
+        display: inline-block;
+    }
 }
 
 .featuresLink {
@@ -137,7 +141,7 @@
 
 .charting-lib-logo {
     display: inline-block;
-    margin: 0.5rem 2.5rem 0.5rem 0;
+    margin: 0.5rem 1.5rem 0.5rem 0;
     vertical-align: middle;
 }
 

@@ -133,8 +133,8 @@ const FeaturesBlock = props => (
 );
 
 const FeaturesBlockGallery = props => {
-  const gallery = props.children.map((item) => (
-    <li className="featuresBlockGalleryItem">
+  const gallery = props.children.map((item, index) => (
+    <li key={index} className="featuresBlockGalleryItem">
       <h4 className="featuresBlockGalleryTitle">{item.title}</h4>
       <ResponsiveImage
         className="featuresBlockGalleryImage"
@@ -150,11 +150,11 @@ const FeaturesBlockGallery = props => {
 const VisualizationsSection = (props) => {
   const imgPath = '/static/img/vis-icons/';
   const visualizations = ['Table', 'Pie', 'Line', 'Column', 'Headline', 'Scatter', 'Bubble', 'Bar', 'Treemap', 'Column-line', 'Funnel', 'Dual Line'];
-  const visualizationsList = visualizations.map((visualization) => {
+  const visualizationsList = visualizations.map((visualization, index) => {
     const visClass = visualization.replace(/\s/, '-').toLowerCase();
 
     return (
-      <li className={'visualization ' + visClass}>
+      <li key={index} className={'visualization ' + visClass}>
         <img src={imgPath + visClass} className="visualizationImage" alt={visualization} />
         <span className="visualizationTitle">{visualization}</span>
       </li>
@@ -167,23 +167,33 @@ const VisualizationsSection = (props) => {
   );
 };
 
-const CodeExample1 =
-`<LineChart
-  projectId='<project-id>'
-  measures={measures}
-  trendBy={attribute}
-  config={
-    colors: ['#14b2e2', '#02C18E']
-  }
-/>`;
+const CodeExample1 = props => (
+  <pre className="exampleCode">
+    <code className="hljs highlighting">
+      <span className="hljs-name">&lt;LineChart</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">projectId=</span><span className="hljs-string">&#39;&lt;project-id&gt;&#39;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;measures&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;attribute&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>, <span className="hljs-string">&#39;#02C18E&#39;</span>]<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;</span><br/>
+      <span className="hljs-name">/&gt;</span>
+    </code>
+  </pre>
+);
 
-const CodeExample2 =
-`<Execute afm={<afm>} projectId={<project-id>}
-onLoadingChanged={function} onError={function}>
-{
-    // your visualization code
-}
-</Execute>`;
+const CodeExample2 = props => (
+  <pre className="exampleCode">
+    <code className="hljs highlighting">
+      <span className="hljs-name">&lt;Execute</span> <span className="hljs-attr">afm=</span><span className="hljs-string">&#123;&lt;afm&gt;&#125;</span> <span className="hljs-attr">projectId=</span><span className="hljs-string">&#123;&lt;project-id&gt;&#125;</span><br/>
+      <span className="hljs-attr">onLoadingChanged=</span><span className="hljs-string">&#123;function&#125;</span> <span className="hljs-attr">onError=</span><span className="hljs-string">&#123;function&#125;&gt;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&#123;<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-comment">&#47;&#47; your visualization code</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br/>
+      <span className="hljs-name">&lt;/Execute&gt;</span>
+    </code>
+  </pre>
+);
 
 const InstallationExample1 = (
   <pre className="exampleCode">
@@ -199,7 +209,7 @@ const InstallationExample1 = (
   </pre>
 );
 
-const InstallationExample2 = (
+const InstallationExample2 = props => (
   <ol>
     <li>
       Open your <strong>GoodData project</strong> in the browser.
@@ -222,27 +232,21 @@ const InstallationExample2 = (
   </ol>
 );
 
-const InstallationExample3 =
-`import { LineChart } from '@gooddata/react-components';
-
-<LineChart
-    projectId="<project-id>"
-    measures={measures}
-    trendBy={attribute}
-    config={
-       colors: ['#14b2e2']
-    }
-/>`;
-
-const ExampleCode = props => {
-  return (
-    <pre className="exampleCode">
-      <code
-        className={'hljs highlighting ' + props.lang}
-        dangerouslySetInnerHTML={{__html: hljs.highlight(props.lang, props.code).value}} />
-    </pre>
-  );
-};
+const InstallationExample3 = props => (
+  <pre className="exampleCode">
+    <code className="hljs highlighting">
+    <span className="hljs-name">import</span> <span className="hljs-literal">&#123; LineChart &#125;</span> from <span className="hljs-string">&#39;@gooddata/react-components&#39;</span>;<br/><br/>
+      <span className="hljs-name">&lt;LineChart</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">projectId=</span><span className="hljs-string">&#39;&lt;project-id&gt;&#39;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;measures&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;attribute&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>]<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;</span><br/>
+      <span className="hljs-name">/&gt;</span>
+    </code>
+  </pre>
+);
 
 const ExampleImage = props => (
   <div className="exampleImage">
@@ -257,7 +261,7 @@ const Features = props => (
         title="Use analytics visualizations as simple React components"
         content="Build your application from ready-made and custom React components. Customize visualizations in just a few lines of code. No iframes involved."
         example={[
-          <ExampleCode lang="html" code={CodeExample1}></ExampleCode>,
+          <CodeExample1 />,
           <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" />
         ]}
         linkTitle="View visual components"
@@ -273,7 +277,7 @@ const Features = props => (
         title="Create custom visualizations"
         content="Use the GoodData React data provider component to wrap any visualization, from libraries such as D3.js, Highcharts or Chart.js, up to your own custom code."
         example={[
-          <ExampleCode lang="html" code={CodeExample2}></ExampleCode>,
+          <CodeExample2 />,
           <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
         ]}
         linkTitle="View custom visualization tutorial"
@@ -284,6 +288,7 @@ const Features = props => (
         <ResponsiveImage src="./img/homepage/d3_logo.png" alt="D3.js" className="charting-lib-logo d3-logo" />
         <ResponsiveImage src="./img/homepage/highcharts_logo.png" alt="Highcharts" className="charting-lib-logo highcharts-logo" />
         <ResponsiveImage src="./img/homepage/chartjs_logo.png" alt="Chart.js" className="charting-lib-logo chartjs-logo" />
+        <Button href="https://www.npmjs.com/search?q=charts" target="_blank" className="button-more-charts">more charts</Button>
       </FeaturesBlock>
     </BackgroundBlock>
 
@@ -320,6 +325,7 @@ const FeatureCalloutBlock = props => (
         name="productShowcaseSwitch"
         className="productShowcaseSwitch"
         checked={props.checked}
+        readOnly
       />
       <div className="productShowcaseTitle">
         <h4>{props.title}</h4>
@@ -341,12 +347,15 @@ const FeatureCallout = props => (
         />
         <FeatureCalloutBlock
           title="Get your project ID"
-          example={InstallationExample2}
+          example={[
+            <InstallationExample2 />,
+            <p className="codeNote">Don't have a GoodData project? Use <a href="https://gooddata-examples.herokuapp.com/">Live Examples</a> instead.</p>
+          ]}
         />
         <FeatureCalloutBlock
           title="Add a visual component"
           example={[
-            <ExampleCode lang="html" code={InstallationExample3}></ExampleCode>,
+            <InstallationExample3 />,
             <p className="codeNote">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers from the GoodData platform</a>.</p>
           ]}
         />

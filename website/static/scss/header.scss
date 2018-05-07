@@ -29,6 +29,7 @@
         a {
             .logo {
                 opacity: 0.9;
+                margin-top: -4px;
             }
 
             &:hover .logo {
@@ -59,8 +60,6 @@
 
     .slidingNav {
         ul {
-            justify-content: center;
-
             @media #{$medium-down} {
                 margin-top: 64px;
                 background-color: transparentize($gray-2, 0.1);
@@ -132,10 +131,19 @@
             a:hover,
             &.siteNavItemActive a,
             &.siteNavGroupActive a {
-                border-bottom-color: $gd-color-highlight;
                 color: transparentize($gd-color-dark, 0.1);
                 background: transparent;
                 transition: all 100ms ease-in;
+            }
+
+            a:focus,
+            a:hover {
+                border-bottom-color: $gd-color-text;
+            }
+
+            &.siteNavItemActive a,
+            &.siteNavGroupActive a {
+                border-bottom-color: $gd-color-highlight;
             }
         }
     }
