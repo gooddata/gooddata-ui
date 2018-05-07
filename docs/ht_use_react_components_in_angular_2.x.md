@@ -38,7 +38,7 @@ To be able to use the GoodData.UI Visual Components in your Angular 2+ environm
     - add KpiComponent to app.module.ts section NgModule.declarations
  -->
  
-Install latest dependencies using either `npm` or `yarn`. Your app must be able to render React components from `@gooddata/react-components` using a unique ID \(`uuid`\), and you also must be able to issue an `invariant` exception if the DOM node is not available.
+Install latest dependencies using either `npm` or `yarn`. Your application must be able to render React components from `@gooddata/react-components` using a unique ID \(`uuid`\), and you also must be able to issue an `invariant` exception if the DOM node is not available.
 
 ```bash
 npm install --save uuid invariant react@15.6.2 react-dom@15.6.2 @gooddata/react-components

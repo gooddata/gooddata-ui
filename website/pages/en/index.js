@@ -331,7 +331,7 @@ const FeatureCalloutBlock = props => (
 
 const FeatureCallout = props => (
   <section className="productShowcaseSection">
-    <h2>Code your first app</h2>
+    <h2>Code your first application</h2>
     <div className="productShowcase wrapper">
       <div className="productShowcaseInner">
         <FeatureCalloutBlock
