@@ -84,11 +84,11 @@ Now you can start adding your first GoodData component:
     ```
 4. Add simple KPI number by appending the following lines in the `render()` method:
     ```javascript
-    // Use the project ID and measure ID from your project.
     <Kpi
       projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
       measure="atSHqCtAePe4" />
     ```
+    > Use project ID and measure ID from your project or use [live examples](https://gooddata-examples.herokuapp.com/).
 
 **Save the changes.** The content of your `App.js` file should now look something like the following example:
 
