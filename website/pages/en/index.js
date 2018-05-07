@@ -277,7 +277,7 @@ const Features = props => (
           <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
         ]}
         linkTitle="View custom visualization tutorial"
-        linkUrl={docUrl('create_new_visualization.html.html')}
+        linkUrl={docUrl('create_new_visualization.html')}
         textPosition="right"
         background="white"
       >
