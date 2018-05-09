@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         y = window.scrollY;
 
         if(y <= homeSplashHeight) {
-            percentage = ((homeSplashBgOverflow / 2) * (-((homeSplashHeight - y) / homeSplashHeight)));
+            percentage = ((homeSplashBgOverflow / 2) * (-((homeSplashHeight - y) / homeSplashHeight))) * ((100 - homeSplashBgOverflow) / 100);
             homeSplashBgElem.style.transform = 'translate3d(0, ' + percentage + '%, 0)';
         }
     });

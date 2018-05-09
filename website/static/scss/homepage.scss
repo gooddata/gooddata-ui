@@ -1,4 +1,5 @@
-$homesplashBgOverflow: 15%;
+$homesplashBgOverflow: 15;
+$homesplashBgOverflowProduct: ($homesplashBgOverflow * ((100 - 2 * $homesplashBgOverflow) / 100)) / 100;
 
 .homeSplashFade {
     position: relative;
@@ -33,15 +34,15 @@ $homesplashBgOverflow: 15%;
 
     .homeSplashFadeBg {
         position: absolute;
-        top: -$homesplashBgOverflow;
+        top: percentage(-$homesplashBgOverflow / 100);
         right: 0;
-        bottom: -$homesplashBgOverflow;
+        bottom: percentage(-$homesplashBgOverflow / 100);
         left: 0;
         background-image: url('../img/homepage/splash-banner.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center top;
-        transform: translate3d(0, -$homesplashBgOverflow, 0);
+        transform: translate3d(0, percentage(-$homesplashBgOverflowProduct), 0);
         transition: transform 1ms;
     }
 }
