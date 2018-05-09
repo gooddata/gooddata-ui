@@ -68,13 +68,13 @@ const Logo = props => (
 
 const ProjectTitle = props => (
   <h1 className="projectTitle">
-    <small>{siteConfig.tagline}</small>
+    <small>Welcome to</small>
     {siteConfig.title}
   </h1>
 );
 
 const ProjectDescription = props => (
-  <p className="projectDescription">Powerful JavaScript library <br className="noMobile" />for&nbsp;building analytical applications</p>
+  <p className="projectDescription">A powerful JavaScript library <br className="noMobile" />for&nbsp;building analytical applications</p>
 )
 
 const PromoSection = props => (
