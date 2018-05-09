@@ -28,6 +28,7 @@
 
         a {
             .logo {
+                display: block;
                 opacity: 0.9;
                 margin-top: -4px;
             }
@@ -50,6 +51,10 @@
             font-weight: lighter;
             font-size: 1rem;
             text-decoration: none;
+
+            @media #{$medium-down} {
+                right: 0;
+            }
         }
     }
 }
@@ -61,6 +66,7 @@
     .slidingNav {
         ul {
             @media #{$medium-down} {
+                justify-content: space-evenly;
                 margin-top: 64px;
                 background-color: transparentize($gray-2, 0.1);
             }
@@ -91,29 +97,6 @@
                     display: none;
                 }
 
-                &[href*="https://github.com/"] {
-                    position: absolute;
-                    top: 17px;
-                    right: 0;
-                    height: 1.75rem;
-                    margin: 0;
-                    border: 1px solid transparentize($gd-color-dark, 0.5);
-                    border-radius: 100px;
-                    color: $gd-color-dark;
-                    font-size: 0.75rem;
-                    line-height: 1.75rem;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        border-color: $gd-color-dark;
-                    }
-
-                    @media #{$medium-down} {
-                        right: 20px;
-                    }
-                }
-
                 @media #{$medium-down} {
                     height: 1.5rem;
                     padding-top: 0;
@@ -123,7 +106,27 @@
 
                 @media #{$medium-up} {
                     height: 4rem;
+                    margin: 0 1.4rem;
                     line-height: 4rem;
+
+                    &[href*="https://github.com/"] {
+                        position: absolute;
+                        top: 17px;
+                        right: 0;
+                        height: 1.75rem;
+                        margin: 0;
+                        border: 1px solid transparentize($gd-color-dark, 0.5);
+                        border-radius: 100px;
+                        color: $gd-color-dark;
+                        font-size: 0.75rem;
+                        line-height: 1.75rem;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            border-color: $gd-color-dark;
+                        }
+                    }
                 }
             }
 
