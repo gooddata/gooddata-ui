@@ -84,10 +84,6 @@ filters: [
             },
             notIn: ['<attribute-element-uri-1>', '<attribute-element-uri-2>'] // Attribute elements currently support only uri
         }
-    },
-    // Type: IExpressionFilter
-    {
-        value: '{demoproject.adf} IN ({demoproject.adf?1})'
     }
 ]
 ...
