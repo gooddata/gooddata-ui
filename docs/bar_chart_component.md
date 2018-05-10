@@ -9,6 +9,20 @@ Bar chart shows data in horizontal bars. Bar charts can display one or multiple 
 
 ![Bar Chart Component](assets/bar_chart.png "Bar Chart Component")
 
+## Structure
+
+```jsx
+import '@gooddata/react-components/styles/css/main.css';
+import { BarChart } from '@gooddata/react-components';
+
+<BarChart
+    projectId={<project-id>}
+    measures={<measures>}
+    config={<chart-config>}
+    …
+/>
+```
+
 ## Example
 
 ```jsx

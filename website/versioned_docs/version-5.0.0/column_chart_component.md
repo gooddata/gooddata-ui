@@ -10,6 +10,20 @@ Column chart shows data in vertical columns. Column charts can display one or mu
 
 ![Column Chart Component](assets/column_chart.png "Column Chart Component")
 
+## Structure
+
+```jsx
+import '@gooddata/react-components/styles/css/main.css';
+import { ColumnChart } from '@gooddata/react-components';
+
+<ColumnChart
+    projectId={<project-id>}
+    measures={<measures>}
+    config={<chart-config>}
+    …
+/>
+```
+
 ## Example
 
 ```jsx

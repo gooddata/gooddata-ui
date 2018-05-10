@@ -6,11 +6,25 @@ id: version-5.0.0-area_chart_component
 original_id: area_chart_component
 ---
 
-Area chart shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or a single measure split by one attribute into multiple areas with points intersecting attribute values. 
+Area chart shows data as an area under a line intersecting dots. It can display either multiple measures as different areas or a single measure split by one attribute into multiple areas with points intersecting attribute values.
 
 Areas stack by default. Alternatively, areas can overlap if config is set to ```{ stacking: false }```.
 
 ![Area Chart Component](assets/area_chart.png "Area Chart Component")
+
+## Structure
+
+```jsx
+import '@gooddata/react-components/styles/css/main.css';
+import { AreaChart } from '@gooddata/react-components';
+
+<AreaChart
+    projectId={<project-id>}
+    measures={<measures>}
+    config={<chart-config>}
+    …
+/>
+```
 
 ## Example
 

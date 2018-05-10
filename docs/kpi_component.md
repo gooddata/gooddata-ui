@@ -26,7 +26,7 @@ import { Kpi } from '@gooddata/react-components';
 
 ```javascript
 import { Kpi } from '@gooddata/react-components';
- 
+
 // with absolute dateFilter
 <Kpi
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -43,8 +43,8 @@ import { Kpi } from '@gooddata/react-components';
         }
     ]}
 />
- 
- 
+
+
 // with positive attributeFilter
 <Kpi
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
@@ -60,8 +60,8 @@ import { Kpi } from '@gooddata/react-components';
         }
     ]}
 />
- 
- 
+
+
 // with negative attributeFilter
 <Kpi
     projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"

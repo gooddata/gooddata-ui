@@ -10,6 +10,20 @@ Pie chart shows data as proportional segments of a disc. Pie charts can be segme
 
 ![Pie Chart Component](assets/pie_chart.png "Pie Chart Component")
 
+## Structure
+
+```jsx
+import '@gooddata/react-components/styles/css/main.css';
+import { PieChart } from '@gooddata/react-components';
+
+<PieChart
+    projectId={<project-id>}
+    measures={<measures>}
+    config={<chart-config>}
+    …
+/>
+```
+
 ## Example
 
 ```jsx

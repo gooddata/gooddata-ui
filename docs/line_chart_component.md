@@ -9,6 +9,20 @@ Line Chart shows data as line-connected dots. Line charts can display either mul
 
 ![Line Chart Component](assets/line_chart.png "Line Chart Component")
 
+## Structure
+
+```jsx
+import '@gooddata/react-components/styles/css/main.css';
+import { LineChart } from '@gooddata/react-components';
+
+<LineChart
+    projectId={<project-id>}
+    measures={<measures>}
+    config={<chart-config>}
+    …
+/>
+```
+
 ## Example
 
 ```jsx

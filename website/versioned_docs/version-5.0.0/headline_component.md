@@ -10,6 +10,17 @@ Headline shows a single number. Use headlines to display measures and attributes
 
 ![Headline Component](assets/headline.png "Headline Component")
 
+## Structure
+
+```jsx
+import { Headline } from '@gooddata/react-components';
+
+<Headline
+    projectId={<project-id>}
+    primaryMeasure={<measure>}
+/>
+```
+
 ## Example
 
 ```jsx

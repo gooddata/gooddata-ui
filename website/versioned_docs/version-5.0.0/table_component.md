@@ -10,6 +10,20 @@ Table shows data in columns and rows. Unlike charts, tables can display only att
 
 ![Table Component](assets/table.png "Table Component")
 
+## Structure
+
+```jsx
+import '@gooddata/react-components/styles/css/main.css';
+import { Table } from '@gooddata/react-components';
+
+<Table
+    projectId={<project-id>}
+    measures={<measures>}
+    config={<chart-config>}
+    …
+/>
+```
+
 ## Example
 
 ```jsx
