@@ -24,7 +24,7 @@ The process of creating a new visualization component comprises the following st
 
 1. [Set up an AFM Query](afm.md)
 
-Specify the compbination of attributes, measures and filters to describe your query
+Specify the combination of attributes, measures and filters to describe your query
 
 2. [Specify Result Data](result_specification.md)
 
