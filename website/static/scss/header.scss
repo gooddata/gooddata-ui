@@ -149,6 +149,14 @@
                 border-bottom-color: $gd-color-highlight;
             }
         }
+
+        @media #{$medium-down} {
+            box-shadow: $shadow;
+
+            .sideNavVisible & {
+                box-shadow: none;
+            }
+        }
     }
 
     @media #{$medium-up} {

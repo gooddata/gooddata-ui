@@ -98,6 +98,10 @@ $homesplashBgOverflowProduct: ($homesplashBgOverflow * ((100 - 2 * $homesplashBg
     .homeWrapper {
         position: relative;
         padding-bottom: 369px;
+
+        @media #{$medium-down} {
+            padding-bottom: 40%;
+        }
     }
 }
 

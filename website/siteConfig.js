@@ -59,7 +59,10 @@ const siteConfig = {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
   },
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    '../js/toggleNav.js'
+  ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/gooddata/gooddata-react-components',
   gaTrackingId: 'UA-3766725-19',
@@ -69,6 +72,10 @@ const siteConfig = {
     apiKey: 'my-search-only-api-key-1234',
     indexName: 'my-index-name'
   }*/
+  twitter: 'true',
+  twitterImage: 'img/metaimage.png',
+  ogImage: 'img/metaimage.png',
+  disableHeaderTitle: true
 };
 
 module.exports = siteConfig;

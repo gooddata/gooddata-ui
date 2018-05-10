@@ -45,12 +45,16 @@ blockquote {
 }
 
 table {
+    display: block;
+    max-width: 100%;
+    overflow: auto;
     border: none;
     background-color: transparent;
 
     tr {
         th,
         td {
+            min-width: 100px;
             padding: 0.3rem;
             border: none;
             font-family: $gd-font-primary;
@@ -123,5 +127,21 @@ table {
     @media #{$large-up} {
         margin-right: 260px;
         margin-left: 326px;
+    }
+}
+
+.mainContainer,
+.blogContainer {
+    &,
+    .wrapper {
+        .post,
+        .posts,
+        .lonePost {
+            &:first-child {
+                @media #{$medium-up} {
+                    padding-top: 0;
+                }
+            }
+        }
     }
 }
