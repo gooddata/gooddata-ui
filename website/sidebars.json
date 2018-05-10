@@ -17,7 +17,8 @@
       "line_chart_component",
       "pie_chart_component",
       "table_component",
-      "visualization_component"
+      "visualization_component",
+      "afm_components"
     ],
     "Properties" : [
       "chart_config",
