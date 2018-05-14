@@ -112,14 +112,16 @@ Now you can start adding your first GoodData component:
     ```
 4. Add simple Line chart by appending the following lines in the `render()` method:
     ```javascript
-    <LineChart
-        projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
-        measures={measures}
-        trendBy={attribute}
-        config={{
-            colors: ['#14b2e2']
-        }}
-    />
+    <div style={{ height: 300 }}>
+      <LineChart
+          projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+          measures={measures}
+          trendBy={attribute}
+          config={{
+              colors: ['#14b2e2']
+          }}
+      />
+    </div>
     ```
     > Use project ID and measure ID from your project or use [live examples](https://gooddata-examples.herokuapp.com/).
 
@@ -166,14 +168,16 @@ class App extends Component {
                <img src={logo} className="App-logo" alt="logo" />
                <h2>Welcome to React</h2>
             </div>
-            <LineChart
-              projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
-              measures={measures}
-              trendBy={attribute}
-              config={{
-                  colors: ['#14b2e2']
-              }}
-            />
+            <div style={{ height: 300 }}>
+              <LineChart
+                  projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+                  measures={measures}
+                  trendBy={attribute}
+                  config={{
+                      colors: ['#14b2e2']
+                  }}
+              />
+            </div>
             <p className="App-intro">
                To get started, edit <code>src/App.js</code> and save to reload.
             </p>
@@ -212,14 +216,16 @@ const measures = [
     }
 ];
 
-<LineChart
-  projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
-  measures={measures}
-  trendBy={attribute}
-  config={{
-      colors: ['#14b2e2']
-  }}
-/>
+<div style={{ height: 300 }}>
+  <LineChart
+      projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+      measures={measures}
+      trendBy={attribute}
+      config={{
+          colors: ['#14b2e2']
+      }}
+  />
+</div>
 ```
 
 In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to our project ID, and measure identifier is a hardcoded reference to a measure.
@@ -297,14 +303,16 @@ After you installed the tool, do the following:
                    <img src={logo} className="App-logo" alt="logo" />
                    <h2>Welcome to React</h2>
                 </div>
-                <LineChart
-                  projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
-                  measures={measures}
-                  trendBy={attribute}
-                  config={{
-                      colors: ['#14b2e2']
-                  }}
-                />
+                <div style={{ height: 300 }}>
+                  <LineChart
+                      projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+                      measures={measures}
+                      trendBy={attribute}
+                      config={{
+                          colors: ['#14b2e2']
+                      }}
+                  />
+                </div>
                 <p className="App-intro">
                    To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
