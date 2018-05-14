@@ -44,6 +44,8 @@ This command adds the latest `@gooddata/react-components` to the list of your pr
 
 ## Step 4 - Start the development server
 
+**Before** you start your development server [prevent cross-origin issues](cors.md#on-your-local-dev-machine) by adding proxy settings to your ```package.json```.
+
 To set up a proxy, add the following section to the root level of your `package.json` \(this works with any application started using `react-scripts start`\):
 
 ```javascript
@@ -108,7 +110,7 @@ Now you can start adding your first GoodData component:
     ```javascript
     import '@gooddata/react-components/styles/css/main.css';
     ```
-4. Add simple Line Chart number by appending the following lines in the `render()` method:
+4. Add simple Line chart by appending the following lines in the `render()` method:
     ```javascript
     <LineChart
         projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
