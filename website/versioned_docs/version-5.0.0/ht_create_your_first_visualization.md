@@ -55,7 +55,7 @@ To set up a proxy, add the following section to the root level of your `package.
     "changeOrigin": true,
     "cookieDomainRewrite": "localhost",
     "secure": false,
-    "target": "https://secure.gooddata.com/".
+    "target": "https://secure.gooddata.com/",
     "headers": {
       "host": "secure.gooddata.com",
       "origin": null
@@ -69,6 +69,8 @@ To set up a proxy, add the following section to the root level of your `package.
 },
 ```
 
+> Switch `target` and `host` to ``https://developer.na.gooddata.com`` when using [live examples](https://gooddata-examples.herokuapp.com/).
+
 Then start the server with the following command from the command line:
 * If you are on Mac or Linux:
     ```bash
@@ -76,7 +78,7 @@ Then start the server with the following command from the command line:
     ```
 * If you are on Windows:
     ```bash
-    set HTTPS=true&&npm start
+    set HTTPS=true && npm start
     ```
 
 **Always** run your local development server using HTTP**S** because the GoodData API responses set cookies with the `secure` flag. Specifically, it means that if you skip the `HTTPS=true` part, you will not be able to log in.
@@ -102,17 +104,22 @@ Now you can start adding your first GoodData component:
 1. Open `src/App.js` in a text editor.
 2. Add the following line to the other `import`s at the beginning of the `App.js` file:
     ```javascript
-    import { Kpi } from '@gooddata/react-components';
+    import { LineChart } from '@gooddata/react-components';
     ```
 3. Add the following line to the other `import`s at the beginning of the `App.js` file to load CSS:
     ```javascript
     import '@gooddata/react-components/styles/css/main.css';
     ```
-4. Add simple KPI number by appending the following lines in the `render()` method:
+4. Add simple Line chart by appending the following lines in the `render()` method:
     ```javascript
-    <Kpi
-      projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-      measure="atSHqCtAePe4" />
+    <LineChart
+        projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+        measures={measures}
+        trendBy={attribute}
+        config={{
+            colors: ['#14b2e2']
+        }}
+    />
     ```
     > Use project ID and measure ID from your project or use [live examples](https://gooddata-examples.herokuapp.com/).
 
@@ -120,11 +127,37 @@ Now you can start adding your first GoodData component:
 
 ```javascript
 import React, { Component } from 'react';
-import { Kpi } from '@gooddata/react-components';
+import { LineChart } from '@gooddata/react-components';
 import '@gooddata/react-components/styles/css/main.css';
 
 import logo from './logo.svg';
 import './App.css';
+
+const measures = [
+    {
+        measure: {
+            localIdentifier: 'franchiseFeesIdentifier',
+            definition: {
+                measureDefinition: {
+                    item: {
+                        identifier: 'aaEGaXAEgB7U'
+                    }
+                }
+            },
+            format: '#,##0'
+        }
+    }
+];
+
+const attribute = {
+    visualizationAttribute: {
+        displayForm: {
+            identifier: 'date.abm81lMifn6q'
+        },
+        localIdentifier: 'month'
+    }
+};
+
 class App extends Component {
    render() {
       return (
@@ -133,9 +166,14 @@ class App extends Component {
                <img src={logo} className="App-logo" alt="logo" />
                <h2>Welcome to React</h2>
             </div>
-            <Kpi
-               projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-               measure="atSHqCtAePe4" />
+            <LineChart
+              projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+              measures={measures}
+              trendBy={attribute}
+              config={{
+                  colors: ['#14b2e2']
+              }}
+            />
             <p className="App-intro">
                To get started, edit <code>src/App.js</code> and save to reload.
             </p>
@@ -151,8 +189,6 @@ Return to your browser window. The default page now looks like the following:
 
 ![Welcome to GoodData components](assets/Welcome_to_React_GoodData_component.png)
 
-Notice the KPI number that you have added.
-
 
 ## Step 7 - Keep your code clean
 GoodData.UI provides a tool named [gdc-catalog-export](gdc-catalog-export.md) that can help you keep the list of object identifiers organized in a Javascript file within your application.
@@ -160,12 +196,33 @@ GoodData.UI provides a tool named [gdc-catalog-export](gdc-catalog-export.md) 
 For example, see the following component used in this tutorial:
 
 ```javascript
-<Kpi
-   projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-   measure="atSHqCtAePe4" />
+const measures = [
+    {
+        measure: {
+            localIdentifier: 'franchiseFeesIdentifier',
+            definition: {
+                measureDefinition: {
+                    item: {
+                        identifier: 'aaEGaXAEgB7U'
+                    }
+                }
+            },
+            format: '#,##0'
+        }
+    }
+];
+
+<LineChart
+  projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+  measures={measures}
+  trendBy={attribute}
+  config={{
+      colors: ['#14b2e2']
+  }}
+/>
 ```
 
-In this component, `projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"` is a hardcoded reference to our project ID, and `measure="atSHqCtAePe4"` is a hardcoded reference to a measure.
+In this component, `projectId="xms7ga4tf3g3nzucd8380o2bev8oeknp"` is a hardcoded reference to our project ID, and measure identifier is a hardcoded reference to a measure.
 
 With the [gdc-catalog-export](gdc-catalog-export.md) tool, you can save the list of all measures, attributes and other relevant objects to a JSON file.
 
@@ -179,21 +236,25 @@ After you installed the tool, do the following:
     ```bash
     $ gdc-catalog-export --output src/catalog.json
     ```
+    > When working with [live examples](https://gooddata-examples.herokuapp.com/), add `--hostname https://developer.na.gooddata.com`.
+
     The `src/catalog.json` file becomes a JSON file in your application.
     ```javascript
     {
-      "measures": {
-        "Avg Deal Size": {
-          "identifier": "atSHqCtAePe4",
-          "tags": ""
-        },
-    ...
+      ...
+      "$ Franchise Fees": {
+        "identifier": "aaEGaXAEgB7U",
+        "tags": "franchise_fees",
+        "title": "$ Franchise Fees"
+      },
+      ...
+    }
     ```
 2. Import the `catalog.json` file into your `App.js` file.
-   You can now reference the measure using its human-readable alias \(`Avg Deal Size`\) instead of its identifier \(`atSHqCtAePe4`\). Your new `App.js` file would look like the following:
+   You can now reference the measure using its human-readable alias \(`$ Franchise Fees`\) instead of its identifier \(`aaEGaXAEgB7U`\). Your new `App.js` file would look like the following:
     ```javascript
     import React, { Component } from 'react';
-    import { Kpi } from '@gooddata/react-components';
+    import { LineChart } from '@gooddata/react-components';
     import '@gooddata/react-components/styles/css/main.css';
 
     import logo from './logo.svg';
@@ -203,6 +264,31 @@ After you installed the tool, do the following:
     import catalogJson from './catalog.json';
     const C = new CatalogHelper(catalogJson);
 
+    const measures = [
+    {
+        measure: {
+            localIdentifier: 'franchiseFeesIdentifier',
+            definition: {
+                measureDefinition: {
+                    item: {
+                        identifier: C.measure('$ Franchise Fees')
+                    }
+                }
+            },
+            format: '#,##0'
+        }
+      }
+    ];
+
+    const attribute = {
+        visualizationAttribute: {
+            displayForm: {
+                identifier: 'date.abm81lMifn6q'
+            },
+            localIdentifier: 'month'
+        }
+    };
+
     class App extends Component {
        render() {
           return (
@@ -211,9 +297,14 @@ After you installed the tool, do the following:
                    <img src={logo} className="App-logo" alt="logo" />
                    <h2>Welcome to React</h2>
                 </div>
-                <Kpi
-                   projectId="la84vcyhrq8jwbu4wpipw66q2sqeb923"
-                   measure={C.measure('Avg Deal Size')} />
+                <LineChart
+                  projectId='xms7ga4tf3g3nzucd8380o2bev8oeknp'
+                  measures={measures}
+                  trendBy={attribute}
+                  config={{
+                      colors: ['#14b2e2']
+                  }}
+                />
                 <p className="App-intro">
                    To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
@@ -224,7 +315,7 @@ After you installed the tool, do the following:
 
     export default App;
     ```
-Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`la84vcyhrq8jwbu4wpipw66q2sqeb923` on line 17\). In your real application, you may prefer to pass the project ID via URL or a hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
+Notice that the code in the `App.js` file still includes the hardcoded reference to the project \(`xms7ga4tf3g3nzucd8380o2bev8oeknp` on line 17\). In your real application, you may prefer to pass the project ID via URL or a hash parameter, or it may be retrieved from your server-side APIs \(if you are integrating GoodData into an existing application\). It depends on your application's architecture.
 
 ## Next steps
 

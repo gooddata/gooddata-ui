@@ -174,9 +174,9 @@ const CodeExample1 = props => (
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">projectId=</span><span className="hljs-string">&#39;&lt;project-id&gt;&#39;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;measures&#125;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;attribute&#125;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;&#123;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>, <span className="hljs-string">&#39;#02C18E&#39;</span>]<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;&#125;</span><br/>
       <span className="hljs-name">/&gt;</span>
     </code>
   </pre>
@@ -198,13 +198,14 @@ const CodeExample2 = props => (
 const InstallationExample1 = (
   <pre className="exampleCode">
     <code className="hljs highlighting">
-      <span className="hljs-comment">// optional See <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or use <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
+      <span className="hljs-comment">// optional - see <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or use <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
       <span className="hljs-literal">$ yarn</span> global add <span className="hljs-type">create-react-app</span><br/>
-      <span className="hljs-literal">$ create-react-app</span> my-first-sba<br/>
+      <span className="hljs-literal">$ create-react-app</span> my-first-app<br/>
       <br/>
       <span className="hljs-comment">// installation</span><br/>
-      <span className="hljs-literal">$ cd</span> my-first-sba<br/>
-      <span className="hljs-literal">$ yarn</span> add <span className="hljs-type">@gooddata/react-components</span>
+      <span className="hljs-literal">$ cd</span> my-first-app<br/>
+      <span className="hljs-literal">$ yarn</span> add <span className="hljs-type">@gooddata/react-components</span><br/>
+      <span className="hljs-literal">$ yarn</span> install
     </code>
   </pre>
 );
@@ -235,14 +236,15 @@ const InstallationExample2 = props => (
 const InstallationExample3 = props => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
+    <span className="hljs-comment">// Add this snippet to src/App.js</span><br/>
     <span className="hljs-name">import</span> <span className="hljs-literal">&#123; LineChart &#125;</span> from <span className="hljs-string">&#39;@gooddata/react-components&#39;</span>;<br/><br/>
       <span className="hljs-name">&lt;LineChart</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">projectId=</span><span className="hljs-string">&#39;&lt;project-id&gt;&#39;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">measures=</span><span className="hljs-string">&#123;measures&#125;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">trendBy=</span><span className="hljs-string">&#123;attribute&#125;</span><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">config=</span><span className="hljs-string">&#123;&#123;</span><br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-attr">colors:</span> [<span className="hljs-string">&#39;#14b2e2&#39;</span>]<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span className="hljs-string">&#125;&#125;</span><br/>
       <span className="hljs-name">/&gt;</span>
     </code>
   </pre>
@@ -356,12 +358,12 @@ const FeatureCallout = props => (
           title="Add a visual component"
           example={[
             <InstallationExample3 />,
-            <p className="codeNote">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers from the GoodData platform</a>.</p>
+            <p className="codeNote">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers</a> and <a href={docUrl('line_chart_component.html')}>how to define valid property structure</a>.</p>
           ]}
         />
       </div>
     </div>
-    <a href={docUrl('ht_create_your_first_visualization.html')} className="productShowcaseLink">Continue creating your first visualization</a>
+    <a href={docUrl('ht_create_your_first_visualization.html')} className="productShowcaseLink">Continue with the complete tutorial</a>
   </section>
 );
 
