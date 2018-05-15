@@ -32,8 +32,9 @@ Importing GoodData DataLayer dependencies
 and GoodData Java Script SDK
 (https://github.com/gooddata/gooddata-js)
 */
-import { DataTable, ExecuteAfmAdapter } from '@gooddata/data-layer';
-import * as sdk from 'gooddata';
+import {factory as SdkFactory, DataLayer} from '@gooddata/gooddata-js';
+const { DataTable, ExecuteAfmAdapter } = DataLayer;
+const sdk = SdkFactory();
  
 /*
 Defining AFMs and (optionally) resultSpec

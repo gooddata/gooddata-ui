@@ -13,7 +13,7 @@ Every SDK instance is connected to a specific domain. To use multiple domains in
 
 ```javascript
 import React, { PureComponent } from 'react';
-import { factory as sdkFactory } from 'gooddata';
+import { factory as sdkFactory } from '@gooddata/gooddata-js';
 import { Visualization } from '@gooddata/react-components';
  
  
