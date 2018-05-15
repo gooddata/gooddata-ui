@@ -1,9 +1,9 @@
-# gdc-ui-sdk-doc
-UI SDK documentation
+# gooddata-ui
+GoodData.UI documentation
 
 ```bash
 cd website
 yarn install --pure-lockfile
 yarn start
-open http://localhost:3000/gdc-ui-sdk-doc/docs/next/getting_started.html
+open http://localhost:3000/gooddata-ui/docs/next/getting_started.html
 ```
