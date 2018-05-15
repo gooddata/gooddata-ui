@@ -14,7 +14,8 @@ Your component code must be wrapped within the Execute component.
 <Execute afm={<afm>} projectId={<project-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
     {
         (execution) => {
-            console.log(isEmptyResult(execution.result) ? 'empty result' : execution.result);
+            console.log(execution);
+            return null;
         }
     }
 </Execute>
