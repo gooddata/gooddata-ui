@@ -127,6 +127,24 @@ Usage: gdc-catalog-export [options]
     --config <path>     Custom config file (default .gdcatalogrc)
 ```
 
+### Subsequent catalog exports
+
+A catalog export maintains keys used in an existing catalog export JSON file. You can rename keys inside the following properties:
+
+* visualizations
+* measures
+* attributes
+* dateDataSets
+* displayForms
+
+At the next run, `gdc-catalog-export` tries to resolve the new items from the server against the existing items, and do the following:
+
+* Preserve the existing keys by matching their identifier attributes
+* Remove the keys that do not exist on the server
+* Add the new keys from the server equal to their title property
+
+In addition, the existing catalog file is renamed to `catalogue.json.bak`, and the last backup gets rewritten.
+
 ## CatalogHelper utility
 
 To access all the values in `catalog.json` easily, use the `CatalogHelper` utility.

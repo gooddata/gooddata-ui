@@ -17,7 +17,7 @@ yarn add @gooddata/react-components
 ```
 
 ```bash
-$ npm install@gooddata/react-components
+$ npm install @gooddata/react-components
 ```
 ## Before you start coding
 
