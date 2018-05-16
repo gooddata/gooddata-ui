@@ -35,12 +35,13 @@ The input data is specified using the component parameters \(see [Parameters](e
 The following example shows the function specified as children in the Execution component that displays the execution output on the console.
 
 ```javascript
-import { Execute, isEmptyResult } from '@gooddata/react-components';
- 
+import { Execute } from '@gooddata/react-components';
+
 <Execute afm={<afm>} projectId={<project-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
     {
         (executionResult) => {
-            console.log(isEmptyResult(executionResult) ? 'empty result' : executionResult);
+            console.log(execution);
+            return null;
         }
     }
 </Execute>
