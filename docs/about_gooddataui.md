@@ -12,13 +12,17 @@ With GoodData.UI, you can:
 * Create your [new visual components](create_new_visualization.md) to address your specific analytical needs.
 
 ## Supported technologies
-
-GoodData.UI supports:
-
+GoodData.UI is compatible with:
 * React 15.6.2, [Angular 1.X](ht_use_react_components_in_angular_1.x.md), [Angular 2+](ht_use_react_components_in_angular_2.x.md)
 * TypeScript 2.3+, ES6, ES5
+* [all major browsers](https://help.gooddata.com/display/doc/System+Requirements+and+Supported+Browsers)
 
-[Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is _not_ supported.
+Note: [Server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) is _not_ supported.
+
+### Mandatory polyfill
+The ES6 polyfill is required to run GoodData.UI application in IE11 as [seen in this table](http://kangax.github.io/compat-table/es6/). Follow the [guide here](https://github.com/zloirock/core-js). 
+
+If you are using babel, you may use [babel polyfill](https://babeljs.io/docs/usage/polyfill/) in your index to specifically include only needed polyfill code.
 
 ## GoodData platform account
 
