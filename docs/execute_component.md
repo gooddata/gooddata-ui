@@ -36,10 +36,17 @@ The following example shows the function specified as a child in the Execution 
 ```javascript
 import { Execute, isEmptyResult } from '@gooddata/react-components';
 
-<Execute afm={<afm>} projectId={<project-id>}> onLoadingChanged={e=>{}} onError={e=>{}}>
+<Execute afm={<afm>} projectId={<project-id>} onLoadingChanged={e=>{}} onError={e=>{}}>
     {
         (execution) => {
-            console.log(isEmptyResult(execution.result) ? 'empty result' : execution.result);
+            const { isLoading, error, result } = execution;
+            if (isLoading) {
+                return (<div>Loading data...</div>);
+            } else if (error) {
+                return (<div>There was an error</div>);
+            }
+            
+            return isEmptyResult(result) ? (<div>Empty result</div>) : (<div>{JSON.stringify(result.executionResult)}</div>);
         }
     }
 </Execute>
