@@ -79,7 +79,7 @@ Start the server by running the following command:
     ```
 * If you are on Windows:
     ```bash
-    set HTTPS=true && npm start
+    set HTTPS=true&&npm start
     ```
 
 **Always** run your local development server using HTTP**S** because the GoodData API responses set cookies with the `secure` flag. Specifically, it means that if you skip the `HTTPS=true` part, you will not be able to log in.
