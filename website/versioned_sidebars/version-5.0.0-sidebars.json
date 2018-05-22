@@ -25,7 +25,8 @@
       "version-5.0.0-drillable_item",
       "version-5.0.0-error_component",
       "version-5.0.0-loading_component",
-      "version-5.0.0-on_legend_ready"
+      "version-5.0.0-on_legend_ready",
+      "version-5.0.0-on_fire_drill_event"
     ],
     "Custom Visualizations": [
       "version-5.0.0-create_new_visualization",

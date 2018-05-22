@@ -68,9 +68,9 @@ import { Visualization } from '@gooddata/react-components';
 | locale | false | string | The localization of the visualization. Defaults to`en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | config  | false | ChartConfig | The chart configuration |
 | filters | false | FilterItem\[\] | The list of filters to be applied to the visualization |
-| drillableItems | false | DrillableItem\[\] | The drilling configuration |
-| onFiredDrillEvent | false | onFiredDrillEvent\(\) | The drilling event catcher. Called when drilling happens. |
+| drillableItems | false | DrillableItem\[\] | The drilling configuration. See [DrillableItems](drillable_item.md).|
+| onFiredDrillEvent | false | onFiredDrillEvent\(\) | The drilling event catcher. Called when drilling happens. See [OnFireDrillEvent](on_fire_drill_event.md).|
 | uriResolver | false | function | A custom method for querying URIs for identifiers. Defaults to the standard Gooddata SDK. `getObjectUri()`. |
-| onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-react-components/blob/master/src/constants/errorStates.ts). Defaults to`console.error`. |
+| onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-react-components/blob/master/src/constants/errorStates.ts). Defaults to `console.error`.|
 | onLoadingChanged | false | function | A custom loading handler. Called when a visualization changes to/from the loading state. Called with the argument denoting a valid state, for example: `{ isLoading:false}`. |
-| onLegendReady | false | OnLegendReady\(\) | The legend ready callback. Called when the visualization series are ready to render. Can be used for rendering a custom legend. |
+| onLegendReady | false | OnLegendReady\(\) | The legend ready callback. Called when the visualization series are ready to render. Can be used for rendering a custom legend. See [OnLegendReady](on_legend_ready.md). |

@@ -16,7 +16,7 @@ The following component props can be used as lifecycle callbacks:
 | :--- | :--- | :--- |
 | onLoadingChanged | A function that is called when a loading state changes | ```{ isLoading: boolean }``` |
 | onError | A function that is called when an error state changes | ```{ status: string, ...}``` |
-| onLegendReady  | A function that is called when a chart legend is rendered | ```{ legendItems: [...] }``` |
+| onLegendReady  | A function that is called when a chart legend is rendered. See [OnLegendReady](on_legend_ready.md). | ```{ legendItems: [...] }``` |
 
 ## Visualization Rendered Successfully
 

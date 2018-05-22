@@ -25,7 +25,8 @@
       "drillable_item",
       "error_component",
       "loading_component",
-      "on_legend_ready"
+      "on_legend_ready",
+      "on_fire_drill_event"
     ],
     "Custom Visualizations": [
       "create_new_visualization",

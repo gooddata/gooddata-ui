@@ -73,9 +73,9 @@ const attributes = [
 | filters | false | Filter[] | An array of filter definitions |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
 | locale | false | string | The location string for translations |
-| drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable
-| ErrorComponent | false | Component | A component to be rendered if this component is in error state |
-| LoadingComponent | false | Component | A component to be rendered if this component is in loading state |
+| drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|
+| ErrorComponent | false | Component | A component to be rendered if this component is in error state. See [ErrorComponent](error_component.md).|
+| LoadingComponent | false | Component | A component to be rendered if this component is in loading state. See [LoadingComponent](loading_component.md).|
 | onError | false | Function | A callback when component updates its error state |
 | onLoadingChanged | false | Function | A callback when component updates its loading state |
 
