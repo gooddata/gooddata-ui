@@ -24,6 +24,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'about_gooddataui', label: 'Docs'},
     {doc: 'support_options', label: 'Support'},
+    {href: 'https://gooddata-examples.herokuapp.com/', label: 'Live Examples'},
     {href: 'https://github.com/gooddata/gooddata-react-components/', label: 'GitHub', external: true}
   ],
   onPageNav: 'separate',

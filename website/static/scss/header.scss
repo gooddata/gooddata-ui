@@ -64,6 +64,8 @@
     flex: 1 1 auto;
 
     .slidingNav {
+        padding: 0 20px;
+
         ul {
             @media #{$medium-down} {
                 justify-content: space-evenly;
