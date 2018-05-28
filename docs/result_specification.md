@@ -325,4 +325,43 @@ Attribute values are then sorted by this computed value (3 and 7, respectivelly)
 
 
 ## Dimensions Quick Reference
-<table><tbody><tr><th class="confluenceTh">AFM</th><th class="confluenceTh"><code>resultSpec.dimensions:</code></th><th class="confluenceTh"><code>executionResult: { }</code></th></tr><tr><td class="confluenceTd"><span>1 measure<br>1 attribute (A)</span></td><td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td><td class="confluenceTd"><pre><code>        A1    A2    A3     <span style="color: rgb(84,84,84)">← elements of attr A</span><br>data: [ ... , ... , ... ]&nbsp; ←&nbsp;values of the measure</code></pre></td></tr><tr><td class="confluenceTd" colspan="1">2 measures (M1, M2)</td><td colspan="1" class="confluenceTd">[<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</td><td colspan="1" class="confluenceTd"><pre><code>        M1    M2     <span style="color: rgb(84,84,84)">← elements of measureGroup</span><br>data: [ ... , ... ]</code></pre></td></tr><tr><td class="confluenceTd">2 measures (M1, M2)<br>1 attribute (A)</td><td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td><td class="confluenceTd"><pre><code>        A1-M1  A1-M2  A2-M1  A2-M2   <span style="color: rgb(84,84,84)">← cartesian product of</span><br>data: [ .... , .... , .... , .... ]    elements from A and <br>                                       measureGroup</code></pre></td></tr><tr><td class="confluenceTd">empty first dimension<br>+ the same as above</td><td class="confluenceTd"><p>[<br> { itemIdentifiers: [ ] },<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</code></pre></td><td class="confluenceTd"><pre><code>data: [<br>    A1    A2    A3    ← the same as above<br>  [ ... , ... , ... ]<br>]</code></pre></td></tr><tr><td colspan="1" class="confluenceTd"><span>2 measures (M1, M2)</span> <br> <span>1 attribute (A)<br> <br> </span>// typical for viewBy chart</td><td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</code></pre></td><td colspan="1" class="confluenceTd"><pre><code>data: [                  // it can be understood as data[A][M]<br>    M1    M2                aka first dimension = elems of A<br>  [ ... , ... ],  ← A1      and second = elems of measureGroup<br>  [ ... , ... ]   ← A2<br>] </code></pre></td></tr><tr><td colspan="1" class="confluenceTd">2 attributes (A, B)<br>1 measure (M1)<br> <br>// typical for stackBy chart</td><td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'B', 'measureGroup' ] }<br>]</code></pre></td><td colspan="1" class="confluenceTd"><pre><code>data: [                  // notice it doesn't matter in which<br>    B1-M1  B2-M1            dimension the measureGroup is<br>  [ .... , .... ],  ← A1    placed (as it has only one measure)<br>  [ .... , .... ]   ← A2<br>] </code></pre></td></tr></tbody></table>
+
+<table>
+<tbody>
+<tr>
+<th class="confluenceTh">AFM</th>
+<th class="confluenceTh"><code>resultSpec.dimensions:</code></th>
+<th class="confluenceTh"><code>executionResult: { }</code></th>
+</tr>
+<tr>
+<td class="confluenceTd"><span>1 measure<br>1 attribute (A)</span></td>
+<td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td>
+<td class="confluenceTd"><pre><code>        A1    A2    A3     <span style="color: rgb(84,84,84)">← elements of attr A</span><br>data: [ ... , ... , ... ]&nbsp; ←&nbsp;values of the measure</code></pre></td>
+</tr>
+<tr>
+<td class="confluenceTd" colspan="1">2 measures (M1, M2)</td>
+<td colspan="1" class="confluenceTd">[<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</td>
+<td colspan="1" class="confluenceTd"><pre><code>        M1    M2     <span style="color: rgb(84,84,84)">← elements of measureGroup</span><br>data: [ ... , ... ]</code></pre></td>
+</tr>
+<tr>
+<td class="confluenceTd">2 measures (M1, M2)<br>1 attribute (A)</td>
+<td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td>
+<td class="confluenceTd"><pre><code>        A1-M1  A1-M2  A2-M1  A2-M2   <span style="color: rgb(84,84,84)">← cartesian product of</span><br>data: [ .... , .... , .... , .... ]    elements from A and <br>                                       measureGroup</code></pre></td>
+</tr>
+<tr>
+<td class="confluenceTd">empty first dimension<br>+ the same as above</td>
+<td class="confluenceTd"><p>[<br> { itemIdentifiers: [ ] },<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</code></pre></td>
+<td class="confluenceTd"><pre><code>data: [<br>    A1    A2    A3    ← the same as above<br>  [ ... , ... , ... ]<br>]</code></pre></td>
+</tr>
+<tr>
+<td colspan="1" class="confluenceTd"><span>2 measures (M1, M2)</span> <br> <span>1 attribute (A)<br> <br> </span>// typical for viewBy chart</td>
+<td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</code></pre></td>
+<td colspan="1" class="confluenceTd"><pre><code>data: [                  // it can be understood as data[A][M]<br>    M1    M2                aka first dimension = elems of A<br>  [ ... , ... ],  ← A1      and second = elems of measureGroup<br>  [ ... , ... ]   ← A2<br>] </code></pre></td>
+</tr>
+<tr>
+<td colspan="1" class="confluenceTd">2 attributes (A, B)<br>1 measure (M1)<br> <br>// typical for stackBy chart</td>
+<td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'B', 'measureGroup' ] }<br>]</code></pre></td>
+<td colspan="1" class="confluenceTd"><pre><code>data: [                  // notice it doesn't matter in which<br>    B1-M1  B2-M1            dimension the measureGroup is<br>  [ .... , .... ],  ← A1    placed (as it has only one measure)<br>  [ .... , .... ]   ← A2<br>] </code></pre></td>
+</tr>
+</tbody>
+</table>
