@@ -5,14 +5,16 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: result_specification
 ---
 
-API field `resultSpec` is an object that defines the structure of result data. You can define dimensionality, (sub)totals and sorting.
+Structure of result data is defined by `resultSpec`, you may add dimensionality (pivoting), totals and sorting.
+
+ * [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L16)
 
 
 ## Dimensions
 
 ### Structure
 
-```javascript
+```js
 // Type: IResultSpec
 {
     // Optional; Defaults to two dimensions – first with attributes, second with 'measureGroup'
@@ -26,9 +28,9 @@ API field `resultSpec` is an object that defines the structure of result data. 
 }
 ```
 
-Dimension fieled tells the executor, how the data is organized into arrays - imagine attribute in columns vs. rows. Each dimension requires the `itemIdentifiers` property, which is an array of *items*. These could be attributes' `localIdentifier`s from the AFM or a special `measureGroup` string.
+Dimension field tells the executor, how the data is organized into arrays - imagine attribute in columns vs. rows. Each dimension requires the `itemIdentifiers` property, which is an array of *items*. These could be attributes' `localIdentifier`s from the AFM or a special `measureGroup` string.
 
-> *Note 1:* Currently you can define only *one* or *two* dimensions, possibly with one dimension empty. The default value is: all attributes in 1st dimension and `measureGroup` in 2nd.
+> *Note 1:* Currently, you can define only *one* or *two* dimensions, possibly with one dimension empty. The default value is: all attributes in 1st dimension and `measureGroup` in 2nd.
 >
 > *Note 2:* [AFM components](afm_components.md) fill `resultSpec` with an appropriate definition depending on the type of the visualization.
 
@@ -38,7 +40,7 @@ Each *item* consists of several *elements*. For example, the attribute 'Year' wo
 
 #### AFM with 1 measure (*Revenue*) and 1 attribute (*Year*)
 * Data is needed in 1 dimension - a simple array.
-  ```
+  ```js
   resultSpec.dimensions = [
     { itemIdentifiers: [ '<Year local id>', 'measureGroup' ] }
   ]
@@ -50,8 +52,8 @@ Each *item* consists of several *elements*. For example, the attribute 'Year' wo
   ```
 
 #### AFM with 2 measures (*Revenue* and *Clicks*) and still 1 attribute (*Year*)
-* For viewBy chart its typical to have attribute elements (*2016,2017,...*) in rows and the two measures in columns. Note that rows means the 1st dimension of returned array, and columns the 2nd.
-  ```
+* For viewBy chart its typical to have attribute elements (*2016, 2017, ...*) in rows and the two measures in columns. Note that rows mean the 1st dimension of the returned array, and columns the 2nd.
+  ```js
   resultSpec.dimensions = [
     { itemIdentifiers: [ '<Year local id>' ] },
     { itemIdentifiers: [ 'measureGroup' ] }
@@ -67,7 +69,7 @@ Each *item* consists of several *elements*. For example, the attribute 'Year' wo
   }
   ```
 * What happens when we switch the dimensions?
-  ```
+  ```js
   resultSpec.dimensions = [
     { itemIdentifiers: [ 'measureGroup' ] },
     { itemIdentifiers: [ '<Year local id>' ] }
@@ -84,7 +86,7 @@ Each *item* consists of several *elements*. For example, the attribute 'Year' wo
 
 #### AFM with 1 measure (*Revenue*) and 2 attributes (*Year*, *Country*)
 * This is often used for stackBy chart - it needs one attribute in rows and the other in columns.
-  ```
+  ```js
   resultSpec.dimensions = [
     { itemIdentifiers: [ '<Year local id>' ] },
     { itemIdentifiers: [ '<Country local id>', 'measureGroup' ] }
@@ -100,13 +102,13 @@ Each *item* consists of several *elements*. For example, the attribute 'Year' wo
   }
   ```
 
-#### Carthesian product - 2 measures (*Revenue* and *Clicks*) and 1 attribute (*Year*)
-Note that in previous example the measureGroup contained only one element. In case two items in one dimension have more than one element, our execution engine returns carthesian product.
+#### Cartesian product - 2 measures (*Revenue* and *Clicks*) and 1 attribute (*Year*)
+Note that in the previous example the measureGroup contained only one element. In case two items in one dimension have more than one element, our execution engine returns cartesian product.
 
-Carthesian product works like this: `A,B × 1,2 = A1, A2, B1, B2`.
+Cartesian product works like this: `A,B × 1,2 = A1, A2, B1, B2`.
 
 * This will get revenues in years, followed by clicks in years:
-  ```
+  ```js
   resultSpec.dimensions = [
     { itemIdentifiers: [ 'measureGroup', '<Year local id>' ] }
   ]
@@ -117,7 +119,7 @@ Carthesian product works like this: `A,B × 1,2 = A1, A2, B1, B2`.
   }
   ```
 * This will get revenues in years, followed by clicks in years:
-  ```
+  ```js
   resultSpec.dimensions = [
     { itemIdentifiers: [ '<Year local id>', 'measureGroup' ] }
   ]
@@ -137,10 +139,10 @@ Array levels:
 2. **items:** one record for each item in the dimension's  `itemIdentifiers`
 3. **elements:** one record for each element in an item (attribute or `measureGroup`)
  
-   The type of this record is one of the following: `IResultAttributeHeaderItem`, `IResultMeasureHeaderItem`, `IResultTotalHeaderItem` See [type definition file](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/Execution.ts#L42-L63).
+   The type of this record is one of the following: `IResultAttributeHeaderItem`, `IResultMeasureHeaderItem`, `IResultTotalHeaderItem`. See [type definition file](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/Execution.ts#L42-L63).
 
 For example:
-```
+```js
 resultSpec.dimensions = [
   { itemIdentifiers: [ '<Year local id>', 'measureGroup' ] }
 ]
@@ -148,7 +150,7 @@ resultSpec.dimensions = [
 // `executionResult`:
 {  
     data: [ 32000, 41000, 77000 ]
-    headerItems: [ // first dimension  (we havent specified any other)
+    headerItems: [ // first dimension (we havent specified any other)
         [ 
             // first item (Year attribute)
             [ 
@@ -165,7 +167,6 @@ resultSpec.dimensions = [
         ]
     ]
 }
-
 ```
 
 For more examples, please sign up to [Live Examples](examples.md) and watch Network tab in your browser's Developer console. You may also experiment by sending your own `resultSpec`s, ie. use the [Postman application](https://www.getpostman.com/apps).
@@ -177,11 +178,13 @@ Optionally, you can also define totals for each dimension. Totals are used to ge
 
 ### Definition
 
-```javascript
+ * [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126) 
+
+```js
 totals: [
    {
-      measureIdentifier: String // measure local identifier on which is total defined
-      type: String              // total type. Possible values are: [sum, max, min, avg, med, nat]
+      measureIdentifier: String, // measure local identifier on which is total defined
+      type: String,              // total type. Possible values are: [sum, max, min, avg, med, nat]
       attributeIdentifier: String // attribute local identifier in dimension defining total placement
    },
    ...
@@ -202,7 +205,7 @@ Only the following limitations are currently supported:
 * Grand totals in the first dimension
   * `total.attributeIdentifier` contains the first `attribute-local-identifier` from `itemIdentifiers`.
 
-If you want to define `nat` (native) total, make sure that it is in sync with the `AFM.nativeTotals` definition (see [Native totals](afm.md#AFM-NativeTotal)).
+If you want to define `nat` (native) total, make sure that it is in sync with the `AFM.nativeTotals` definition (see [Native totals](afm.md#native-total)).
 
 ### Defining table totals
 
@@ -210,7 +213,7 @@ See [Table Totals in ExecutionObject](table_totals_in_execution_context.md).
 
 ### Example
 
-```javascript
+```js
 {
     dimensions: [
         {
@@ -252,7 +255,7 @@ Measures are always listed in the same order in which they were defined in the A
 
 ### Structure
 
-```javascript
+```js
 {
     ...
     // Type SortItem[]
@@ -291,7 +294,7 @@ Currently, only sorting by the `sum` function is supported.
 
 The following example shows sorting a table with two measures and a 'Year' attribute. You can set sorting based on the Year attribute with:
 
-```javascript
+```js
 {
     ...
     aggregation: 'sum',
@@ -322,4 +325,4 @@ Attribute values are then sorted by this computed value (3 and 7, respectivelly)
 
 
 ## Dimensions Quick Reference
-<table><tbody><tr><th class="confluenceTh">AFM</th><th class="confluenceTh"><code>resultSpec.dimensions:</code></th><th class="confluenceTh"><code>executionResult: { }</code></th></tr><tr><td class="confluenceTd"><span>1 measure<br>1 attribute (A)</span></td><td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td><td class="confluenceTd"><pre><code>        A1    A2    A3     <span style="color: rgb(84,84,84)">← elements of attr A</span><br>data: [ ... , ... , ... ]&nbsp; ←&nbsp;values of the measure</code></pre></td></tr><tr><td class="confluenceTd" colspan="1">2 measures (M1, M2)</td><td colspan="1" class="confluenceTd">[<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</td><td colspan="1" class="confluenceTd"><pre><code>        M1    M2     <span style="color: rgb(84,84,84)">← elements of measureGroup</span><br>data: [ ... , ... ]</code></pre></td></tr><tr><td class="confluenceTd">2 measures (M1, M2)<br>1 attribute (A)</td><td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td><td class="confluenceTd"><pre><code>        A1-M1  A1-M2  A2-M1  A2-M2   <span style="color: rgb(84,84,84)">← carthesian product of</span><br>data: [ .... , .... , .... , .... ]     elements from A and <br>                                        measureGroup</code></pre></td></tr><tr><td class="confluenceTd">empty first dimension<br>+ the same as above</td><td class="confluenceTd"><p>[<br> { itemIdentifiers: [ ] },<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</code></pre></td><td class="confluenceTd"><pre><code>data: [<br>    A1    A2    A3    ← the same as above<br>  [ ... , ... , ... ]<br>]</code></pre></td></tr><tr><td colspan="1" class="confluenceTd"><span>2 measures (M1, M2)</span> <br> <span>1 attribute (A)<br> <br> </span>// typical for viewBy chart</td><td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</code></pre></td><td colspan="1" class="confluenceTd"><pre><code>data: [                  // it can be understood as data[A][M]<br>    M1    M2                aka first dimension = elems of A<br>  [ ... , ... ],  ← A1     and second = elems of measureGroup<br>  [ ... , ... ]   ← A2<br>] </code></pre></td></tr><tr><td colspan="1" class="confluenceTd">2 attributes (A, B)<br>1 measure (M1)<br> <br>// typical for stackBy chart</td><td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'B', 'measureGroup' ] }<br>]</code></pre></td><td colspan="1" class="confluenceTd"><pre><code>data: [                  // notice it doesn't matter in which<br>    B1-M1  B2-M1            dimension the measureGroup is<br>  [ .... , .... ],  ← A1    placed (as it has only one measure)<br>  [ .... , .... ]   ← A2<br>] </code></pre></td></tr></tbody></table>
+<table><tbody><tr><th class="confluenceTh">AFM</th><th class="confluenceTh"><code>resultSpec.dimensions:</code></th><th class="confluenceTh"><code>executionResult: { }</code></th></tr><tr><td class="confluenceTd"><span>1 measure<br>1 attribute (A)</span></td><td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td><td class="confluenceTd"><pre><code>        A1    A2    A3     <span style="color: rgb(84,84,84)">← elements of attr A</span><br>data: [ ... , ... , ... ]&nbsp; ←&nbsp;values of the measure</code></pre></td></tr><tr><td class="confluenceTd" colspan="1">2 measures (M1, M2)</td><td colspan="1" class="confluenceTd">[<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</td><td colspan="1" class="confluenceTd"><pre><code>        M1    M2     <span style="color: rgb(84,84,84)">← elements of measureGroup</span><br>data: [ ... , ... ]</code></pre></td></tr><tr><td class="confluenceTd">2 measures (M1, M2)<br>1 attribute (A)</td><td class="confluenceTd">[<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</td><td class="confluenceTd"><pre><code>        A1-M1  A1-M2  A2-M1  A2-M2   <span style="color: rgb(84,84,84)">← cartesian product of</span><br>data: [ .... , .... , .... , .... ]    elements from A and <br>                                       measureGroup</code></pre></td></tr><tr><td class="confluenceTd">empty first dimension<br>+ the same as above</td><td class="confluenceTd"><p>[<br> { itemIdentifiers: [ ] },<br> { itemIdentifiers: [ 'A', 'measureGroup' ] }<br>]</code></pre></td><td class="confluenceTd"><pre><code>data: [<br>    A1    A2    A3    ← the same as above<br>  [ ... , ... , ... ]<br>]</code></pre></td></tr><tr><td colspan="1" class="confluenceTd"><span>2 measures (M1, M2)</span> <br> <span>1 attribute (A)<br> <br> </span>// typical for viewBy chart</td><td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'measureGroup' ] }<br>]</code></pre></td><td colspan="1" class="confluenceTd"><pre><code>data: [                  // it can be understood as data[A][M]<br>    M1    M2                aka first dimension = elems of A<br>  [ ... , ... ],  ← A1      and second = elems of measureGroup<br>  [ ... , ... ]   ← A2<br>] </code></pre></td></tr><tr><td colspan="1" class="confluenceTd">2 attributes (A, B)<br>1 measure (M1)<br> <br>// typical for stackBy chart</td><td colspan="1" class="confluenceTd"><p>[<br> { itemIdentifiers: [ 'A' ] },<br> { itemIdentifiers: [ 'B', 'measureGroup' ] }<br>]</code></pre></td><td colspan="1" class="confluenceTd"><pre><code>data: [                  // notice it doesn't matter in which<br>    B1-M1  B2-M1            dimension the measureGroup is<br>  [ .... , .... ],  ← A1    placed (as it has only one measure)<br>  [ .... , .... ]   ← A2<br>] </code></pre></td></tr></tbody></table>
