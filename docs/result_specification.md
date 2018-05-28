@@ -150,7 +150,7 @@ resultSpec.dimensions = [
 // `executionResult`:
 {  
     data: [ 32000, 41000, 77000 ]
-    headerItems: [ // first dimension (we havent specified any other)
+    headerItems: [ // first dimension (we haven't specified any other)
         [ 
             // first item (Year attribute)
             [ 
