@@ -11,6 +11,7 @@
       "start_with_visual_components",
       "area_chart_component",
       "bar_chart_component",
+      "bubble_chart_component",
       "column_chart_component",
       "headline_component",
       "kpi_component",
