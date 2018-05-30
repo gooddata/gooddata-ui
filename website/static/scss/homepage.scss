@@ -138,7 +138,7 @@ $homesplashBgOverflowProduct: ($homesplashBgOverflow * ((100 - 2 * $homesplashBg
 }
 
 .getStartedSection {
-    padding: 5rem 1.25rem 6.7rem;
+    padding: 5rem 1.25rem 1rem;
     box-shadow: inset 0 1px 2px 0 transparentize($gd-color-dark, 0.7);
     background-image: linear-gradient(-130deg, $gd-color-highlight 0%, $gd-color-positive 100%);
 
@@ -159,4 +159,73 @@ $homesplashBgOverflowProduct: ($homesplashBgOverflow * ((100 - 2 * $homesplashBg
             transparentize($gd-color-state-blank, 1) calc(100% - 100px),
             transparentize(#59626b, 0.89) 100%
         );
+}
+
+.social-buttons {
+    display: inline-block;
+    padding: 2rem 0;
+    margin: 5.375rem auto 0.5rem;
+    border-top: 1px solid transparentize($gd-color-white, 0.7);
+    color: $gd-color-text-light;
+
+    h4,
+    a {
+        height: 1.875rem;
+        display: inline-block;
+        color: inherit;
+        line-height: 1.875rem;
+        vertical-align: middle;
+
+        @media #{$medium-down} {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+}
+
+.social-button {
+    margin: 0 0 0 2.5rem;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 1.875rem;
+        height: 1.875rem;
+        margin: -0.1rem 0.6rem 0 0;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.9;
+        transition: all 0.2s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &.github::before {
+        background-image: url('../img/homepage/github-logo.png');
+    }
+
+    &.stackoverflow::before {
+        background-image: url('../img/homepage/stackoverflow-logo.png');
+    }
+
+    &.twitter::before {
+        background-image: url('../img/homepage/twitter-logo.png');
+    }
+
+    @media #{$medium-down} {
+        margin: 1rem 0;
+    }
 }

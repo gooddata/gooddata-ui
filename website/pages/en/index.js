@@ -371,6 +371,12 @@ const GetStarted = props => (
   <section className="getStartedSection">
     <h2>See the GoodData.UI library</h2>
     <Button href={docUrl('about_gooddataui.html')}>Get Started</Button>
+    <div className="social-buttons">
+      <h4>Check us also on:</h4>
+      <a href="https://github.com/gooddata/gooddata-react-components" target="_blank" className="social-button github">Github</a>
+      <a href="https://stackoverflow.com/questions/tagged/gooddata" target="_blank" className="social-button stackoverflow">Stack Overflow</a>
+      <a href="https://twitter.com/gooddata_dev" target="_blank" className="social-button twitter">Twitter</a>
+    </div>
   </section>
 );
 

@@ -1,8 +1,6 @@
 .fixedHeaderContainer {
     height: 64px;
     padding: 0;
-    box-shadow: $shadow;
-    background: $gray-3;
 
     header img,
     .logo {
@@ -57,6 +55,11 @@
             }
         }
     }
+
+    @media #{$medium-up} {
+        box-shadow: $shadow;
+        background: $gray-3;
+    }
 }
 
 .navigationSlider {
@@ -87,7 +90,6 @@
             }
 
             a {
-                margin: 0 1.4rem;
                 padding: 0 1.4rem;
                 border-bottom: 2px solid transparent;
                 color: transparentize($gd-color-dark, 0.3);
@@ -101,14 +103,13 @@
 
                 @media #{$medium-down} {
                     height: 1.5rem;
-                    padding-top: 0;
-                    padding-bottom: 0;
+                    margin: 0;
+                    padding: 0 0.5rem;
                     line-height: 1.5rem;
                 }
 
                 @media #{$medium-up} {
                     height: 4rem;
-                    margin: 0 1.4rem;
                     line-height: 4rem;
 
                     &[href*="https://github.com/"] {
@@ -129,6 +130,10 @@
                             border-color: $gd-color-dark;
                         }
                     }
+                }
+
+                @media #{$large-up} {
+                    margin: 0 1.4rem;
                 }
             }
 
@@ -154,6 +159,7 @@
 
         @media #{$medium-down} {
             box-shadow: $shadow;
+            background: $gray-3;
 
             .sideNavVisible & {
                 box-shadow: none;
@@ -162,6 +168,8 @@
     }
 
     @media #{$medium-up} {
+        overflow: hidden;
+
         &,
         nav.slidingNav,
         .nav-site {
