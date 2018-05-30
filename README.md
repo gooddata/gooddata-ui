@@ -1,25 +1,24 @@
 # GoodData.UI documentation
 
-GoodData.UI is a React-based JavaScript library for building responsive analytical applications around the GoodData platform. It comes with its product documentation and several other resources. 
+GoodData.UI is a powerful JavaScript library for building analytical applications on top of the GoodData platform. The best way to start working with Gooddata.UI is to visit [sdk.gooddata.com/gooddata-ui](https://sdk.gooddata.com/gooddata-ui/).
 
-## Live resources
+This repository contains the source code of the [documentation](https://sdk.gooddata.com/gooddata-ui/). 
 
-Use the following resources to learn how to use GoodData.UI:
+## Learn more
 
-- [Documentation](http://sdk.gooddata.com/gooddata-ui/)
-- [Live examples](https://gooddata-examples.herokuapp.com)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/gooddata)
-- GoodData.UI code:
-  - [ReactComponents](https://github.com/gooddata/gooddata-react-components) ([npm pkg](https://www.npmjs.com/package/@gooddata/react-components))
-  - [GoodData JS](https://github.com/gooddata/gooddata-js) ([npm pkg](https://www.npmjs.com/package/@gooddata/gooddata-js))
+- [Read the online documentation.](https://sdk.gooddata.com/gooddata-ui/)
+- [Check out the live examples](https://gooddata-examples.herokuapp.com/) with extensive code documentation.
+- Use GoodData [npm package](https://github.com/gooddata/gooddata-react-components).
+- Check out the GoodData.UI source code at [react-components repository](https://github.com/gooddata/gooddata-react-components).
 
-## Offline access to documentation
+## Follow the community
 
-To launch documentation locally:
+- Ask questions at [Stack Overflow forum](https://stackoverflow.com/questions/tagged/gooddata).
+- Submit code issues/bugs on [Github](https://github.com/gooddata/gooddata-react-components/issues).
+- Follow [@gooddata_dev](https://twitter.com/gooddata_dev) on Twitter.
 
-```bash
-cd website
-yarn install
-yarn start
-open http://localhost:3000/
-```
+## License
+
+(C) 2007-2018 GoodData Corporation
+
+For more information, please see [LICENSE](https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE)
