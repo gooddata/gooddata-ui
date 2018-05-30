@@ -7,7 +7,7 @@ id: result_specification
 
 The structure of the result data is defined by `resultSpec`. You can add dimensionality (pivoting), totals, and sorting.
 
- * [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L16)
+See [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L16).
 
 
 ## Dimensions
@@ -30,9 +30,9 @@ The structure of the result data is defined by `resultSpec`. You can add dimensi
 
 The `dimensions` field communicates the executor how the data is organized into arrays. Imagine an attribute in columns vs. rows. Each dimension requires the `itemIdentifiers` property, which is an array of *items*. These items could be attributes' `localIdentifier`s from the AFM or a special `measureGroup` string.
 
-**NOTES:**
-* Currently, you can define either *one* or *two* dimensions, with one dimension being empty. The default value for the first dimension is all attributes. The default value for the second dimension is `measureGroup`.
-* [AFM components](afm_components.md) fill `resultSpec` with an appropriate definition depending on the type of the visualization.
+> **NOTES:**
+> * Currently, you can define either *one* or *two* dimensions, with one dimension being empty. The default value for the first dimension is all attributes. The default value for the second dimension is `measureGroup`.
+> * [AFM components](afm_components.md) fill `resultSpec` with an appropriate definition depending on the type of the visualization.
 
 Each *item* consists of several *elements*. For example, the attribute 'Year' would have 2016, 2017, and so on. The same applies to `measureGroup`: its *elements* are the individual measures from the AFM. All these *elements* are sent in the `headerItems` property.
 
@@ -41,19 +41,19 @@ Each *item* consists of several *elements*. For example, the attribute 'Year' wo
 #### AFM with one measure (*Revenue*) and one attribute (*Year*)
 Data is needed in one dimension: a simple array.
 
-  ```js
-  resultSpec.dimensions = [
-    { itemIdentifiers: [ '<Year local id>', 'measureGroup' ] }
-  ]
+```js
+resultSpec.dimensions = [
+{ itemIdentifiers: [ '<Year local id>', 'measureGroup' ] }
+]
 
-  // `executionResult` is returned by years (that is, 2016, 2017, 2018):
-  {  
-    data: [ 32000, 41000, 77000 ]
-  }
-  ```
+// `executionResult` is returned by years (that is, 2016, 2017, 2018):
+{  
+data: [ 32000, 41000, 77000 ]
+}
+```
 
 #### AFM with two measures (*Revenue* and *Clicks*) and one attribute (*Year*)
-A typical layout of a viewBy chart is to have the attribute elements (*2016, 2017, ...*) in rows and the two measures in columns. The rows mean the first dimension of the returned array, and columns mean the second array.
+* A typical layout of a viewBy chart is to have the attribute elements (*2016, 2017, ...*) in rows and the two measures in columns. The rows mean the first dimension of the returned array, and columns mean the second array.
 
   ```js
   resultSpec.dimensions = [
@@ -71,7 +71,7 @@ A typical layout of a viewBy chart is to have the attribute elements (*2016, 201
   }
   ```
 
-What happens when we switch the dimensions?
+* What happens when we switch the dimensions?
 
   ```js
   resultSpec.dimensions = [
@@ -89,29 +89,28 @@ What happens when we switch the dimensions?
   ```
 
 #### AFM with one measure (*Revenue*) and two attributes (*Year*, *Country*)
-This layout is often used for a stackBy chart when you need one attribute in rows and the other one in columns.
+This layout is often used for a stackBy chart. It has one attribute in rows and the other in columns.
 
-  ```js
-  resultSpec.dimensions = [
-    { itemIdentifiers: [ '<Year local id>' ] },
-    { itemIdentifiers: [ '<Country local id>', 'measureGroup' ] }
-  ]
+```js
+resultSpec.dimensions = [
+{ itemIdentifiers: [ '<Year local id>' ] },
+{ itemIdentifiers: [ '<Country local id>', 'measureGroup' ] }
+]
 
-  // `executionResult` is returned with two columns (that is, for Czechia and USA):
-  {
-    data: [
-      [ 13000, 19000 ],  // year 2016 - gives original sum of 32000
-      [ 15000, 26000 ],  // year 2017 - gives original sum of 41000
-      [ 31000, 36000 ]   // year 2018 - gives original sum of 77000
-    ]
-  }
-  ```
+// `executionResult` is returned with two columns (for example, Czechia and USA):
+{
+data: [
+  [ 13000, 19000 ],  // year 2016 - gives original sum of 32000
+  [ 15000, 26000 ],  // year 2017 - gives original sum of 41000
+  [ 31000, 36000 ]   // year 2018 - gives original sum of 77000
+]
+}
+```
 
 #### Cartesian product with two measures (*Revenue* and *Clicks*) and one attribute (*Year*)
 In the previous example, `measureGroup` contains only one element. If two items in one dimension have more than one element, a Cartesian product is returned.
 
-The Cartesian product works in the following way:
-
+The Cartesian product works in the following way: \
 `A,B × 1,2 = A1, A2, B1, B2`
 
 * The following code sample gets revenues in years, followed by clicks in years:
@@ -183,9 +182,7 @@ For more examples, sign up to [Live Examples](examples.md) and watch the Network
 
 Optionally, you can define totals for each dimension. Totals are used to get aggregated data over several rows or columns of measure data.
 
-### Definition
-
- * [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126) 
+### Definition 
 
 ```js
 totals: [
@@ -197,6 +194,8 @@ totals: [
    ...
 ]
 ```
+
+See [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126).
 
 ### Order of Totals
 
