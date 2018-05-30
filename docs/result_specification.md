@@ -7,7 +7,7 @@ id: result_specification
 
 The structure of the result data is defined by `resultSpec`. You can add dimensionality (pivoting), totals, and sorting.
 
-See [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L16).
+See the [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L16).
 
 
 ## Dimensions
@@ -195,7 +195,7 @@ totals: [
 ]
 ```
 
-See [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126).
+See the [type definition](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L110-L126).
 
 ### Order of Totals
 
