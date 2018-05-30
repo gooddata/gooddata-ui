@@ -33,7 +33,7 @@ The response returns `HTTP 201 Created`:
 
 ## executionResults and polling
 
-If fetching data from the GoodData infrastructure takes longer than expected, the API may periodically ask if the result is ready \(polling\). In this case, poll the URL from `executionResponse.link.executionResult` in the `executeAfm` response.
+If fetching data from the GoodData infrastructure takes longer than expected, the API may periodically ask if the result is ready (polling). In this case, poll the URL from `executionResponse.link.executionResult` in the `executeAfm` response.
 
 You can change the parameters to request different pages from the result. For example, to request only 10 items for both dimensions, set `limit=10,10`.
 
@@ -68,13 +68,13 @@ For a single defined dimension, parameters `offset` and `limits` have both on
 
 For two dimensions, the parameters have two values separated by a comma. In the response, it is an array with two values. The first value represents the first dimension, the second value represents the second dimension.
 
-For example, if you set the limit to`3,2`, the pages could be retrieved in four requests with offsets `0,0` and `0,2` and `3,0` and`3,2` respectively.
+For example, if you set the limit to `3,2`, the pages could be retrieved in four requests with offsets `0,0` and `0,2` and `3,0` and `3,2` respectively.
 
-| \[ 11, 12 \] \[ 21, 22 \] \[ 31, 32 \] | \[ 13 \] \[ 23 \] \[ 33 \] |
+| [ 11, 12 ] <br> [ 21, 22 ] <br> [ 31, 32 ] | [ 13 ] <br> [ 23 ] <br> [ 33 ] |
 | :--- | :--- |
-| \[ 41, 42 \] | \[ 43 \] |
+| [ 41, 42 ] | [ 43 ] |
 
-The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification \(resultSpec\)](result_specification.md).
+The first dimension of the data is the "rows", the second is the "columns". For more information, see 'Dimensions' in [Result Specification (resultSpec)](result_specification.md).
 
 For details, see [executeAfm test scenarios](https://github.com/gooddata/gooddata-js/blob/master/test/execution/execute-afm.test.js#L228) from the GoodData JavaScript SDK.
 
