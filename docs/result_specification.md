@@ -198,13 +198,13 @@ totals: [
 ]
 ```
 
-### Totals order limits
+### Order of Totals
 
 The order of total items is `[sum, max, min, avg, med, nat]` and cannot be changed.
 
 ### Limitations
 
-Only the following limitations are currently supported:
+Currently, the following limitations are supported:
 
 * Table visualizations
   * First dimension with `attributes` and `totals`
@@ -212,7 +212,7 @@ Only the following limitations are currently supported:
 * Grand totals in the first dimension
   * `total.attributeIdentifier` contains the first `attribute-local-identifier` from `itemIdentifiers`.
 
-If you want to define `nat` (native) total, make sure that it is in sync with the `AFM.nativeTotals` definition (see [Native totals](afm.md#native-total)).
+If you want to define a `nat` (native) total, make sure that it is in sync with the `AFM.nativeTotals` definition (see [Native totals](afm.md#native-total)).
 
 ### Defining table totals
 
@@ -258,7 +258,7 @@ A data line is uniquely defined by the `locators` array. The data line contains
 
 If the selected attributes, attribute values or measures are not available (for example, by being filtered out), `measureSortItems` are omitted.
 
-Measures are always listed in the same order in which they were defined in the AFM. Sorting measures based on their value is currently _not_ supported.
+Measures are always listed in the same order in which they were defined in the AFM. Sorting measures based on their value is currently *not* supported.
 
 ### Structure
 
@@ -310,7 +310,7 @@ The following example shows sorting a table with two measures and a 'Year' attri
 }
 ```
 
-Consider original data:
+Consider the following original data:
 
 | Year | 2006 | 2006 | 2007 | 2007 |
 | :--- | :--- | :--- | :--- | :--- |
@@ -331,7 +331,7 @@ Attribute values are then sorted by this computed value (3 and 7, respectivelly)
 | Values | 3 | 4 | 1 | 4 |
 
 
-## Dimensions Quick Reference
+## Quick Reference of Dimensions
 
 <table>
 <tbody>
