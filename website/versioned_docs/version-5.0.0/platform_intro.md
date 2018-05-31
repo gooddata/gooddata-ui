@@ -20,9 +20,9 @@ original_id: platform_intro
 
 ## Main concepts
 
-Imagine you are an account manager for a Franchize network. You want to know the **average** daily amount of money for each Franchize office in the USA.
+Imagine you are an account manager for a Franchise network. You want to know the **average** daily amount of money for each Franchise office in the USA.
 
-You have the data that shows how much money all your Franchizes earn daily. Let's display this data as a bar chart:
+You have the data that shows how much money all your Franchises earn daily. Let's display this data as a bar chart:
 
 ![Bar Chart](assets/intro_bar_chart.png "Bar Chart")
 
@@ -30,6 +30,6 @@ The graph shows the elements that together work as unified input for creating a 
 
 * `$ Avg Daily Total Sales` is a **measure** that is a computational expression that aggregates one or more numerical values. In this example, you are interested in the average daily amount.
 
-* `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchize offices.
+* `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchise offices.
 
 * A **filter** is a set of conditions that removes specific values from your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the bar chart has a **filter** applied to display only the offices located in the USA.
