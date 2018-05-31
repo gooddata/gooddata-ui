@@ -167,7 +167,7 @@ const VisualizationsSection = (props) => {
   );
 };
 
-const CodeExample1 = props => (
+const CodeExample1 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
       <span className="hljs-name">&lt;LineChart</span><br/>
@@ -182,7 +182,7 @@ const CodeExample1 = props => (
   </pre>
 );
 
-const CodeExample2 = props => (
+const CodeExample2 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
       <span className="hljs-name">&lt;Execute</span> <span className="hljs-attr">afm=</span><span className="hljs-string">&#123;&lt;afm&gt;&#125;</span> <span className="hljs-attr">projectId=</span><span className="hljs-string">&#123;&lt;project-id&gt;&#125;</span><br/>
@@ -195,7 +195,7 @@ const CodeExample2 = props => (
   </pre>
 );
 
-const InstallationExample1 = (
+const InstallationExample1 =  (
   <pre className="exampleCode">
     <code className="hljs highlighting">
       <span className="hljs-comment">// optional - see <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or use <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
@@ -210,7 +210,7 @@ const InstallationExample1 = (
   </pre>
 );
 
-const InstallationExample2 = props => (
+const InstallationExample2 = () => (
   <ol>
     <li>
       Open your <strong>GoodData project</strong> in the browser.
@@ -233,7 +233,7 @@ const InstallationExample2 = props => (
   </ol>
 );
 
-const InstallationExample3 = props => (
+const InstallationExample3 = () => (
   <pre className="exampleCode">
     <code className="hljs highlighting">
     <span className="hljs-comment">// Add this snippet to src/App.js</span><br/>
@@ -263,8 +263,8 @@ const Features = props => (
         title="Use analytics visualizations as simple React components"
         content="Build your application from ready-made and custom React components. Customize visualizations in just a few lines of code. No iframes involved."
         example={[
-          <CodeExample1 />,
-          <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" />
+          <CodeExample1 key="1" />,
+          <ExampleImage src="./img/homepage/example_1.png" alt="Example 1" key="2" />
         ]}
         linkTitle="View visual components"
         linkUrl={docUrl('start_with_visual_components.html')}
@@ -279,8 +279,8 @@ const Features = props => (
         title="Create custom visualizations"
         content="Use the GoodData React data provider component to wrap any visualization, from libraries such as D3.js, Highcharts or Chart.js, up to your own custom code."
         example={[
-          <CodeExample2 />,
-          <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" />
+          <CodeExample2 key="1" />,
+          <ExampleImage src="./img/homepage/example_2.png" alt="Example 2" key="2" />
         ]}
         linkTitle="View custom visualization tutorial"
         linkUrl={docUrl('create_new_visualization.html')}
@@ -350,15 +350,15 @@ const FeatureCallout = props => (
         <FeatureCalloutBlock
           title="Get your project ID"
           example={[
-            <InstallationExample2 />,
-            <p className="codeNote">Don't have a GoodData project? Use <a href="https://gooddata-examples.herokuapp.com/">Live Examples</a> instead.</p>
+            <InstallationExample2 key="1" />,
+            <p className="codeNote" key="2" >Don't have a GoodData project? Use <a href="https://gooddata-examples.herokuapp.com/">Live Examples</a> instead.</p>
           ]}
         />
         <FeatureCalloutBlock
           title="Add a visual component"
           example={[
-            <InstallationExample3 />,
-            <p className="codeNote">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers</a> and <a href={docUrl('line_chart_component.html')}>how to define valid property structure</a>.</p>
+            <InstallationExample3 key="1" />,
+            <p className="codeNote" key="2">See <a href={docUrl('gdc_catalog_export.html')}>how to get identifiers</a> and <a href={docUrl('line_chart_component.html')}>how to define valid property structure</a>.</p>
           ]}
         />
       </div>

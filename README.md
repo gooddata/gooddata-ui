@@ -21,4 +21,4 @@ This repository contains the source code of the [documentation](https://sdk.good
 
 (C) 2007-2018 GoodData Corporation
 
-For more information, please see [LICENSE](https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE)
+For more information, please see [LICENSE](LICENSE)
