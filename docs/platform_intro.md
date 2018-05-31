@@ -5,25 +5,32 @@ sidebar_label: Platform Introduction
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
-The **GoodData platform** is a full-fledged analytics platform. This end-to-end solution for business intelligence delivers ETL (Extract Transform Load), data warehousing, and insight modeling in a single, unified platform.
+**GoodData Platform** is a powerful end-to-end analytics platform as a service with multi-tenant distribution that scales to hundreds of terabytes of data and hundreds of thousands of users. Learn more about the [GoodData platform](https://www.gooddata.com/platform) and how to [embed its analytics possibilities](https://www.gooddata.com/embedded-analytics).
 
-GoodData **users** access analytics through the web-based **GoodData Portal** where they can create insights and build dashboards.
+![GoodData Platform and GoodData.UI](assets/gooddata_platform_ui.png "GoodData Platform and GoodData.UI")
 
-As a **developer**, you can use our comprehensive set of open REST APIs and SDKs to customize GoodData tools and build insights that suit your customers’ specific needs.
+**GoodData REST API** is a low-level API that makes the platform features accessible to all GoodData users.
 
-## Key concepts
+**GoodData.js** is a set of JavaScript wrappers written on top of the *REST API*. Additionally, GoodData.js handles authentication, unified query request format (AFM), and many more.
 
-An **insight** is a chart or table of measures designed to surface analytics into the GoodData Portal for stakeholders to review. An insight contains one or more aggregation functions applied to numerical facts or **measures**, optionally segmented by one or more **attributes** and filtered out by **filters**.
+**GoodData.UI** is a React-based JavaScript library for building responsive analytical applications. This library is written on top of *GoodData.js* and makes creating analytical applications even more convenient by adding visual components.
 
-* **measure** is aggregation of facts or counts of distinct attribute values, which are represented as numbers in insights. Measures represent what is being measured in a insight; for example, sum of sales or average salary.
-* **attribute** is a descriptor used to break measures apart and provide context to insight data. Attributes dictate how measures are calculated and represented.
-* **filter** is a set of characteristics applied to a visualization or measure to remove values from computed and displayed values.
+## Main Concepts
 
-Insights represent **visualizations** of your data. A visualization is a view into a specific part of your data defined by **AFM**, **resultSpec** and a configuration object, usually in a form of a table or chart.
+Imagine you have the data that shows how much money your Franchizes earn daily.
 
-* **AFM** (Attribute - Filter - Measure) is unified input for creating a visualization using the GoodData.UI. AFM describes what data you want to execute: what to measure by _measure_, how to slice by _attribute_, and how to filter out by _filter_. For more information, see [AFM](afm.md).
-* **resultSpec** is an object that defines the structure of result data. For example, you can define a custom title and format for each measure, or sorting of data. See [resultSpec](result_specification.md).
+You want to know the **average** daily amount for each Franchize office in the USA.
 
-For more details about the terminology, see [Glossary](glossary.md).
+With GoodData.UI, let's display this data (on the left) as a bar chart (on the right):
 
-For comprehensive GoodData platform documentation, see [GoodData online Help](https://help.gooddata.com/display/doc/GoodData+Help).
+![Bar Chart](assets/intro_bar_chart.png "Bar Chart")
+
+The graph shows the elements that together work as unified input for creating a visualization using GoodData.UI.
+
+In the bar chart:
+
+* `$ Avg Daily Total Sales` is a **measure** that represents what is being measured. In this example, you are interested in the average daily amount. The `$ Avg Daily Total Sales` measure is derived by calculating the average of the daily amounts (`Daily Sales` in your data).
+
+* `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchize offices.
+
+* A **filter** is a set of characteristics applied to a report to remove values from computed and displayed values. Notice that the chart shows only specific values of the `Location State` attribute: `Alabama`, `California`, `Florida`, `New York`, and `Texas`. This is because you are interested in the data for the US offices only, and the chart has a **filter** applied to display only the offices located in the USA.

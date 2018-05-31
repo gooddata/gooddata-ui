@@ -20,31 +20,18 @@ original_id: platform_intro
 
 Imagine you have the data that shows how much money your Franchizes earn daily.
 
-| Location State | Daily Sales | Date      |
-| -------------- | ----------- | --------- |
-| Alabama        | $16,239     | 5/22/2018 |
-| California     | $39,877     | 5/22/2018 |
-| Florida        | $12,639     | 5/22/2018 |
-| London         | $24,041     | 5/22/2018 |
-| New York       | $11,678     | 5/22/2018 |
-| Texas          | $10,299     | 5/22/2018 |
-| Tokyo          | $18,451     | 5/22/2018 |
-| Alabama        | $14,239     | 5/23/2018 |
-| California     | $35,877     | 5/23/2018 |
-| Florida        | $12,639     | 5/23/2018 |
-| London         | $24,041     | 5/23/2018 |
-| New York       | $11,678     | 5/23/2018 |
-| Texas          | $10,299     | 5/23/2018 |
-| Tokyo          | $10,451     | 5/23/2018 |
+You want to know the **average** daily amount for each Franchize office in the USA.
 
-With GoodData.UI, let's display this data as a bar chart:
+With GoodData.UI, let's display this data (on the left) as a bar chart (on the right):
 
 ![Bar Chart](assets/intro_bar_chart.png "Bar Chart")
 
 The graph shows the elements that together work as unified input for creating a visualization using GoodData.UI.
 
-`$ Daily Sales` is a **measure** that represents what is being measured. In this example, you are interested in the daily amount of sales.
+In the bar chart:
 
-`Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Sales departments.
+* `$ Avg Daily Total Sales` is a **measure** that represents what is being measured. In this example, you are interested in the average daily amount. The `$ Avg Daily Total Sales` measure is derived by calculating the average of the daily amounts (`Daily Sales` in your data).
 
-Notice that the chart shows only specific values of the `Location State` attribute: `Alabama`, `California`, `Florida`, `New York`, and `Texas`. This is because the chart has a **filter** applied to display only the Sales offices located in the USA.
+* `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchize offices.
+
+* A **filter** is a set of characteristics applied to a report to remove values from computed and displayed values. Notice that the chart shows only specific values of the `Location State` attribute: `Alabama`, `California`, `Florida`, `New York`, and `Texas`. This is because you are interested in the data for the US offices only, and the chart has a **filter** applied to display only the offices located in the USA.
