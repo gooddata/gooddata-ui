@@ -18,6 +18,7 @@ You specify the input data by using the component parameters. Then, the executio
 | resultSpec | false | [Result Specification \(resultSpec\)](result_specification.md) |
 | onError | false | function |
 | onLoadingChanged | false | function |
+| onLoadingFinish | false | function |
 
 * If you specify a function in the `onError` parameter, this function will be called in case of an error. It is always executed after `onLoadingChanged`. The first parameter is an error object: `{ status: ErrorStates, error?: string }`. Status can be one of the following \(use `import { ErrorStates } from '@gooddata/react-components'`\):
 
@@ -26,6 +27,8 @@ You specify the input data by using the component parameters. Then, the executio
   * `ErrorStates.UNKNOWN_ERROR`
 
 * If you specify a function in the `onLoadingChanged` parameter, this function will be called every time a data load starts or finishes, and it will get either the `{isLoading: true}` or `{isLoading: false}` object as a parameter. It is always executed before `onError`.
+
+* If you specify a function in the `onLoadingFinish` parameter, this function will be called every time a data load finishes successfully, and it will get the execution result object `{ result }` as a parameter. It is always executed after `onLoadingChanged`. `onLoadingFinish` is *not* called when execution results in an error.
 
 * Empty execution results can be found by an empty data property in the result. To check if the result is empty, use `import { isEmptyResult } from '@gooddata/react-components'`.
 
@@ -36,7 +39,7 @@ The following example shows the function specified as a child in the Execution 
 ```javascript
 import { Execute, isEmptyResult } from '@gooddata/react-components';
 
-<Execute afm={<afm>} projectId={<project-id>} onLoadingChanged={e=>{}} onError={e=>{}}>
+<Execute afm={<afm>} projectId={<project-id>} onLoadingChanged={e=>{}} onLoadingFinish={e=>{}} onError={e=>{}}>
     {
         (execution) => {
             const { isLoading, error, result } = execution;
@@ -45,7 +48,7 @@ import { Execute, isEmptyResult } from '@gooddata/react-components';
             } else if (error) {
                 return (<div>There was an error</div>);
             }
-            
+
             return isEmptyResult(result) ? (<div>Empty result</div>) : (<div>{JSON.stringify(result.executionResult)}</div>);
         }
     }

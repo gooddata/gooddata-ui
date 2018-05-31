@@ -12,6 +12,7 @@
       "area_chart_component",
       "bar_chart_component",
       "column_chart_component",
+      "donut_chart_component",
       "headline_component",
       "kpi_component",
       "line_chart_component",
@@ -34,7 +35,8 @@
       "afm",
       "result_specification",
       "table_totals_in_execution_object",
-      "execute_component"
+      "execute_component",
+      "execution_rest_api_and_result"
     ],
     "Development Tips": [
       "gdc_catalog_export",

@@ -74,8 +74,8 @@ const siteConfig = {
     indexName: 'my-index-name'
   }*/
   twitter: 'true',
-  twitterImage: 'img/metaimage.png',
-  ogImage: 'img/metaimage.png',
+  twitterImage: 'img/metaimage.jpg',
+  ogImage: 'img/metaimage.jpg',
   disableHeaderTitle: true
 };
 

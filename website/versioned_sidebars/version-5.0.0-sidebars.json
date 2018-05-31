@@ -33,7 +33,8 @@
       "version-5.0.0-afm",
       "version-5.0.0-result_specification",
       "version-5.0.0-table_totals_in_execution_object",
-      "version-5.0.0-execute_component"
+      "version-5.0.0-execute_component",
+      "version-5.0.0-execution_rest_api_and_result"
     ],
     "Development Tips": [
       "version-5.0.0-gdc_catalog_export",
