@@ -28,7 +28,7 @@ You specify the input data by using the component parameters. Then, the executio
 
 * If you specify a function in the `onLoadingChanged` parameter, this function will be called every time a data load starts or finishes, and it will get either the `{isLoading: true}` or `{isLoading: false}` object as a parameter. It is always executed before `onError`.
 
-* If you specify a function in the `onLoadingFinish` parameter, this function will be called every time a data load finishes successfully, and it will get the execution result object `{ result }` as a parameter. It is always executed after `onLoadingChanged`. `onLoadingFinish` is *not* called when execution results in an error.
+* If you specify a function in the `onLoadingFinish` parameter, this function will be called every time a data load finishes successfully, and it will get the execution result object `{ result }` as a parameter. It is always executed after `onLoadingChanged`. `onLoadingFinish` is *not* called when an execution finishes with an error.
 
 * Empty execution results can be found by an empty data property in the result. To check if the result is empty, use `import { isEmptyResult } from '@gooddata/react-components'`.
 

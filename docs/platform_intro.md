@@ -7,7 +7,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 
 **GoodData Platform** is a powerful end-to-end analytics platform as a service with multi-tenant distribution that scales to hundreds of terabytes of data and hundreds of thousands of users. Learn more about the [GoodData platform](https://www.gooddata.com/platform) and how to [embed its analytics possibilities](https://www.gooddata.com/embedded-analytics).
 
-## GoodData Platform and GoodData.UI
+## GoodData platform and GoodData.UI
 
 ![GoodData Platform and GoodData.UI](assets/gooddata_platform_ui.png "GoodData Platform and GoodData.UI")
 
@@ -17,20 +17,18 @@ copyright: (C) 2007-2018 GoodData Corporation
 
 * **GoodData.UI** is a React-based JavaScript library for building responsive analytical applications. This library is written on top of *GoodData.js* and makes creating analytical applications even more convenient by adding visual components.
 
-## Main Concepts
+## Main concepts
 
-Imagine you are an account manager for a Franchize network. You want to know the **average** daily amount for each Franchize office in the USA.
+Imagine you are an account manager for a Franchize network. You want to know the **average** daily amount of money for each Franchize office in the USA.
 
-You have the data that shows how much money your Franchizes earn daily. Let's display this data (on the left) as a bar chart (on the right):
+You have the data that shows how much money all your Franchizes earn daily. Let's display this data as a bar chart:
 
 ![Bar Chart](assets/intro_bar_chart.png "Bar Chart")
 
-The graph shows the elements that together work as unified input for creating a visualization using GoodData.UI.
+The graph shows the elements that together work as unified input for creating a visualization using GoodData.UI. In the bar chart:
 
-In the bar chart:
-
-* `$ Avg Daily Total Sales` is a **measure** that is a computational expression that aggregates one or more numerical values. In this example, you are interested in the average daily amount. The `$ Avg Daily Total Sales` is a measure that is derived by calculating the average of the daily amounts (`Daily Sales` in your data).
+* `$ Avg Daily Total Sales` is a **measure** that is a computational expression that aggregates one or more numerical values. In this example, you are interested in the average daily amount.
 
 * `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchize offices.
 
-* A **filter** is a set of conditions that removes specific values from the your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the bar chart has a **filter** applied to display only the offices located in the USA.
+* A **filter** is a set of conditions that removes specific values from your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the bar chart has a **filter** applied to display only the offices located in the USA.
