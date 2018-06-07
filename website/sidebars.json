@@ -20,7 +20,8 @@
       "scatter_plot_component",
       "table_component",
       "visualization_component",
-      "afm_components"
+      "afm_components",
+      "attribute_filter_component"
     ],
     "Properties" : [
       "chart_config",
@@ -32,6 +33,7 @@
     ],
     "Custom Visualizations": [
       "create_new_visualization",
+      "create_custom_attribute_filter",
       "afm",
       "result_specification",
       "table_totals_in_execution_object",

@@ -1,7 +1,7 @@
 ---
 id: attribute_filter_component
-title: AttributeFilter Component
-sidebar_label: AttributeFilter Component
+title: Attribute Filter
+sidebar_label: Attribute Filter
 copyright: (C) 2007-2018 GoodData Corporation
 ---
 
