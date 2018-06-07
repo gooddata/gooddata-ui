@@ -68,6 +68,13 @@ To set up a proxy, add the following section to the root level of your `package.
 },
 ```
 
+* If you are on Windows and using Microsoft Edge or Internet Explorer:
+    Set `cookieDomainRewrite` to the IP address on which your local web server runs, for example:
+    ```javascript
+    "cookieDomainRewrite": "127.0.0.1"
+    ```
+    You can get your IP address from the console output after the server started.
+
 > Switch `target` and `host` to ``https://developer.na.gooddata.com`` when using the [live examples](https://gooddata-examples.herokuapp.com/).
 
 Start the server by running the following command:
@@ -85,6 +92,8 @@ Start the server by running the following command:
 
 ## Step 5. Establish a session
 Open [https://localhost:3000/account.html](https://localhost:3000/account.html) in your browser, and enter your GoodData credentials. You are now logged in to GoodData.
+
+* If you are on Windows and using Microsoft Edge or Internet Explorer, replace `localhost` in the URI above with the IP address that you get after running the server
 
 If you see a warning about an insecure connection due to using a self-signed certificate, accept the exception: you can trust your localhost.
 
@@ -127,10 +136,10 @@ Now, you can start adding your first GoodData component:
     import React, { Component } from 'react';
     import { LineChart } from '@gooddata/react-components';
     import '@gooddata/react-components/styles/css/main.css';
-    
+
     import logo from './logo.svg';
     import './App.css';
-    
+
     const measures = [
         {
             measure: {
@@ -146,7 +155,7 @@ Now, you can start adding your first GoodData component:
             }
         }
     ];
-    
+
     const attribute = {
         visualizationAttribute: {
             displayForm: {
@@ -155,7 +164,7 @@ Now, you can start adding your first GoodData component:
             localIdentifier: 'month'
         }
     };
-    
+
     class App extends Component {
        render() {
           return (
@@ -181,7 +190,7 @@ Now, you can start adding your first GoodData component:
           );
        }
     }
-    
+
     export default App;
     ```
 6. Return to your browser window. The default page now looks like the following:
