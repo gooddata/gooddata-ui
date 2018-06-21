@@ -40,6 +40,7 @@
       "version-5.0.0-gdc_catalog_export",
       "version-5.0.0-sso",
       "version-5.0.0-cors",
+      "version-5.0.0-filter_visual_components",
       "version-5.0.0-data_layer",
       "version-5.0.0-ht_render_visualization_from_different_domain",
       "version-5.0.0-ht_use_react_components_with_vanilla_js",

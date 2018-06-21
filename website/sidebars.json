@@ -34,8 +34,6 @@
     ],
     "Custom Visualizations": [
       "create_new_visualization",
-      "create_custom_attribute_filter",
-      "filter_visual_components",
       "afm",
       "result_specification",
       "table_totals_in_execution_object",
@@ -47,6 +45,8 @@
       "sso",
       "cors",
       "data_layer",
+      "filter_visual_components",
+      "create_custom_attribute_filter",
       "ht_render_visualization_from_different_domain",
       "ht_use_react_components_with_vanilla_js",
       "ht_use_react_component_in_angular_1.x",

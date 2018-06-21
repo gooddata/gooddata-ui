@@ -68,7 +68,7 @@ const attribute = {
 | measures | true | Measure[] | An array of measure definitions |
 | trendBy | false | Attribute[] | An array of attribute definitions |
 | segmentBy | false | Attribute[] | An array of attribute definitions |
-| filters | false | Filter[] | An array of filter definitions |
+| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
 | config | false | {} | The chart configuration object |
 | locale | false | string | The location string for translations |

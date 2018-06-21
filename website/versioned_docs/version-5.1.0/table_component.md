@@ -71,7 +71,7 @@ const attributes = [
 | measures | false | Measure[] | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
 | attributes | false | Attribute[] | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
 | totals | false | Total[] | An array of total definitions |
-| filters | false | Filter[] | An array of filter definitions |
+| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
 | locale | false | string | The location string for translations |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|

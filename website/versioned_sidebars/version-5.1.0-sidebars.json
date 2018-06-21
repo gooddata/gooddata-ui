@@ -33,8 +33,6 @@
     ],
     "Custom Visualizations": [
       "version-5.1.0-create_new_visualization",
-      "version-5.1.0-create_custom_attribute_filter",
-      "version-5.1.0-filter_visual_components",
       "version-5.1.0-afm",
       "version-5.1.0-result_specification",
       "version-5.1.0-table_totals_in_execution_object",
@@ -45,6 +43,8 @@
       "version-5.1.0-gdc_catalog_export",
       "version-5.1.0-sso",
       "version-5.1.0-cors",
+      "version-5.1.0-filter_visual_components",
+      "version-5.1.0-create_custom_attribute_filter",
       "version-5.1.0-data_layer",
       "version-5.1.0-ht_render_visualization_from_different_domain",
       "version-5.1.0-ht_use_react_components_with_vanilla_js",

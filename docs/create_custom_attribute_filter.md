@@ -10,10 +10,11 @@ Attribute elements component is a low level counterpart to the [Attribute Filter
 It lists attribute values and allows you to completely customize how they are rendered.
 
 The child function receives the following arguments:
-*  an array of attribute values
-*  a callback to load more values
-*  loading status
-*  an optional error object
+
+* an array of attribute values
+* a callback to load more values
+* loading status
+* an optional error object
 
 ### Example
 
