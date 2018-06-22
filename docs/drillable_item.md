@@ -9,14 +9,16 @@ To turn on eventing and drilling, specify at least one drillableItem.
 
 Drillable items consist of measures, attribute displayForms that are defined by their identifier or URI, or attribute values defined by their URI. Visualization points that intersect any defined measures, attributes, or attribute values become drillable and will emit events when interacted with.
 
+**NOTE:** Visualizations created and saved in Analytical Designer contain URIs, not identifiers. When you set up drilling for such visualizations, use URIs in `drillableItems` and not identifiers.
+
 ## Structure
 
 ```javascript
 drillableItems: [
     {
-        identifier: <identifier>  // measure or attribute displayForm identifier
+        identifier: <identifier>  // Measure or attribute displayForm identifier
         // or
-        uri: <uri>    // measure, attribute displayForm, or attribute value uri
+        uri: <uri>    // Measure, attribute displayForm, or attribute value URI
     },
     ...
 ]
@@ -30,7 +32,7 @@ drillableItems: [
 
 ## Set up drilling
 
-To enable event drilling, extend the `Visualization` component with a `drillableItems` property. 
+To enable event drilling, extend the `Visualization` component with a `drillableItems` property.
 
 In the `drillableItems` property, add an array of `uri`s and/or `identifier`s of the measures and attributes that will become highlighted and drillable.
 
@@ -54,5 +56,4 @@ document.addEventListener('drill',function(arg) { console.log(arg.detail); });
 
 Each event is a JSON consisting of `executionContext` and `drillableContext`. 
 
-For more information, 
-see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/display/doc/Setting+up+Events+for+Drilling+in+Embedded+Analytical+Designer+and+KPI+Dashboards).
+For more information, see [Setting up Events for Drilling in Embedded Analytical Designer and KPI Dashboards](https://help.gooddata.com/display/doc/Setting+up+Events+for+Drilling+in+Embedded+Analytical+Designer+and+KPI+Dashboards).
