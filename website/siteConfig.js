@@ -62,7 +62,7 @@ const siteConfig = {
   },
   scripts: [
     'https://buttons.github.io/buttons.js',
-    '../js/toggleNav.js'
+    '/gooddata-ui/js/toggleNav.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/gooddata/gooddata-react-components',

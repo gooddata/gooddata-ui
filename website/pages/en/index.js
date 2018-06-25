@@ -393,6 +393,7 @@ class Index extends React.Component {
           <GetStarted />
         </div>
         <script src="js/parallax.js" />
+        <script src="js/gaEvents.js" />
       </div>
     );
   }
