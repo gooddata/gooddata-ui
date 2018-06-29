@@ -11,7 +11,7 @@ This article provides components examples and basic usage information to get you
 
 ## Responsive UI
 
-Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour also implicates that in case you want a visualization with specific `height` and `width`, you have to specifiy them in the wrapper element. Otherwise, the visualization will not work correctly.
+Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour also implicates that in case you want a visualization with specific `height` and `width`, you have to specifiy them in the wrapper element. Otherwise, the visualization may not be visible at all.
 
 ### Example
 
@@ -21,9 +21,57 @@ Visual Components are responsive by nature and fill the whole content of their w
 </div>
 ```
 
-## Object URI vs. object identifier
+## Bucket interface
 
-Though you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+The props used for passing measures and attributes are called buckets (its similar to drag&drop buckets in the [Analytical Designer](https://secure.gooddata.com/analyze)). 
+Each bucket is a single value or an array of type `IMeasure` or `IVisualizationAttribute`.
+It is passed to the component as an object literal.
+
+See the individual component pages as examples, each page features a different approach. Comprehensive typings can be found
+ [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
+
+### Example
+```js
+<div style={{ height: 300 }}>
+    <AreaChart
+        projectId="myproject"
+        measures={[
+                      {
+                          measure: {
+                              localIdentifier: 'm1',
+                              definition: {
+                                  measureDefinition: {
+                                      item: { identifier: 'aagAVA3ffiz' }
+                                  }
+                              },
+                              format: '#,##0'
+                          }
+                      }
+                  ]}
+        viewBy={{
+                    visualizationAttribute: {
+                        displayForm: { uri: '/gdc/md/myproject/obj/851' },
+                        localIdentifier: 'month'
+                    }
+                }}
+    />
+</div>
+```
+
+### How to refer to attributes and measures
+
+- Measures can be refered to by its `identifier` or `uri`
+- Attributes are little different - each attribute (for example, Date of invoice) has multiple display forms (Years, Quarters etc.). You have to choose specific display form to viewBy or similar buckets. On the contrary when using filters, you have to refer to the main attribute object. 
+
+To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+
+Another option is through the [Analytical Designer](https://secure.gooddata.com/analyze): 
+1) create a visualization according to your needs 
+2) open Developer Tools's [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter) 
+3) find requests to `/executeAfm` 
+4) see the [AFM](afm.md) in the request body - it contains the needed identifiers to measures, atributes and display forms.   
+
+> **Object URI vs. object identifier:** Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. 
 
 ## Visualization lifecycle
 

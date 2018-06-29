@@ -7,6 +7,7 @@ id: afm
 
 AFM is a combination of attributes, measures and filters that describes a query that you want to execute. In terms of underlying API, it is similar to creating an insight using [Analytical Designer](https://help.gooddata.com/display/doc/Create+an+Insight+with+Analytical+Designer).
 
+**Just a quick reminder:** A measure contains the numeric data (eg. Revenue), it can be sliced according to a selected attribute (eg. City, date in years, or both) and filtered by attribute value(s) or date contraints. More in [platform intro](platform_intro.md#main-concepts).   
 
 ## Structure
 
@@ -18,6 +19,8 @@ AFM is a combination of attributes, measures and filters that describes a query 
     nativeTotals: [] // Optional; the default is []
 }
 ```
+
+See [typings](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/AFM.ts#L9) for typescript specification.
 
 ## Attribute
 
