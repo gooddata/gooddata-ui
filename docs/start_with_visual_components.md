@@ -11,7 +11,7 @@ This article provides components examples and basic usage information to get you
 
 ## Responsive UI
 
-Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour also implicates that in case you want a visualization with specific `height` and `width`, you have to specifiy them in the wrapper element. Otherwise, the visualization may not be visible at all.
+Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour implicates that if you want to create a visualization with a specific `height` and `width`, you must specifiy those dimensions in the wrapper element. Otherwise, the visualization may not be visible.
 
 ### Example
 
@@ -23,11 +23,11 @@ Visual Components are responsive by nature and fill the whole content of their w
 
 ## Bucket interface
 
-The props used for passing measures and attributes are called buckets (its similar to drag&drop buckets in the [Analytical Designer](https://secure.gooddata.com/analyze)). 
+The props that are used for passing measures and attributes are called buckets. They are similar to the drag&drop buckets in the [Analytical Designer](https://secure.gooddata.com/analyze)). 
 Each bucket is a single value or an array of type `IMeasure` or `IVisualizationAttribute`.
 It is passed to the component as an object literal.
 
-See the individual component pages as examples, each page features a different approach. Comprehensive typings can be found
+Review the individual components in the Visual Components section. Comprehensive typings can be found
  [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
 
 ### Example
@@ -58,19 +58,22 @@ See the individual component pages as examples, each page features a different a
 </div>
 ```
 
-### How to refer to attributes and measures
+### How to work with attributes and measures
 
-- Measures can be refered to by its `identifier` or `uri`
-- Attributes are little different - each attribute (for example, Date of invoice) has multiple display forms (Years, Quarters etc.). You have to choose specific display form to viewBy or similar buckets. On the contrary when using filters, you have to refer to the main attribute object. 
+A measure can be referred to by its `identifier` or `uri`.
 
-To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+Attributes are little different. Each attribute (for example, Date of invoice) has multiple display forms (Years, Quarters etc.). Select a specific display form and place it to a *viewBy* or a similar bucket. However, when you are using attributes in filters, you must refer to the attribute.
 
-Another option is through the [Analytical Designer](https://secure.gooddata.com/analyze): 
-1) create a visualization according to your needs 
-2) open Developer Tools's [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter) 
-3) find requests to `/executeAfm` 
-4) see the [AFM](afm.md) in the request body - it contains the needed identifiers to measures, atributes and display forms.   
+To find an identifier or uri of the measure or attributes that you need, download a list of attributes and measures from a GoodData project by using [gdc-catalog-export](gdc-catalog-export.md).
 
+Another option to find identifiers and uris is using the [Analytical Designer](https://secure.gooddata.com/analyze): 
+
+1) Create a visualization that uses measures and attributes that you need.
+2) Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter). 
+3) Find requests to `/executeAfm`. 
+4) Search for the [AFM](afm.md) in the request body - it contains the required identifiers to measures, atributes, and display forms. 
+
+> **NOTE:**
 > **Object URI vs. object identifier:** Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. 
 
 ## Visualization lifecycle
