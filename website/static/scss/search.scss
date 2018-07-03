@@ -8,6 +8,15 @@
 .reactNavSearchWrapper {
     @media #{$medium-down} {
         top: 15px;
+
+        &,
+        input#search_input_react {
+            max-width: calc(100vw - 280px);
+        }
+    }
+
+    @media #{$small-only} {
+        display: none;
     }
 
     input#search_input_react {
@@ -21,11 +30,139 @@
             width: 234px;
             padding: 0 1rem;
             color: $gd-color-text;
-            background: #ddd;
+            background: transparentize(#ddd, 0.5);
         }
 
         &::placeholder {
             color: $gd-color-state-blank;
         }
+    }
+
+    .aa-dropdown-menu {
+        padding: 20px;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+        box-shadow: 0 1px 20px 0 rgba(20,57,93,0.20);
+        background-color: $gd-color-white;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            right: 100px;
+            border: 10px solid transparent;
+        }
+
+        &::before {
+            top: -20px;
+            border-bottom-color: $border-color;
+        }
+
+        &::after {
+            top: -19px;
+            border-bottom-color: $gd-color-white;
+        }
+
+        .algolia-docsearch-suggestion,
+        .algolia-docsearch-suggestion--category-header,
+        .algolia-docsearch-suggestion--subcategory-column,
+        .algolia-docsearch-suggestion--content,
+        .algolia-docsearch-footer {
+            border: none;
+            background-color: transparent;
+        }
+
+        .algolia-docsearch-suggestion--category-header {
+            padding: 15px 0;
+            border-top: 1px solid $border-color;
+            color: $gd-color-dark;
+            font-family: inherit;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .aa-suggestion:first-child .algolia-docsearch-suggestion--category-header,
+        .algolia-docsearch-suggestion__main .algolia-docsearch-suggestion--content,
+        .algolia-docsearch-suggestion__secondary {
+            border-top: none;
+        }
+
+        .aa-suggestion:first-child .algolia-docsearch-suggestion--category-header {
+            padding-top: 0;
+        }
+
+        .algolia-docsearch-suggestion--title {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 22px;
+        }
+
+        .algolia-docsearch-suggestion--content {
+            padding: 5px 10px;
+            border-top: 1px solid $border-color;
+            color: $gd-color-text;
+            line-height: 20px;
+        }
+
+        .algolia-docsearch-suggestion--text {
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .algolia-docsearch-suggestion--subcategory-column {
+            padding: 5px 0;
+            font-size: 16px;
+            text-align: left;
+            line-height: 22px;
+        }
+
+        .algolia-docsearch-footer {
+            padding: 15px 0 0;
+            border-top: 1px solid $border-color;
+        }
+
+        .algolia-docsearch-footer--logo {
+            height: 15px;
+            margin: 0;
+            border: none;
+            line-height: inherit;
+        }
+
+        @media #{$medium-down} {
+            width: 90%;
+            right: 5% !important; // Override inline style
+            left: 5% !important; // Override inline style
+            position: fixed !important; // Override inline style
+            top: auto !important; // Override inline style
+            max-height: 90vh;
+        }
+    }
+
+    .aa-cursor {
+        .algolia-docsearch-suggestion--title  {
+            color: $gd-color-dark;
+        }
+
+        .algolia-docsearch-suggestion--content {
+            color: $gd-color-text;
+            background-color: #e8edf3;
+        }
+    }
+
+    .algolia-docsearch-suggestion--highlight {
+        color: $gd-color-highlight;
+    }
+
+    .aa-suggestion-title-separator {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        width: 4px;
+        height: 7px;
+        margin: 0 5px;
+        font-size: 0;
+        background-image: url('data:image/svg+xml;utf8,<svg width="4" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M0 8.166992l3.87988-3.534114L0 1.461174" stroke="#94A1AE" fill="none" fill-rule="evenodd"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }

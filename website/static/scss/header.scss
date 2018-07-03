@@ -142,7 +142,7 @@
             &.siteNavItemActive a,
             &.siteNavGroupActive a {
                 color: transparentize($gd-color-dark, 0.1);
-                background: transparent;
+                background-color: transparent;
                 transition: all 100ms ease-in;
             }
 
@@ -157,6 +157,19 @@
             }
         }
 
+        .navSearchWrapper {
+            position: absolute;
+            top: 50%;
+            right: 200px;
+            width: 218px;
+            margin-top: -14px;
+
+            @media #{$medium-down} {
+                top: 32px;
+                right: 100px;
+            }
+        }
+
         @media #{$medium-down} {
             box-shadow: $shadow;
             background: $gray-3;
@@ -168,7 +181,7 @@
     }
 
     @media #{$medium-up} {
-        overflow: hidden;
+        overflow: visible;
 
         &,
         nav.slidingNav,
@@ -176,13 +189,6 @@
             height: 100%;
         }
     }
-}
-
-.navSearchWrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 218px;
 }
 
 .navPusher {

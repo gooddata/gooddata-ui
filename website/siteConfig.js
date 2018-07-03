@@ -69,10 +69,10 @@ const siteConfig = {
   gaTrackingId: 'UA-3766725-19',
   /* On page navigation for the current documentation page */
   // onPageNav: 'separate',
-  /* algolia: {
-    apiKey: 'my-search-only-api-key-1234',
-    indexName: 'my-index-name'
-  }*/
+  algolia: {
+    apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+    indexName: 'gooddata'
+  },
   twitter: 'true',
   twitterImage: 'img/metaimage.jpg',
   ogImage: 'img/metaimage.jpg',
