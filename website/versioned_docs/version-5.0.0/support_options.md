@@ -8,8 +8,10 @@ original_id: support_options
 
 Feeling stuck? There are several ways to get help with building your app.
 
-## Stack Overflow
-Check the [existing questions](https://stackoverflow.com/questions/tagged/gooddata) tagged with **GoodData.UI** or [ask your own](http://stackoverflow.com/questions/ask?tags=gooddata)!
+## Follow the community
+* Ask questions at [Stack Overflow](https://stackoverflow.com/questions/tagged/gooddata) forum.
+* Submit issues on [Github](https://github.com/gooddata/gooddata-react-components).
+* Follow [@gooddata_dev](https://twitter.com/gooddata_dev) on Twitter.
 
-## GitHub
-Report a bug or log a feature request at our [Github project](https://github.com/gooddata/gooddata-react-components).
+## Additional resources
+* Use GoodData [npm package](https://www.npmjs.com/package/@gooddata/react-components).
