@@ -11,7 +11,7 @@ This article provides components examples and basic usage information to get you
 
 ## Responsive UI
 
-Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour implicates that if you want to create a visualization with a specific `height` and `width`, you must specifiy those dimensions in the wrapper element. Otherwise, the visualization may not be visible.
+Visual Components are responsive by nature and take the whole space of their wrapper element. This behavior implicates that if you want to create a visualization with a specific `height` and `width`, you must specify those dimensions in the wrapper element. Otherwise, the visualization may not be visible.
 
 ### Example
 
