@@ -11,7 +11,7 @@ This article provides components examples and basic usage information to get you
 
 ## Responsive UI
 
-Visual Components are responsive by nature and take the whole space of their wrapper element. This behavior implicates that if you want to create a visualization with a specific `height` and `width`, you must specify those dimensions in the wrapper element. Otherwise, the visualization may not be visible.
+Visual components are responsive by nature and take the whole space of their wrapper element. This behavior implicates that if you want to create a visualization with a specific `height` and `width`, you must specify those dimensions in the wrapper element. Otherwise, the visualization may not be visible.
 
 ### Example
 
@@ -23,12 +23,11 @@ Visual Components are responsive by nature and take the whole space of their wra
 
 ## Bucket interface
 
-The props that are used for passing measures and attributes are called buckets. They are similar to the drag&drop buckets in the [Analytical Designer](https://secure.gooddata.com/analyze)). 
-Each bucket is a single value or an array of type `IMeasure` or `IVisualizationAttribute`.
-It is passed to the component as an object literal.
+The props that are used for passing measures and attributes are called **buckets**. Buckets are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer). 
+A bucket can be a single value or an array of either the `IMeasure` or `IVisualizationAttribute` type.
+A bucket is passed to the component as an object literal.
 
-Review the individual components in the Visual Components section. Comprehensive typings can be found
- [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
+Review the individual components in the Visual Components section. You can find the comprehensive typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
 
 ### Example
 ```js
