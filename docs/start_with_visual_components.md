@@ -5,9 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: start_with_visual_components
 ---
 
-GoodData.UI comes with ready-made visual components listed in the Visual Components section that you can use as-is or further customize. You can also use the unique visualization component that simply renders any chart you create on the GoodData platform.
+GoodData.UI comes with ready-made visual components listed in the Visual Components section. You can use these visual components as-is or customize them. You can also use the unique Visualization component that simply renders any chart that you create on the GoodData platform.
 
-This article provides components examples and basic usage information to get you going. 
+This article provides components examples and basic instructions on component usage. 
 
 ## Responsive UI
 
@@ -21,14 +21,17 @@ Visual components are responsive by nature and take the whole space of their wra
 </div>
 ```
 
-## Visual Components Props
+## Visual component props
 
-The components`s props can be of two types. First ones define the data returned by the platform execution, and second the style and interaction props.  
+The component props can be of the following types:
 
-The data props are used for passing measures and attributes. These props are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer), they use similar names like "View by", "Stack by" etc.
+* **Data props** that define the data returned by execution of the GoodData platform itself
+* **Style props** that define the style and interaction
+
+The data props pass measures and attributes. These props are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer) and use similar names such as "View by", "Stack by" and so on.
 A data prop can be a single value or an array of either the `IMeasure` or `IVisualizationAttribute` type, which is passed to the component as an object literal.
 
-Specific documentation can be found in individual components pages in the Visual Components section. 
+You can find more information in the sections about individual components in the Visual Components section.
 
 ### Example
 ```js
@@ -62,16 +65,16 @@ Specific documentation can be found in individual components pages in the Visual
 
 A measure can be referred to by its `identifier` or `uri`.
 
-Attributes are little different. Each attribute (for example, Date of invoice) has multiple display forms (Years, Quarters etc.). Select a specific display form and place it to a *viewBy* or a similar bucket. However, when you are using attributes in filters, you must refer to the attribute.
+Attributes are a little different. Each attribute (for example, Date of invoice) has multiple display forms (Years, Quarters, and so on). Select a specific display form and place it to a `viewBy` or a similar prop. However, when you are using attributes in filters, you must refer to the attribute itself, not its display form.
 
-To find an identifier or uri of the measure or attributes that you need, download a list of attributes and measures from a GoodData project by using [gdc-catalog-export](gdc-catalog-export.md).
+To find the identifier or URI of a measure or an attributes, download a list of attributes and measures from your project using [gdc-catalog-export](gdc-catalog-export.md).
 
 Another option to find identifiers and uris is using the [Analytical Designer](https://secure.gooddata.com/analyze): 
 
 1) Create a visualization that uses measures and attributes that you need.
 2) Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter). 
 3) Find requests to `/executeAfm`. 
-4) Search for the [AFM](afm.md) in the request body - it contains the required identifiers to measures, atributes, and display forms. 
+4) Search for the [AFM](afm.md) in the request body - it contains the required identifiers to measures, atributes, and display forms.
 
 > **NOTE:**
 > **Object URI vs. object identifier:** Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. 
@@ -123,8 +126,6 @@ IVisualizationAttribute = {
     }
 }
 ```
-
-
 
 ## Visualization lifecycle
 
