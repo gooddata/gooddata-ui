@@ -21,13 +21,14 @@ Visual components are responsive by nature and take the whole space of their wra
 </div>
 ```
 
-## Bucket interface
+## Visual Components Props
 
-The props that are used for passing measures and attributes are called **buckets**. Buckets are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer). 
-A bucket can be a single value or an array of either the `IMeasure` or `IVisualizationAttribute` type.
-A bucket is passed to the component as an object literal.
+The components`s props can be of two types. First ones define the data returned by the platform execution, and second the style and interaction props.  
 
-Review the individual components in the Visual Components section. You can find the comprehensive typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
+The data props are used for passing measures and attributes. These props are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer), they use similar names like "View by", "Stack by" etc.
+A data prop can be a single value or an array of either the `IMeasure` or `IVisualizationAttribute` type, which is passed to the component as an object literal.
+
+Specific documentation can be found in individual components pages in the Visual Components section. 
 
 ### Example
 ```js
@@ -74,6 +75,56 @@ Another option to find identifiers and uris is using the [Analytical Designer](h
 
 > **NOTE:**
 > **Object URI vs. object identifier:** Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. 
+
+#### Type definition
+You can find the TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
+
+```ts
+IMeasure = {
+  measure: {
+    localIdentifier: string 
+          // An arbitrary identifier, which is later used in sorting and filtering
+    definition: IMeasureDefinition | IPoPMeasureDefinition 
+          // Specifies simple measure or period-over-period measure, see below
+    alias: string // Optional. Alternative measure name to be displayed 
+    format: string // Optional. Rules for number formating, if empty measure default is used 
+  }
+}
+
+IMeasureDefinition = {
+    measureDefinition: {
+        item: { uri / identifier: string } 
+            // uri or identifier of specific measure from your project 
+        aggregation: string 
+            // Optional. Operation on the measure - one of sum, count, avg, min, max, median, runsum 
+        filters: VisualizationObjectFilter[] 
+            // Optional. Array of attribute or date filters (more at page Filter Visual Components)
+        computeRatio: boolean 
+            // Optional. Return value as ratios from whole, useful for showing percents.
+    }
+}
+
+// references another measure, but shows its values shifted back by one year (aka "period over period")
+IPoPMeasureDefinition = {
+    popMeasureDefinition: {
+        measureIdentifier: Identifier // localIdentifier of the referenced measure
+        popAttribute: { uri / identifier: string } 
+            // uri or identifier of attribute which is used for slicing (not the displayForm)
+    }
+}
+```
+
+```ts
+IVisualizationAttribute = {
+    visualizationAttribute: {
+        localIdentifier: Identifier // An arbitrary identifier, which is later used in sorting and filtering
+        displayForm: { uri / identifier: string } // The attribute`s display form 
+        alias: string // Optional. Alternative attribute name to be displayed
+    }
+}
+```
+
+
 
 ## Visualization lifecycle
 
