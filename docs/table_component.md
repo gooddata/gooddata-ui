@@ -18,7 +18,6 @@ import { Table } from '@gooddata/react-components';
 <Table
     projectId={<project-id>}
     measures={<measures>}
-    config={<chart-config>}
     …
 />
 ```

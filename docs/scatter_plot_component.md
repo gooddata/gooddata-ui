@@ -1,12 +1,12 @@
 ---
-title: Scatter Plot Chart
-sidebar_label: Scatter Plot Chart
+title: Scatter Plot
+sidebar_label: Scatter Plot
 copyright: (C) 2007-2018 GoodData Corporation
 id: scatter_plot_component
 ---
 
-Scatter plot chart shows data as points using Cartesian coordinates. Scatter plot charts typically have a minimum of two measures, one for the X-axis and the other for the Y-axis, and one attribute, which determines the meaning of each data point.
-Scatter charts are useful for analyzing trends between two measures or for tracking the magnitude of two measures from the same chart.
+Scatter plot shows data as points using Cartesian coordinates. Scatter plots typically have a minimum of two measures, one for the X-axis and the other for the Y-axis, and one attribute, which determines the meaning of each data point.
+Scatter plots are useful for analyzing trends between two measures or for tracking the magnitude of two measures from the same chart.
 
 ![Scatter Plot Component](assets/scatter_plot.png "Scatter Plot Component")
 
@@ -85,12 +85,12 @@ const attribute = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| xAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot chart to render properly) |
-| yAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot chart to render properly) |
+| xAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
+| yAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the scatter plot to render properly) |
 | attribute | false | Attribute | An attribute definition |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
-| config | false | {} | The chart configuration object |
+| config | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
 | locale | false | string | The location string for translations |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state |
