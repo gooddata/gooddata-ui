@@ -6,13 +6,13 @@ id: version-5.0.0-start_with_visual_components
 original_id: start_with_visual_components
 ---
 
-GoodData.UI comes with ready-made visual components listed in the Visual Components section that you can use as-is or further customize. You can also use the unique visualization component that simply renders any chart you create on the GoodData platform.
+GoodData.UI comes with ready-made visual components listed in the Visual Components section. You can use these visual components as-is or customize them. You can also use the unique Visualization component that simply renders any chart that you create on the GoodData platform.
 
-This article provides components examples and basic usage information to get you going. 
+This article provides components examples and basic instructions on component usage.  
 
 ## Responsive UI
 
-Visual Components are responsive by nature and fill the whole content of their wrapper element. This behaviour also implicates that in case you want a visualization with specific `height` and `width`, you have to specifiy them in the wrapper element. Otherwise, the visualization will not work correctly.
+Visual components are responsive by nature and take the whole space of their wrapper element. This behavior implicates that if you want to create a visualization with a specific `height` and `width`, you must specify those dimensions in the wrapper element. Otherwise, the visualization may not be visible.
 
 ### Example
 
@@ -22,9 +22,114 @@ Visual Components are responsive by nature and fill the whole content of their w
 </div>
 ```
 
-## Object URI vs. object identifier
+## Visual component props
 
-Though you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. To get a list of catalog items and date datasets from a GoodData project in form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+The component props can be of the following types:
+
+* **Style props** that define the style and interaction
+* **Data props** that define the data returned by execution of the GoodData platform itself
+
+The style props define style and interaction of a visualization. For more information, see the articles in the Properties section.
+
+The data props pass measures and attributes. These props are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer) and use similar names such as "View by", "Stack by" and so on.
+A data prop can be a single value or an array of either the `IMeasure` or `IVisualizationAttribute` type, which is passed to the component as an object literal.
+
+You can find more information about data props in the articles about individual components in the Visual Components section.
+
+### Example
+```js
+<div style={{ height: 300 }}>
+    <AreaChart
+        projectId="myproject"
+        measures={[
+                      {
+                          measure: {
+                              localIdentifier: 'm1',
+                              definition: {
+                                  measureDefinition: {
+                                      item: { identifier: 'aagAVA3ffiz' }
+                                  }
+                              },
+                              format: '#,##0'
+                          }
+                      }
+                  ]}
+        viewBy={{
+                    visualizationAttribute: {
+                        displayForm: { uri: '/gdc/md/myproject/obj/851' },
+                        localIdentifier: 'month'
+                    }
+                }}
+    />
+</div>
+```
+
+### How to work with attributes and measures
+
+A measure can be referred to by its `identifier` or `uri`.
+
+An attribute can be referred to by this attribute's identifier or by the identifier of one of the attribute's display forms (labels).
+When using an attribute in a data prop, specify the identifier of the attribute's display form. However, when you are using attributes in filters, you must refer to the attribute itself, not its display form.
+
+To find the identifier or URI of a measure or attribute, use either of the following options:
+
+* Use [gdc-catalog-export](gdc-catalog-export.md): Download a list of attributes and measures from your project. In the downloaded list, find the measures and attributes that you need.
+* Use [Analytical Designer](https://secure.gooddata.com/analyze). 
+  1. Create a visualization that uses measures and attributes that you need.
+  2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).
+  3. Find requests to `/executeAfm`.
+  4. Search for the [AFM](afm.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
+
+#### Object URI vs. object identifier
+Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects. 
+
+#### Type definition
+You can find the TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
+
+```ts
+IMeasure = {
+  measure: {
+    localIdentifier: string 
+          // An arbitrary identifier, which is later used in sorting and filtering
+    definition: IMeasureDefinition | IPoPMeasureDefinition 
+          // Specifies simple measure or period-over-period measure, see below
+    alias: string // Optional. Alternative measure name to be displayed 
+    format: string // Optional. Rules for number formating, if empty measure default is used 
+  }
+}
+
+IMeasureDefinition = {
+    measureDefinition: {
+        item: { uri / identifier: string } 
+            // uri or identifier of specific measure from your project 
+        aggregation: string 
+            // Optional. Operation on the measure - one of sum, count, avg, min, max, median, runsum 
+        filters: VisualizationObjectFilter[] 
+            // Optional. Array of attribute or date filters (more at page Filter Visual Components)
+        computeRatio: boolean 
+            // Optional. Return value as ratios from whole, useful for showing percents.
+    }
+}
+
+// references another measure, but shows its values shifted back by one year (aka "period over period")
+IPoPMeasureDefinition = {
+    popMeasureDefinition: {
+        measureIdentifier: Identifier // localIdentifier of the referenced measure
+        popAttribute: { uri / identifier: string } 
+            // uri or identifier of attribute which is used for slicing (not the displayForm)
+    }
+}
+```
+
+```ts
+IVisualizationAttribute = {
+    visualizationAttribute: {
+        localIdentifier: Identifier // An arbitrary identifier, which is later used in sorting and filtering
+        displayForm: { uri / identifier: string } // The attribute`s display form 
+        alias: string // Optional. Alternative attribute name to be displayed
+    }
+}
+```
 
 ## Visualization lifecycle
 
