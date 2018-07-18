@@ -8,9 +8,9 @@ original_id: filter_visual_components
 
 This article provides examples of filtering visual components by date and attribute values.
 
-You can filter the `Visualization` component, `Kpi`, `Headline`, chart components and table components with the `filters` prop. The `filters` prop is an array of attribute filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](attribute_filter_component.md) or [`AttributeElements`](create_custom_attribute_filter.md) components.
+You can filter the `Visualization` component, `Kpi`, `Headline`, chart components, and table components with the `filters` prop. The `filters` prop is an array of attribute filters and date filters. You can make the filters dynamic with the [`AttributeFilter`](attribute_filter_component.md) or [`AttributeElements`](create_custom_attribute_filter.md) components.
 
-The `filters` prop is identical to the structure of individual filters in AFM. For more information, see [Set Up an AFM Query](afm.md).
+The same `filters` are used in AFM (for details, see [Set Up an AFM Query](afm.md)).
 
 Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
@@ -311,7 +311,7 @@ export class AttributeFilterExample extends Component {
 }
 ```
 
-Also, see the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
+See the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
 
 ### AttributeElements
 
@@ -378,4 +378,4 @@ Pass a custom children function to `AttributeElements`. This function will recei
 </AttributeElements>
 ```
 
-Also, see the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
+See the [live example](https://gooddata-examples.herokuapp.com/attribute-filter-components).
