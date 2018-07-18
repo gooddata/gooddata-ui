@@ -25,13 +25,15 @@ Visual components are responsive by nature and take the whole space of their wra
 
 The component props can be of the following types:
 
-* **Data props** that define the data returned by execution of the GoodData platform itself
 * **Style props** that define the style and interaction
+* **Data props** that define the data returned by execution of the GoodData platform itself
+
+The style props define style and interaction of a visualization. For more information, see the articles in the Properties section.
 
 The data props pass measures and attributes. These props are similar to the drag and drop sections in [Analytical Designer](https://help.gooddata.com/display/doc/Analytical+Designer) and use similar names such as "View by", "Stack by" and so on.
 A data prop can be a single value or an array of either the `IMeasure` or `IVisualizationAttribute` type, which is passed to the component as an object literal.
 
-You can find more information in the sections about individual components in the Visual Components section.
+You can find more information about data props in the articles about individual components in the Visual Components section.
 
 ### Example
 ```js
@@ -65,19 +67,20 @@ You can find more information in the sections about individual components in the
 
 A measure can be referred to by its `identifier` or `uri`.
 
-Attributes are a little different. Each attribute (for example, Date of invoice) has multiple display forms (Years, Quarters, and so on). Select a specific display form and place it to a `viewBy` or a similar prop. However, when you are using attributes in filters, you must refer to the attribute itself, not its display form.
+An attribute can be referred to by this attribute's identifier or by the identifier of one of the attribute's display forms (labels).
+When using an attribute in a data prop, specify the identifier of the attribute's display form. However, when you are using attributes in filters, you must refer to the attribute itself, not its display form.
 
-To find the identifier or URI of a measure or an attributes, download a list of attributes and measures from your project using [gdc-catalog-export](gdc-catalog-export.md).
+To find the identifier or URI of a measure or attribute, use either of the following options:
 
-Another option to find identifiers and uris is using the [Analytical Designer](https://secure.gooddata.com/analyze): 
+* Use [gdc-catalog-export](gdc-catalog-export.md): Download a list of attributes and measures from your project. In the downloaded list, find the measures and attributes that you need.
+* Use [Analytical Designer](https://secure.gooddata.com/analyze). 
+  1. Create a visualization that uses measures and attributes that you need.
+  2. Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter).
+  3. Find requests to `/executeAfm`.
+  4. Search for the [AFM](afm.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
 
-1) Create a visualization that uses measures and attributes that you need.
-2) Use your browser's Developer Tools and open the [Network tab](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#filter). 
-3) Find requests to `/executeAfm`. 
-4) Search for the [AFM](afm.md) in the request body - it contains the required identifiers to measures, atributes, and display forms.
-
-> **NOTE:**
-> **Object URI vs. object identifier:** Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the _same_ object identifier in _any_ of those projects. 
+#### Object URI vs. object identifier
+Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects. 
 
 #### Type definition
 You can find the TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.0.0/src/VisualizationObject.ts#L86-L102).
