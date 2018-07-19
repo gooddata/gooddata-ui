@@ -5,13 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: afm_components
 ---
 
-In their current form, the visual components listed in this section do not support data sorting (for example, by attribute or measure).
-
-If your use case requires data sorting, use the AFM components described in this article.
+> **Warning!** The AFM components are legacy elements from the previous GoodData.UI version and will be deprecated. Charts added after GoodData.UI Version 5.1.0 do not support the AFM components.
 
 The AFM components use the [AFM](afm.md) property instead of specific properties such as `measures` or `viewBy` that are used in the visual components.
-
-> **Warning!** The AFM components are legacy elements from the previous GoodData.UI version and will be deprecated. Charts added after GoodData.UI Version 5.1.0 do not support the AFM components.
 
 ## Charts
 
