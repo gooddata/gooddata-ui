@@ -85,8 +85,8 @@ const measures = [
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
 | measures | true | Measure[] | An array of measure definitions |
-| viewBy | false | Attribute | Attribute definition |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| viewBy | false | Attribute | An attribute definition |
+| filters | false | Filter[] | An array of filter definitions. See [Filter](filter_visual_components.md). |
 | config | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
 | locale | false | string | The location string for translations |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|
