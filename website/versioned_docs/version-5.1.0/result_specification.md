@@ -328,7 +328,7 @@ Attribute values are then sorted by this computed value (3 and 7, respectivelly)
 | Year | 2007 | 2007 | 2006 | 2006 |
 | :--- | :--- | :--- | :--- | :--- |
 | Measures | M1 | M2 | M1 | M2 |
-| Values | 3 | 4 | 1 | 4 |
+| Values | 3 | 4 | 1 | 2 |
 
 
 ## Quick Reference of Dimensions
