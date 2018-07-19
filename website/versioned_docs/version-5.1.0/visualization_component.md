@@ -70,8 +70,8 @@ For more information, see [Filter Visual Components](filter_visual_components.md
 | projectId | true | string | The project ID |
 | uri | false | string | The URI of the visualization to be rendered. Can be omitted if the visualization identifier is present. |
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
-| locale | false | string | The localization of the visualization. Defaults to`en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
-| config  | false | ChartConfig | The chart configuration |
+| locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
+| config  | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
 | filters | false | FilterItem\[\] | The list of filters to be applied to the visualization |
 | drillableItems | false | DrillableItem\[\] | The drilling configuration. See [DrillableItems](drillable_item.md).|
 | onFiredDrillEvent | false | onFiredDrillEvent\(\) | The drilling event catcher. Called when drilling happens. See [OnFireDrillEvent](on_fire_drill_event.md).|

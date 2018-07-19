@@ -19,7 +19,6 @@ import { Table } from '@gooddata/react-components';
 <Table
     projectId={<project-id>}
     measures={<measures>}
-    config={<chart-config>}
     …
 />
 ```
@@ -71,9 +70,9 @@ const attributes = [
 | measures | false | Measure[] | An array of measure definitions (either measure or attribute definition must be provided for the table to render properly) |
 | attributes | false | Attribute[] | An array of attribute definitions (either measure or attribute definition must be provided for the table to render properly) |
 | totals | false | Total[] | An array of total definitions |
-| filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
+| filters | false | Filter[] | An array of filter definitions. See [Filter](filter_visual_components.md). |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
-| locale | false | string | The location string for translations |
+| locale | false | string | The localization of the table. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|
 | ErrorComponent | false | Component | A component to be rendered if this component is in error state. See [ErrorComponent](error_component.md).|
 | LoadingComponent | false | Component | A component to be rendered if this component is in loading state. See [LoadingComponent](loading_component.md).|
