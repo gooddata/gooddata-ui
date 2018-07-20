@@ -68,8 +68,8 @@ const attribute = {
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
 | measures | true | Measure[] | An array of measure definitions |
-| viewBy | false | Attribute | An attribute definition |
-| stackBy | false | Attribute | An attribute definition |
+| viewBy | false | Attribute[] | An array of attribute definitions |
+| stackBy | false | Attribute[] | An array of attribute definitions |
 | filters | false | Filter[] | An array of filter definitions. See [Filter](filter_visual_components.md). |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
 | config | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
