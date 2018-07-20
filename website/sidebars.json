@@ -20,6 +20,7 @@
       "pie_chart_component",
       "scatter_plot_component",
       "table_component",
+      "treemap_component",
       "visualization_component",
       "afm_components",
       "attribute_filter_component"
