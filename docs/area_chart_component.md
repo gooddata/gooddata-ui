@@ -71,7 +71,7 @@ const attribute = {
 | viewBy | false | Attribute[] | An array of attribute definitions |
 | stackBy | false | Attribute[] | An array of attribute definitions |
 | filters | false | Filter[] | An array of filter definitions. See [Filter Visual Components](filter_visual_components.md). |
-| sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
+| sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Specify Result Specification](result_specification.md#sorting). |
 | config | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | DrillableItem[] | An array of points and attribute values to be drillable. See [DrillableItems](drillable_item.md).|
