@@ -104,7 +104,7 @@ const viewBy = {
 | yAxisMeasure | false | Measure | A measure definition (at least one of xAxisMeasure or yAxisMeasure must be provided for the bubble chart to render properly) |
 | size | false | Measure | A measure definition that determines the size of the bubbles |
 | viewBy | false | Attribute | An attribute definition |
-| filters | false | Filter[] | An array of filter definitions. See [Filter](filter_visual_components.md). |
+| filters | false | Filter[] | An array of filter definitions. See [Filter Visual Components](filter_visual_components.md). |
 | sortBy | false | SortItem[] | An array of sort definitions. See the `sorts` prop in the code sample in [Result specification](result_specification.md#sorting). |
 | config | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
