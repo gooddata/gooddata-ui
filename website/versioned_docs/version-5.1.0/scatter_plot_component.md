@@ -6,7 +6,7 @@ id: version-5.1.0-scatter_plot_component
 original_id: scatter_plot_component
 ---
 
-Scatter plot shows data as points using Cartesian coordinates. Scatter plot typically have a minimum of two measures, one for the X-axis and the other for the Y-axis, and one attribute, which determines the meaning of each data point.
+Scatter plot shows data as points using Cartesian coordinates. Scatter plots typically have a minimum of two measures, one for the X-axis and the other for the Y-axis, and one attribute, which determines the meaning of each data point.
 Scatter plots are useful for analyzing trends between two measures or for tracking the magnitude of two measures from the same chart.
 
 ![Scatter Plot Component](assets/scatter_plot.png "Scatter Plot Component")
