@@ -15,10 +15,10 @@ The AFM components use the [AFM](afm.md) property instead of specific properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| afm | true | AFM | A combination of attributes, measures, and filters. See [AFM](afm.md). |
+| afm | true | [AFM](afm.md) | A combination of attributes, measures, and filters |
 | projectId | true | string | The project ID |
-| resultSpec  | false | ResultSpec | The structure of the result data. See [Specify Result Structure](result_specification.md).|
-| config  | false | object | The chart configuration object. See [Chart Config](chart_config.md). |
+| resultSpec  | false | [ResultSpec](result_specification.md) | The structure of the result data |
+| config  | false | [ChartConfig](chart_config.md) | The chart configuration object |
 
 ### Structure
 
@@ -79,9 +79,9 @@ const { BarChart } = AfmComponents;
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
-| afm | true | AFM | A combination of attributes, measures, and filters. See [AFM](afm.md). |
+| afm | true | [AFM](afm.md) | A combination of attributes, measures, and filters |
 | projectId | true | string | The project ID |
-| resultSpec  | false | ResultSpec | The structure of the result data. See [Specify Result Structure](result_specification.md).|
+| resultSpec  | false | [ResultSpec](result_specification.md) | The structure of the result data |
 
 ### Structure
 

@@ -66,7 +66,7 @@ import { Visualization } from '@gooddata/react-components';
 | projectId | true | string | The project ID |
 | uri | false | string | The URI of the visualization to be rendered. Can be omitted if the visualization identifier is present. |
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
-| locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
+| locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | config  | false | ChartConfig | The chart configuration |
 | filters | false | FilterItem\[\] | The list of filters to be applied to the visualization |
 | drillableItems | false | DrillableItem\[\] | The drilling configuration. See [DrillableItems](drillable_item.md).|
