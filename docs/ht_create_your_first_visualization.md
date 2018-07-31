@@ -9,7 +9,7 @@ This tutorial will guide you through the process of creating your first analytic
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 
-**NOTE:** Before you start this tutorial, review [About GoodData.UI](about_gooddataui.md) and make sure that you have a GoodData account and tried the [live examples](https://gooddata-examples.herokuapp.com).
+**NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#gooddata-platform-account)).
 
 ## Step 1. Get create-react-app
 Run the following command from the command line:

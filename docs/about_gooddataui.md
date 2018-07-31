@@ -31,4 +31,4 @@ If you are using Babel, you can use the [Babel polyfill](https://babeljs.io/docs
 ## GoodData platform account
 To use the GoodData.UI, you must have an account on the GoodData platform. For basic information about the GoodData platform, see [GoodData Platform Introduction](platform_intro.md).
 
-If you want to try out GoodData.UI, we recommend that you use the [live examples](https://gooddata-examples.herokuapp.com) first. You can use the online experience or run the examples locally on your machine.
+If you want to try out GoodData.UI, we recommend that you sign up for the [live examples](https://gooddata-examples.herokuapp.com) first. You can use the online experience or run the examples locally on your machine.
