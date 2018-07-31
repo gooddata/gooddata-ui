@@ -11,6 +11,9 @@ With GoodData.UI, you can:
 * Display insights or existing visualizations from the GoodData platform using [visual components](start_with_visual_components.md).
 * Create your [new visual components](create_new_visualization.md) to address your specific analytical needs.
 
+## Target audience
+This documentation is intended for front end software developers and requires JavaScript knowledge.
+
 ## Supported technologies
 GoodData.UI is compatible with:
 * React 15.6.2, [Angular 1.X](ht_use_react_components_in_angular_1.x.md), [Angular 2+](ht_use_react_components_in_angular_2.x.md)
@@ -26,7 +29,6 @@ To run a GoodData.UI application in Internet Explorer 11, you must have the ES6 
 If you are using Babel, you can use the [Babel polyfill](https://babeljs.io/docs/usage/polyfill/) in your index to specifically include only the needed polyfill code.
 
 ## GoodData platform account
+To use the GoodData.UI, you must have an account on the GoodData platform. For basic information about the GoodData platform, see [GoodData Platform Introduction](platform_intro.md).
 
-To use the GoodData.UI, you must have an account on the GoodData platform. If you do not have an account and want to try GoodData.UI, use the [live examples](https://gooddata-examples.herokuapp.com).
-
-For basic information about the GoodData platform, see [GoodData Platform Introduction](platform_intro.md).
+If you want to try out GoodData.UI, we recommend that you use the [live examples](https://gooddata-examples.herokuapp.com) first. You can use the online experience or run the examples locally on your machine.
