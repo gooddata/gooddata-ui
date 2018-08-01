@@ -2,7 +2,8 @@
 title: Execution Response and Execution Result
 sidebar_label: Execution REST API and Result
 copyright: (C) 2007-2018 GoodData Corporation
-id: execution_rest_api_and_result
+id: version-5.2.0-execution_rest_api_and_result
+original_id: execution_rest_api_and_result
 ---
 
 This article describes how to call executions on the server using either [gooddata-js](https://github.com/gooddata/gooddata-js) functions or direct API calls.
