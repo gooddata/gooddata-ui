@@ -10,6 +10,8 @@ This tutorial will guide you through the process of creating your first analytic
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 
+**NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#gooddata-platform-account)).
+
 ## Step 1. Get create-react-app
 Run the following command from the command line:
 ```bash
@@ -44,8 +46,11 @@ This command adds the latest `@gooddata/react-components` to the list of your pr
 
 
 ## Step 4. Start the development server
-
 **Before** you start your development server, prevent cross-origin issues by [adding proxy settings](cors.md).
+
+> **Careful:** Only use the proxy authentication for development. Do not use this authentication method for production.
+
+> **Careful:** If you are only using the [development proxy](cors.md#on-your-local-dev-machine), you will still need to autenticate users by going to `/account.html` or by calling the `sdk.user.login()` method, and filling in valid GoodData credentials.
 
 To set up a proxy, add the following section to the root level of your `package.json` \(this works with any application started using `react-scripts start`\):
 
