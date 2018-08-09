@@ -5,7 +5,9 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: headline_component
 ---
 
-Headline shows a single number. Use headlines to display measures and attributes.
+Headline shows a single number or compares two numbers. You can display both measures and attributes.
+
+Headlines have two sections: Measure (primary) and Measure (secondary). You can add one item to each section. If you add two items, the headline also displays the change in percent.
 
 ![Headline Component](assets/headline.png "Headline Component")
 
@@ -21,6 +23,8 @@ import { Headline } from '@gooddata/react-components';
 ```
 
 ## Example
+
+### Headline with a single measure (primary measure)
 
 ```jsx
 const measure = {
@@ -42,12 +46,49 @@ const measure = {
 />
 ```
 
+### Headline with two measures (primary and secondary measures)
+
+```jsx
+const measure = {
+    measure: {
+        localIdentifier: 'franchiseFeesIdentifier',
+        definition: {
+            measureDefinition: {
+                item: {
+                    identifier: franchiseFeesIdentifier
+                }
+            }
+        }
+    }
+};
+
+const secondaryMeasure = {
+    measure: {
+        localIdentifier: 'franchiseFeesAdRoyaltyIdentifier',
+        definition: {
+            measureDefinition: {
+                item: {
+                    identifier: franchiseFeesAdRoyaltyIdentifier
+                }
+            }
+        }
+    }
+};
+
+<Headline
+    projectId={projectId}
+    primaryMeasure={measure}
+    secondaryMeasure={secondaryMeasure}
+/>
+```
+
 ## Properties
 
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| primaryMeasure | true | Measure | A measure definition |
+| primaryMeasure | true | Measure | The definition of the primary measure |
+| secondaryMeasure | false | Measure | The definition of the secondary measure |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | locale | false | string | The localization of the chart. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
 | drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
