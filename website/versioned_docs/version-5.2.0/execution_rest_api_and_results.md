@@ -1,6 +1,6 @@
 ---
 title: Execution Response and Execution Result
-sidebar_label: Execution REST API and Result
+sidebar_label: Execution Response and Execution Result
 copyright: (C) 2007-2018 GoodData Corporation
 id: version-5.2.0-execution_rest_api_and_result
 original_id: execution_rest_api_and_result
