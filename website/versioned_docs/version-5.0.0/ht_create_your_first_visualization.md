@@ -10,7 +10,7 @@ This tutorial will guide you through the process of creating your first analytic
 
 After you complete this tutorial, you will be able to display various measures and charts from your GoodData project within the context of your React application.
 
-**NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#gooddata-platform-account)).
+**NOTE:** Before you start this tutorial, make sure that you have a GoodData account (see [About GoodData.UI](about_gooddataui.md#supported-technologies)).
 
 ## Step 1. Get create-react-app
 Run the following command from the command line:
@@ -99,9 +99,9 @@ Start the server by running the following command:
 ## Step 5. Establish a session
 Open [https://localhost:3000/account.html](https://localhost:3000/account.html) in your browser, and enter your GoodData credentials. You are now logged in to GoodData.
 
-* If you are on Windows and using Microsoft Edge or Internet Explorer, replace `localhost` in the URI above with the IP address that you get after running the server
-
-If you see a warning about an insecure connection due to using a self-signed certificate, accept the exception: you can trust your localhost.
+**NOTE:**
+* If you are on Windows and using Microsoft Edge or Internet Explorer, replace `localhost` in this URI with the IP address that you get after running the server.
+* If you see a warning about an insecure connection due to using a self-signed certificate, accept the exception. You can trust your localhost.
 
 For the purpose of this tutorial, you are asked to establish a client session by simply logging in to GoodData.
 
@@ -136,7 +136,7 @@ Now, you can start adding your first GoodData component:
       />
     </div>
     ```
-    > Use the project ID and measure ID from your project, or use the [live examples](https://gooddata-examples.herokuapp.com/).
+    > This example uses the project ID from the [live examples](https://gooddata-examples.herokuapp.com/). If you want to use this code in your project, replace the properties with the appropriate values from your project. For more details, see [Line Chart](line_chart_component.md).
 5. Save the changes. The content of your `App.js` file should now look something like the following example:
     ```javascript
     import React, { Component } from 'react';
