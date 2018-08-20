@@ -36,6 +36,10 @@ See [AFM](afm.md).
 
 **gdc-catalog-export** is a GoodData.UI tool for exporting a list of catalog items and date datasets from a GoodData project. See [gdc-catalog-export](gdc-catalog-export.md).
 
+## I
+
+**identifier** -- see **resource identifier**.
+
 ## K
 
 **KPI \(Key Performance Indicator\)** is a type of performance measurement that evaluates a person's or organization's success in a particular activity. See [KPI Dashboards](https://help.gooddata.com/display/doc/KPI+Dashboards).
@@ -44,16 +48,24 @@ See [AFM](afm.md).
 
 **measure** is aggregation of facts or counts of distinct attribute values, which are represented as numbers in reports. Measures represent what is being measured in a report; for example, sum of sales or average salary.
 
-## S
+## P
 
-**stacked bar chart** is a chart that enables the display of the composite categories that make up each bar. These charts may be useful for simplifying the display of a busy bar chart. See [Stacked Bar Chart](https://help.gooddata.com/display/doc/Stacked+Bar+Chart).
+**project ID** is a unique 32-character identifier of your project within the GoodData platform. To get your project ID, see [Find the Project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID).
 
 ## R
 
+**resource identifier** is a reference to a project resource (for example, attribute, measure, displayForm, visualization, filter, and so on). The ideentifier of a resource is consistent across your domain regardless of the GoodData project it lives in.
+
 **resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](result_specification.md).
+
+## S
+
+**stacked bar chart** is a chart that enables the display of the composite categories that make up each bar. These charts may be useful for simplifying the display of a busy bar chart. See [Stacked Bar Chart](https://help.gooddata.com/display/doc/Stacked+Bar+Chart+in+Report+Editor).
 
 ## V
 
 **visualization** is a view into a specific part of your data defined by AFM, ResultSpec, and a configuration object, usually in a form of a table or graph \(see **AFM** and **resultSpec**\).
 
 **visualization component** is a component of GoodData.UI that renders a table or graph displaying data defined by a combination of AFM, ResultSpec \(see **AFM** and **resultSpec**\), and a configuration object.
+
+**visualization type** is a predefined visual representation of a visualization (for example, area chart, table, pie chart, treemap, and so on).

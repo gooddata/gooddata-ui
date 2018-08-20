@@ -54,11 +54,11 @@ This is how authentication process works:
               document.getElementById('root')
             );
           } else {
-            window.location.replace(`${domain}/account.html?lastUrl=${window.location}`);
+            window.location.replace(`${domain}/account.html?lastUrl=${encodeURIComponent(window.location)}`);
           }
         };
         ```
-
+      **NOTE:** If you want to pass multiple arguments in `lastUrl`, protect them by using `encodeURIComponent`.
 3. If the user is not logged in, the application redirects the user to the GoodData login page (white-labeled with your domain name) with the appended `lastUrl` parameter that points to the URL where your analytical application runs:
 
     `https://my.company.com/account.html?lastUrl=https://my.app.com/`
