@@ -54,7 +54,7 @@ See [AFM](afm.md).
 
 ## R
 
-**resource identifier** is a reference to a project resource (for example, attribute, measure, displayForm, visualization, filter, and so on). The ideentifier of a resource is consistent across your domain regardless of the GoodData project it lives in.
+**resource identifier** is a reference to a project resource (for example, attribute, measure, displayForm, visualization, filter, and so on). The identifier of a resource is consistent across your domain regardless of the GoodData project it lives in.
 
 **resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](result_specification.md).
 
