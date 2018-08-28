@@ -25,7 +25,7 @@ The parameter placeholders are:
 
 For more information about AFM and resultSpec, see [AFM](afm) and [Specify Result Structure](result_specification.md).
 
-Though you can use either object URIs or object identifiers, we recommend that you use only the **object identifiers** that are consistent across your domain regardless of the GoodData project they live in. In other words, an object used in any project within your domain should have the _same_ object identifier in _any_ of those projects\). To get a list of catalog items and date datasets from a GoodData project in the form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
+Though you can use either object URIs or object identifiers, we recommend that you use only the **object identifiers** that are consistent across your domain regardless of the GoodData project they live in. In other words, an object used in any project within your domain should have the _same_ object identifier in _any_ of those projects. To get a list of catalog items and date datasets from a GoodData project in the form of a JavaScript object, use [gdc-catalog-export](gdc-catalog-export.md).
 
 ```javascript
 /*
