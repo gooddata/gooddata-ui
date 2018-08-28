@@ -8,6 +8,8 @@ Treemap chart presents your data hierarchically as nested rectangles. Treemaps a
 
 ![Treemap Component](assets/treemap.png "Treemap Component")
 
+**NOTE:** The legend of a treemap is located on the right. Changing the legend position is currently not supported.
+
 ## Structure
 
 ```jsx
