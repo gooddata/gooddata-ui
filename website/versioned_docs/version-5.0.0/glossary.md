@@ -39,7 +39,7 @@ See [AFM](afm.md).
 
 ## I
 
-**identifier** -- see [resource identifier](glossary.md#r).
+**identifier** -- see [object identifier](glossary.md#o).
 
 ## K
 
@@ -49,13 +49,17 @@ See [AFM](afm.md).
 
 **measure** is aggregation of facts or counts of distinct attribute values, which are represented as numbers in reports. Measures represent what is being measured in a report; for example, sum of sales or average salary.
 
+## O
+
+**object identifier** is a reference to a project object (for example, attribute, measure, displayForm, visualization, filter, and so on). The identifier of an object is consistent across your domain regardless of the GoodData project it lives in. The object identifier is a text string. Example: `franchiseFeesAdRoyaltyIdentifier`
+
+**object URI** is a URI of a project object (for example, attribute, measure, displayForm, visualization, filter, and so on). The URI of an objects includes the object ID and the ID of the project that the object belongs to. Example: `/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/380`
+
 ## P
 
 **project ID** is a unique 32-character identifier of your project within the GoodData platform. To get your project ID, see [Find the Project ID](https://help.gooddata.com/display/doc/Find+the+Project+ID).
 
 ## R
-
-**resource identifier** is a reference to a project resource (for example, attribute, measure, displayForm, visualization, filter, and so on). The identifier of a resource is consistent across your domain regardless of the GoodData project it lives in.
 
 **resultSpec** is an object that defines the structure of data inside an AFM \(see**AFM**\) based on your preferences. For example, you can define a custom sorting of data. See [Result Specification \(resultSpec\)](result_specification.md).
 
