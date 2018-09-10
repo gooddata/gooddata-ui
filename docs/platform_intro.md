@@ -31,4 +31,4 @@ The graph shows the elements that together work as unified input for creating a 
 
 * `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchise offices.
 
-* A **filter** is a set of conditions that removes specific values from your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the column chart has a **filter** applied to display only the offices located in the USA.
+* A **filter** is a set of conditions that removes specific values from your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the column chart has a **filter** applied to display only the offices located in the USA. A filter is a set of characteristics applied to a visualization (or measure) to remove values from computed and displayed values.
