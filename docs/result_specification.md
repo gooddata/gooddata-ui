@@ -175,7 +175,7 @@ resultSpec.dimensions = [
 }
 ```
 
-For more examples, sign up to [Live Examples](examples.md) and watch the Network tab in your browser's Developer console. You may also experiment by sending your own `resultSpec`s: for example, use the [Postman application](https://www.getpostman.com/apps).
+For more examples, sign up to the Live Examples and watch the Network tab in your browser's Developer console. You may also experiment by sending your own `resultSpec`s: for example, use the [Postman application](https://www.getpostman.com/apps).
 
 
 ## Totals
