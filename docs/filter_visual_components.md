@@ -11,7 +11,7 @@ You can filter the `Visualization` component, `Kpi`, `Headline`, chart component
 
 The same `filters` are used in AFM (for details, see [Set Up an AFM Query](afm.md)).
 
-Both global filters and measure filters are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
+Both global filters and filters set on measures are always interpreted as an intersection of all individual filters \(`f1 AND f2 AND f3...)`.
 
 ## Attribute filter
 
@@ -137,11 +137,11 @@ The `from` and `to` properties set the number of granularity units (for example,
 }
 ```
 
-## Measure filters
+# Filters set on a specific measure
 
-You can set a filter on a specific measure. This is helpful when you have duplicate measures with diferent filters.
+Applying a filter to a specific measure is helpful when you have duplicate measures with different filters.
 
-To set a measure filter, pass an array of attribute filters or date filters as the `filters` prop inside the measure definition.
+To apply a filter to a specific measure, pass an array of attribute filters or date filters as the `filters` prop inside the definition of this measure.
 
 ```jsx
 <div style={{ height: 300 }}>
