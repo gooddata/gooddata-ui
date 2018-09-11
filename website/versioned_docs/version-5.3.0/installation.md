@@ -1,8 +1,9 @@
 ---
-id: installation
 title: Installation
 sidebar_label: Installation
 copyright: (C) 2007-2018 GoodData Corporation
+id: version-5.3.0-installation
+original_id: installation
 ---
 
 This article describes how to install GoodData.UI React components and a few steps to accomplish before you can start creating your visualizations.

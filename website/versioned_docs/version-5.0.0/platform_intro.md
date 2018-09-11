@@ -26,10 +26,10 @@ You have the data that shows how much money all your Franchises earn daily. Let'
 
 ![Column Chart](assets/intro_column_chart.png "Column Chart")
 
-The graph shows the elements that together work as unified input for creating a visualization using GoodData.UI. In the column chart:
+The graph shows the elements that together work as unified input for creating a **visualization** using GoodData.UI, which is a view into a specific part of your data. In the column chart:
 
 * `$ Avg Daily Total Sales` is a **measure** that is a computational expression that aggregates one or more numerical values. In this example, you are interested in the average daily amount.
 
 * `Location State` is an **attribute** that breaks the measure apart and provides context to the data. In this example, the measure is sliced by the location of the Franchise offices.
 
-* A **filter** is a set of conditions that removes specific values from your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the column chart has a **filter** applied to display only the offices located in the USA.
+* A **filter** is a set of conditions that removes specific values from your original data. Notice that the chart shows only USA-specific values of `Location State`. This is because the column chart has a **filter** applied to display only the offices located in the USA. A filter is a set of characteristics applied to a visualization (or measure) to remove values from computed and displayed values.
