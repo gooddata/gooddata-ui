@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: visualization_component
 ---
 
-Visualization is a generic component that renders a chart according to the provided URI or identifier. It can render a table or any type of chart.
+Visualization is a generic component that renders a table or a chart according to the provided URI or identifier.
 
 ## Structure
 

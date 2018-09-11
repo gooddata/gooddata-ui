@@ -80,7 +80,12 @@ To find the identifier or URI of a measure or attribute, use either of the follo
   4. Search for the [AFM](afm.md) in the request body. It contains the required identifiers of the measures, atributes, and attribute display forms.
 
 #### Object URI vs. object identifier
-Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects. 
+
+The **object URI** is the URI of a project object. The URI of an objects includes the object ID and the ID of the project that the object belongs to. Example: `/gdc/md/xms7ga4tf3g3nzucd8380o2bev8oeknp/obj/380`
+
+The **object identifier** is a reference to a project object. The object identifier is a text string. Example: `franchiseFeesAdRoyaltyIdentifier`
+
+Although you can use either object URIs or object identifiers with all visual components, we recommend that you use the **object identifiers**, which are consistent across your domain regardless of the GoodData project they live in. That is, an object used in any project within your domain would have the **same** object identifier in **any** of those projects.
 
 #### Measure definition
 You can find full TypeScript typings [here](https://github.com/gooddata/gooddata-typings/blob/v2.3.0/src/AFM.ts#L29).

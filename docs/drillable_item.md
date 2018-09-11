@@ -9,7 +9,14 @@ Youo can enable eventing and drilling in a vizualization. drilling is the proces
 
 To turn on eventing and drilling, specify at least one drillableItem.
 
-Drillable items consist of measures, attribute displayForms that are defined by their identifier or URI, or attribute values defined by their URI. Visualization points that intersect any defined measures, attributes, or attribute values become drillable and will emit events when interacted with.
+Drillable items can consist of the following entities:
+* Measures
+* Attribute displayForms that are defined by their identifier or URI
+
+    displayForm, or attribute label, is a different means of representing an attribute. For example, the `Name` attribute might have labels for `Firstname` and `Lastname`.
+* Attribute values defined by their URI
+
+Visualization points that intersect any defined measures, attributes, or attribute values become drillable and will emit events when interacted with.
 
 **NOTE:** Visualizations created and saved in Analytical Designer contain URIs, not identifiers. When you set up drilling for such visualizations, use URIs in `drillableItems` and not identifiers.
 
