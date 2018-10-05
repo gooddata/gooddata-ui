@@ -5,7 +5,11 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: pivot_table_component
 ---
 
-Pivot table shows data in columns and rows. In contrast to the standard [table](table_component.md), a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. In pivot tables, you can choose to display only attributes (without any measures). Also, pivot tables have higher limits for the number of datapoints to display than charts.
+Pivot table expands on a regular (flat) [table](table_component.md) by allowing you to reorganize and summarize selected data beyond the typical row-column relationship without the need to create a new flat table.
+
+In GoodData.UI implementation, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). 
+
+Pivot tables have higher limits for the number of datapoints to display than charts.
 
 ![Pivot Table Component](assets/pivot_table.png "Pivot Table Component")
 
