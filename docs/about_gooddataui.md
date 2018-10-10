@@ -18,7 +18,7 @@ This documentation is intended for front end software developers and requires Ja
 
 GoodData.UI is compatible with:
 
-* React 15.6.2, [Angular 1.X](ht_use_react_components_in_angular_1.x.md), [Angular 2+](ht_use_react_components_in_angular_2.x.md)
+* React 16.5.2, [Angular 1.X](ht_use_react_components_in_angular_1.x.md), [Angular 2+](ht_use_react_components_in_angular_2.x.md)
 * TypeScript 2.3+, ES6, ES5
 * Node 8.9.4
 * [Officially supported browsers](https://help.gooddata.com/display/doc/System+Requirements+and+Supported+Browsers)
