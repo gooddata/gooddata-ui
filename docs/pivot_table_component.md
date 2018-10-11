@@ -5,11 +5,11 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: pivot_table_component
 ---
 
-Pivot table expands on a regular (flat) [table](table_component.md) by allowing you to reorganize and summarize selected data beyond the typical row-column relationship without the need to create a new flat table.
+Pivot table expands capabilities of a regular (flat) [table](table_component.md) by allowing you to reorganize and summarize selected data beyond the typical row-column relationship without the need to create a new flat table.
 
 In GoodData.UI implementation, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). 
 
-Pivot tables have higher limits for the number of datapoints to display than charts.
+Compared with charts, pivot tables have higher limits for the number of datapoints to display.
 
 ![Pivot Table Component](assets/pivot_table.png "Pivot Table Component")
 
@@ -121,7 +121,7 @@ const rows = [
 
 ## Sorting
 
-You can [sort](result_specification.md#sorting) rows and attribute columns. Measures are always listed in the same order they were defined in the ```measures``` prop.
+You can [sort](result_specification.md#sorting) rows and attribute columns. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
 
 ### Example: Sorting by measure
 
@@ -162,9 +162,9 @@ const sortBy = [
 
 ## Totals
 
-Defining aggregation with the ```totals``` prop adds one or more fixed rows below the table with aggregated measure data.
+Defining aggregation with the ```totals``` prop adds one or more fixed rows below the table with the aggregated measure data.
 
-Supported aggregation functions:
+The following are the supported aggregation functions:
 * sum
 * count
 * average
@@ -173,7 +173,7 @@ Supported aggregation functions:
 * median
 * running sum
 
-For information about the aggregation functions, see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
+For more information about the aggregation functions, see [Aggregate Table Data](https://help.gooddata.com/display/doc/Aggregate+Table+Data).
 
 ```jsx
     // ...using Pivot Table Example
