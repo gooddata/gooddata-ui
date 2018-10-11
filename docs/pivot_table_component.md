@@ -9,7 +9,15 @@ Pivot table expands capabilities of a regular (flat) [table](table_component.md)
 
 In GoodData.UI, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). A flat table, on the other hand, can only display measures.
 
-In the following example, we are watching franchise fees (measures) which we split down horizontaly by location state (attribute) and vertically by month (attribute).
+In the following example, we are watching franchise fees (measure) which we split down horizontaly by location state (attribute) and vertically by month (column attribute).
+
+* Franchise fees - measure
+* Short (Jan)(Date) - column attribute name
+* JAN, FEB, etc. - Attribute value
+* Row with JAN, FEB, etc. - atrribute
+* Location State - attribute name
+* Alabama, California - attribute value
+* numerical value in $ - value of measure for the given attribute value
 
 ![Pivot Table Component](assets/pivot_table.png "Pivot Table Component")
 
