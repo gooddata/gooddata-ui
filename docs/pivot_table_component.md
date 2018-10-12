@@ -135,13 +135,9 @@ const rows = [
 
 ## Sorting in pivot tables
 
-You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. 
+You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
 
-**Important!** Sorting must be applied to any column attribute that is used in the pivot table. 
-
-Measures are always listed in the same order in which they were defined in the ```measures``` prop.
-
-In the sample table above
+**Important!** Sorting must be applied to any column attribute that is used in the pivot table. For example, in the table above, you apply sorting to both the Franchise Fees (measure) and the Date (column attribute)
 
 ### Example: Sorting by measure
 
