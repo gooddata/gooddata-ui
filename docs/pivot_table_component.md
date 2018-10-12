@@ -38,46 +38,6 @@ import { PivotTable } from '@gooddata/react-components';
 
 ## Examples
 
-### Standard table
-
-```jsx
-const measures = [
-    {
-        measure: {
-            localIdentifier: 'franchiseFees',
-            definition: {
-                measureDefinition: {
-                    item: {
-                        identifier: franchiseFeesIdentifier
-                    }
-                }
-            },
-            format: '#,##0'
-        }
-    }
-];
-
-const rows = [
-    {
-        visualizationAttribute: {
-            displayForm: {
-                identifier: locationStateDisplayFormIdentifier
-            },
-            localIdentifier: 'location'
-        }
-    }
-];
-
-<div style={{ height: 300 }}>
-    <PivotTable
-        projectId={projectId}
-        measures={measures}
-        rows={rows}
-        columns={columns}
-    />
-</div>
-```
-
 ### Pivot table
 
 ```jsx
@@ -104,6 +64,46 @@ const columns = [
                 identifier: monthDateIdentifier
             },
             localIdentifier: 'month'
+        }
+    }
+];
+
+const rows = [
+    {
+        visualizationAttribute: {
+            displayForm: {
+                identifier: locationStateDisplayFormIdentifier
+            },
+            localIdentifier: 'location'
+        }
+    }
+];
+
+<div style={{ height: 300 }}>
+    <PivotTable
+        projectId={projectId}
+        measures={measures}
+        rows={rows}
+        columns={columns}
+    />
+</div>
+```
+
+### Standard table
+
+```jsx
+const measures = [
+    {
+        measure: {
+            localIdentifier: 'franchiseFees',
+            definition: {
+                measureDefinition: {
+                    item: {
+                        identifier: franchiseFeesIdentifier
+                    }
+                }
+            },
+            format: '#,##0'
         }
     }
 ];
