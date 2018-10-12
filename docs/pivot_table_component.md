@@ -5,7 +5,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 id: pivot_table_component
 ---
 
-Pivot table expands capabilities of a regular (flat) [table](table_component.md) by allowing you to reorganize and summarize selected data beyond the typical row-column relationship.
+Pivot table component expands capabilities of a regular (flat) [table](table_component.md) by allowing you to reorganize and summarize selected data beyond the typical row-column relationship.
 
 In GoodData.UI, a pivot table allows you to break measures into columns by setting attributes in the ```columns``` prop. You can also choose to display only attributes (without any measures). A flat table, on the other hand, can only display measures. 
 
@@ -37,6 +37,8 @@ import { PivotTable } from '@gooddata/react-components';
 ```
 
 ## Examples
+
+The following code sample shows arrangement for a typical pivot table.
 
 ### Pivot table
 
@@ -89,7 +91,9 @@ const rows = [
 </div>
 ```
 
-### Standard table
+### Flat table
+
+You can also use the pivot table component to create a regular, flat, table.
 
 ```jsx
 const measures = [
@@ -129,9 +133,15 @@ const rows = [
 </div>
 ```
 
-## Sorting
+## Sorting in pivot tables
 
-You can [sort](result_specification.md#sorting) rows and attribute columns. Measures are always listed in the same order in which they were defined in the ```measures``` prop.
+You can [sort](result_specification.md#sorting) rows and attribute columns in any pivot table. 
+
+**Important!** Sorting must be applied to any column attribute that is used in the pivot table. 
+
+Measures are always listed in the same order in which they were defined in the ```measures``` prop.
+
+In the sample table above
 
 ### Example: Sorting by measure
 
