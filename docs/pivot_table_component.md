@@ -13,7 +13,7 @@ Compared with charts, pivot tables have higher limits for the number of datapoin
 
 In the following example, we are watching franchise fees (measure) which we split down horizontaly by location state (attribute) and vertically by month (column attribute).
 
-
+![Pivot Table Component](assets/pivot_table_description.png "Pivot Table Component")
 
 ## Structure
 
