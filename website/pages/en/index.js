@@ -95,7 +95,7 @@ class HomeSplash extends React.Component {
           <ProjectDescription />
           <PromoSection>
             <Button href={docUrl('about_gooddataui.html')}>Get Started</Button>
-            <Button href="https://help.gooddata.com/display/doc/GoodData+Platform+Overview" className="button-link">Develop with GoodData</Button>
+            <Button href="https://help.gooddata.com/display/doc/GoodData+Platform+Overview" className="button-link">About GoodData Platform</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -198,7 +198,7 @@ const CodeExample2 = () => (
 const InstallationExample1 =  (
   <pre className="exampleCode">
     <code className="hljs highlighting">
-      <span className="hljs-comment">// optional - see <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or use <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
+      <span className="hljs-comment">// optional - see <a href="https://yarnpkg.com/lang/en/docs/install/">how to install yarn</a>, or <a href="https://docs.npmjs.com/cli/install">npm</a>.</span><br/>
       <span className="hljs-literal">$ yarn</span> global add <span className="hljs-type">create-react-app</span><br/>
       <span className="hljs-literal">$ create-react-app</span> my-first-app<br/>
       <br/>
@@ -344,7 +344,10 @@ const FeatureCallout = props => (
       <div className="productShowcaseInner">
         <FeatureCalloutBlock
           title="Install GoodData.UI"
-          example={InstallationExample1}
+          example={[
+            InstallationExample1,
+            <p className="codeNote" key="2" >Check <a href={docUrl('ht_create_your_first_visualization.html#step-4-start-the-development-server')}>how to start development server</a></p>
+          ]}
           checked="true"
         />
         <FeatureCalloutBlock
