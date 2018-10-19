@@ -6,7 +6,7 @@
 }
 
 .reactNavSearchWrapper {
-    @media #{$medium-down} {
+    @media #{$large-down} {
         top: 15px;
 
         &,
@@ -128,7 +128,7 @@
             line-height: inherit;
         }
 
-        @media #{$medium-down} {
+        @media #{$large-down} {
             width: 90%;
             right: 5% !important; // Override inline style
             left: 5% !important; // Override inline style
