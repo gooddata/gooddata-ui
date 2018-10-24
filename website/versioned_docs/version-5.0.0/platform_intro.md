@@ -6,7 +6,7 @@ copyright: (C) 2007-2018 GoodData Corporation
 original_id: platform_intro
 ---
 
-**GoodData Platform** is a powerful end-to-end analytics platform as a service with multi-tenant distribution that scales to hundreds of terabytes of data and hundreds of thousands of users. Learn more about the [GoodData platform](https://help.gooddata.com/display/doc/GoodData+Platform+Overview) and how to [embed its analytics possibilities]https://help.gooddata.com/display/doc/GoodData+Integration+into+Your+Application).
+**GoodData Platform** is a powerful end-to-end analytics platform as a service with multi-tenant distribution that scales to hundreds of terabytes of data and hundreds of thousands of users. Learn more about the [GoodData platform](https://help.gooddata.com/display/doc/GoodData+Platform+Overview) and how to [embed its analytics possibilities](https://help.gooddata.com/display/doc/GoodData+Integration+into+Your+Application).
 
 ## GoodData platform and GoodData.UI
 
