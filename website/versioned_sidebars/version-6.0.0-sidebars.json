@@ -1,0 +1,64 @@
+{
+  "version-6.0.0-Docs": {
+    "Getting Started": [
+      "version-6.0.0-about_gooddataui",
+      "version-6.0.0-platform_intro",
+      "version-6.0.0-installation",
+      "version-6.0.0-ht_create_your_first_visualization"
+    ],
+    "Visual Components": [
+      "version-6.0.0-start_with_visual_components",
+      "version-6.0.0-area_chart_component",
+      "version-6.0.0-bar_chart_component",
+      "version-6.0.0-bubble_chart_component",
+      "version-6.0.0-column_chart_component",
+      "version-6.0.0-donut_chart_component",
+      "version-6.0.0-headline_component",
+      "version-6.0.0-heatmap_component",
+      "version-6.0.0-kpi_component",
+      "version-6.0.0-line_chart_component",
+      "version-6.0.0-pie_chart_component",
+      "version-6.0.0-pivot_table_component",
+      "version-6.0.0-scatter_plot_component",
+      "version-6.0.0-table_component",
+      "version-6.0.0-treemap_component",
+      "version-6.0.0-visualization_component",
+      "version-6.0.0-afm_components",
+      "version-6.0.0-attribute_filter_component"
+    ],
+    "Properties": [
+      "version-6.0.0-chart_config",
+      "version-6.0.0-drillable_item",
+      "version-6.0.0-error_component",
+      "version-6.0.0-loading_component",
+      "version-6.0.0-on_legend_ready",
+      "version-6.0.0-on_fire_drill_event"
+    ],
+    "Custom Visualizations": [
+      "version-6.0.0-create_new_visualization",
+      "version-6.0.0-afm",
+      "version-6.0.0-result_specification",
+      "version-6.0.0-table_totals_in_execution_object",
+      "version-6.0.0-execute_component",
+      "version-6.0.0-execution_rest_api_and_result"
+    ],
+    "Development Tips": [
+      "version-6.0.0-gdc_catalog_export",
+      "version-6.0.0-sso",
+      "version-6.0.0-cors",
+      "version-6.0.0-data_layer",
+      "version-6.0.0-time_over_time_comparison",
+      "version-6.0.0-filter_visual_components",
+      "version-6.0.0-create_custom_attribute_filter",
+      "version-6.0.0-ht_render_visualization_from_different_domain",
+      "version-6.0.0-ht_use_react_components_with_vanilla_js",
+      "version-6.0.0-ht_use_react_component_in_angular_1.x",
+      "version-6.0.0-ht_use_react_component_in_angular_2.x"
+    ]
+  },
+  "version-6.0.0-Support": {
+    "Support": [
+      "version-6.0.0-support_options"
+    ]
+  }
+}
