@@ -2,7 +2,8 @@
 title: Visualization
 sidebar_label: Visualization
 copyright: (C) 2007-2018 GoodData Corporation
-id: visualization_component
+id: version-6.2.0-visualization_component
+original_id: visualization_component
 ---
 
 Visualization is a generic component that renders a table or a chart according to the provided URI or identifier.
