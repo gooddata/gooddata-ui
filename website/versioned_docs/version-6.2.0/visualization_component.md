@@ -68,11 +68,9 @@ For more information, see [Filter Visual Components](filter_visual_components.md
 
 ## Caching
 
-To properly render referenced table or chart the Visualization component needs some additional information from the GoodData platform, which is usually static. To minimize the number of redundant requests and fasten the render time we cache some such data for all Visualizations in same application.
+To properly render the referenced table or chart, the Visualization component needs additional information from the GoodData platform. This information is usually static. To minimize the number of redundant requests and reduce the rendering time, some static information (such as the list of visualization classes, the color palette, or feature flags for each project) is cached for all Visualization components in the same application.
 
-Example of such cached data are eg. list of visualization classes, color palette or feature flags for each project.
-
-Number of cached items should never go over reasonable size, but in some specific cases, eg. after logging out or project switch in your app you can clear cache manually
+The amount of the cached information does not impact performance in any way. However, you can manually clear the cache whenever needed (for example, after logging out, when switching projects or leaving a page with visualizations using the GoodData.UI components).
 
 ```javascript
 import { clearSdkCache } from '@gooddata/react-components/dist/helpers/sdkCache';
