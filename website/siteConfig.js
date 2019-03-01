@@ -79,4 +79,4 @@ const siteConfig = {
   disableHeaderTitle: true
 };
 
-module.exports = 123;
+module.exports = siteConfig;
