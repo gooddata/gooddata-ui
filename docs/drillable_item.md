@@ -15,6 +15,9 @@ To turn on eventing and drilling, specify at least one drillableItem.
 
 Drillable items can consist of the following entities:
 * Measures
+
+    **NOTE:** Drilling is disabled for grand totals and subtotals in pivot tables.
+
 * Attribute displayForms that are defined by their identifier or URI
 
     *displayForm*, or attribute label, is a different means of representing an attribute. For example, the `Name` attribute might have labels for `Firstname` and `Lastname`. For more information, see [Determine the Attribute Value ID](https://help.gooddata.com/display/doc/Determine+the+Attribute+Value+ID).
