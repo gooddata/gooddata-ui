@@ -63,7 +63,6 @@ export default class SalesByResort extends Component {
             <div>
                 <MeasureValueFilter
                     onApply={this.onApply}
-                    onCancel={this.onCancel}
                     filter={filters[0]}
                     buttonTitle={measureTitle}
                 />
