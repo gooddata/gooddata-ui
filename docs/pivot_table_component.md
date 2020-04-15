@@ -213,7 +213,7 @@ columnSizing: {
 * If you manually adjust the column width, the adjusted width is preserved only temporarily and will be reset to the previously set value after the table is re-rendered.
 * When auto-resizing is turned on, the column width can be set to 500 px maximum (for both auto-resized and manually resized columns).
 
-To switch to the default behavior (all columns have the same fixed size), set the `columnSizing` prop to `defaultWidth: "unset"` or don't provide `columnSizing` at all.
+To switch to the default behavior (all columns have the same fixed size), set the `columnSizing` prop to `defaultWidth: "unset"` or do not provide `columnSizing` at all.
 
 ## Configuration menu
 
