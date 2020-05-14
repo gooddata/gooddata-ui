@@ -13,5 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     			bodyClasses.add(NAV_OPEN);
     		}
 	    });
-    }
+	}
+
+	document.querySelector('header .logo').parentNode.href = "https://developer.gooddata.com/";
 });
