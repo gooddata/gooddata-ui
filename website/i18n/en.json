@@ -9,25 +9,41 @@
         "title": "About GoodData.UI",
         "sidebar_label": "About GoodData.UI"
       },
-      "afm_components": {
-        "title": "AFM Components",
-        "sidebar_label": "AFM Components"
+      "framework_overview": {
+        "title": "Architecture Overview",
+        "sidebar_label": "Architecture Overview"
       },
-      "afm": {
-        "title": "Set Up an AFM Query",
-        "sidebar_label": "Set Up an AFM Query"
+      "platform_intro": {
+        "title": "GoodData Platform Introduction",
+        "sidebar_label": "Platform Introduction"
+      },
+      "api_maturity": {
+        "title": "API Maturity",
+        "sidebar_label": "API Maturity"
+      },
+      "gdc_catalog_export": {
+        "title": "Export catalog",
+        "sidebar_label": "Export catalog"
+      },
+      "analytical_backend_integration": {
+        "title": "Connecting To Analytical Backend",
+        "sidebar_label": "Connecting To Analytical Backend"
+      },
+      "installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
+      },
+      "ht_create_your_first_visualization": {
+        "title": "Create Your First Application from Scratch",
+        "sidebar_label": "Create Your First Application from Scratch"
+      },
+      "ht_create_your_first_visualization_toolkit": {
+        "title": "Create Your First Application Using Accelerator Toolkit",
+        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
       },
       "area_chart_component": {
         "title": "Area Chart",
         "sidebar_label": "Area Chart"
-      },
-      "arithmetic_measure": {
-        "title": "Arithmetic Measure",
-        "sidebar_label": "Arithmetic Measure"
-      },
-      "attribute_element_option": {
-        "title": "AttributeElements Component Options",
-        "sidebar_label": "AttributeElements Component Options"
       },
       "attribute_filter_component": {
         "title": "Attribute Filter",
@@ -45,14 +61,6 @@
         "title": "Bullet Chart",
         "sidebar_label": "Bullet Chart"
       },
-      "chart_config": {
-        "title": "Chart Config",
-        "sidebar_label": "Chart Config"
-      },
-      "clean_up_your_code": {
-        "title": "Clean Up Your Code",
-        "sidebar_label": "Clean Up Your Code"
-      },
       "column_chart_component": {
         "title": "Column Chart",
         "sidebar_label": "Column Chart"
@@ -61,69 +69,17 @@
         "title": "Combo Chart",
         "sidebar_label": "Combo Chart"
       },
-      "cors": {
-        "title": "Deal with Cross-Origin Issues",
-        "sidebar_label": "Deal with Cross-Origin Issues"
-      },
-      "create_custom_attribute_filter": {
-        "title": "Create a Custom Attribute Filter",
-        "sidebar_label": "Create Custom Filter"
-      },
-      "create_new_visualization": {
-        "title": "Create Custom Visualization",
-        "sidebar_label": "Create Custom Visualization"
-      },
-      "data_layer": {
-        "title": "Access Low Level API (DataLayer)",
-        "sidebar_label": "Access Low Level API"
-      },
       "date_filter_component": {
         "title": "DateFilter Component",
         "sidebar_label": "DateFilter Component"
-      },
-      "date_filter_option": {
-        "title": "DateFilter Component Options",
-        "sidebar_label": "DateFilter Component Options"
       },
       "donut_chart_component": {
         "title": "Donut Chart",
         "sidebar_label": "Donut Chart"
       },
-      "drillable_item": {
-        "title": "DrillableItems",
-        "sidebar_label": "DrillableItems"
-      },
-      "error_component": {
-        "title": "ErrorComponent",
-        "sidebar_label": "ErrorComponent"
-      },
-      "ex_global_filters": {
-        "title": "Global Filters Example",
-        "sidebar_label": "Global Filters"
-      },
-      "execute_component": {
-        "title": "Execute API Call",
-        "sidebar_label": "Execute API Call"
-      },
-      "execution_rest_api_and_result": {
-        "title": "Execution Response and Execution Result",
-        "sidebar_label": "Execution Response and Execution Result"
-      },
-      "filter_visual_components": {
-        "title": "Filter Visual Components",
-        "sidebar_label": "Filter Visual Components"
-      },
-      "gdc_catalog_export": {
-        "title": "Get Identifiers from the Platform",
-        "sidebar_label": "Get Identifiers from the Platform"
-      },
       "geo_pushpin_chart_component": {
         "title": "Geo Pushpin Chart",
         "sidebar_label": "Geo Pushpin Chart"
-      },
-      "glossary": {
-        "title": "Glossary",
-        "sidebar_label": "Glossary"
       },
       "headline_component": {
         "title": "Headline",
@@ -133,57 +89,6 @@
         "title": "Heatmap",
         "sidebar_label": "Heatmap"
       },
-      "ht_build_visualization_custom_react": {
-        "title": "Build a Visualization Using a Custom React Application",
-        "sidebar_label": "Build a Visualization Using a Custom React Application"
-      },
-      "ht_configure_webpack_proxy": {
-        "title": "Configure a Webpack Proxy",
-        "sidebar_label": "Configure a Webpack Proxy"
-      },
-      "ht_create_predicates": {
-        "title": "Create Predicates",
-        "sidebar_label": "Create Predicates"
-      },
-      "ht_create_your_first_visualization_toolkit": {
-        "title": "Create Your First Application Using Accelerator Toolkit",
-        "sidebar_label": "Create Your First Application Using Accelerator Toolkit"
-      },
-      "ht_create_your_first_visualization": {
-        "title": "Create Your First Application from Scratch",
-        "sidebar_label": "Create Your First Application from Scratch"
-      },
-      "ht_customize_visualization": {
-        "title": "Customize a Visualization",
-        "sidebar_label": "Customize a Visualization"
-      },
-      "ht_embed_visualization": {
-        "title": "Embed a Visualization",
-        "sidebar_label": "Embed a Visualization"
-      },
-      "ht_render_visualization_from_different_domain": {
-        "title": "Access Multiple Domains and Projects",
-        "sidebar_label": "Access Multiple Domains and Projects"
-      },
-      "ht_set_up_loading_state_for_embeded_insight": {
-        "title": "ht_set_up_loading_state_for_embeded_insight"
-      },
-      "ht_use_react_component_in_angular_1.x": {
-        "title": "Use Angular 1.x",
-        "sidebar_label": "Use Angular 1.x"
-      },
-      "ht_use_react_component_in_angular_2.x": {
-        "title": "Use Angular 2+",
-        "sidebar_label": "Use Angular 2+"
-      },
-      "ht_use_react_components_with_vanilla_js": {
-        "title": "Use Vanilla JavaScript",
-        "sidebar_label": "Use Vanilla JavaScript"
-      },
-      "installation": {
-        "title": "Installation",
-        "sidebar_label": "Installation"
-      },
       "kpi_component": {
         "title": "KPI",
         "sidebar_label": "KPI"
@@ -192,37 +97,9 @@
         "title": "Line Chart",
         "sidebar_label": "Line Chart"
       },
-      "live_examples": {
-        "title": "Live Examples",
-        "sidebar_label": "Live Examples"
-      },
-      "loading_component": {
-        "title": "LoadingComponent",
-        "sidebar_label": "LoadingComponent"
-      },
       "measure_value_filter_component": {
         "title": "Measure Value Filter",
         "sidebar_label": "Measure Value Filter"
-      },
-      "migration_guide_7": {
-        "title": "Migration guide to React Components v7.x.x",
-        "sidebar_label": "Migration guide to v7.x.x"
-      },
-      "model_helpers": {
-        "title": "Model Helpers",
-        "sidebar_label": "Model Helpers"
-      },
-      "on_export_ready": {
-        "title": "OnExportReady",
-        "sidebar_label": "OnExportReady"
-      },
-      "on_fire_drill_event": {
-        "title": "OnFireDrillEvent",
-        "sidebar_label": "OnFireDrillEvent"
-      },
-      "on_legend_ready": {
-        "title": "OnLegendReady",
-        "sidebar_label": "OnLegendReady"
       },
       "pie_chart_component": {
         "title": "Pie Chart",
@@ -232,45 +109,153 @@
         "title": "Pivot Table",
         "sidebar_label": "Pivot Table"
       },
-      "platform_intro": {
-        "title": "GoodData Platform Introduction",
-        "sidebar_label": "Platform Introduction"
-      },
-      "result_specification": {
-        "title": "Specify Result Structure",
-        "sidebar_label": "Specify Result Structure"
-      },
       "scatter_plot_component": {
         "title": "Scatter Plot",
         "sidebar_label": "Scatter Plot"
-      },
-      "sso": {
-        "title": "Set Up Authentication and Single Sign-On",
-        "sidebar_label": "Set Up Authentication and Single Sign-On"
       },
       "start_with_visual_components": {
         "title": "Start with Visual Components",
         "sidebar_label": "Start with Visual Components"
       },
-      "support_options": {
-        "title": "Support Options",
-        "sidebar_label": "Support Options"
+      "treemap_component": {
+        "title": "Treemap",
+        "sidebar_label": "Treemap"
       },
-      "table_component": {
-        "title": "Table",
-        "sidebar_label": "Table"
+      "attribute_element_option": {
+        "title": "AttributeElements Component Options",
+        "sidebar_label": "AttributeElements Component Options"
       },
-      "table_totals": {
-        "title": "Specify Table Totals",
-        "sidebar_label": "Specify Table Totals"
+      "chart_config": {
+        "title": "Chart Config",
+        "sidebar_label": "Chart Config"
+      },
+      "date_filter_option": {
+        "title": "DateFilter Component Options",
+        "sidebar_label": "DateFilter Component Options"
+      },
+      "drillable_item": {
+        "title": "DrillableItems",
+        "sidebar_label": "DrillableItems"
+      },
+      "error_component": {
+        "title": "ErrorComponent",
+        "sidebar_label": "ErrorComponent"
+      },
+      "loading_component": {
+        "title": "LoadingComponent",
+        "sidebar_label": "LoadingComponent"
+      },
+      "on_fire_drill_event": {
+        "title": "OnDrill",
+        "sidebar_label": "OnDrill"
+      },
+      "on_export_ready": {
+        "title": "OnExportReady",
+        "sidebar_label": "OnExportReady"
+      },
+      "on_legend_ready": {
+        "title": "OnLegendReady",
+        "sidebar_label": "OnLegendReady"
+      },
+      "arithmetic_measure": {
+        "title": "Arithmetic Measure",
+        "sidebar_label": "Arithmetic Measure"
       },
       "time_over_time_comparison": {
         "title": "Time Over Time Comparison",
         "sidebar_label": "Time Over Time Comparison"
       },
-      "treemap_component": {
-        "title": "Treemap",
-        "sidebar_label": "Treemap"
+      "clean_up_your_code": {
+        "title": "Clean Up Your Code",
+        "sidebar_label": "Clean Up Your Code"
+      },
+      "cors": {
+        "title": "Deal with Cross-Origin Issues",
+        "sidebar_label": "Deal with Cross-Origin Issues"
+      },
+      "create_custom_attribute_filter": {
+        "title": "Create a Custom Attribute Filter",
+        "sidebar_label": "Create Custom Filter"
+      },
+      "ht_create_predicates": {
+        "title": "Create Predicates",
+        "sidebar_label": "Create Predicates"
+      },
+      "filter_visual_components": {
+        "title": "Filter Visual Components",
+        "sidebar_label": "Filter Visual Components"
+      },
+      "ht_embed_visualization": {
+        "title": "Embed an Insight Created in Analytical Designer",
+        "sidebar_label": "Embed an Insight"
+      },
+      "model_helpers": {
+        "title": "Model Helpers",
+        "sidebar_label": "Model Helpers"
+      },
+      "sso": {
+        "title": "Set Up Authentication and Single Sign-On",
+        "sidebar_label": "Set Up Authentication and Single Sign-On"
+      },
+      "table_totals": {
+        "title": "Specify Table Totals",
+        "sidebar_label": "Specify Table Totals"
+      },
+      "ht_use_react_component_in_angular_1.x": {
+        "title": "Use Angular 1.x",
+        "sidebar_label": "Use Angular 1.x"
+      },
+      "ht_use_react_component_in_angular_2.x": {
+        "title": "Use Angular 2+",
+        "sidebar_label": "Use Angular 2+"
+      },
+      "ht_render_visualization_from_different_domain": {
+        "title": "Access Multiple Domains and Projects",
+        "sidebar_label": "Access Multiple Domains and Projects"
+      },
+      "ht_use_react_components_with_vanilla_js": {
+        "title": "Use Vanilla JavaScript",
+        "sidebar_label": "Use Vanilla JavaScript"
+      },
+      "execute_component": {
+        "title": "Execute API Call",
+        "sidebar_label": "Execute API Call"
+      },
+      "create_new_visualization": {
+        "title": "Create Custom Visualization",
+        "sidebar_label": "Create Custom Visualization"
+      },
+      "afm": {
+        "title": "Custom Executions",
+        "sidebar_label": "Custom Executions"
+      },
+      "result_specification": {
+        "title": "Specify Result Structure",
+        "sidebar_label": "Specify Result Structure"
+      },
+      "execution_rest_api_and_result": {
+        "title": "Execution Response and Execution Result",
+        "sidebar_label": "Execution Response and Execution Result"
+      },
+      "ex_global_filters": {
+        "title": "Global Filters Example",
+        "sidebar_label": "Global Filters"
+      },
+      "glossary": {
+        "title": "Glossary",
+        "sidebar_label": "Glossary"
+      },
+      "live_examples": {
+        "title": "Live Examples",
+        "sidebar_label": "Live Examples"
+      },
+      "migration_guide_7": {
+        "title": "Migration guide to React Components v7.x.x",
+        "sidebar_label": "Migration guide to v7.x.x"
+      },
+      "support_options": {
+        "title": "Support Options",
+        "sidebar_label": "Support Options"
       },
       "visualization_component": {
         "title": "Visualization",
@@ -1258,13 +1243,13 @@
     },
     "categories": {
       "Support": "Support",
+      "Introduction": "Introduction",
       "Getting Started": "Getting Started",
       "Visual Components": "Visual Components",
       "Properties": "Properties",
       "Custom Visualizations": "Custom Visualizations",
       "Miscellaneous Features": "Miscellaneous Features",
       "Development Tips": "Development Tips",
-      "Introduction": "Introduction",
       "Tutorials": "Tutorials",
       "React Components": "React Components",
       "Reference": "Reference",

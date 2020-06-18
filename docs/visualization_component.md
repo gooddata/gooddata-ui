@@ -63,7 +63,7 @@ import { Visualization } from '@gooddata/react-components';
 
 ## Filters
 
-For more information, see [Filter Visual Components](filter_visual_components.md).
+For more information, see [Filter Visual Components](30_tips__filter_visual_components.md).
 
 ## Caching
 
@@ -85,14 +85,14 @@ clearSdkCache();
 | projectId | true | string | The project ID |
 | uri | false | string | The URI of the visualization to be rendered. Can be omitted if the visualization identifier is present. |
 | identifier | false | string | The identifier of the visualization to be rendered. Can be omitted if the visualization URI is present. |
-| locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-react-components/tree/master/src/translations). |
-| config  | false | [ChartConfig](chart_config.md) | The chart configuration object |
-| filters | false | [FilterItem[]](filter_visual_components.md) | An array of filter definitions |
-| drillableItems | false | [DrillableItem[]](drillable_item.md) | An array of points and attribute values to be drillable. |
-| onFiredDrillEvent | false | [onFiredDrillEvent()](on_fire_drill_event.md) | The drilling event catcher. Called when drilling happens. |
+| locale | false | string | The localization of the visualization. Defaults to `en-US`. For other languages, see the [full list of available localizations](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/localization/Locale.ts). |
+| config  | false | [ChartConfig](15_props__chart_config.md) | The chart configuration object |
+| filters | false | [FilterItem[]](30_tips__filter_visual_components.md) | An array of filter definitions |
+| drillableItems | false | [DrillableItem[]](15_props__drillable_item.md) | An array of points and attribute values to be drillable. |
+| onFiredDrillEvent | false | [onFiredDrillEvent()](15_props__on_drill.md) | The drilling event catcher. Called when drilling happens. |
 | sdk | false | SDK | A configuration object where you can define a custom domain and other API options |
 | uriResolver | false | function | A custom method for querying URIs for identifiers. Defaults to the standard Gooddata SDK. `getObjectUri()`. |
-| onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-react-components/blob/master/src/constants/errorStates.ts). Defaults to `console.error`.|
+| onError | false | function | A custom error handler. Called with the argument containing the state and original error message, for example: `{ status:ErrorStates.BAD_REQUEST,error: {...} }`. See the [full list of error states](https://github.com/gooddata/gooddata-ui-sdk/blob/master/libs/sdk-ui/src/base/errors/GoodDataSdkError.ts). Defaults to `console.error`.|
 | onExportReady | false | Function | A callback when the component is ready for exporting its data |
 | onLoadingChanged | false | function | A custom loading handler. Called when a visualization changes to/from the loading state. Called with the argument denoting a valid state, for example: `{ isLoading:false}`. |
-| onLegendReady | false | [onLegendReady()](on_legend_ready.md) | The legend ready callback. Called when the visualization series are ready to render. Can be used for rendering a custom legend. |
+| onLegendReady | false | [onLegendReady()](15_props__on_legend_ready.md) | The legend ready callback. Called when the visualization series are ready to render. Can be used for rendering a custom legend. |

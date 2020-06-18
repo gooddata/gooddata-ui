@@ -65,7 +65,7 @@ const siteConfig = {
     '/gooddata-ui/js/toggleNav.js'
   ],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/gooddata/gooddata-react-components',
+  repoUrl: 'https://github.com/gooddata/gooddata-ui-sdk',
   gaTrackingId: 'GTM-5G49LK',
   gaGtag: true,
   /* On page navigation for the current documentation page */
