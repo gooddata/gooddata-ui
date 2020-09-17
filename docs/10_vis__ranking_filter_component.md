@@ -27,7 +27,7 @@ import { MeasureValueFilter } from "@gooddata/sdk-ui-filters";
 
 ## Example
 
-The following example shows a table displaying one measure sliced by one attribute. A user can use the Ranking Filter component to filter the displayed bars and see the relevant data only.
+The following example shows a table displaying one measure sliced by one attribute. A user can use the Ranking Filter component to filter the displayed rows and see the relevant data only.
 
 ```jsx
 import React, { useState } from "react";
