@@ -1,7 +1,7 @@
 ---
 id: date_filter_component
-title: Date Filter Component
-sidebar_label: Date Filter Component
+title: Date Filter
+sidebar_label: Date Filter
 copyright: (C) 2007-2019 GoodData Corporation
 ---
 

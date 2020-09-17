@@ -144,7 +144,7 @@ newRelativeDateFilter('<date-dataset-identifier>', 'GDC.time.quarter', -1, -1);
 
 ## Filter by a measure value
 
-You can filter a visualization by the value of a measure. You can filter only the measures that are present in the visualization, on a granularity defined by the attributes in the visualization.
+You can filter a visualization by the value of a measure. You can filter only the measures that are present in the visualization, on the granularity defined by the attributes in the visualization.
 
 > **NOTES:**
 > * The numbers rendered by a visualization are often rounded up/down. However, filters are applied to the original exact numbers (those before rounding), and that may lead to unexpected results. For example, the number `400.01` rounded to a whole number would be `400`, but it will still be included in the visualization with a filter that filters out the values smaller than or equal to `400`.
@@ -229,15 +229,15 @@ This applies to the following types of measures:
 
 ## Ranking filter
 
-With the Ranking Filter, you can choose to display your data from the set of highest or lowest ranked values of some attribute, based on ranking criteria that you establish. You can filter only the measures that are present in the visualization, on a granularity defined by the attributes in the visualization.  
+A ranking filter shows the data from a set of the highest or lowest ranked values of an attribute based on the ranking criteria that you establish. You can filter only the measures that are present in the visualization, on the granularity defined by the attributes in the visualization.
 
 > **NOTES:**
-> * A [rollup total](30_tips__table_totals.md) and measure that is shown in % (that is, the measure with `computeRatio=true` property) are not supported in visualizations with ranking filters. Such visualizations are not rendered, and the error message is shown instead.
-> * Ranking filter does not affect visualization sorting. For example, when you filter to get TOP 3 highest values of the measure, the visualization will keep its sorting order which may or may not have been applied on the filtered measure. 
+> * A [rollup total](30_tips__table_totals.md) and measures that are shown in % (that is, the measures with `computeRatio=true` property) are not supported in visualizations with ranking filters. Such visualizations are not rendered, and the error message is shown instead.
+> * Ranking filters do not affect visualization sorting. For example, when you filter to get top three highest values of a measure, the visualization keeps its sorting order, which may or may not have been applied to the filtered measure.
 
-When you apply ranking filter to a measure, the filter shows only the data whose measure values matches the condition. Note that more records than requested can be returned when they share the same value.
+When you apply a ranking filter to a measure, the filter shows only the data whose measure values match the condition. More records than requested can be returned if they share the same value.
 
-You can create ranking filters using with on of the following `newRankingFilter` factory functions:
+You can create ranking filters using one of the following `newRankingFilter` factory functions:
 
 ```javascript
 newRankingFilter(measureOrLocalId, operator, value)
@@ -249,18 +249,18 @@ newRankingFilter(measureOrLocalId, attributesOrLocalIds, operator, value)
 
 where:
 
--  `measureOrLocalId` is `localIdentifier` of the measure to filter. You can specify the localIdentifier explicitly or 
-   pass an instance of measure and the factory will extract the localIdentifier for you.
+-  `measureOrLocalId` is `localIdentifier` of the measure to filter. You can specify `localIdentifier` explicitly or 
+   pass an instance of the measure, and the factory will extract `localIdentifier` for you.
    
-- `attributesOrLocalIds` is an array of `localIdentifier` strings of attributes that defines the ranking granularity. 
-You can specify the localIdentifier explicitly or pass an instance of attribute and the factory will extract the localIdentifier for you. 
-This parameter is not required. If it is not specified the ranking behaves as if you would enter the list of all attributes in the visualization.
+- `attributesOrLocalIds` is an array of `localIdentifier` strings of the attributes that defines the ranking granularity. 
+You can specify `localIdentifier` explicitly or pass an instance of the attribute, and the factory will extract `localIdentifier` for you. 
+This parameter is optional. If it is not specified, the ranking behaves as if you would enter the list of all attributes in the visualization.
    
--  `operator` is one of the following: 
-    * `'TOP'`: Returns records with the highest values of the filtered measure for granularity specified by the filter attributes. 
-    * `'BOTTOM'`: Returns records with the lowest values of the filtered measure for granularity specified by the filter attributes.
+-  `operator` is one of the following:
+    * `'TOP'` returns records with the highest values of the filtered measure for the granularity specified by the filter attributes.
+    * `'BOTTOM'` returns records with the lowest values of the filtered measure for the granularity specified by the filter attributes.
 
--  `value` the number of desired ranked records. The value must be positive number greater than zero.
+-  `value` is the number of the ranked records to return. The number must be a positive integer (1, 2, 3, ...).
 
 ## Filter set on a specific measure
 
