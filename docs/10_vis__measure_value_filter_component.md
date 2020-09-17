@@ -5,7 +5,7 @@ sidebar_label: Measure Value Filter
 copyright: (C) 2007-2020 GoodData Corporation
 ---
 
-The **Measure Value Filter component** is a dropdown component that allows you to create a new [measure value filter](30_tips__filter_visual_components.md#filter-by-a-measure-value) or to edit an existing one. When a user clicks **Apply**, a callback function that contains a measure value filter ready to be used in the AFM is called.
+The **Measure Value Filter component** is a dropdown component that allows you to create a new [measure value filter](30_tips__filter_visual_components.md#filter-by-a-measure-value) or to edit an existing one. When a user clicks **Apply**, a callback function that contains a measure value filter ready to be used in the visualization component is called.
 
 ![Measure Value Filter Component](assets/mvf_combined.png "Measure Value Filter Component")
 

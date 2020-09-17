@@ -5,7 +5,7 @@ sidebar_label: Ranking Filter
 copyright: (C) 2007-2020 GoodData Corporation
 ---
 
-The **Ranking Filter component** is a dropdown component that allows you to create a new [ranking filter](30_tips__filter_visual_components.md#ranking-filter) or to edit an existing one. When a user clicks **Apply**, a callback function that contains a ranking filter ready to be used in the AFM is called.
+The **Ranking Filter component** is a dropdown component that allows you to create a new [ranking filter](30_tips__filter_visual_components.md#ranking-filter) or to edit an existing one. When a user clicks **Apply**, a callback function that contains a ranking filter ready to be used in the visualization component is called.
 
 ![Ranking Filter Component](assets/ranking_filter_combined.png "Ranking Filter Component")
 
